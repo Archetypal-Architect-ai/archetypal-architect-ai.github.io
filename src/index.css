@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Dark mode transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom focus styles */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Persona color utilities */
+.bg-architect-primary { background-color: #0EA5E9; }
+.bg-architect-secondary { background-color: #06B6D4; }
+.bg-architect-accent { background-color: #67E8F9; }
+
+.bg-roxy-primary { background-color: #EC4899; }
+.bg-roxy-secondary { background-color: #F97316; }
+.bg-roxy-accent { background-color: #FBBF24; }
+
+.bg-sage-primary { background-color: #10B981; }
+.bg-sage-secondary { background-color: #059669; }
+.bg-sage-accent { background-color: #34D399; }
+
+.bg-rebel-primary { background-color: #EF4444; }
+.bg-rebel-secondary { background-color: #DC2626; }
+.bg-rebel-accent { background-color: #F87171; }
+
+.bg-mystic-primary { background-color: #8B5CF6; }
+.bg-mystic-secondary { background-color: #7C3AED; }
+.bg-mystic-accent { background-color: #A78BFA; }
