@@ -469,7 +469,10 @@ export type GameAction =
   | { type: 'EQUIP_ITEM'; payload: { itemId: ItemId; slot: string } }
   | { type: 'UNEQUIP_ITEM'; payload: { slot: string } }
   | { type: 'USE_ITEM'; payload: { itemId: ItemId } }
-  | { type: 'MEDITATE'; payload: { focus: 'stability' | 'essence' | 'coherence' } }
+  | { type: 'MEDITATE'; payload: { focus: 'stability' | 'essence' | 'coherence' | 'vitality' } }
+  | { type: 'REST'; payload: { days: number } }
+  | { type: 'STUDY'; payload: { topic: string } }
+  | { type: 'FREEFORM_ACTION'; payload: { text: string } }
   | { type: 'ADVANCE_TIME'; payload: { days: number } }
   | { type: 'SET_PHASE'; payload: { phase: GamePhase } }
   | { type: 'APPLY_EFFECTS'; payload: { effects: Effect[] } }

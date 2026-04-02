@@ -128,6 +128,15 @@ export function gameReducer(state: GameState, action: GameAction, content: Conte
     case 'MEDITATE':
       return handleMeditate(state, action.payload);
 
+    case 'REST':
+      return handleRest(state, action.payload);
+
+    case 'STUDY':
+      return handleStudy(state, action.payload, content);
+
+    case 'FREEFORM_ACTION':
+      return handleFreeformAction(state, action.payload, content);
+
     case 'ADVANCE_TIME':
       return handleAdvanceTime(state, action.payload);
 
@@ -486,13 +495,26 @@ function handleUseItem(
 
 function handleMeditate(
   state: GameState,
-  payload: { focus: 'stability' | 'essence' | 'coherence' }
+  payload: { focus: 'stability' | 'essence' | 'coherence' | 'vitality' }
 ): GameState {
   const char = state.character;
   let newState = { ...state };
   const narratives: string[] = [];
 
   switch (payload.focus) {
+    case 'vitality':
+      newState = {
+        ...newState,
+        character: {
+          ...char,
+          resources: {
+            ...char.resources,
+            vitality: Math.min(char.resources.vitality + 20, char.resources.maxVitality),
+          },
+        },
+      };
+      narratives.push('You focus inward, mending flesh and bone. Warmth spreads through old wounds. Vitality restored.');
+      break;
     case 'stability':
       newState = {
         ...newState,
@@ -536,6 +558,310 @@ function handleMeditate(
   }
 
   // Advance time by 1 day when meditating
+  newState = {
+    ...newState,
+    world: { ...newState.world, day: newState.world.day + 1 },
+    narrativeBuffer: [...newState.narrativeBuffer, ...narratives],
+    turnCount: newState.turnCount + 1,
+  };
+
+  return newState;
+}
+
+function handleRest(
+  state: GameState,
+  payload: { days: number }
+): GameState {
+  const char = state.character;
+  const days = Math.min(payload.days, 7);
+  const healPerDay = Math.ceil(char.resources.maxVitality * 0.15);
+  const essencePerDay = Math.ceil(char.resources.maxEssence * 0.1);
+  const focusPerDay = Math.ceil(char.resources.maxFocus * 0.2);
+  const stabilityPerDay = 5;
+
+  const newVitality = Math.min(char.resources.vitality + healPerDay * days, char.resources.maxVitality);
+  const newEssence = Math.min(char.resources.essence + essencePerDay * days, char.resources.maxEssence);
+  const newFocus = Math.min(char.resources.focus + focusPerDay * days, char.resources.maxFocus);
+  const newStability = Math.min(char.resources.stability + stabilityPerDay * days, char.resources.maxStability);
+
+  return {
+    ...state,
+    character: {
+      ...char,
+      resources: {
+        ...char.resources,
+        vitality: newVitality,
+        essence: newEssence,
+        focus: newFocus,
+        stability: newStability,
+      },
+    },
+    world: { ...state.world, day: state.world.day + days },
+    narrativeBuffer: [
+      ...state.narrativeBuffer,
+      `You rest for ${days} day${days > 1 ? 's' : ''}. Your body heals, your mind clears, your reserves replenish.`,
+    ],
+    turnCount: state.turnCount + 1,
+  };
+}
+
+function handleStudy(
+  state: GameState,
+  payload: { topic: string },
+  content: ContentPack
+): GameState {
+  const topic = payload.topic.toLowerCase();
+  const char = state.character;
+  const narratives: string[] = [];
+  let newState = { ...state };
+
+  // Study a method you already know — gain mastery
+  const knownMethod = Object.keys(char.methods).find(id => {
+    const def = content.methods.find(m => m.id === id);
+    return def && (def.name.toLowerCase().includes(topic) || def.tags.some(t => t.includes(topic)));
+  });
+  if (knownMethod) {
+    const def = content.methods.find(m => m.id === knownMethod)!;
+    const current = char.methods[knownMethod].mastery;
+    if (current < def.masteryLevels) {
+      newState = {
+        ...newState,
+        character: {
+          ...char,
+          methods: {
+            ...char.methods,
+            [knownMethod]: { mastery: current + 1 },
+          },
+          resources: {
+            ...char.resources,
+            focus: Math.max(0, char.resources.focus - 10),
+          },
+        },
+      };
+      const bonus = def.masteryBonuses.find(b => b.level === current + 1);
+      narratives.push(`You study ${def.name} intently. Mastery increases to ${current + 1}.`);
+      if (bonus) {
+        narratives.push(`New insight: ${bonus.description}`);
+        newState = applyEffects(newState, bonus.effects);
+      }
+    } else {
+      narratives.push(`You have already mastered ${def.name}. There is nothing more to learn through study alone.`);
+    }
+  } else {
+    // Try to discover a new method by studying a topic
+    const discoverable = content.methods.find(m =>
+      !char.methods[m.id] &&
+      (m.tags.some(t => t.includes(topic)) || m.name.toLowerCase().includes(topic)) &&
+      m.conditions.every(c => {
+        if (c.type === 'has_tag') return char.tags.includes(c.target!);
+        if (c.type === 'min_rank') return char.rank >= (c.value as number);
+        return true;
+      })
+    );
+
+    if (discoverable) {
+      newState = {
+        ...newState,
+        character: {
+          ...char,
+          methods: { ...char.methods, [discoverable.id]: { mastery: 1 } },
+          resources: {
+            ...char.resources,
+            focus: Math.max(0, char.resources.focus - 15),
+          },
+        },
+      };
+      narratives.push(`Through dedicated study of "${topic}", you discover a new method: ${discoverable.name}.`);
+      narratives.push(discoverable.lore);
+    } else {
+      // General study — gain focus and lore
+      const relatedPath = content.paths.find(p =>
+        p.tags.some(t => t.includes(topic)) || p.name.toLowerCase().includes(topic)
+      );
+      if (relatedPath) {
+        narratives.push(`You study the ways of ${relatedPath.name}. ${relatedPath.description}`);
+      } else {
+        narratives.push(`You spend time studying "${topic}". While you gain no immediate breakthrough, the knowledge settles into you.`);
+      }
+      newState = {
+        ...newState,
+        character: {
+          ...char,
+          resources: {
+            ...char.resources,
+            focus: Math.min(char.resources.focus + 5, char.resources.maxFocus),
+          },
+        },
+      };
+    }
+  }
+
+  newState = {
+    ...newState,
+    world: { ...newState.world, day: newState.world.day + 1 },
+    narrativeBuffer: [...newState.narrativeBuffer, ...narratives],
+    turnCount: newState.turnCount + 1,
+  };
+
+  return newState;
+}
+
+function handleFreeformAction(
+  state: GameState,
+  payload: { text: string },
+  content: ContentPack
+): GameState {
+  const text = payload.text.toLowerCase().trim();
+  const char = state.character;
+  const narratives: string[] = [];
+  let newState = { ...state };
+
+  // Parse intent from keywords
+  const healWords = ['heal', 'rest', 'recover', 'bandage', 'tend wounds', 'mend', 'cure'];
+  const searchWords = ['search', 'look', 'examine', 'inspect', 'investigate', 'explore', 'scavenge'];
+  const trainWords = ['train', 'practice', 'drill', 'exercise', 'spar', 'hone'];
+  const studyWords = ['study', 'read', 'learn', 'research', 'meditate on', 'contemplate'];
+  const craftWords = ['craft', 'build', 'forge', 'create', 'make', 'assemble'];
+  const socialWords = ['talk', 'speak', 'ask', 'negotiate', 'convince', 'intimidate', 'greet'];
+  const stealthWords = ['hide', 'sneak', 'shadow', 'stealth', 'skulk', 'creep'];
+  const gatherWords = ['gather', 'collect', 'harvest', 'pick', 'forage', 'mine', 'dig'];
+
+  if (healWords.some(w => text.includes(w))) {
+    const healAmt = Math.ceil(char.resources.maxVitality * 0.1);
+    newState = {
+      ...newState,
+      character: {
+        ...char,
+        resources: {
+          ...char.resources,
+          vitality: Math.min(char.resources.vitality + healAmt, char.resources.maxVitality),
+        },
+      },
+    };
+    narratives.push('You tend to your wounds as best you can. The damage knits slowly, but it knits.');
+    if (char.methods['corpse-resistance'] || char.traits.includes('death-touched')) {
+      narratives.push('Your attunement to death gives you an unusual understanding of the body. The healing comes easier than it should.');
+      newState.character.resources.vitality = Math.min(
+        newState.character.resources.vitality + 5,
+        newState.character.resources.maxVitality
+      );
+    }
+  } else if (searchWords.some(w => text.includes(w))) {
+    // Chance to find items based on location
+    const scene = content.scenes.find(s => s.id === state.world.currentScene);
+    const sceneTags = scene?.tags ?? [];
+    const possibleFinds = content.items.filter(i =>
+      i.category === 'material' && i.tags.some(t => sceneTags.includes(t))
+    );
+    if (possibleFinds.length > 0) {
+      const found = possibleFinds[Math.floor(Math.random() * possibleFinds.length)];
+      newState = {
+        ...newState,
+        character: {
+          ...char,
+          inventory: addToInventory(char.inventory, found.id, 1),
+          resources: {
+            ...char.resources,
+            focus: Math.max(0, char.resources.focus - 3),
+          },
+        },
+      };
+      narratives.push(`You search the area carefully. Your efforts are rewarded — you find: ${found.name}.`);
+    } else {
+      narratives.push('You search the area thoroughly but find nothing of value. The land keeps its secrets today.');
+      newState = {
+        ...newState,
+        character: {
+          ...char,
+          resources: {
+            ...char.resources,
+            focus: Math.max(0, char.resources.focus - 2),
+          },
+        },
+      };
+    }
+  } else if (trainWords.some(w => text.includes(w))) {
+    // Train a random known method
+    const methodIds = Object.keys(char.methods);
+    if (methodIds.length > 0) {
+      const methodId = methodIds[Math.floor(Math.random() * methodIds.length)];
+      const def = content.methods.find(m => m.id === methodId);
+      const current = char.methods[methodId].mastery;
+      if (def && current < def.masteryLevels) {
+        newState = {
+          ...newState,
+          character: {
+            ...char,
+            methods: { ...char.methods, [methodId]: { mastery: current + 1 } },
+            resources: {
+              ...char.resources,
+              focus: Math.max(0, char.resources.focus - 8),
+              essence: Math.max(0, char.resources.essence - 5),
+            },
+          },
+        };
+        narratives.push(`You train ${def.name} relentlessly. Sweat, repetition, and pain forge deeper skill. Mastery: ${current + 1}.`);
+      } else {
+        narratives.push(`You train hard, but your body already knows what your mind is trying to teach.`);
+      }
+    } else {
+      narratives.push('You train your body and mind, but without a method to focus on, the effort is general.');
+    }
+  } else if (studyWords.some(w => text.includes(w))) {
+    // Delegate to study handler
+    const topic = text.replace(/study|read|learn|research|meditate on|contemplate/gi, '').trim() || 'cultivation';
+    return handleStudy(state, { topic }, content);
+  } else if (craftWords.some(w => text.includes(w))) {
+    narratives.push('You look through your materials and consider what you might create. Open the Crafting panel to see available recipes.');
+  } else if (socialWords.some(w => text.includes(w))) {
+    const scene = content.scenes.find(s => s.id === state.world.currentScene);
+    if (scene?.tags.includes('settlement') || scene?.tags.includes('outpost') || scene?.id === 'moorland-village') {
+      narratives.push('You approach the locals and attempt conversation. They eye you warily but listen.');
+      newState = {
+        ...newState,
+        character: {
+          ...char,
+          resources: { ...char.resources, reputation: char.resources.reputation + 1 },
+        },
+      };
+    } else {
+      narratives.push('There is no one here to speak with. The wind and the dead do not trade pleasantries.');
+    }
+  } else if (stealthWords.some(w => text.includes(w))) {
+    if (char.methods['shadow-walk'] || char.traits.includes('shadow-touched')) {
+      narratives.push('You melt into the shadows. The darkness wraps around you like a familiar cloak. You are unseen.');
+      newState = {
+        ...newState,
+        world: { ...newState.world, flags: { ...newState.world.flags, 'stealth-active': true } },
+      };
+    } else {
+      narratives.push('You try to conceal yourself, pressing against the terrain. Without shadow cultivation, your concealment is ordinary — but functional.');
+    }
+  } else if (gatherWords.some(w => text.includes(w))) {
+    const scene = content.scenes.find(s => s.id === state.world.currentScene);
+    const sceneTags = scene?.tags ?? [];
+    const materials = content.items.filter(i =>
+      i.category === 'material' && i.tags.some(t => sceneTags.includes(t))
+    );
+    if (materials.length > 0) {
+      const mat = materials[Math.floor(Math.random() * materials.length)];
+      newState = {
+        ...newState,
+        character: {
+          ...char,
+          inventory: addToInventory(char.inventory, mat.id, 1),
+        },
+      };
+      narratives.push(`You gather materials from the surrounding area. Found: ${mat.name}.`);
+    } else {
+      narratives.push('You search for useful materials, but this area has little to offer right now.');
+    }
+  } else {
+    // Generic fallback
+    narratives.push(`You attempt to "${payload.text}." The world responds, but not in ways you can yet perceive. Perhaps a more specific action would yield clearer results.`);
+    narratives.push('Try: heal, search, train, study [topic], gather, rest, or explore.');
+  }
+
   newState = {
     ...newState,
     world: { ...newState.world, day: newState.world.day + 1 },

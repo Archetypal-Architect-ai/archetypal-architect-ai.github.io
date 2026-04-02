@@ -202,6 +202,18 @@ export default function GameApp({ content, onExit }: GameAppProps) {
               dispatch({ type: 'DISMISS_NARRATIVE' });
               dispatch({ type: 'MEDITATE', payload: { focus } });
             }}
+            onRest={(days) => {
+              dispatch({ type: 'DISMISS_NARRATIVE' });
+              dispatch({ type: 'REST', payload: { days } });
+            }}
+            onStudy={(topic) => {
+              dispatch({ type: 'DISMISS_NARRATIVE' });
+              dispatch({ type: 'STUDY', payload: { topic } });
+            }}
+            onFreeformAction={(text) => {
+              dispatch({ type: 'DISMISS_NARRATIVE' });
+              dispatch({ type: 'FREEFORM_ACTION', payload: { text } });
+            }}
           />
 
           {/* Debug Panel */}
