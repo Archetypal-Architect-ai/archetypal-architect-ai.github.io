@@ -11,6 +11,7 @@ import { factions } from './factions';
 import { regions } from './regions';
 import { scenes } from './scenes';
 import { recipes } from './recipes';
+import { companions } from './companions';
 
 export const ashenmoorContentPack: ContentPack = {
   origins,
@@ -20,7 +21,7 @@ export const ashenmoorContentPack: ContentPack = {
   titles,
   traits,
   items,
-  companions: [],
+  companions,
   breakthroughs,
   factions,
   regions,

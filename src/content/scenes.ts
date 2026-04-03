@@ -22,6 +22,28 @@ export const scenes: SceneDef[] = [
         resultText: 'The ambient death-essence of the moor flows into you, cold and clarifying. When you open your eyes, the fog has shifted.',
         tags: ['cultivation', 'rest'],
       },
+      {
+        id: 'forage-crossroads',
+        text: 'Forage for materials among the standing stones.',
+        conditions: [],
+        effects: [
+          { type: 'add_item', target: 'bone-dust', value: 2 },
+          { type: 'advance_time', value: 1 },
+        ],
+        resultText: 'You search the mossy crevices around the standing stones. The moor provides — bone dust caught in the roots, fragments of peat-iron, and the occasional odd trinket left as an offering by travelers long gone.',
+        tags: ['gathering', 'exploration'],
+      },
+      {
+        id: 'practice-methods-crossroads',
+        text: 'Practice your methods in the open air.',
+        conditions: [],
+        effects: [
+          { type: 'add_method_mastery', target: 'ossuary-meditation', value: 1 },
+          { type: 'add_resource', target: 'focus', value: -5 },
+        ],
+        resultText: 'You run through the forms and meditations you have learned, the moor wind testing your concentration. Each repetition sharpens your understanding, wearing grooves of mastery into your spirit.',
+        tags: ['cultivation', 'training'],
+      },
     ],
     exits: [
       { targetScene: 'barrow-entrance', text: 'Follow the northern path toward the ancient barrows.', conditions: [] },
@@ -80,6 +102,30 @@ export const scenes: SceneDef[] = [
         resultText: 'Your voice echoes into the barrow and something answers — not with words, but with a pressure against your mind. A spirit acknowledges you.',
         tags: ['spirit', 'communion'],
       },
+      {
+        id: 'camp-barrow',
+        text: 'Set up a camp nearby and rest.',
+        conditions: [],
+        effects: [
+          { type: 'add_resource', target: 'vitality', value: 15 },
+          { type: 'add_resource', target: 'stability', value: 5 },
+          { type: 'advance_time', value: 1 },
+        ],
+        resultText: 'You make camp in the lee of the barrow mound, sheltered from the moor wind. Sleep comes uneasily this close to the dead, but your body recovers. By morning, you feel restored if not entirely rested.',
+        tags: ['rest', 'camp'],
+      },
+      {
+        id: 'search-hidden-passages',
+        text: 'Look for hidden passages behind the burial niches.',
+        conditions: [{ type: 'min_resource', target: 'focus', value: 15 }],
+        effects: [
+          { type: 'set_world_flag', target: 'whispering-barrow-discovered', value: true },
+          { type: 'add_resource', target: 'focus', value: -10 },
+          { type: 'narrative_log', value: 'Behind a false wall, you discover a passage that descends into deeper darkness. The whispers grow louder here.' },
+        ],
+        resultText: 'Your careful examination reveals a seam in the stonework that does not match the rest. You pry it open to discover a hidden passage leading down into a deeper barrow — one where the dead still whisper.',
+        tags: ['exploration', 'discovery'],
+      },
     ],
     exits: [
       { targetScene: 'crossroads', text: 'Return to the crossroads.', conditions: [] },
@@ -128,6 +174,29 @@ export const scenes: SceneDef[] = [
         ],
         resultText: 'The spirit lashes out in cold fury, but you endure it. As it dissipates, its essence flows into you — decades of accumulated power released in a single exhalation.',
         tags: ['combat', 'spirit'],
+      },
+      {
+        id: 'collect-sanctified-stone',
+        text: 'Collect sanctified stone from the altar base.',
+        conditions: [],
+        effects: [
+          { type: 'add_item', target: 'sanctified-ash', value: 1 },
+          { type: 'add_resource', target: 'momentum', value: 1 },
+        ],
+        resultText: 'You chip away at the altar base where centuries of prayer have left the stone saturated with sanctity. The fragments glow faintly in your palm, warm and clean despite the ruin surrounding them.',
+        tags: ['gathering', 'sanctity'],
+      },
+      {
+        id: 'read-prayer-books',
+        text: 'Read the faded prayer books scattered in the vestry.',
+        conditions: [],
+        effects: [
+          { type: 'set_world_flag', target: 'chapel-prayers-studied', value: true },
+          { type: 'add_resource', target: 'focus', value: 3 },
+          { type: 'add_method', target: 'death-rite-officiant' },
+        ],
+        resultText: 'The prayer books are mildewed and fragile, but legible. Among the expected liturgies, you discover detailed instructions for performing death rites — a formal method of guiding spirits to rest. The knowledge settles into your mind like a prayer answered.',
+        tags: ['study', 'lore', 'death'],
       },
     ],
     exits: [
@@ -191,6 +260,29 @@ export const scenes: SceneDef[] = [
         resultText: 'The villagers blanch and comply, pressing grave iron ingots into your hands with trembling fingers. Word of this will reach the Watch.',
         tags: ['social', 'intimidation'],
       },
+      {
+        id: 'visit-healer',
+        text: 'Visit the village healer.',
+        conditions: [{ type: 'min_resource', target: 'reputation', value: 3 }],
+        effects: [
+          { type: 'add_resource', target: 'vitality', value: 25 },
+          { type: 'add_resource', target: 'reputation', value: -2 },
+        ],
+        resultText: 'The healer is an old woman with knowing eyes. She charges not in coin but in favors owed. Her poultices sting but her hands are sure, and by the time you leave, your wounds have closed and your strength returned.',
+        tags: ['social', 'healing'],
+      },
+      {
+        id: 'check-notice-board',
+        text: 'Check the notice board in the market square.',
+        conditions: [],
+        effects: [
+          { type: 'set_world_flag', target: 'blood-hollow-discovered', value: true },
+          { type: 'set_world_flag', target: 'bone-field-rumors', value: true },
+          { type: 'narrative_log', value: 'Faded notices and desperate pleas pin the board. Among them: reports of strange bleeding earth to the north, and warnings about the old battlefield to the west.' },
+        ],
+        resultText: 'The notice board is a patchwork of pleas, warnings, and bounties. You learn of hidden places on the moor that merit investigation, and of threats the villagers dare not face alone.',
+        tags: ['social', 'lore', 'discovery'],
+      },
     ],
     exits: [
       { targetScene: 'crossroads', text: 'Return to the crossroads.', conditions: [] },
@@ -240,6 +332,29 @@ export const scenes: SceneDef[] = [
         ],
         resultText: 'You observe the pulse pattern, noting how it aligns with deeper geological rhythms. Understanding deepens your connection to your path.',
         tags: ['study', 'cultivation'],
+      },
+      {
+        id: 'bottle-blood-water',
+        text: 'Bottle the blood water from the pool.',
+        conditions: [],
+        effects: [
+          { type: 'add_item', target: 'congealed-blood-crystal', value: 1 },
+          { type: 'add_corruption', value: 1 },
+        ],
+        resultText: 'You collect the crimson liquid in a sealed vessel. It congeals almost immediately into a crystalline mass, pulsing faintly with residual vitality. A potent reagent for blood cultivation or crafting.',
+        tags: ['gathering', 'blood'],
+      },
+      {
+        id: 'trace-source-upstream',
+        text: 'Trace the source of the blood water upstream.',
+        conditions: [],
+        effects: [
+          { type: 'set_world_flag', target: 'crimson-grove-discovered', value: true },
+          { type: 'add_resource', target: 'focus', value: -5 },
+          { type: 'narrative_log', value: 'Following the crimson seepage uphill, you discover a grove of ancient trees whose roots drink deep from a vein of living blood-essence.' },
+        ],
+        resultText: 'You follow the crimson seepage upstream through increasingly dense undergrowth. The trail leads to a hidden grove where the trees themselves bleed sap the color of arterial blood. This place pulses with primal power.',
+        tags: ['exploration', 'blood', 'discovery'],
       },
     ],
     exits: [
@@ -301,6 +416,30 @@ export const scenes: SceneDef[] = [
         ],
         resultText: 'Wrapped in shadow, you observe patrol routes, supply stores, and the strange rituals the wardens perform at midnight. Valuable intelligence.',
         tags: ['stealth', 'shadow'],
+      },
+      {
+        id: 'train-wardens',
+        text: 'Request combat training from the wardens.',
+        conditions: [{ type: 'min_resource', target: 'focus', value: 10 }],
+        effects: [
+          { type: 'add_method_mastery', target: 'oath-tempering', value: 1 },
+          { type: 'add_resource', target: 'focus', value: -10 },
+          { type: 'add_resource', target: 'momentum', value: 5 },
+        ],
+        resultText: 'A grizzled warden agrees to drill you in their oath-forged combat style. The training is brutal and methodical — each strike paired with a recitation, each defense rooted in sworn duty. You emerge battered but sharper.',
+        tags: ['combat', 'training', 'oath'],
+      },
+      {
+        id: 'read-duty-roster',
+        text: 'Read the duty roster posted in the gatehouse.',
+        conditions: [],
+        effects: [
+          { type: 'set_world_flag', target: 'warden-patrol-routes', value: true },
+          { type: 'set_world_flag', target: 'faction-movements-known', value: true },
+          { type: 'narrative_log', value: 'The roster reveals patrol schedules, supply shipments, and terse notes about increased undead activity near the western moor.' },
+        ],
+        resultText: 'The duty roster is pinned to the gatehouse wall — names, routes, and incident reports in neat military script. You learn the rhythms of the Watch and, between the lines, the shape of threats gathering on the moor.',
+        tags: ['lore', 'faction', 'intelligence'],
       },
     ],
     exits: [

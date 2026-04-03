@@ -265,9 +265,9 @@ export const traits: TraitDef[] = [
     id: 'corruption-embraced',
     name: 'Corruption Embraced',
     description:
-      'You have welcomed corruption into your cultivation. Power flows freely, but at terrible cost.',
-    tags: ['corruption', 'dark', 'power'],
-    permanent: false,
+      'You have accepted corruption as part of your path. It no longer damages your stability, but it accumulates faster than ever.',
+    tags: ['corruption', 'power'],
+    permanent: true,
     passiveEffects: [
       {
         type: 'add_resource',
@@ -275,16 +275,16 @@ export const traits: TraitDef[] = [
         value: 5,
       },
       {
-        type: 'add_resource',
-        target: 'stability',
-        value: -3,
+        type: 'narrative_log',
+        value: 'Corruption flows through you freely now — a dark river that no longer erodes its banks but carves new channels of power.',
       },
     ],
     conditions: [
       { type: 'has_trait', target: 'corruption-scarred' },
       { type: 'min_resource', target: 'corruption', value: 80 },
+      { type: 'world_flag', target: 'embraced_corruption', value: 'true' },
     ],
-    lore: 'There is a moment when resistance becomes acceptance, and acceptance becomes hunger.',
+    lore: 'There is a moment when resistance becomes acceptance, and acceptance becomes hunger. Those who embrace corruption do not decay — they transform.',
   },
 
   {
@@ -357,5 +357,172 @@ export const traits: TraitDef[] = [
       { type: 'min_resource', target: 'sanctity', value: 50 },
     ],
     lore: 'To be blessed by the dead is to carry their silence like armor. It is the rarest gift of the Grave Saints.',
+  },
+
+  // ── Expanded Traits ────────────────────────────────────────────────────
+
+  {
+    id: 'plague-resistant',
+    name: 'Plague Resistant',
+    description:
+      'Survived exposure to cultivator plague. Your body has adapted, rendering you immune to corruption from disease sources.',
+    tags: ['disease', 'defense'],
+    permanent: true,
+    passiveEffects: [
+      {
+        type: 'narrative_log',
+        value: 'The plague left its mark, but you endure. Disease-born corruption slides off you like water from oiled leather.',
+      },
+    ],
+    conditions: [
+      { type: 'world_flag', target: 'survived_cultivator_plague', value: 'true' },
+    ],
+    lore: 'The cultivator plague claimed nine of every ten it touched. Those who survived emerged changed — not stronger, necessarily, but sealed against the sickness forevermore.',
+  },
+
+  {
+    id: 'iron-marrow',
+    name: 'Iron Marrow',
+    description:
+      'Your bones have been infused with iron essence. They are denser, heavier, and far harder to break.',
+    tags: ['iron', 'body'],
+    permanent: true,
+    passiveEffects: [
+      {
+        type: 'add_resource',
+        target: 'maxVitality',
+        value: 5,
+      },
+    ],
+    conditions: [
+      { type: 'has_method', target: 'oath-tempering' },
+      { type: 'min_method_mastery', target: 'oath-tempering', value: 5 },
+    ],
+    mutations: [
+      {
+        targetTraitId: 'living-iron',
+        conditions: [
+          { type: 'min_resource', target: 'stability', value: 60 },
+          { type: 'min_rank', value: 4 },
+        ],
+        description:
+          'When iron marrow is cultivated long enough, it spreads beyond the bones. The body becomes partially metallic — a living construct.',
+      },
+    ],
+    lore: 'The Wardens discovered that oaths sworn on iron could be drawn inward, fortifying the skeleton itself. The process is agonizing. The result is unbreakable.',
+  },
+
+  {
+    id: 'living-iron',
+    name: 'Living Iron',
+    description:
+      'Your body is partially metallic. Skin gleams with a dull iron sheen, and your movements carry the weight of forged steel.',
+    tags: ['iron', 'construct', 'body'],
+    permanent: true,
+    passiveEffects: [
+      {
+        type: 'add_resource',
+        target: 'maxVitality',
+        value: 10,
+      },
+      {
+        type: 'add_resource',
+        target: 'stability',
+        value: 5,
+      },
+      {
+        type: 'set_body_state',
+        value: 'augmented',
+      },
+    ],
+    conditions: [
+      { type: 'has_trait', target: 'iron-marrow' },
+      { type: 'min_resource', target: 'stability', value: 60 },
+      { type: 'min_rank', value: 4 },
+    ],
+    lore: 'Beyond iron marrow lies a further transformation. The body ceases to be merely flesh reinforced — it becomes something new. Part human, part metal, wholly singular.',
+  },
+
+  {
+    id: 'beast-bonded',
+    name: 'Beast Bonded',
+    description:
+      'You have formed a deep bond with a companion beast. Your spirits are intertwined, strengthening both.',
+    tags: ['beast', 'bond'],
+    permanent: true,
+    passiveEffects: [
+      {
+        type: 'narrative_log',
+        value: 'Your bonded beast stirs in resonance with your emotions. The link between you hums with quiet power.',
+      },
+    ],
+    conditions: [
+      { type: 'has_companion', target: 'any' },
+      { type: 'world_flag', target: 'beast_bond_forged', value: 'true' },
+    ],
+    lore: 'In the old days, cultivators did not tame beasts — they merged with them. The bond was mutual, the sacrifice shared, the power doubled.',
+  },
+
+  {
+    id: 'fog-walker',
+    name: 'Fog Walker',
+    description:
+      'You can navigate the fog market freely, seeing paths hidden to others. Merchants there recognize you as one of their own.',
+    tags: ['shadow', 'liminal', 'trade'],
+    permanent: true,
+    passiveEffects: [
+      {
+        type: 'narrative_log',
+        value: 'The fog parts before you like a curtain drawn aside. You know its lanes and alleys as well as any native.',
+      },
+    ],
+    conditions: [
+      { type: 'has_trait', target: 'shadow-touched' },
+      { type: 'world_flag', target: 'fog_market_access', value: 'true' },
+    ],
+    lore: 'The fog market exists between worlds — not quite real, not quite imagined. Only those touched by shadow can find its shifting stalls, and only the fog walkers can do so reliably.',
+  },
+
+  {
+    id: 'ancestor-blessed',
+    name: 'Ancestor Blessed',
+    description:
+      'You have received a blessing from ancestor spirits. Their approval sharpens your mind and eases your spirit methods.',
+    tags: ['spirit', 'sanctity', 'ancestor'],
+    permanent: true,
+    passiveEffects: [
+      {
+        type: 'add_resource',
+        target: 'focus',
+        value: 3,
+      },
+    ],
+    conditions: [
+      { type: 'has_method', target: 'spirit-communion' },
+      { type: 'min_method_mastery', target: 'spirit-communion', value: 5 },
+      { type: 'min_resource', target: 'sanctity', value: 30 },
+    ],
+    lore: 'The ancestors do not bless lightly. Their approval must be earned through communion, through respect, through the slow accumulation of sanctity that proves one worthy of their regard.',
+  },
+
+  {
+    id: 'wound-keeper',
+    name: 'Wound Keeper',
+    description:
+      'Your wounds heal faster and teach you something with every recovery. Pain is a patient instructor, and you are an attentive student.',
+    tags: ['body', 'healing'],
+    permanent: true,
+    passiveEffects: [
+      {
+        type: 'add_resource',
+        target: 'vitality',
+        value: 2,
+      },
+    ],
+    conditions: [
+      { type: 'min_resource', target: 'vitality', value: 1 },
+      { type: 'world_flag', target: 'survived_near_death', value: 'true' },
+    ],
+    lore: 'Some bodies learn from damage the way minds learn from study. Each wound closes a little faster, each scar a little lighter. The wound keeper does not fear injury — they grow from it.',
   },
 ];
