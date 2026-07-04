@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CategoryFilter from "../../components/CategoryFilter.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import WikiMap from "../../components/WikiMap.astro";
+import { creator, projects, wikiFacets } from "../../content/projects";
+---
+
+<BaseLayout title={`Wiki | ${creator.name}`} description="A cross-linked creator wiki for stories, music, images, merch, and atlas entries.">
+  <main>
+    <PageHeader
+      eyebrow="Creator Wiki"
+      title="Series Hubs, Artifacts, References"
+      description="Browse the public map without drowning in private structure: series hubs first, then songs, tools, essays, merch threads, and reference doors."
+    />
+    <section class="section first-section">
+      <div class="facet-row" aria-label="Wiki facets">
+        {
+          wikiFacets.map((facet) => (
+            <button type="button" data-facet={facet.label} data-kinds={facet.kinds.join("|")}>
+              {facet.label}
+            </button>
+          ))
+        }
+      </div>
+      <CategoryFilter />
+      <div class="project-grid" data-project-grid>
+        {projects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </section>
+    <WikiMap />
+  </main>
+  <script is:inline define:vars={{ projects }}>
+    const grid = document.querySelector("[data-project-grid]");
+    const search = document.querySelector("[data-search]");
+    const sort = document.querySelector("[data-sort]");
+    const buttons = [...document.querySelectorAll("[data-category]")];
+    const facets = [...document.querySelectorAll("[data-facet]")];
+    const params = new URLSearchParams(window.location.search);
+    let active = params.get("category") || "All";
+    let activeKinds = null;
+
+    const requestedFacet = params.get("facet");
+    if (requestedFacet) {
+      const facet = facets.find((button) => button.dataset.facet === requestedFacet);
+      if (facet) activeKinds = facet.dataset.kinds.split("|");
+    }
+
+    function matches(project, query) {
+      return [
+        project.title,
+        project.kind,
+        project.status,
+        project.entryRole,
+        project.summary,
+        project.description,
+        ...(project.tags || []),
+        ...(project.connections || []).map((connection) => connection.label)
+      ]
+        .flat()
+        .join(" ")
+        .toLowerCase()
+        .includes(query.toLowerCase());
+    }
+
+    function card(project) {
+      const visibleTags = project.tags.slice(0, 3);
+      const tags = visibleTags.map((tag) => `<li>${tag}</li>`).join("");
+      const hiddenTagCount = Math.max(project.tags.length - visibleTags.length, 0);
+      const moreTags = hiddenTagCount ? `<p class="micro-note">+${hiddenTagCount} more tags</p>` : "";
+      const connections = project.connections?.length ? `<p class="micro-note">${project.connections.length} linked entries</p>` : "";
+      const role = project.entryRole || "Entry";
+      const roleClass = role.toLowerCase();
+
+      return `
+        <article class="project-card ${roleClass}">
+          <a class="thumb-link" href="/wiki/${project.id}" aria-label="Open ${project.title}">
+            <img src="${project.thumbnail}" alt="${project.thumbnailAlt}" loading="lazy" />
+          </a>
+          <div class="project-card-body">
+            <div class="card-meta"><span class="role-pill">${role}</span><span>${project.kind}</span><span>${project.status}</span></div>
+            <h2><a href="/wiki/${project.id}">${project.title}</a></h2>
+            <p>${project.summary}</p>
+            ${connections}
+            <ul class="tag-list" aria-label="Tags">${tags}</ul>
+            ${moreTags}
+            <div class="external-links text"><a href="/wiki/${project.id}"><span>Open entry</span><span aria-hidden="true">-&gt;</span></a></div>
+          </div>
+        </article>
+      `;
+    }
+
+    function render() {
+      buttons.forEach((button) => button.classList.toggle("is-active", button.dataset.category === active));
+      facets.forEach((button) => {
+        const kinds = button.dataset.kinds.split("|");
+        button.classList.toggle("is-active", Boolean(activeKinds && kinds.join("|") === activeKinds.join("|")));
+      });
+
+      const query = search.value.trim();
+      const sorted = [...projects]
+        .filter((project) => {
+          const categoryMatch = active === "All" || project.kind === active;
+          const facetMatch = !activeKinds || activeKinds.includes(project.kind);
+          return categoryMatch && facetMatch && matches(project, query);
+        })
+        .sort((a, b) => {
+          if (sort.value === "newest") return (b.date || "").localeCompare(a.date || "");
+          if (sort.value === "oldest") return (a.date || "").localeCompare(b.date || "");
+          if (sort.value === "alpha") return a.title.localeCompare(b.title);
+          return Number(Boolean(b.featured)) - Number(Boolean(a.featured));
+        });
+
+      grid.innerHTML = sorted.length
+        ? sorted.map(card).join("")
+        : `<div class="empty-panel"><h2>No matches</h2><p>Try another filter or add the entry in <code>src/content/projects.ts</code>.</p></div>`;
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        active = button.dataset.category;
+        activeKinds = null;
+        render();
+      });
+    });
+    facets.forEach((button) => {
+      button.addEventListener("click", () => {
+        active = "All";
+        activeKinds = button.dataset.kinds.split("|");
+        render();
+      });
+    });
+    search.addEventListener("input", render);
+    sort.addEventListener("change", render);
+    render();
+  </script>
+</BaseLayout>

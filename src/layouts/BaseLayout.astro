@@ -1,0 +1,54 @@
+---
+import "../styles/global.css";
+import { creator } from "../content/projects";
+
+const {
+  title = `${creator.name} | Creative Archive`,
+  description = creator.tagline,
+  image = "/images/hero-studio.png"
+} = Astro.props;
+
+const nav = [
+  ["Home", "/"],
+  ["Wiki", "/wiki"],
+  ["Novels", "/novels"],
+  ["Music", "/music"],
+  ["Videos", "/videos"],
+  ["Essays", "/essays"],
+  ["Free", "/free"],
+  ["Shop Threads", "/merch"],
+  ["About", "/about"],
+  ["Contact", "/contact"]
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span>{creator.name}</span>
+        <small>{creator.imprint}</small>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        {nav.map(([label, href]) => <a href={href}>{label}</a>)}
+      </nav>
+    </header>
+    <slot />
+    <footer class="site-footer">
+      <strong>{creator.name}</strong>
+      <span>Creator wiki. Built to be edited in <code>src/content/projects.ts</code>.</span>
+    </footer>
+  </body>
+</html>

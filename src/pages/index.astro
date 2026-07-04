@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FeaturedProjects from "../components/FeaturedProjects.astro";
+import ProjectGrid from "../components/ProjectGrid.astro";
+import WikiMap from "../components/WikiMap.astro";
+import { creator, projects, wikiFacets } from "../content/projects";
+
+const recent = [...projects].sort((a, b) => (b.date || "").localeCompare(a.date || "")).slice(0, 4);
+const entryCount = projects.length;
+const connectionCount = projects.reduce((total, project) => total + (project.connections?.length || 0), 0);
+---
+
+<BaseLayout title={`${creator.name} | ${creator.imprint}`} description={creator.tagline}>
+  <main>
+    <section class="home-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">{creator.imprint}</p>
+        <h1>{creator.tagline}</h1>
+        <p>{creator.aboutTheWork}</p>
+        <div class="hero-actions">
+          <a class="button primary" href="/wiki">Enter the Wiki</a>
+          <a class="button secondary" href="#map">View the Map</a>
+          <a class="button secondary" href="/contact">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wiki-stats">
+      <div>
+        <strong>{entryCount}</strong>
+        <span>Entries</span>
+      </div>
+      <div>
+        <strong>{connectionCount}</strong>
+        <span>Explicit links</span>
+      </div>
+      <div>
+        <strong>{wikiFacets.length}</strong>
+        <span>Browse lenses</span>
+      </div>
+    </section>
+
+    <FeaturedProjects />
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Browse</p>
+        <h2>Explore by Relationship</h2>
+        <p>Use these as lenses, not hard boxes. A series can be fiction, music fuel, visual source, and shop thread at the same time.</p>
+      </div>
+      <div class="medium-grid">
+        {
+          wikiFacets.map((facet) => (
+            <a href={`/wiki?facet=${encodeURIComponent(facet.label)}`}>
+              <strong>{facet.label}</strong>
+              <span>{facet.kinds.join(" / ")}</span>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <div id="map">
+      <WikiMap />
+    </div>
+
+    <section class="section about-band">
+      <div>
+        <p class="eyebrow">About the Structure</p>
+        <h2>Not a shelf. A web of recurring obsessions.</h2>
+      </div>
+      <p>{creator.bio}</p>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Recent</p>
+        <h2>Latest Entries</h2>
+      </div>
+      <ProjectGrid projects={recent} />
+    </section>
+  </main>
+</BaseLayout>

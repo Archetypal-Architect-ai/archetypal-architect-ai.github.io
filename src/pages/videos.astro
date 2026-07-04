@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import ProjectGrid from "../components/ProjectGrid.astro";
+import { creator, getProjectsByCategory } from "../content/projects";
+import { mediumPages } from "../content/pages";
+
+const page = mediumPages.videos;
+const items = page.categories.flatMap((category) => getProjectsByCategory(category));
+---
+
+<BaseLayout title={`Videos | ${creator.name}`} description={page.description}>
+  <main>
+    <PageHeader eyebrow={page.eyebrow} title={page.title} description={page.description} />
+    <section class="section first-section">
+      <ProjectGrid projects={items} />
+    </section>
+  </main>
+</BaseLayout>

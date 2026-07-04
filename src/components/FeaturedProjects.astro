@@ -1,0 +1,13 @@
+---
+import ProjectGrid from "./ProjectGrid.astro";
+import { getFeaturedProjects } from "../content/projects";
+---
+
+<section class="section">
+  <div class="section-heading">
+    <p class="eyebrow">Featured</p>
+    <h2>Start Here</h2>
+    <p>Highlighted work across fiction, music, video, and tools.</p>
+  </div>
+  <ProjectGrid projects={getFeaturedProjects()} />
+</section>

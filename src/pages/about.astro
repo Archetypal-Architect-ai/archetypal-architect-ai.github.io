@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import { creator } from "../content/projects";
+---
+
+<BaseLayout title={`About | ${creator.name}`} description={creator.bio}>
+  <main>
+    <PageHeader eyebrow="Creator" title="About" description={creator.bio} />
+    <section class="section prose-section first-section">
+      <h2>The Work</h2>
+      <p>{creator.aboutTheWork}</p>
+      <p>
+        This site is set up as a hub for the real artifacts: books, songs, essays,
+        videos, tools, games, shop items, and whatever category becomes necessary next.
+      </p>
+    </section>
+  </main>
+</BaseLayout>

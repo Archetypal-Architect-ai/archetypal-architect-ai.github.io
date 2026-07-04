@@ -1,0 +1,19 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import type { Project } from "../content/projects";
+
+const { projects } = Astro.props as { projects: Project[] };
+---
+
+{
+  projects.length ? (
+    <div class="project-grid">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  ) : (
+    <div class="empty-panel">
+      <h2>Coming soon</h2>
+      <p>This section is ready. Add items in <code>src/content/projects.ts</code>.</p>
+    </div>
+  )
+}

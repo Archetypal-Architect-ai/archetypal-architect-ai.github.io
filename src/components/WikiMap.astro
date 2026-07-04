@@ -1,0 +1,38 @@
+---
+import { projects } from "../content/projects";
+---
+
+<section class="section wiki-map-section">
+  <div class="section-heading">
+    <p class="eyebrow">Map</p>
+    <h2>How Things Feed Each Other</h2>
+    <p>Every line here comes from editable relationships in <code>src/content/projects.ts</code>.</p>
+  </div>
+  <div class="wiki-map">
+    {
+      projects
+        .filter((entry) => entry.connections?.length)
+        .map((entry) => (
+          <article>
+            <a class="map-node" href={`/wiki/${entry.id}`}>
+              <span>{entry.kind}</span>
+              <strong>{entry.title}</strong>
+            </a>
+            <div class="map-links">
+              {entry.connections!.map((connection) => {
+                const target = projects.find((item) => item.id === connection.id);
+                return (
+                  target && (
+                    <a href={`/wiki/${target.id}`}>
+                      <small>{connection.type}</small>
+                      <span>{target.title}</span>
+                    </a>
+                  )
+                );
+              })}
+            </div>
+          </article>
+        ))
+    }
+  </div>
+</section>

@@ -1,0 +1,24 @@
+---
+import { categories } from "../content/projects";
+---
+
+<div class="filter-panel" data-filter-panel>
+  <label class="search-box">
+    <span>Search</span>
+    <input type="search" placeholder="Title, tag, description..." data-search />
+  </label>
+  <label class="search-box">
+    <span>Sort</span>
+    <select data-sort>
+      <option value="featured">Featured</option>
+      <option value="newest">Newest</option>
+      <option value="oldest">Oldest</option>
+      <option value="alpha">Alphabetical</option>
+    </select>
+  </label>
+  <p class="filter-note">Filter the wiki by entry type. Merch can live inside any connected story, song, image, or universe entry.</p>
+  <div class="filter-buttons" aria-label="Category filters">
+    <button type="button" class="is-active" data-category="All">All</button>
+    {categories.map((category) => <button type="button" data-category={category}>{category}</button>)}
+  </div>
+</div>

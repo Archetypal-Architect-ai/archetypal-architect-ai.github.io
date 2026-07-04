@@ -1,0 +1,20 @@
+---
+import { ArrowUpRight } from "@lucide/astro";
+import type { ProjectLink } from "../content/projects";
+
+const { links = [], variant = "text" } = Astro.props as {
+  links: ProjectLink[];
+  variant?: "text" | "button";
+};
+---
+
+<div class:list={["external-links", variant]}>
+  {
+    links.map((link) => (
+      <a href={link.url}>
+        <span>{link.label}</span>
+        <ArrowUpRight aria-hidden="true" size={16} />
+      </a>
+    ))
+  }
+</div>

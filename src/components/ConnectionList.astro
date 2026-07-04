@@ -1,0 +1,42 @@
+---
+import { getBacklinks, getConnectedEntries } from "../content/projects";
+
+const { entryId } = Astro.props as { entryId: string };
+const outgoing = getConnectedEntries(entryId);
+const backlinks = getBacklinks(entryId);
+---
+
+<div class="connection-stack">
+  {
+    outgoing.length > 0 && (
+      <section class="connection-panel">
+        <h2>Connections</h2>
+        <div class="connection-list">
+          {outgoing.map(({ connection, entry }) => (
+            <a href={`/wiki/${entry!.id}`}>
+              <span>{connection.type}</span>
+              <strong>{entry!.title}</strong>
+              <small>{connection.label}</small>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+  {
+    backlinks.length > 0 && (
+      <section class="connection-panel">
+        <h2>Backlinks</h2>
+        <div class="connection-list">
+          {backlinks.map((entry) => (
+            <a href={`/wiki/${entry.id}`}>
+              <span>Referenced by</span>
+              <strong>{entry.title}</strong>
+              <small>{entry.kind}</small>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+</div>

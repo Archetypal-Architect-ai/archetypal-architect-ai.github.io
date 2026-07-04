@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ConnectionList from "../../components/ConnectionList.astro";
+import ExternalLinks from "../../components/ExternalLinks.astro";
+import TagList from "../../components/TagList.astro";
+import { projects, creator } from "../../content/projects";
+
+export function getStaticPaths() {
+  return projects.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+---
+
+<BaseLayout title={`${entry.title} | ${creator.name} Wiki`} description={entry.summary} image={entry.thumbnail}>
+  <main>
+    <section class="detail-hero wiki-detail-hero">
+      <div>
+        <p class="eyebrow">{entry.entryRole || "Entry"} / {entry.kind} / {entry.status}</p>
+        <h1>{entry.title}</h1>
+        <p>{entry.summary}</p>
+        {entry.externalWikiUrl && <a class="button primary" href={entry.externalWikiUrl}>Open External Wiki</a>}
+        <ExternalLinks links={entry.links} variant="button" />
+      </div>
+      <img src={entry.thumbnail} alt={entry.thumbnailAlt} />
+    </section>
+
+    <section class="section detail-body wiki-detail-body">
+      <article>
+        <h2>Entry</h2>
+        <p>{entry.description}</p>
+        {entry.body?.map((paragraph) => <p>{paragraph}</p>)}
+        {entry.notes && <p>{entry.notes}</p>}
+        {
+          entry.sourceNotes?.length ? (
+            <div class="source-notes">
+              <h2>Source Notes</h2>
+              <ul>
+                {entry.sourceNotes.map((note) => <li>{note}</li>)}
+              </ul>
+            </div>
+          ) : null
+        }
+        {
+          entry.artPrompt ? (
+            <details class="prompt-panel">
+              <summary>Generated art prompt</summary>
+              <p>{entry.artPrompt}</p>
+            </details>
+          ) : null
+        }
+      </article>
+      <aside>
+        <h2>Index</h2>
+        <dl>
+          {entry.entryRole && <div><dt>Role</dt><dd>{entry.entryRole}</dd></div>}
+          <div><dt>Type</dt><dd>{entry.kind}</dd></div>
+          <div><dt>Status</dt><dd>{entry.status}</dd></div>
+          {entry.date && <div><dt>Date</dt><dd>{entry.date}</dd></div>}
+          {entry.series && <div><dt>Series</dt><dd>{entry.series}</dd></div>}
+          {entry.bookNumber && <div><dt>Book</dt><dd>{entry.bookNumber}</dd></div>}
+          {entry.genre && <div><dt>Genre</dt><dd>{entry.genre}</dd></div>}
+          {entry.wordCount && <div><dt>Word Count</dt><dd>{entry.wordCount}</dd></div>}
+          {entry.chapterCount && <div><dt>Chapters</dt><dd>{entry.chapterCount}</dd></div>}
+          {entry.mood && <div><dt>Mood</dt><dd>{entry.mood}</dd></div>}
+          {entry.price && <div><dt>Price</dt><dd>{entry.price}</dd></div>}
+        </dl>
+        <TagList tags={entry.tags} />
+        {
+          entry.merchLinks?.length ? (
+            <div class="shop-panel">
+              <h2>Shop Thread</h2>
+              <ExternalLinks links={entry.merchLinks} />
+            </div>
+          ) : null
+        }
+      </aside>
+    </section>
+
+    <section class="section first-section">
+      <ConnectionList entryId={entry.id} />
+    </section>
+  </main>
+</BaseLayout>
