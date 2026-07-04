@@ -133,7 +133,9 @@ export const projects: Project[] = [
       { label: "Reader List", url: "/free", type: "Reference" },
       { label: "MES Publishing", url: "/wiki/mes-publishing", type: "Reference" },
       { label: "Dirty-minded Bastard Publishing", url: "/adult/dirty-minded-bastard-publishing", type: "Reference" },
-      { label: "Pen Name Directory", url: "/wiki/pen-name-directory", type: "Reference" }
+      { label: "Pen Name Directory", url: "/wiki/pen-name-directory", type: "Reference" },
+      { label: "MES Publishing on Smashwords", url: "https://www.smashwords.com/profile/view/MES_Publishing", type: "Read" },
+      { label: "Dirty-minded Bastard on Smashwords", url: "https://www.smashwords.com/profile/view/Dirty_MInded_Bastard", type: "Read" }
     ],
     connections: [
       { id: "mes-publishing", label: "General fiction imprint", type: "Contains" },
@@ -165,7 +167,8 @@ export const projects: Project[] = [
     tags: ["imprint", "MES", "system fiction", "My Evolution System", "backmatter"],
     links: [
       { label: "Reader List", url: "/free", type: "Reference" },
-      { label: "My Evolution System", url: "/wiki/my-evolution-system", type: "Reference" }
+      { label: "My Evolution System", url: "/wiki/my-evolution-system", type: "Reference" },
+      { label: "Smashwords Profile", url: "https://www.smashwords.com/profile/view/MES_Publishing", type: "Read" }
     ],
     connections: [
       { id: "backmatter-link-index", label: "Appears in backmatter", type: "Belongs to" },
@@ -193,7 +196,10 @@ export const projects: Project[] = [
       "The imprint still belongs to the larger mythos. It just speaks through desire, transformation, glamour, power, bodies, and the genre logic of adult fiction."
     ],
     tags: ["adult imprint", "erotica", "adult fiction", "backmatter", "publisher"],
-    links: [{ label: "Reader List", url: "/free", type: "Reference" }],
+    links: [
+      { label: "Reader List", url: "/free", type: "Reference" },
+      { label: "Smashwords Profile", url: "https://www.smashwords.com/profile/view/Dirty_MInded_Bastard", type: "Read" }
+    ],
     connections: [
       { id: "backmatter-link-index", label: "Appears in backmatter", type: "Belongs to" },
       { id: "house-of-the-gilded-lily", label: "Adult series lane", type: "Contains" },
@@ -223,7 +229,14 @@ export const projects: Project[] = [
       "This keeps backmatter simple: books can point to one stable wiki page, and the wiki can send readers onward to the right platform."
     ],
     tags: ["pen names", "Amazon", "Smashwords", "author profiles", "backmatter"],
-    links: [],
+    links: [
+      { label: "Charles Adams on Smashwords", url: "https://www.smashwords.com/profile/view/Charles_Adams", type: "Read" },
+      { label: "JRRFuckKin on Smashwords", url: "https://www.smashwords.com/profile/view/JRRFuckKin", type: "Read" },
+      { label: "Rockshatter on Smashwords", url: "https://www.smashwords.com/profile/view/Rockshatter", type: "Read" },
+      { label: "TheArchitect953 on Smashwords", url: "https://www.smashwords.com/profile/view/TheArchitect953", type: "Read" },
+      { label: "Dirty-minded Bastard on Smashwords", url: "https://www.smashwords.com/profile/view/Dirty_MInded_Bastard", type: "Read" },
+      { label: "MES Publishing on Smashwords", url: "https://www.smashwords.com/profile/view/MES_Publishing", type: "Read" }
+    ],
     connections: [
       { id: "backmatter-link-index", label: "Organized through the backmatter index", type: "Belongs to" },
       { id: "mes-publishing", label: "General imprint lane", type: "Related" },
