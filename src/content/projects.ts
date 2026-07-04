@@ -15,6 +15,8 @@ export type EntryKind =
   | "Character"
   | "Place"
   | "Concept"
+  | "Imprint"
+  | "Pen Name"
   | "Other";
 
 export type EntryStatus = "Completed" | "Ongoing" | "Archived" | "Experimental" | "Seed";
@@ -106,6 +108,129 @@ export const creator = {
 
 export const projects: Project[] = [
   {
+    id: "backmatter-link-index",
+    title: "Backmatter Link Index",
+    kind: "Concept",
+    category: "Concept",
+    status: "Ongoing",
+    entryRole: "Hub",
+    maturity: "General",
+    visibility: "Public",
+    featured: true,
+    date: "2026-07-04",
+    thumbnail: "/images/hero-studio.png",
+    thumbnailAlt: "Archive studio image representing a central link index for books and author pages.",
+    summary: "The canonical link layer for book backmatter, imprints, pen names, reader pages, and store profiles.",
+    description:
+      "The Backmatter Link Index gives every recurring name in the publishing ecosystem one stable home. A book can mention an imprint, a pen name, a reader list, a music catalog, or a universe wiki and send readers here instead of trapping them in stale store links.",
+    body: [
+      "Each backmatter page answers the reader's immediate questions: what this name means, what kind of work lives under it, where to read more, and which stores or platforms matter.",
+      "As the catalog grows, this index can point to Amazon author pages, Smashwords profiles, Royal Road pages, Suno catalogs, Kit reader links, universe wikis, and shop pages.",
+      "The goal is simple: every name in the backmatter becomes a doorway into the mythos rather than a loose end."
+    ],
+    tags: ["backmatter", "publishing", "imprints", "pen names", "reader links", "stores"],
+    links: [
+      { label: "Reader List", url: "/free", type: "Reference" },
+      { label: "MES Publishing", url: "/wiki/mes-publishing", type: "Reference" },
+      { label: "Dirty-minded Bastard Publishing", url: "/adult/dirty-minded-bastard-publishing", type: "Reference" },
+      { label: "Pen Name Directory", url: "/wiki/pen-name-directory", type: "Reference" }
+    ],
+    connections: [
+      { id: "mes-publishing", label: "General fiction imprint", type: "Contains" },
+      { id: "dirty-minded-bastard-publishing", label: "Adult fiction imprint", type: "Contains" },
+      { id: "pen-name-directory", label: "Author identity directory", type: "Contains" },
+      { id: "suno-music-catalog", label: "Songs referenced from books", type: "Related" },
+      { id: "fiction-universe-merch", label: "Objects and shop links", type: "Related" }
+    ]
+  },
+  {
+    id: "mes-publishing",
+    title: "MES Publishing",
+    kind: "Imprint",
+    category: "Imprint",
+    status: "Ongoing",
+    entryRole: "Hub",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-04",
+    thumbnail: "/images/works/my-evolution-system-book-1-cover.jpg",
+    thumbnailAlt: "My Evolution System Book 1 cover used as the current MES Publishing visual anchor.",
+    summary: "The imprint lane for My Evolution System, system fiction, universe atlas work, and related reader material.",
+    description:
+      "MES Publishing names the branch of the archive that points toward system fiction, evolutionary pressure, biotech, survival, and the expanding My Evolution System universe.",
+    body: [
+      "A reader reaching this page from book backmatter finds the clean path forward: the current universe entry, the dedicated atlas, the reader list, and any active store profiles once they are connected.",
+      "The imprint belongs to the public-facing side of the mythos. It carries the work about adaptation, civilization, and the question of what agency means when a world starts rewriting the rules."
+    ],
+    tags: ["imprint", "MES", "system fiction", "My Evolution System", "backmatter"],
+    links: [
+      { label: "Reader List", url: "/free", type: "Reference" },
+      { label: "My Evolution System", url: "/wiki/my-evolution-system", type: "Reference" }
+    ],
+    connections: [
+      { id: "backmatter-link-index", label: "Appears in backmatter", type: "Belongs to" },
+      { id: "my-evolution-system", label: "Primary universe", type: "Contains" },
+      { id: "archetypal-mythos", label: "Shares the mythos engine", type: "Related" }
+    ]
+  },
+  {
+    id: "dirty-minded-bastard-publishing",
+    title: "Dirty-minded Bastard Publishing",
+    kind: "Imprint",
+    category: "Imprint",
+    status: "Ongoing",
+    entryRole: "Hub",
+    maturity: "Adult",
+    visibility: "Adult",
+    date: "2026-07-04",
+    thumbnail: "/images/generated/roxy-archive.png",
+    thumbnailAlt: "Generated archive image representing the adult publishing wing.",
+    summary: "The adult imprint lane for erotic genre work, spicy satire, taboo-adjacent mythmaking, and mature reader paths.",
+    description:
+      "Dirty-minded Bastard Publishing collects the adult side of the archive under one name. The imprint gives erotica and adult satire a clear shelf without mixing that material into the main public wiki.",
+    body: [
+      "Readers who arrive from adult-book backmatter can use this page to find the relevant series hubs, store profiles, reader links, and related adult works.",
+      "The imprint still belongs to the larger mythos. It just speaks through desire, transformation, glamour, power, bodies, and the genre logic of adult fiction."
+    ],
+    tags: ["adult imprint", "erotica", "adult fiction", "backmatter", "publisher"],
+    links: [{ label: "Reader List", url: "/free", type: "Reference" }],
+    connections: [
+      { id: "backmatter-link-index", label: "Appears in backmatter", type: "Belongs to" },
+      { id: "house-of-the-gilded-lily", label: "Adult series lane", type: "Contains" },
+      { id: "mythos-of-lust", label: "Adult series lane", type: "Contains" },
+      { id: "monster-girl-harem", label: "Adult series lane", type: "Contains" },
+      { id: "bimbo-farm", label: "Adult satire lane", type: "Contains" },
+      { id: "roxy-stardust-archive", label: "Adult sci-fi archive", type: "Contains" }
+    ]
+  },
+  {
+    id: "pen-name-directory",
+    title: "Pen Name Directory",
+    kind: "Pen Name",
+    category: "Pen Name",
+    status: "Seed",
+    entryRole: "Hub",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-04",
+    thumbnail: "/images/hero-studio.png",
+    thumbnailAlt: "Archive studio image representing author identities and store profiles.",
+    summary: "A future directory for pen names, author profiles, storefronts, and platform-specific reading paths.",
+    description:
+      "The Pen Name Directory will keep author identities organized for readers who arrive from Amazon, Smashwords, Royal Road, WebNovel, Substack, or other platforms.",
+    body: [
+      "Each pen name can receive its own entry with the genre lane it serves, the books attached to it, and direct links to its active store profiles.",
+      "This keeps backmatter simple: books can point to one stable wiki page, and the wiki can send readers onward to the right platform."
+    ],
+    tags: ["pen names", "Amazon", "Smashwords", "author profiles", "backmatter"],
+    links: [],
+    connections: [
+      { id: "backmatter-link-index", label: "Organized through the backmatter index", type: "Belongs to" },
+      { id: "mes-publishing", label: "General imprint lane", type: "Related" },
+      { id: "dirty-minded-bastard-publishing", label: "Adult imprint lane", type: "Related" }
+    ]
+  },
+  {
     id: "house-of-the-gilded-lily",
     title: "House of the Gilded Lily",
     kind: "Series",
@@ -129,6 +254,7 @@ export const projects: Project[] = [
     links: [],
     merchLinks: [],
     connections: [
+      { id: "dirty-minded-bastard-publishing", label: "Published through the adult imprint lane", type: "Belongs to" },
       { id: "mythos-of-lust", label: "Mythic adult fantasy neighbor", type: "Related" },
       { id: "archetypal-mythos", label: "Uses the general mythic grammar", type: "Related" }
     ]
@@ -156,6 +282,7 @@ export const projects: Project[] = [
     tags: ["adult fiction", "myth", "forest", "old gods", "folklore"],
     links: [],
     connections: [
+      { id: "dirty-minded-bastard-publishing", label: "Published through the adult imprint lane", type: "Belongs to" },
       { id: "house-of-the-gilded-lily", label: "Ritual and myth neighbor", type: "Related" },
       { id: "archetypal-mythos", label: "Uses the general mythic grammar", type: "Related" }
     ]
@@ -183,6 +310,7 @@ export const projects: Project[] = [
     tags: ["adult fiction", "fantasy", "humanoid", "swamp", "pulp"],
     links: [],
     connections: [
+      { id: "dirty-minded-bastard-publishing", label: "Published through the adult imprint lane", type: "Belongs to" },
       { id: "mythos-of-lust", label: "Fantasy neighbor", type: "Related" },
       { id: "fiction-universe-merch", label: "Possible print/product thread", type: "Merch for" }
     ]
@@ -210,6 +338,7 @@ export const projects: Project[] = [
     tags: ["adult fiction", "noir", "satire", "transformation", "identity"],
     links: [],
     connections: [
+      { id: "dirty-minded-bastard-publishing", label: "Published through the adult imprint lane", type: "Belongs to" },
       { id: "fiction-universe-merch", label: "Satirical product/merch thread", type: "Merch for" },
       { id: "supers-dark-erotica", label: "Dark adult satire neighbor", type: "Related" }
     ]
@@ -237,6 +366,7 @@ export const projects: Project[] = [
     tags: ["adult fiction", "superheroes", "satire", "power", "performance"],
     links: [],
     connections: [
+      { id: "dirty-minded-bastard-publishing", label: "Published through the adult imprint lane", type: "Belongs to" },
       { id: "bimbo-farm", label: "Dark satire neighbor", type: "Related" },
       { id: "fiction-universe-merch", label: "Possible logo/shirt thread", type: "Merch for" }
     ]
@@ -267,6 +397,7 @@ export const projects: Project[] = [
     ],
     externalWikiUrl: "https://app.notion.com/p/2d974c4fdf8f80e3a381d4ab2f52bece?pvs=1",
     connections: [
+      { id: "mes-publishing", label: "Published through MES Publishing", type: "Belongs to" },
       { id: "archetypal-mythos", label: "Shares system/philosophy spine", type: "Related" },
       { id: "deja-vu", label: "Audio/video archive neighbor", type: "Related" }
     ]
@@ -293,6 +424,7 @@ export const projects: Project[] = [
     tags: ["Roxy", "archive", "Drive", "Notion", "adult sci-fi"],
     links: [],
     connections: [
+      { id: "dirty-minded-bastard-publishing", label: "Published through the adult imprint lane", type: "Belongs to" },
       { id: "deja-vu", label: "Music/video archive neighbor", type: "Related" },
       { id: "fiction-universe-merch", label: "Merch planning neighbor", type: "Related" }
     ]
@@ -477,6 +609,8 @@ export const categories: EntryKind[] = [
   "Character",
   "Place",
   "Concept",
+  "Imprint",
+  "Pen Name",
   "Other"
 ];
 
@@ -514,6 +648,7 @@ export function getConnectedEntries(id: string, entries: Project[] = publicProje
 }
 
 export const wikiFacets = [
+  { label: "Backmatter", kinds: ["Imprint", "Pen Name", "Concept"] },
   { label: "Series Hubs", kinds: ["Series", "Universe"] },
   { label: "Music", kinds: ["Song", "Album", "Video"] },
   { label: "Visuals", kinds: ["Image", "Video", "Merch"] },
