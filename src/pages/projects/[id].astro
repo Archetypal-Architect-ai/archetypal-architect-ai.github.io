@@ -13,12 +13,12 @@ export function getStaticPaths() {
 const { entry } = Astro.props;
 ---
 
-<BaseLayout title={`${entry.title} moved to Wiki | ${creator.name}`} description={entry.summary}>
+<BaseLayout title={`${entry.title} | ${creator.name}`} description={entry.summary}>
   <main>
     <PageHeader
-      eyebrow="Moved"
+      eyebrow="Project"
       title={entry.title}
-      description="This entry now lives in the creator wiki, where its connections and backlinks are visible."
+      description="This project belongs to the larger archive, where its themes, influences, and related works can be followed."
     />
     <section class="section first-section prose-section">
       <p><a class="button primary" href={`/wiki/${entry.id}`}>Open Wiki Entry</a></p>

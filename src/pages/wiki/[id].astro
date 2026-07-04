@@ -56,7 +56,7 @@ const { entry } = Astro.props;
         }
       </aside>
       <article class="encyclopedia-main">
-        <h2>Entry</h2>
+        <h2>Place in the Mythos</h2>
         <p>{entry.description}</p>
         {
           entry.audioSrc ? (
@@ -67,7 +67,6 @@ const { entry } = Astro.props;
           ) : null
         }
         {entry.body?.map((paragraph) => <p>{paragraph}</p>)}
-        {entry.notes && <p>{entry.notes}</p>}
         {entry.notes && <p>{entry.notes}</p>}
       </article>
     </section>

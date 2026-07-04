@@ -7,13 +7,13 @@ import { adultProjects, creator } from "../content/projects";
 
 <BaseLayout
   title={`Adult Archive | ${creator.name}`}
-  description="Age-gated index for adult-genre fiction and reference entries."
+  description="Age-gated index for adult-genre fiction and mature symbolic material."
 >
   <main>
     <PageHeader
       eyebrow="Adult Archive"
-      title="Adult-Genre Work Lives Here"
-      description="This section is intentionally separated from the main public wiki. It can hold erotica, adult satire, and spicy production archives without making them the front door of the whole body of work."
+      title="Mature Stories, Separate Shelf"
+      description="Some parts of the mythos speak through adult desire, erotic genre logic, body transformation, power, and taboo. They belong in their own wing."
     />
 
     <section class="section adult-gate" data-adult-gate>
@@ -21,9 +21,8 @@ import { adultProjects, creator } from "../content/projects";
         <p class="eyebrow">Content Notice</p>
         <h2>Adult material ahead.</h2>
         <p>
-          The entries beyond this point may reference erotica, adult themes, desire, transformation,
-          and mature genre premises. The public wiki keeps mythos, nonfiction, music, and novel-universe
-          material separate from this archive.
+          The entries beyond this point discuss erotica, adult themes, desire, transformation,
+          and mature genre premises. Continue only if that is what you came looking for.
         </p>
         <button class="button primary" type="button" data-confirm-adult>I am 18+ and want to continue</button>
         <a class="button secondary" href="/wiki">Return to Public Wiki</a>
@@ -34,7 +33,7 @@ import { adultProjects, creator } from "../content/projects";
       <div class="section-heading">
         <p class="eyebrow">Separated Shelf</p>
         <h2>Series Hubs and References</h2>
-        <p>These are adult-facing hubs. They are deliberately not featured on the homepage or public wiki.</p>
+        <p>These series explore the mythos through adult genre language.</p>
       </div>
       <div class="project-grid adult-grid">
         {

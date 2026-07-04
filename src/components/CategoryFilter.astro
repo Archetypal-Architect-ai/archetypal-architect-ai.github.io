@@ -16,7 +16,7 @@ import { categories } from "../content/projects";
       <option value="alpha">Alphabetical</option>
     </select>
   </label>
-  <p class="filter-note">Filter the public wiki by entry type. Adult-genre series live in the separate archive; merch can still appear inside any connected story, song, image, or universe entry.</p>
+  <p class="filter-note">Filter the public archive by form. The same idea may appear as a novel, song, essay, image, or object.</p>
   <div class="filter-buttons" aria-label="Category filters">
     <button type="button" class="is-active" data-category="All">All</button>
     {categories.map((category) => <button type="button" data-category={category}>{category}</button>)}

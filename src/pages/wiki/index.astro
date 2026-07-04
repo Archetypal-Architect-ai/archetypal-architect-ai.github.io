@@ -7,12 +7,12 @@ import WikiMap from "../../components/WikiMap.astro";
 import { creator, publicProjects, wikiFacets } from "../../content/projects";
 ---
 
-<BaseLayout title={`Wiki | ${creator.name}`} description="A public creator wiki for mythos, fiction, songs, tools, and atlas entries.">
+<BaseLayout title={`Wiki | ${creator.name}`} description="A public archive of mythos, fiction, songs, tools, and symbolic systems.">
   <main>
     <PageHeader
       eyebrow="Creator Wiki"
-      title="Series Hubs, Artifacts, References"
-      description="Browse the public map without drowning in private structure. Adult-genre series are separated into their own gated archive, so this page can explain the respectable front-door mythos, books, songs, tools, essays, merch threads, and reference doors."
+      title="The Public Archive"
+      description="This wiki follows the stories behind the stories: the recurring symbols, systems, songs, tools, and worlds that keep answering one another."
     />
     <section class="section first-section">
       <div class="facet-row" aria-label="Wiki facets">
@@ -30,7 +30,7 @@ import { creator, publicProjects, wikiFacets } from "../../content/projects";
       </div>
       <div class="archive-callout">
         <h2>Adult Archive</h2>
-        <p>Erotica and adult-genre series are kept behind a separate warning wall instead of sitting beside the main public work.</p>
+        <p>Some stories deal directly with adult desire, transformation, and erotic genre material. They live in a separate wing of the archive.</p>
         <a class="button secondary" href="/adult-archive">Open Adult Archive</a>
       </div>
     </section>
@@ -119,7 +119,7 @@ import { creator, publicProjects, wikiFacets } from "../../content/projects";
 
       grid.innerHTML = sorted.length
         ? sorted.map(card).join("")
-        : `<div class="empty-panel"><h2>No matches</h2><p>Try another filter or add the entry in <code>src/content/projects.ts</code>.</p></div>`;
+        : `<div class="empty-panel"><h2>No matches</h2><p>No public entries match that lens yet.</p></div>`;
     }
 
     buttons.forEach((button) => {

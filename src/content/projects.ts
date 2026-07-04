@@ -86,12 +86,12 @@ export type Project = {
 export const creator = {
   name: "Archetypal Architect",
   imprint: "Archetypal Architect",
-  tagline: "A living wiki of stories, songs, images, tools, worlds, and strange little economies.",
+  tagline: "Stories, songs, systems, and strange machines for minds that like friction.",
   email: "mailto:contact@archetypalarchitect.online",
   bio:
-    "Independent author, philosopher, hypnotherapist, craftsman, worldbuilder, and experimental creator working around systems, myth, psychology, civilization, AI, agency, desire, and the places where tools become culture.",
+    "Archetypal Architect builds fiction, songs, essays, tools, and symbolic systems around agency, myth, psychology, civilization, AI, and the places where tools become culture.",
   aboutTheWork:
-    "The useful shape is not a portfolio shelf. It is a cross-linked archive: fiction feeds music, music feeds images, images become merch, merch points back to characters, and the novel universe keeps expanding through its own atlas. Adult-genre work is kept in a separate archive so the front door can stay coherent.",
+    "This archive tells stories about how stories get made. A novel may become a song. A song may become an image. An image may become a symbol, a product, or an argument. The mythos grows through those crossings.",
   socialLinks: [
     { label: "Email", url: "mailto:contact@archetypalarchitect.online" },
     { label: "Substack", url: "https://substack.com" },
@@ -118,22 +118,16 @@ export const projects: Project[] = [
     date: "2026-06-06",
     thumbnail: "/images/generated/house-gilded-lily.png",
     thumbnailAlt: "Generated gothic academy art with mist, gold lily motifs, and a tastefully dressed adult woman.",
-    summary: "A secluded mountain academy series hub with ritual polish, hierarchy, and adult gothic tension.",
+    summary: "A gothic academy series about ritual, hierarchy, desire, and the cost of belonging.",
     description:
-      "This is a series-level public hub, not a book-by-book dump. The visible entry keeps the academy atmosphere, gold-lily identity, and character energy while leaving the explicit production text in the source folders.",
+      "House of the Gilded Lily treats the academy as a machine for shaping identity. Its rituals polish people into roles, then ask what remains underneath the costume.",
     body: [
-      "The first-pass extraction pointed to a secluded mountain academy, mist, ritual service aesthetics, and a final-year Lotus figure with silver-streaked hair and penetrating eyes.",
-      "Public treatment: adult gothic academy, clothed, tasteful, suggestive, and clear that this is not children's fantasy."
+      "The setting leans into mist, uniforms, service rites, old money, and the dangerous intimacy of institutions that call control tradition.",
+      "Inside the larger mythos, the series speaks to the way systems recruit longing. People enter looking for initiation and discover that every title carries a debt."
     ],
-    tags: ["smut series", "academy", "gothic", "ritual", "adult-coded"],
-    links: [{ label: "Local source folder", url: "#", type: "Reference" }],
-    sourceNotes: [
-      "Private manuscript archive: House of the Gilded Lily representative files.",
-      "Representative notes were skimmed for setting and character language only; source manuscripts were not modified."
-    ],
-    artPrompt:
-      "Adult gothic academy series hub for House of the Gilded Lily: secluded mountain academy in mist, golden lily motifs, adult woman in elegant high-neck black-and-gold uniform dress, silver-streaked hair, penetrating eyes, literary dark fantasy mood, clothed, tasteful, no nudity, no explicit pose, no minors, no schoolgirl styling, no franchise imitation.",
-    merchLinks: [{ label: "Gilded Lily print slot", url: "#", type: "Buy" }],
+    tags: ["adult fiction", "academy", "gothic", "ritual", "belonging"],
+    links: [],
+    merchLinks: [],
     connections: [
       { id: "mythos-of-lust", label: "Mythic adult fantasy neighbor", type: "Related" },
       { id: "archetypal-mythos", label: "Uses the general mythic grammar", type: "Related" }
@@ -152,21 +146,15 @@ export const projects: Project[] = [
     date: "2026-06-06",
     thumbnail: "/images/generated/mythos-of-lust.png",
     thumbnailAlt: "Generated mythic forest tavern art with adult fantasy figures in layered clothing.",
-    summary: "A mythic adult-fantasy hub where old gods, forest paths, taverns, and desire become folklore.",
+    summary: "An adult fantasy cycle where old gods, forest paths, taverns, and desire become folklore.",
     description:
-      "The hub keeps the mythic and woodland atmosphere without exposing the explicit manuscript scenes on the public index. It is meant to gather stories, songs, images, and essays that orbit this erotic-mythic register.",
+      "Mythos of Lust belongs to the adult shelf, but its mythic engine matters to the larger archive: hunger becomes omen, encounter becomes initiation, and the forest keeps older laws than the town.",
     body: [
-      "The source skim surfaced a forest/tavern axis, Elys with broad shoulders and thick dark hair, Alysia with green eyes, and the pressure of old gods in the trees.",
-      "The public art direction treats that as adult folklore: suggestive, clothed, and mythic rather than explicit."
+      "The series moves through taverns, roads, green-eyed priestesses, wanderers, and gods that hide in carved trees and smoke.",
+      "Its place in the mythos is blunt: desire is not decoration. Desire exposes the bargains a world has trained its people to accept."
     ],
-    tags: ["smut series", "myth", "forest", "old gods", "adult fantasy"],
-    links: [{ label: "Local source folder", url: "#", type: "Reference" }],
-    sourceNotes: [
-      "Private manuscript archive: Mythos of Lust representative files.",
-      "Character and setting phrases were used as prompt notes, not copied into the site as scene text."
-    ],
-    artPrompt:
-      "Adult mythic fantasy series hub for Mythos of Lust: ancient forest tavern at dusk, adult male wanderer with thick dark hair beside an adult green-eyed forest priestess in layered robes, old gods implied by carved trees and lantern smoke, sensual folklore atmosphere, clothed, tasteful, no nudity, no sexual act, no minors, no franchise imitation.",
+    tags: ["adult fiction", "myth", "forest", "old gods", "folklore"],
+    links: [],
     connections: [
       { id: "house-of-the-gilded-lily", label: "Ritual and myth neighbor", type: "Related" },
       { id: "archetypal-mythos", label: "Uses the general mythic grammar", type: "Related" }
@@ -185,21 +173,15 @@ export const projects: Project[] = [
     date: "2026-06-06",
     thumbnail: "/images/generated/monster-girl-harem.png",
     thumbnailAlt: "Generated fantasy swamp settlement with adult humanoid fantasy women and an adventurer.",
-    summary: "A fantasy-adventure hub for humanoid monster-girl stories, swamp settlements, and saturated pulp energy.",
+    summary: "A fantasy-adventure series about dangerous attraction, otherness, and saturated pulp worlds.",
     description:
-      "This hub is deliberately sanitized for the public archive: adult humanoid fantasy characters, adventure composition, no bestial framing, no explicit imagery, and no attempt to expose source scenes directly.",
+      "Monster Girl Harem uses pulp fantasy to explore contact with the beautiful, the strange, and the socially forbidden. Its creatures matter less as novelty than as pressure tests for what a hero thinks humanity means.",
     body: [
-      "The source notes suggested an enchanted swamp, a lamia settlement, and jewel-toned humanoid fantasy women in emerald, sapphire, and crimson palettes.",
-      "The public art keeps the fantasy color and danger while avoiding animalized sexual content or explicit poses."
+      "Swamp settlements, jewel-toned courts, serpentine motifs, and adventuring danger give the series its surface texture.",
+      "In the larger mythos, the series asks how easily attraction becomes conquest and how fantasy worlds turn difference into either threat or invitation."
     ],
-    tags: ["smut series", "fantasy", "humanoid", "swamp", "pulp"],
-    links: [{ label: "Local source folder", url: "#", type: "Reference" }],
-    sourceNotes: [
-      "Private manuscript archive: Monster Girl Harem representative files.",
-      "Only humanoid fantasy and setting cues were used for the generated-art pass."
-    ],
-    artPrompt:
-      "Adult fantasy adventure series hub for Monster Girl Harem: enchanted swamp village, lanterns, jewel-toned humanoid fantasy women with elegant scaled accessories and layered clothes, adult adventurer, pulp cover composition, sensual but non-explicit, no nudity, no sexual act, no bestial framing, no minors, no franchise imitation.",
+    tags: ["adult fiction", "fantasy", "humanoid", "swamp", "pulp"],
+    links: [],
     connections: [
       { id: "mythos-of-lust", label: "Fantasy neighbor", type: "Related" },
       { id: "fiction-universe-merch", label: "Possible print/product thread", type: "Merch for" }
@@ -218,21 +200,15 @@ export const projects: Project[] = [
     date: "2026-06-06",
     thumbnail: "/images/generated/bimbo-farm.png",
     thumbnailAlt: "Generated noir warehouse art with a tall adult detective in a fitted uniform.",
-    summary: "A noir-adjacent adult satire hub built around investigation, transformation anxiety, and slick pulp tension.",
+    summary: "A noir-adjacent adult satire about investigation, transformation anxiety, and manufactured identity.",
     description:
-      "This entry frames the material as a public-facing hub rather than an explicit premise page. It emphasizes detective-noir tension, product satire, and adult-coded transformation themes without leaning into nude or explicit visuals.",
+      "Bimbo Farm turns transformation into a crime scene. The detective frame gives the series a way to examine bodies, branding, compliance, and the fear that a market can rewrite a person faster than memory can defend them.",
     body: [
-      "The source skim highlighted detective figures such as Sheila/Alvarez, a tall imposing investigator, tight uniform symbolism, and warehouse/interrogation tension.",
-      "The generated image translates that into clothed noir mood and readable adult genre energy."
+      "The noir mood matters: offices, warehouses, uniforms, interrogation rooms, product labels, and the exhausted suspicion that every explanation hides another machine.",
+      "Its mythic question is modern and ugly: who owns a self after desire, commerce, and shame have all taken their cut?"
     ],
-    tags: ["smut series", "noir", "satire", "transformation", "adult-coded"],
-    links: [{ label: "Local source folder", url: "#", type: "Reference" }],
-    sourceNotes: [
-      "Private manuscript archive: Bimbo Farm representative files.",
-      "Prompt notes were drawn from detective/setting cues rather than explicit scene content."
-    ],
-    artPrompt:
-      "Adult noir satire series hub for Bimbo Farm: moody warehouse office, tall adult female detective in a fitted but professional uniform, investigation board, pink product labels used as satire props, cinematic shadows, suggestive adult genre energy, clothed, no nudity, no explicit pose, no minors, no franchise imitation.",
+    tags: ["adult fiction", "noir", "satire", "transformation", "identity"],
+    links: [],
     connections: [
       { id: "fiction-universe-merch", label: "Satirical product/merch thread", type: "Merch for" },
       { id: "supers-dark-erotica", label: "Dark adult satire neighbor", type: "Related" }
@@ -251,21 +227,15 @@ export const projects: Project[] = [
     date: "2026-06-06",
     thumbnail: "/images/generated/supers-dark-erotica.png",
     thumbnailAlt: "Generated adult superhero rooftop art with a fully suited woman looking over a neon city.",
-    summary: "A sanitized placeholder hub for superhero satire and adult power fantasy, held back from explicit source material.",
+    summary: "A dark superhero satire about power, performance, glamour, and corruption.",
     description:
-      "The source folder had material that should not lead the first public pass. This hub keeps only the safe structural idea: superhero satire, dangerous glamour, public identity, and power as a corrupting mythology.",
+      "Supers Dark Erotica treats superhero identity as theater with consequences. Masks, costumes, fame, and power all become eroticized symbols of control.",
     body: [
-      "This entry exists so the archive has a slot for the series without foregrounding unsafe or explicit source framing.",
-      "Future public entries should stay adult, clothed, and satirical unless specific publish-ready copy is chosen."
+      "The city rooftop, the glowing billboard, and the public persona all point toward the same mythic problem: power wants an audience.",
+      "Within the archive, this series belongs near the work about systems and agency. It asks what happens when the costume stops being a disguise and starts giving orders."
     ],
-    tags: ["smut series", "superheroes", "satire", "power", "adult-coded"],
-    links: [{ label: "Local source folder", url: "#", type: "Reference" }],
-    sourceNotes: [
-      "Private manuscript archive: Supers/Villains-adjacent material was inspected conservatively.",
-      "Folders with non-consensual, bestial, or otherwise unsafe framing were excluded from the first public pass."
-    ],
-    artPrompt:
-      "Adult satirical superhero erotica-adjacent series hub: neon rooftop, adult woman superhero 25+ in a full-body suit, cape, city billboards, dangerous glamour, power fantasy mood, clothed, no nudity, no sexual pose, no fetish gear, no minors, no franchise imitation.",
+    tags: ["adult fiction", "superheroes", "satire", "power", "performance"],
+    links: [],
     connections: [
       { id: "bimbo-farm", label: "Dark satire neighbor", type: "Related" },
       { id: "fiction-universe-merch", label: "Possible logo/shirt thread", type: "Merch for" }
@@ -284,23 +254,16 @@ export const projects: Project[] = [
     date: "2026-06-06",
     thumbnail: "/images/works/my-evolution-system-book-1-cover.jpg",
     thumbnailAlt: "Most recent Book 1 cover art for My Evolution System: Fall from Space.",
-    summary: "A compact link hub for the separate My Evolution System wiki and manuscript/audio archive.",
+    summary: "A system-fiction universe about survival, biotech, agency, and civilization after the old world breaks.",
     description:
-      "This site makes room for My Evolution System without trying to rebuild its atlas here. The entry is a doorway: manuscript references, audio/visual artifacts, and the external wiki-in-progress should live behind it.",
+      "My Evolution System follows the pressure point where personal evolution stops being metaphor. The series turns adaptation into plot, technology into inheritance, and survival into a philosophical demand.",
     body: [
-      "Private manuscript files include My Evolution System and Fall from Space variants in DOCX, ODT, and PDF forms.",
-      "Keep this as a hub/link slot until the dedicated My Evolution System wiki is ready to be connected."
+      "The dedicated universe atlas will carry the deep continuity: species, factions, places, powers, and the long causal chain of the setting.",
+      "Across the archive, the series functions as one of the central mythos engines. It asks what a person becomes when evolution, ecology, and invention all start speaking at once."
     ],
     tags: ["novel universe", "separate wiki", "system fiction", "audio", "atlas"],
     links: [
-      { label: "Open Notion book page", url: "https://app.notion.com/p/2d974c4fdf8f80e3a381d4ab2f52bece?pvs=1", type: "Reference" },
-      { label: "Separate wiki slot", url: "#", type: "External" }
-    ],
-    sourceNotes: [
-      "Private manuscript archive: My Evolution System and Fall from Space Book 1 draft variants.",
-      "Private manuscript archive: My Evolution System and Fall from Space Book 2 draft variants.",
-      "Private publishing shelf: current Book 1 ebook cover.",
-      "Copied website asset: public/images/works/my-evolution-system-book-1-cover.jpg."
+      { label: "Open universe wiki", url: "https://app.notion.com/p/2d974c4fdf8f80e3a381d4ab2f52bece?pvs=1", type: "Reference" }
     ],
     externalWikiUrl: "https://app.notion.com/p/2d974c4fdf8f80e3a381d4ab2f52bece?pvs=1",
     connections: [
@@ -320,26 +283,15 @@ export const projects: Project[] = [
     date: "2026-06-06",
     thumbnail: "/images/generated/roxy-archive.png",
     thumbnailAlt: "Generated neutral archive desk with star maps, manuscripts, and sci-fi labels.",
-    summary: "One compact archive doorway for the Roxy production materials, Notion dashboards, Drive folders, music, visuals, and merch notes.",
+    summary: "A sci-fi adult archive about performance, spectacle, fame, and identity in orbit.",
     description:
-      "Roxy stays in the wiki, but no longer drives the public structure. This entry acts as a compact reference node for the real production archive instead of spreading every dashboard and asset database across the front page.",
+      "Roxy Stardust gathers the space-glamour side of the adult archive: celebrity mythology, sci-fi spectacle, bodies as brands, and the strange loneliness of being turned into an image.",
     body: [
-      "Use this as the launch point for deeper private/reference material: books, bundles, covers, shirts, video/channel assets, songs, Drive manuscripts, and Notion planning pages.",
-      "The public index now gives more room to other series hubs and nonfiction/product nodes."
+      "The archive connects books, covers, songs, videos, and product ideas around one bright, unstable persona.",
+      "Its role in the mythos is theatrical: identity performs itself until the performance starts making claims on the soul."
     ],
     tags: ["Roxy", "archive", "Drive", "Notion", "adult sci-fi"],
-    links: [
-      { label: "Open roxyverse Drive folder", url: "https://drive.google.com/drive/folders/1ciRTtDD3P7oyn-GvGY99PljbR7elrgag", type: "Reference" },
-      { label: "Open Notion spine dashboard", url: "https://app.notion.com/p/2b174c4fdf8f80688eddddc26bd89208?pvs=1", type: "Reference" },
-      { label: "Product and book ideas", url: "https://app.notion.com/p/1dc74c4fdf8f80b2bb27c9b5fbfd21e1?pvs=1", type: "Reference" }
-    ],
-    sourceNotes: [
-      "Private Roxy Stardust production archive was used as reference context only.",
-      "Google Drive roxyverse folder was used as a reference link target.",
-      "Notion Roxyverse, lore, story canon, music, visuals, and merch databases remain external references."
-    ],
-    artPrompt:
-      "Neutral sci-fi production archive for Roxy Stardust Archive: no people, dark desk with star maps, manuscript stacks, drive icons, hazard labels, neon sticky notes, starship window, adult creator archive mood, no explicit imagery, no character portrait, no franchise imitation.",
+    links: [],
     connections: [
       { id: "deja-vu", label: "Music/video archive neighbor", type: "Related" },
       { id: "fiction-universe-merch", label: "Merch planning neighbor", type: "Related" }
@@ -358,13 +310,15 @@ export const projects: Project[] = [
     date: "2025-11-13",
     thumbnail: "/images/works/make-anxiety-cover.jpg",
     thumbnailAlt: "Make Anxiety Your Superpower cover art.",
-    summary: "A real nonfiction/product node from the local ebook archive, tied to psychology and agency work.",
+    summary: "A practical psychology work about converting anxiety into attention, motion, and agency.",
     description:
-      "A completed self-help/philosophy product that belongs beside the fiction because it shares the same practical obsession: turning internal pressure into usable agency.",
-    body: ["Private product archive includes cover, manuscript, PDF, and audio files."],
+      "Make Anxiety Your Superpower belongs beside the fiction because it handles the same problem in practical language: a person under pressure still needs a way to act.",
+    body: [
+      "The book treats anxiety as information with bad manners. It asks the reader to stop treating every internal alarm as prophecy and start asking what the signal can do.",
+      "In the larger mythos, this is one of the nonfiction keys: agency begins when fear becomes legible."
+    ],
     tags: ["nonfiction", "anxiety", "psychology", "audio", "product"],
     links: [{ label: "View copied cover", url: "/images/works/make-anxiety-cover.jpg", type: "Reference" }],
-    sourceNotes: ["Private product archive: Make Anxiety Your Superpower cover, manuscript, PDF, and audio files."],
     connections: [
       { id: "emotional-misinterpretation-dictionary", label: "Nonfiction companion", type: "Related" },
       { id: "archetypal-mythos", label: "Practical philosophy neighbor", type: "Related" }
@@ -383,13 +337,15 @@ export const projects: Project[] = [
     date: "2025-11-13",
     thumbnail: "/images/works/emotional-misinterpretation-dictionary.jpg",
     thumbnailAlt: "The Emotional Misinterpretation Dictionary cover art.",
-    summary: "A compact psychology/product node for naming mistaken emotional readings.",
+    summary: "A psychology dictionary for the moments when emotion mistranslates reality.",
     description:
-      "A real ebook/audio artifact that fits the archive as a thinking tool: part dictionary, part nervous-system map, part practical language kit.",
-    body: ["Private product archive includes cover, manuscript, PDF, and audio files."],
+      "The Emotional Misinterpretation Dictionary gives names to the little mistranslations that turn sensation into false certainty.",
+    body: [
+      "The project belongs in the archive as a language tool. It helps readers notice when fear, shame, desire, or anger has put a costume on the world.",
+      "Inside the mythos, naming is not cosmetic. A thing that can be named can be negotiated with."
+    ],
     tags: ["nonfiction", "psychology", "dictionary", "audio", "product"],
     links: [{ label: "View copied cover", url: "/images/works/emotional-misinterpretation-dictionary.jpg", type: "Reference" }],
-    sourceNotes: ["Private product archive: The Emotional Misinterpretation Dictionary cover, manuscript, PDF, and audio files."],
     connections: [{ id: "make-anxiety-your-superpower", label: "Nonfiction companion", type: "Related" }]
   },
   {
@@ -403,18 +359,13 @@ export const projects: Project[] = [
     visibility: "Public",
     date: "2026-06-06",
     thumbnail: "/images/hero-studio.png",
-    thumbnailAlt: "Archive studio image used as a placeholder for merch planning.",
-    summary: "A scattered merch hub for prints, shirts, slogans, covers, and products attached to entries rather than a boring product list.",
+    thumbnailAlt: "Archive studio image representing symbols, phrases, and objects from the work.",
+    summary: "A growing object shelf for symbols, shirts, prints, phrases, covers, and artifacts from the mythos.",
     description:
-      "Merch should appear where it belongs: on a series, character, image, song, or concept page. This hub is only the index of those threads until real product pages are ready.",
+      "The shop thread treats merchandise as another kind of storytelling. A phrase, sigil, cover, or diagram can leave the page and become a portable fragment of the mythos.",
     tags: ["merch", "prints", "shirts", "shop threads", "products"],
     links: [
-      { label: "Gumroad placeholder", url: "https://gumroad.com", type: "Buy" },
-      { label: "Product ideas Notion", url: "https://app.notion.com/p/1dc74c4fdf8f80b2bb27c9b5fbfd21e1?pvs=1", type: "Reference" }
-    ],
-    sourceNotes: [
-      "Notion product/book ideas page.",
-      "Existing local cover and generated art assets can become product imagery later."
+      { label: "Shop", url: "https://gumroad.com", type: "Buy" }
     ],
     connections: [
       { id: "my-evolution-system", label: "System fiction product thread", type: "Merch for" },
@@ -433,13 +384,15 @@ export const projects: Project[] = [
     date: "2025-10-20",
     thumbnail: "/images/works/deja-vu-thumbnail.jpg",
     thumbnailAlt: "Deja Vu music video thumbnail.",
-    summary: "A real music/video artifact from the private audio-visual archive.",
+    summary: "A song and video artifact about repetition, recognition, and the feeling of returning to a scene before it happens.",
     description:
-      "Deja Vu appears locally as video and thumbnail assets, so it stays as a music/video artifact that can later connect to lyric pages, videos, or image sets.",
-    body: ["Private audio-visual archive includes the Deja Vu video and thumbnail assets."],
-    tags: ["song", "video", "thumbnail", "local asset"],
+      "Deja Vu belongs to the music side of the archive, where songs work like emotional footnotes to the fiction and systems work.",
+    body: [
+      "The song sits near the recurring mythos of loops, memory, agency, and the suspicion that a person can arrive late to a decision their deeper self already made.",
+      "As the music catalog grows, this page can connect lyrics, video imagery, and the story-world ideas that echo through the track."
+    ],
+    tags: ["song", "video", "memory", "loop", "recognition"],
     links: [{ label: "View copied thumbnail", url: "/images/works/deja-vu-thumbnail.jpg", type: "Reference" }],
-    sourceNotes: ["Private audio-visual archive: Deja Vu video.", "Private audio-visual archive: Deja Vu thumbnail."],
     connections: [
       { id: "my-evolution-system", label: "Audio/video archive neighbor", type: "Related" },
       { id: "suno-music-catalog", label: "Belongs in the music catalog", type: "Belongs to" }
@@ -458,22 +411,16 @@ export const projects: Project[] = [
     date: "2026-07-04",
     thumbnail: "/images/hero-studio.png",
     thumbnailAlt: "Archive studio image representing a growing hosted music library.",
-    summary: "A planned library for published Suno tracks, lyric pages, videos, cover art, and downloadable audio hosted by this site.",
+    summary: "A library for songs, lyric pages, videos, cover art, and musical fragments from across the mythos.",
     description:
-      "This hub is where the music archive should grow beyond whatever happens to be on the local machine. Published Suno songs can be downloaded, copied into the site, and added as song entries with audio embeds, lyrics, platform links, and connections back to the fiction, images, or essays that inspired them.",
+      "The songs translate the archive into another nervous system. Some tracks grow out of novels, some out of characters, some out of images, and some out of stray concepts that needed rhythm before they needed prose.",
     body: [
-      "Recommended file path: put downloaded tracks in public/audio/suno/ and covers or thumbnails in public/images/works/. Then add audioSrc: \"/audio/suno/song-file.mp3\" to the matching song entry.",
-      "Each song can become a normal wiki entry with title, mood, lyrics link, Suno URL, YouTube URL, and connections to the story, image, or mythic concept it belongs to.",
-      "This keeps Suno from being a vague external platform link and turns it into a real hosted catalog over time."
+      "As the catalog grows, each song can carry lyrics, audio, cover art, video links, mood notes, and connections back to the story or concept that produced it.",
+      "The music section makes the mythos audible. It lets a character, world, or philosophical tension speak in a different register."
     ],
     tags: ["music", "Suno", "songs", "lyrics", "hosted audio", "catalog"],
     links: [
-      { label: "Open Suno", url: "https://suno.com", type: "Listen" },
-      { label: "Add songs in content file", url: "/wiki/suno-music-catalog", type: "Reference" }
-    ],
-    sourceNotes: [
-      "Future source: published Suno account songs should be downloaded or linked individually.",
-      "Audio files intended for public hosting should be copied into public/audio/suno/."
+      { label: "Open Suno", url: "https://suno.com", type: "Listen" }
     ],
     connections: [
       { id: "deja-vu", label: "Existing local song artifact", type: "Contains" },
@@ -494,17 +441,16 @@ export const projects: Project[] = [
     date: "2026-07-04",
     thumbnail: "/images/hero-studio.png",
     thumbnailAlt: "A studio archive image representing the public mythos framework.",
-    summary: "The public explanation of the recurring mythic grammar behind the fiction, songs, tools, and systems.",
+    summary: "The recurring symbolic grammar behind the fiction, songs, tools, essays, and worlds.",
     description:
-      "The mythos is not one book title, one setting, or one adult series. It is the reusable symbolic engine underneath the work: systems that become characters, tools that become culture, desire that becomes civilization, and personal agency tested against machines, institutions, gods, markets, and stories.",
+      "The Archetypal Mythos names the pattern beneath the work: systems become characters, tools become culture, desire becomes civilization, and agency gets tested against machines, institutions, gods, markets, and stories.",
     body: [
-      "A reader should be able to start here and understand the shape of the work without walking straight into the erotica shelf. The mythos is the clean public map of the recurring obsessions.",
+      "Readers who want more than a list of projects can start here. The mythos explains how the stories talk to each other and why songs, tools, essays, novels, and visual artifacts keep circling the same questions.",
       "Core tensions include agency versus automation, myth versus mechanism, language as a tool for self-command, civilization as an operating system, and the strange moment when an invented tool starts teaching its maker how to think.",
-      "This hub can absorb essays, diagrams, glossary entries, symbolic motifs, and reading guides. It should explain the work, not merely point at it."
+      "Every story in the archive can be read as one argument inside that larger conversation. Some ask what power does to identity. Some ask how fear becomes language. Some ask whether evolution liberates a person or drafts them into a larger design."
     ],
     tags: ["mythos", "philosophy", "reader guide", "agency", "systems", "worldbuilding"],
     links: [{ label: "Open Notion page", url: "https://app.notion.com/p/1d474c4fdf8f80bfb30adce3862c7ccc?pvs=1", type: "Reference" }],
-    sourceNotes: ["Notion: Plain Language Philosophy: Framework for Understanding the Mythos."],
     connections: [
       { id: "my-evolution-system", label: "Shares philosophical spine", type: "Related" },
       { id: "make-anxiety-your-superpower", label: "Practical philosophy neighbor", type: "Related" },

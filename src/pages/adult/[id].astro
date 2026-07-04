@@ -20,7 +20,7 @@ const { entry } = Astro.props;
       <div>
         <p class="eyebrow">Adult Archive</p>
         <h1>Confirm before entering.</h1>
-        <p>This entry belongs to the separated adult archive and may reference mature genre material.</p>
+        <p>This entry discusses mature genre material and belongs to the adult wing of the archive.</p>
         <button class="button primary" type="button" data-confirm-adult>I am 18+ and want to continue</button>
         <a class="button secondary" href="/wiki">Return to Public Wiki</a>
       </div>
@@ -51,27 +51,9 @@ const { entry } = Astro.props;
           <TagList tags={entry.tags} />
         </aside>
         <article class="encyclopedia-main">
-          <h2>Entry</h2>
+          <h2>Story Function</h2>
           <p>{entry.description}</p>
           {entry.body?.map((paragraph) => <p>{paragraph}</p>)}
-          {
-            entry.sourceNotes?.length ? (
-              <div class="source-notes">
-                <h2>Source Notes</h2>
-                <ul>
-                  {entry.sourceNotes.map((note) => <li>{note}</li>)}
-                </ul>
-              </div>
-            ) : null
-          }
-          {
-            entry.artPrompt ? (
-              <details class="prompt-panel">
-                <summary>Generated art prompt</summary>
-                <p>{entry.artPrompt}</p>
-              </details>
-            ) : null
-          }
         </article>
       </section>
     </div>
