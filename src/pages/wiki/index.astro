@@ -4,15 +4,15 @@ import CategoryFilter from "../../components/CategoryFilter.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
 import WikiMap from "../../components/WikiMap.astro";
-import { creator, projects, wikiFacets } from "../../content/projects";
+import { creator, publicProjects, wikiFacets } from "../../content/projects";
 ---
 
-<BaseLayout title={`Wiki | ${creator.name}`} description="A cross-linked creator wiki for stories, music, images, merch, and atlas entries.">
+<BaseLayout title={`Wiki | ${creator.name}`} description="A public creator wiki for mythos, fiction, songs, tools, and atlas entries.">
   <main>
     <PageHeader
       eyebrow="Creator Wiki"
       title="Series Hubs, Artifacts, References"
-      description="Browse the public map without drowning in private structure: series hubs first, then songs, tools, essays, merch threads, and reference doors."
+      description="Browse the public map without drowning in private structure. Adult-genre series are separated into their own gated archive, so this page can explain the respectable front-door mythos, books, songs, tools, essays, merch threads, and reference doors."
     />
     <section class="section first-section">
       <div class="facet-row" aria-label="Wiki facets">
@@ -26,12 +26,17 @@ import { creator, projects, wikiFacets } from "../../content/projects";
       </div>
       <CategoryFilter />
       <div class="project-grid" data-project-grid>
-        {projects.map((project) => <ProjectCard project={project} />)}
+        {publicProjects.map((project) => <ProjectCard project={project} />)}
+      </div>
+      <div class="archive-callout">
+        <h2>Adult Archive</h2>
+        <p>Erotica and adult-genre series are kept behind a separate warning wall instead of sitting beside the main public work.</p>
+        <a class="button secondary" href="/adult-archive">Open Adult Archive</a>
       </div>
     </section>
     <WikiMap />
   </main>
-  <script is:inline define:vars={{ projects }}>
+  <script is:inline define:vars={{ projects: publicProjects }}>
     const grid = document.querySelector("[data-project-grid]");
     const search = document.querySelector("[data-search]");
     const sort = document.querySelector("[data-sort]");

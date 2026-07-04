@@ -19,6 +19,8 @@ export type EntryKind =
 
 export type EntryStatus = "Completed" | "Ongoing" | "Archived" | "Experimental" | "Seed";
 export type EntryRole = "Hub" | "Entry" | "Reference";
+export type EntryMaturity = "General" | "Adult";
+export type EntryVisibility = "Public" | "Adult";
 
 export type EntryLink = {
   label: string;
@@ -54,6 +56,8 @@ export type Project = {
   category: EntryKind;
   status: EntryStatus;
   entryRole?: EntryRole;
+  maturity?: EntryMaturity;
+  visibility?: EntryVisibility;
   featured?: boolean;
   date?: string;
   thumbnail: string;
@@ -68,6 +72,7 @@ export type Project = {
   sourceNotes?: string[];
   artPrompt?: string;
   externalWikiUrl?: string;
+  audioSrc?: string;
   series?: string;
   bookNumber?: number;
   genre?: string;
@@ -86,7 +91,7 @@ export const creator = {
   bio:
     "Independent author, philosopher, hypnotherapist, craftsman, worldbuilder, and experimental creator working around systems, myth, psychology, civilization, AI, agency, desire, and the places where tools become culture.",
   aboutTheWork:
-    "The useful shape is not a portfolio shelf. It is a cross-linked archive: fiction feeds music, music feeds images, images become merch, merch points back to characters, and the novel universe keeps expanding through its own atlas.",
+    "The useful shape is not a portfolio shelf. It is a cross-linked archive: fiction feeds music, music feeds images, images become merch, merch points back to characters, and the novel universe keeps expanding through its own atlas. Adult-genre work is kept in a separate archive so the front door can stay coherent.",
   socialLinks: [
     { label: "Email", url: "mailto:contact@archetypalarchitect.online" },
     { label: "Substack", url: "https://substack.com" },
@@ -107,7 +112,9 @@ export const projects: Project[] = [
     category: "Series",
     status: "Ongoing",
     entryRole: "Hub",
-    featured: true,
+    maturity: "Adult",
+    visibility: "Adult",
+    featured: false,
     date: "2026-06-06",
     thumbnail: "/images/generated/house-gilded-lily.png",
     thumbnailAlt: "Generated gothic academy art with mist, gold lily motifs, and a tastefully dressed adult woman.",
@@ -129,7 +136,7 @@ export const projects: Project[] = [
     merchLinks: [{ label: "Gilded Lily print slot", url: "#", type: "Buy" }],
     connections: [
       { id: "mythos-of-lust", label: "Mythic adult fantasy neighbor", type: "Related" },
-      { id: "plain-language-mythos", label: "Mythic framework neighbor", type: "Related" }
+      { id: "archetypal-mythos", label: "Uses the general mythic grammar", type: "Related" }
     ]
   },
   {
@@ -139,7 +146,9 @@ export const projects: Project[] = [
     category: "Series",
     status: "Ongoing",
     entryRole: "Hub",
-    featured: true,
+    maturity: "Adult",
+    visibility: "Adult",
+    featured: false,
     date: "2026-06-06",
     thumbnail: "/images/generated/mythos-of-lust.png",
     thumbnailAlt: "Generated mythic forest tavern art with adult fantasy figures in layered clothing.",
@@ -160,7 +169,7 @@ export const projects: Project[] = [
       "Adult mythic fantasy series hub for Mythos of Lust: ancient forest tavern at dusk, adult male wanderer with thick dark hair beside an adult green-eyed forest priestess in layered robes, old gods implied by carved trees and lantern smoke, sensual folklore atmosphere, clothed, tasteful, no nudity, no sexual act, no minors, no franchise imitation.",
     connections: [
       { id: "house-of-the-gilded-lily", label: "Ritual and myth neighbor", type: "Related" },
-      { id: "plain-language-mythos", label: "Philosophy companion", type: "Related" }
+      { id: "archetypal-mythos", label: "Uses the general mythic grammar", type: "Related" }
     ]
   },
   {
@@ -170,7 +179,9 @@ export const projects: Project[] = [
     category: "Series",
     status: "Ongoing",
     entryRole: "Hub",
-    featured: true,
+    maturity: "Adult",
+    visibility: "Adult",
+    featured: false,
     date: "2026-06-06",
     thumbnail: "/images/generated/monster-girl-harem.png",
     thumbnailAlt: "Generated fantasy swamp settlement with adult humanoid fantasy women and an adventurer.",
@@ -201,7 +212,9 @@ export const projects: Project[] = [
     category: "Series",
     status: "Ongoing",
     entryRole: "Hub",
-    featured: true,
+    maturity: "Adult",
+    visibility: "Adult",
+    featured: false,
     date: "2026-06-06",
     thumbnail: "/images/generated/bimbo-farm.png",
     thumbnailAlt: "Generated noir warehouse art with a tall adult detective in a fitted uniform.",
@@ -232,7 +245,9 @@ export const projects: Project[] = [
     category: "Series",
     status: "Seed",
     entryRole: "Hub",
-    featured: true,
+    maturity: "Adult",
+    visibility: "Adult",
+    featured: false,
     date: "2026-06-06",
     thumbnail: "/images/generated/supers-dark-erotica.png",
     thumbnailAlt: "Generated adult superhero rooftop art with a fully suited woman looking over a neon city.",
@@ -263,6 +278,8 @@ export const projects: Project[] = [
     category: "Universe",
     status: "Ongoing",
     entryRole: "Hub",
+    maturity: "General",
+    visibility: "Public",
     featured: true,
     date: "2026-06-06",
     thumbnail: "/images/works/my-evolution-system-book-1-cover.jpg",
@@ -287,7 +304,7 @@ export const projects: Project[] = [
     ],
     externalWikiUrl: "https://app.notion.com/p/2d974c4fdf8f80e3a381d4ab2f52bece?pvs=1",
     connections: [
-      { id: "plain-language-mythos", label: "Shares system/philosophy spine", type: "Related" },
+      { id: "archetypal-mythos", label: "Shares system/philosophy spine", type: "Related" },
       { id: "deja-vu", label: "Audio/video archive neighbor", type: "Related" }
     ]
   },
@@ -298,6 +315,8 @@ export const projects: Project[] = [
     category: "Universe",
     status: "Archived",
     entryRole: "Reference",
+    maturity: "Adult",
+    visibility: "Adult",
     date: "2026-06-06",
     thumbnail: "/images/generated/roxy-archive.png",
     thumbnailAlt: "Generated neutral archive desk with star maps, manuscripts, and sci-fi labels.",
@@ -333,6 +352,9 @@ export const projects: Project[] = [
     category: "Tool",
     status: "Completed",
     entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    featured: true,
     date: "2025-11-13",
     thumbnail: "/images/works/make-anxiety-cover.jpg",
     thumbnailAlt: "Make Anxiety Your Superpower cover art.",
@@ -345,7 +367,7 @@ export const projects: Project[] = [
     sourceNotes: ["Private product archive: Make Anxiety Your Superpower cover, manuscript, PDF, and audio files."],
     connections: [
       { id: "emotional-misinterpretation-dictionary", label: "Nonfiction companion", type: "Related" },
-      { id: "plain-language-mythos", label: "Practical philosophy neighbor", type: "Related" }
+      { id: "archetypal-mythos", label: "Practical philosophy neighbor", type: "Related" }
     ]
   },
   {
@@ -355,6 +377,9 @@ export const projects: Project[] = [
     category: "Tool",
     status: "Completed",
     entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    featured: true,
     date: "2025-11-13",
     thumbnail: "/images/works/emotional-misinterpretation-dictionary.jpg",
     thumbnailAlt: "The Emotional Misinterpretation Dictionary cover art.",
@@ -374,6 +399,8 @@ export const projects: Project[] = [
     category: "Merch",
     status: "Seed",
     entryRole: "Hub",
+    maturity: "General",
+    visibility: "Public",
     date: "2026-06-06",
     thumbnail: "/images/hero-studio.png",
     thumbnailAlt: "Archive studio image used as a placeholder for merch planning.",
@@ -390,9 +417,8 @@ export const projects: Project[] = [
       "Existing local cover and generated art assets can become product imagery later."
     ],
     connections: [
-      { id: "house-of-the-gilded-lily", label: "Series print slot", type: "Merch for" },
-      { id: "monster-girl-harem", label: "Fantasy print slot", type: "Merch for" },
-      { id: "roxy-stardust-archive", label: "Roxy merch archive", type: "Related" }
+      { id: "my-evolution-system", label: "System fiction product thread", type: "Merch for" },
+      { id: "archetypal-mythos", label: "Symbol and phrase product thread", type: "Merch for" }
     ]
   },
   {
@@ -402,6 +428,8 @@ export const projects: Project[] = [
     category: "Song",
     status: "Completed",
     entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
     date: "2025-10-20",
     thumbnail: "/images/works/deja-vu-thumbnail.jpg",
     thumbnailAlt: "Deja Vu music video thumbnail.",
@@ -414,29 +442,74 @@ export const projects: Project[] = [
     sourceNotes: ["Private audio-visual archive: Deja Vu video.", "Private audio-visual archive: Deja Vu thumbnail."],
     connections: [
       { id: "my-evolution-system", label: "Audio/video archive neighbor", type: "Related" },
-      { id: "roxy-stardust-archive", label: "Production archive neighbor", type: "Related" }
+      { id: "suno-music-catalog", label: "Belongs in the music catalog", type: "Belongs to" }
     ]
   },
   {
-    id: "plain-language-mythos",
-    title: "Plain Language Philosophy: Framework for Understanding the Mythos",
-    kind: "Essay",
-    category: "Essay",
+    id: "suno-music-catalog",
+    title: "Published Suno Songs Library",
+    kind: "Album",
+    category: "Album",
     status: "Ongoing",
-    entryRole: "Reference",
-    date: "2025-11-20",
+    entryRole: "Hub",
+    maturity: "General",
+    visibility: "Public",
+    featured: true,
+    date: "2026-07-04",
     thumbnail: "/images/hero-studio.png",
-    thumbnailAlt: "A studio archive image representing philosophical framework notes.",
-    summary: "A Notion philosophy reference that can explain the skeleton beneath the mythos without exposing every private note.",
+    thumbnailAlt: "Archive studio image representing a growing hosted music library.",
+    summary: "A planned library for published Suno tracks, lyric pages, videos, cover art, and downloadable audio hosted by this site.",
     description:
-      "Notion search surfaced this as a conceptual bridge for readers encountering the mythos, the fiction systems, or the worldbuilding engine without needing all of the private scaffolding first.",
-    tags: ["Notion", "philosophy", "mythos", "reader guide"],
+      "This hub is where the music archive should grow beyond whatever happens to be on the local machine. Published Suno songs can be downloaded, copied into the site, and added as song entries with audio embeds, lyrics, platform links, and connections back to the fiction, images, or essays that inspired them.",
+    body: [
+      "Recommended file path: put downloaded tracks in public/audio/suno/ and covers or thumbnails in public/images/works/. Then add audioSrc: \"/audio/suno/song-file.mp3\" to the matching song entry.",
+      "Each song can become a normal wiki entry with title, mood, lyrics link, Suno URL, YouTube URL, and connections to the story, image, or mythic concept it belongs to.",
+      "This keeps Suno from being a vague external platform link and turns it into a real hosted catalog over time."
+    ],
+    tags: ["music", "Suno", "songs", "lyrics", "hosted audio", "catalog"],
+    links: [
+      { label: "Open Suno", url: "https://suno.com", type: "Listen" },
+      { label: "Add songs in content file", url: "/wiki/suno-music-catalog", type: "Reference" }
+    ],
+    sourceNotes: [
+      "Future source: published Suno account songs should be downloaded or linked individually.",
+      "Audio files intended for public hosting should be copied into public/audio/suno/."
+    ],
+    connections: [
+      { id: "deja-vu", label: "Existing local song artifact", type: "Contains" },
+      { id: "archetypal-mythos", label: "Songs can express mythic concepts", type: "Adapted from" },
+      { id: "my-evolution-system", label: "Novel universe can generate songs", type: "Inspired by" }
+    ]
+  },
+  {
+    id: "archetypal-mythos",
+    title: "The Archetypal Mythos",
+    kind: "Concept",
+    category: "Concept",
+    status: "Ongoing",
+    entryRole: "Hub",
+    maturity: "General",
+    visibility: "Public",
+    featured: true,
+    date: "2026-07-04",
+    thumbnail: "/images/hero-studio.png",
+    thumbnailAlt: "A studio archive image representing the public mythos framework.",
+    summary: "The public explanation of the recurring mythic grammar behind the fiction, songs, tools, and systems.",
+    description:
+      "The mythos is not one book title, one setting, or one adult series. It is the reusable symbolic engine underneath the work: systems that become characters, tools that become culture, desire that becomes civilization, and personal agency tested against machines, institutions, gods, markets, and stories.",
+    body: [
+      "A reader should be able to start here and understand the shape of the work without walking straight into the erotica shelf. The mythos is the clean public map of the recurring obsessions.",
+      "Core tensions include agency versus automation, myth versus mechanism, language as a tool for self-command, civilization as an operating system, and the strange moment when an invented tool starts teaching its maker how to think.",
+      "This hub can absorb essays, diagrams, glossary entries, symbolic motifs, and reading guides. It should explain the work, not merely point at it."
+    ],
+    tags: ["mythos", "philosophy", "reader guide", "agency", "systems", "worldbuilding"],
     links: [{ label: "Open Notion page", url: "https://app.notion.com/p/1d474c4fdf8f80bfb30adce3862c7ccc?pvs=1", type: "Reference" }],
     sourceNotes: ["Notion: Plain Language Philosophy: Framework for Understanding the Mythos."],
     connections: [
-      { id: "mythos-of-lust", label: "Mythic fiction companion", type: "Related" },
       { id: "my-evolution-system", label: "Shares philosophical spine", type: "Related" },
-      { id: "make-anxiety-your-superpower", label: "Practical philosophy neighbor", type: "Related" }
+      { id: "make-anxiety-your-superpower", label: "Practical philosophy neighbor", type: "Related" },
+      { id: "suno-music-catalog", label: "Music can become mythic artifact", type: "Adapted into" },
+      { id: "fiction-universe-merch", label: "Symbols can become products", type: "Merch for" }
     ]
   }
 ];
@@ -461,28 +534,35 @@ export const categories: EntryKind[] = [
   "Other"
 ];
 
+export function isAdultEntry(project: Project) {
+  return project.visibility === "Adult" || project.maturity === "Adult";
+}
+
+export const publicProjects = projects.filter((project) => !isAdultEntry(project));
+export const adultProjects = projects.filter(isAdultEntry);
+
 export function getProjectsByCategory(category: EntryKind) {
-  return projects.filter((project) => project.category === category);
+  return publicProjects.filter((project) => project.category === category);
 }
 
 export function getFeaturedProjects() {
-  return projects.filter((project) => project.featured);
+  return publicProjects.filter((project) => project.featured);
 }
 
 export function getProjectById(id: string) {
   return projects.find((project) => project.id === id);
 }
 
-export function getBacklinks(id: string) {
-  return projects.filter((project) => project.connections?.some((connection) => connection.id === id));
+export function getBacklinks(id: string, entries: Project[] = publicProjects) {
+  return entries.filter((project) => project.connections?.some((connection) => connection.id === id));
 }
 
-export function getConnectedEntries(id: string) {
+export function getConnectedEntries(id: string, entries: Project[] = publicProjects) {
   const entry = getProjectById(id);
   return (entry?.connections || [])
     .map((connection) => ({
       connection,
-      entry: getProjectById(connection.id)
+      entry: entries.find((project) => project.id === connection.id)
     }))
     .filter((item) => item.entry);
 }
@@ -495,4 +575,4 @@ export const wikiFacets = [
   { label: "References", kinds: ["Universe", "Atlas", "Essay", "Other"] }
 ] satisfies { label: string; kinds: EntryKind[] }[];
 
-export const allEntries = projects;
+export const allEntries = publicProjects;

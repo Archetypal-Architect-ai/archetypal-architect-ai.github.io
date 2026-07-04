@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ExternalLinks from "../../components/ExternalLinks.astro";
+import TagList from "../../components/TagList.astro";
+import { adultProjects } from "../../content/projects";
+
+export function getStaticPaths() {
+  return adultProjects.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+---
+
+<BaseLayout title={`${entry.title} | Adult Archive`} description={entry.summary} image={entry.thumbnail}>
+  <main class="adult-detail-page">
+    <section class="adult-detail-lock" data-adult-gate>
+      <div>
+        <p class="eyebrow">Adult Archive</p>
+        <h1>Confirm before entering.</h1>
+        <p>This entry belongs to the separated adult archive and may reference mature genre material.</p>
+        <button class="button primary" type="button" data-confirm-adult>I am 18+ and want to continue</button>
+        <a class="button secondary" href="/wiki">Return to Public Wiki</a>
+      </div>
+    </section>
+
+    <div class="is-locked" data-adult-content>
+      <section class="detail-hero wiki-detail-hero">
+        <div>
+          <p class="eyebrow">{entry.entryRole || "Entry"} / Adult Archive / {entry.status}</p>
+          <h1>{entry.title}</h1>
+          <p>{entry.summary}</p>
+          <a class="button secondary" href="/adult-archive">Back to Adult Archive</a>
+          <ExternalLinks links={entry.links} variant="button" />
+        </div>
+        <img src={entry.thumbnail} alt={entry.thumbnailAlt} />
+      </section>
+
+      <section class="section detail-body wiki-detail-body">
+        <aside class="encyclopedia-panel">
+          <h2>Index</h2>
+          <dl>
+            {entry.entryRole && <div><dt>Role</dt><dd>{entry.entryRole}</dd></div>}
+            <div><dt>Type</dt><dd>{entry.kind}</dd></div>
+            <div><dt>Status</dt><dd>{entry.status}</dd></div>
+            <div><dt>Maturity</dt><dd>Adult</dd></div>
+            {entry.date && <div><dt>Date</dt><dd>{entry.date}</dd></div>}
+          </dl>
+          <TagList tags={entry.tags} />
+        </aside>
+        <article class="encyclopedia-main">
+          <h2>Entry</h2>
+          <p>{entry.description}</p>
+          {entry.body?.map((paragraph) => <p>{paragraph}</p>)}
+          {
+            entry.sourceNotes?.length ? (
+              <div class="source-notes">
+                <h2>Source Notes</h2>
+                <ul>
+                  {entry.sourceNotes.map((note) => <li>{note}</li>)}
+                </ul>
+              </div>
+            ) : null
+          }
+          {
+            entry.artPrompt ? (
+              <details class="prompt-panel">
+                <summary>Generated art prompt</summary>
+                <p>{entry.artPrompt}</p>
+              </details>
+            ) : null
+          }
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <script is:inline>
+    const gate = document.querySelector("[data-adult-gate]");
+    const content = document.querySelector("[data-adult-content]");
+    const button = document.querySelector("[data-confirm-adult]");
+    const key = "aa-adult-archive-confirmed";
+
+    function unlock() {
+      gate?.classList.add("is-hidden");
+      content?.classList.remove("is-locked");
+    }
+
+    if (window.localStorage.getItem(key) === "yes") unlock();
+    button?.addEventListener("click", () => {
+      window.localStorage.setItem(key, "yes");
+      unlock();
+    });
+  </script>
+</BaseLayout>

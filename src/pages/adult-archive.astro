@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import TagList from "../components/TagList.astro";
+import { adultProjects, creator } from "../content/projects";
+---
+
+<BaseLayout
+  title={`Adult Archive | ${creator.name}`}
+  description="Age-gated index for adult-genre fiction and reference entries."
+>
+  <main>
+    <PageHeader
+      eyebrow="Adult Archive"
+      title="Adult-Genre Work Lives Here"
+      description="This section is intentionally separated from the main public wiki. It can hold erotica, adult satire, and spicy production archives without making them the front door of the whole body of work."
+    />
+
+    <section class="section adult-gate" data-adult-gate>
+      <div>
+        <p class="eyebrow">Content Notice</p>
+        <h2>Adult material ahead.</h2>
+        <p>
+          The entries beyond this point may reference erotica, adult themes, desire, transformation,
+          and mature genre premises. The public wiki keeps mythos, nonfiction, music, and novel-universe
+          material separate from this archive.
+        </p>
+        <button class="button primary" type="button" data-confirm-adult>I am 18+ and want to continue</button>
+        <a class="button secondary" href="/wiki">Return to Public Wiki</a>
+      </div>
+    </section>
+
+    <section class="section adult-archive is-locked" data-adult-content>
+      <div class="section-heading">
+        <p class="eyebrow">Separated Shelf</p>
+        <h2>Series Hubs and References</h2>
+        <p>These are adult-facing hubs. They are deliberately not featured on the homepage or public wiki.</p>
+      </div>
+      <div class="project-grid adult-grid">
+        {
+          adultProjects.map((project) => (
+            <article class:list={["project-card", project.entryRole?.toLowerCase(), "adult-card"]}>
+              <a class="thumb-link" href={`/adult/${project.id}`} aria-label={`Open ${project.title}`}>
+                <img src={project.thumbnail} alt={project.thumbnailAlt} loading="lazy" />
+              </a>
+              <div class="project-card-body">
+                <div class="card-meta">
+                  {project.entryRole && <span class="role-pill">{project.entryRole}</span>}
+                  <span>{project.kind}</span>
+                  <span>{project.status}</span>
+                </div>
+                <h2><a href={`/adult/${project.id}`}>{project.title}</a></h2>
+                <p>{project.summary}</p>
+                <TagList tags={project.tags.slice(0, 3)} />
+                <div class="external-links text">
+                  <a href={`/adult/${project.id}`}><span>Open adult entry</span><span aria-hidden="true">-&gt;</span></a>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+
+  <script is:inline>
+    const gate = document.querySelector("[data-adult-gate]");
+    const content = document.querySelector("[data-adult-content]");
+    const button = document.querySelector("[data-confirm-adult]");
+    const key = "aa-adult-archive-confirmed";
+
+    function unlock() {
+      gate?.classList.add("is-hidden");
+      content?.classList.remove("is-locked");
+    }
+
+    if (window.localStorage.getItem(key) === "yes") unlock();
+    button?.addEventListener("click", () => {
+      window.localStorage.setItem(key, "yes");
+      unlock();
+    });
+  </script>
+</BaseLayout>

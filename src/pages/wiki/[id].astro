@@ -3,10 +3,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ConnectionList from "../../components/ConnectionList.astro";
 import ExternalLinks from "../../components/ExternalLinks.astro";
 import TagList from "../../components/TagList.astro";
-import { projects, creator } from "../../content/projects";
+import { publicProjects, creator } from "../../content/projects";
 
 export function getStaticPaths() {
-  return projects.map((entry) => ({
+  return publicProjects.map((entry) => ({
     params: { id: entry.id },
     props: { entry }
   }));
@@ -29,36 +29,13 @@ const { entry } = Astro.props;
     </section>
 
     <section class="section detail-body wiki-detail-body">
-      <article>
-        <h2>Entry</h2>
-        <p>{entry.description}</p>
-        {entry.body?.map((paragraph) => <p>{paragraph}</p>)}
-        {entry.notes && <p>{entry.notes}</p>}
-        {
-          entry.sourceNotes?.length ? (
-            <div class="source-notes">
-              <h2>Source Notes</h2>
-              <ul>
-                {entry.sourceNotes.map((note) => <li>{note}</li>)}
-              </ul>
-            </div>
-          ) : null
-        }
-        {
-          entry.artPrompt ? (
-            <details class="prompt-panel">
-              <summary>Generated art prompt</summary>
-              <p>{entry.artPrompt}</p>
-            </details>
-          ) : null
-        }
-      </article>
-      <aside>
+      <aside class="encyclopedia-panel">
         <h2>Index</h2>
         <dl>
           {entry.entryRole && <div><dt>Role</dt><dd>{entry.entryRole}</dd></div>}
           <div><dt>Type</dt><dd>{entry.kind}</dd></div>
           <div><dt>Status</dt><dd>{entry.status}</dd></div>
+          <div><dt>Maturity</dt><dd>{entry.maturity || "General"}</dd></div>
           {entry.date && <div><dt>Date</dt><dd>{entry.date}</dd></div>}
           {entry.series && <div><dt>Series</dt><dd>{entry.series}</dd></div>}
           {entry.bookNumber && <div><dt>Book</dt><dd>{entry.bookNumber}</dd></div>}
@@ -78,6 +55,21 @@ const { entry } = Astro.props;
           ) : null
         }
       </aside>
+      <article class="encyclopedia-main">
+        <h2>Entry</h2>
+        <p>{entry.description}</p>
+        {
+          entry.audioSrc ? (
+            <div class="audio-panel">
+              <h2>Hosted Audio</h2>
+              <audio controls preload="metadata" src={entry.audioSrc}></audio>
+            </div>
+          ) : null
+        }
+        {entry.body?.map((paragraph) => <p>{paragraph}</p>)}
+        {entry.notes && <p>{entry.notes}</p>}
+        {entry.notes && <p>{entry.notes}</p>}
+      </article>
     </section>
 
     <section class="section first-section">

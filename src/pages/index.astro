@@ -3,11 +3,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import FeaturedProjects from "../components/FeaturedProjects.astro";
 import ProjectGrid from "../components/ProjectGrid.astro";
 import WikiMap from "../components/WikiMap.astro";
-import { creator, projects, wikiFacets } from "../content/projects";
+import { creator, publicProjects, wikiFacets } from "../content/projects";
 
-const recent = [...projects].sort((a, b) => (b.date || "").localeCompare(a.date || "")).slice(0, 4);
-const entryCount = projects.length;
-const connectionCount = projects.reduce((total, project) => total + (project.connections?.length || 0), 0);
+const recent = [...publicProjects].sort((a, b) => (b.date || "").localeCompare(a.date || "")).slice(0, 4);
+const entryCount = publicProjects.length;
+const connectionCount = publicProjects.reduce((total, project) => total + (project.connections?.length || 0), 0);
 ---
 
 <BaseLayout title={`${creator.name} | ${creator.imprint}`} description={creator.tagline}>
@@ -20,6 +20,7 @@ const connectionCount = projects.reduce((total, project) => total + (project.con
         <div class="hero-actions">
           <a class="button primary" href="/wiki">Enter the Wiki</a>
           <a class="button secondary" href="#map">View the Map</a>
+          <a class="button secondary" href="/adult-archive">Adult Archive</a>
           <a class="button secondary" href="/contact">Contact</a>
         </div>
       </div>

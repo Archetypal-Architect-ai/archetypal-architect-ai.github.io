@@ -1,5 +1,5 @@
 ---
-import { projects } from "../content/projects";
+import { publicProjects } from "../content/projects";
 ---
 
 <section class="section wiki-map-section">
@@ -10,7 +10,7 @@ import { projects } from "../content/projects";
   </div>
   <div class="wiki-map">
     {
-      projects
+      publicProjects
         .filter((entry) => entry.connections?.length)
         .map((entry) => (
           <article>
@@ -20,7 +20,7 @@ import { projects } from "../content/projects";
             </a>
             <div class="map-links">
               {entry.connections!.map((connection) => {
-                const target = projects.find((item) => item.id === connection.id);
+                const target = publicProjects.find((item) => item.id === connection.id);
                 return (
                   target && (
                     <a href={`/wiki/${target.id}`}>
