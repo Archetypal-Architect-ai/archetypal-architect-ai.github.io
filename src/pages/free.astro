@@ -1,63 +1,47 @@
 ---
-const destination = "https://archetypal-architect.kit.com/profile";
-const title = "Free Reader List | Archetypal Architect";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { creator } from "../content/projects";
+
+const kitDestination = "https://archetypal-architect.kit.com";
+const title = "Rowan's Honey Cakes | Archetypal Architect";
 const description =
-  "Redirecting to the Archetypal Architect reader list on Kit.";
+  "Join the Archetypal Architect reader table and get Rowan's third-batch honey cake recipe from The Gentle Shadow.";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="refresh" content={`0; url=${destination}`} />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <link rel="canonical" href={destination} />
-    <style>
-      :root {
-        color-scheme: dark;
-        font-family:
-          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
-      }
+<BaseLayout title={title} description={description} image="/images/works/the-gentle-shadow-cover.jpg">
+  <main>
+    <section class="detail-hero">
+      <div>
+        <p class="eyebrow">Reader Bonus / The Gentle Shadow</p>
+        <h1>Want Rowan's Honey Cakes?</h1>
+        <p>
+          Thank you so much for reading my story. I have so much more to tell, and I'd love
+          to have you beside me for the next journey.
+        </p>
+        <p>
+          There will be honey cakes, scarves aplenty, and probably someone who needs both.
+          In fact, the first batch is ready now: join me at the table, and I'll send you my
+          third-batch honey cake recipe.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href={kitDestination}>Send me the recipe</a>
+          <a class="button secondary" href="/wiki/the-gentle-shadow">Open the book page</a>
+        </div>
+      </div>
+      <img src="/images/works/the-gentle-shadow-cover.jpg" alt="Cover art for The Gentle Shadow." />
+    </section>
 
-      body {
-        align-items: center;
-        background: #0f1112;
-        color: #f4efe6;
-        display: grid;
-        margin: 0;
-        min-height: 100vh;
-        padding: 24px;
-        text-align: center;
-      }
-
-      main {
-        display: grid;
-        gap: 18px;
-        justify-items: center;
-      }
-
-      a {
-        border: 1px solid rgba(244, 239, 230, 0.22);
-        color: #f7c477;
-        font-weight: 850;
-        padding: 12px 18px;
-        text-decoration: none;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>Redirecting to the reader list.</h1>
-      <p>If the page does not move on its own, use the link below.</p>
-      <a href={destination}>Open Archetypal Architect on Kit</a>
-    </main>
-    <script is:inline define:vars={{ destination }}>
-      window.location.replace(destination);
-    </script>
-  </body>
-</html>
+    <section class="section first-section prose-section">
+      <p class="eyebrow">Permanent Reader Link</p>
+      <h2>Why this page exists</h2>
+      <p>
+        This is the stable reader doorway for {creator.name}. Mailing-list providers can
+        change. This page can move the button behind the scenes while the books keep pointing
+        to the same owned address.
+      </p>
+      <p>
+        If the button does not open, visit <a href={kitDestination}>{kitDestination}</a>.
+      </p>
+    </section>
+  </main>
+</BaseLayout>

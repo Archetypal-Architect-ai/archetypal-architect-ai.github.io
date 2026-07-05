@@ -230,7 +230,6 @@ export const projects: Project[] = [
     ],
     tags: ["pen names", "Amazon", "Smashwords", "author profiles", "backmatter"],
     links: [
-      { label: "Charles Adams on Smashwords", url: "https://www.smashwords.com/profile/view/Charles_Adams", type: "Read" },
       { label: "JRRFuckKin on Smashwords", url: "https://www.smashwords.com/profile/view/JRRFuckKin", type: "Read" },
       { label: "Rockshatter on Smashwords", url: "https://www.smashwords.com/profile/view/Rockshatter", type: "Read" },
       { label: "TheArchitect953 on Smashwords", url: "https://www.smashwords.com/profile/view/TheArchitect953", type: "Read" },
@@ -242,6 +241,117 @@ export const projects: Project[] = [
       { id: "mes-publishing", label: "General imprint lane", type: "Related" },
       { id: "dirty-minded-bastard-publishing", label: "Adult imprint lane", type: "Related" }
     ]
+  },
+  {
+    id: "the-gentle-shadow-series",
+    title: "The Gentle Shadow",
+    kind: "Series",
+    category: "Series",
+    status: "Ongoing",
+    entryRole: "Hub",
+    maturity: "General",
+    visibility: "Public",
+    featured: true,
+    date: "2026-07-05",
+    thumbnail: "/images/works/the-gentle-shadow-cover.jpg",
+    thumbnailAlt: "Cover art for The Gentle Shadow, an adult cozy-goth vampire horror-comedy.",
+    summary: "An adult cozy-goth vampire horror-comedy series about a girl who survives an impossible bite and weaponizes kindness across five hundred years.",
+    description:
+      "The Gentle Shadow is the archive's cozy-goth vampire lane: horror from the monster world's point of view, found family with fangs, and the stubborn thesis that kindness can be beautiful without being harmless.",
+    body: [
+      "Rowan Whitaker should have died in 1527. Instead, she worried that the monster at her throat seemed lonely, survived the bite, and became a pastel problem the darkness never learned how to solve.",
+      "The series begins in Elden Hollow, crosses five centuries of war and grief, and lands in a modern American high school where Rowan is seventeen again, this time with the wisdom to protect the overlooked kids who need her.",
+      "The public hook is simple: Viktor wants to correct his mistake. Rowan wants to bring him honey cakes."
+    ],
+    tags: ["adult cozy fantasy", "vampires", "found family", "horror-comedy", "cozy-goth"],
+    links: [
+      { label: "Get Rowan's Honey Cakes", url: "/free", type: "Download" },
+      { label: "Book 1", url: "/wiki/the-gentle-shadow", type: "Reference" }
+    ],
+    merchLinks: [
+      { label: "Kindness has teeth", url: "#", type: "Buy" }
+    ],
+    connections: [
+      { id: "mes-publishing", label: "Published through MES Publishing", type: "Belongs to" },
+      { id: "the-gentle-shadow", label: "Book 1", type: "Contains" },
+      { id: "the-weight-of-memory", label: "Book 2", type: "Contains" },
+      { id: "archetypal-mythos", label: "Shares the mythos engine", type: "Related" }
+    ]
+  },
+  {
+    id: "the-gentle-shadow",
+    title: "The Gentle Shadow",
+    kind: "Novel",
+    category: "Novel",
+    status: "Completed",
+    entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    featured: true,
+    date: "2026-07-05",
+    thumbnail: "/images/works/the-gentle-shadow-cover.jpg",
+    thumbnailAlt: "Cover art for The Gentle Shadow by Archetypal Architect.",
+    summary: "Five hundred years after surviving a vampire's mistake, Rowan is a high school junior again. Kindness has teeth.",
+    description:
+      "The Gentle Shadow is an adult cozy-goth vampire horror-comedy about a village girl who survives an impossible bite, spends five hundred years being far too kind for the darkness, and enrolls in modern high school with a werewolf best friend and a vampire sire who still thinks honey cakes are a threat.",
+    body: [
+      "Rowan Whitaker should have died in 1527. Viktor came to Elden Hollow for a quiet feeding. Instead, Rowan looked at the monster at her throat and worried that he seemed lonely.",
+      "He faltered. She survived. Worse, she stayed herself. Sunlight stings. Mirrors lose track of her. Hunger has rules she keeps rewriting with honey cakes, mending baskets, and a terrible habit of licking wounds clean.",
+      "Five hundred years later, Rowan is a high school junior. Again. Now she hides her ghost-thin reflection from bathroom mirrors, knits impossible scarves for overlooked girls, keeps a golden-retriever werewolf out of trouble, and builds the kind of found family ancient vampires find deeply offensive."
+    ],
+    tags: ["adult cozy fantasy", "vampire horror-comedy", "found family", "high school", "kindness has teeth"],
+    links: [
+      { label: "Get Rowan's Honey Cakes", url: "/free", type: "Download" }
+    ],
+    merchLinks: [
+      { label: "Kindness has teeth", url: "#", type: "Buy" }
+    ],
+    connections: [
+      { id: "the-gentle-shadow-series", label: "Series hub", type: "Belongs to" },
+      { id: "the-weight-of-memory", label: "Next book", type: "Related" },
+      { id: "mes-publishing", label: "General fiction imprint", type: "Belongs to" }
+    ],
+    series: "The Gentle Shadow",
+    bookNumber: 1,
+    genre: "Adult cozy-goth vampire horror-comedy",
+    wordCount: "83,247",
+    chapterCount: "35",
+    mood: "Warm, fanged, funny, and stubbornly kind"
+  },
+  {
+    id: "the-weight-of-memory",
+    title: "The Weight of Memory",
+    kind: "Novel",
+    category: "Novel",
+    status: "Ongoing",
+    entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    featured: false,
+    date: "2026-07-05",
+    thumbnail: "/images/works/the-gentle-shadow-cover.jpg",
+    thumbnailAlt: "Series cover placeholder for The Weight of Memory, Book 2 of The Gentle Shadow.",
+    summary: "Book 2 of The Gentle Shadow, where Viktor discovers the vampires may have misunderstood their own species.",
+    description:
+      "The Weight of Memory continues the cozy-goth vampire series by turning the question inward: Rowan was not a strange exception. She may have been the complete version of what vampires were supposed to remain.",
+    body: [
+      "The second book follows Viktor as restored conscience, willing blood, grief, and connection reveal a darker possibility than any enemy attack: the old vampires may have crippled themselves and mistaken the injury for maturity.",
+      "The dog thread, the memory burden, and Viktor's new soul-spark make the question intimate rather than abstract. The pain is not the point. Feeling what you care about is the capability."
+    ],
+    tags: ["adult cozy fantasy", "vampire lore", "memory", "grief", "Book 2"],
+    links: [
+      { label: "Start with Book 1", url: "/wiki/the-gentle-shadow", type: "Reference" },
+      { label: "Join the reader list", url: "/free", type: "Download" }
+    ],
+    connections: [
+      { id: "the-gentle-shadow-series", label: "Series hub", type: "Belongs to" },
+      { id: "the-gentle-shadow", label: "Book 1", type: "Belongs to" },
+      { id: "mes-publishing", label: "General fiction imprint", type: "Belongs to" }
+    ],
+    series: "The Gentle Shadow",
+    bookNumber: 2,
+    genre: "Adult cozy-goth vampire fantasy",
+    mood: "Tender, investigative, supernatural, and emotionally sharp"
   },
   {
     id: "house-of-the-gilded-lily",
