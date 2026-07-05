@@ -1,0 +1,150 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Rowan's Honey Cakes | Archetypal Architect";
+const description =
+  "The third-batch honey cake recipe from The Gentle Shadow, written in Rowan's voice.";
+---
+
+<BaseLayout title={title} description={description} image="/images/generated/gentle-shadow-series.svg">
+  <main>
+    <section class="detail-hero">
+      <div>
+        <p class="eyebrow">The Gentle Shadow / Reader Bonus</p>
+        <h1>Rowan's Honey Cakes</h1>
+        <p><em>The third-batch recipe</em></p>
+        <p>
+          I have been making these since 1527, which sounds like a boast but is mostly an
+          apology. A recipe carried that long stops being instructions and becomes a set of
+          habits with flour on them. I will do my best to write the habits down.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="/downloads/rowans-honey-cakes.pdf">Download the PDF</a>
+          <a class="button secondary" href="/wiki/the-gentle-shadow">Open the book page</a>
+        </div>
+      </div>
+      <img src="/images/generated/gentle-shadow-series.svg" alt="Honey cakes, a lavender scarf, and soft gothic shadows on a moonlit table." />
+    </section>
+
+    <section class="section first-section recipe-page">
+      <article class="recipe-card">
+        <p>
+          You should know before you begin that the first batch often burns. This is not a
+          failure of the recipe. It is usually a sign that you stopped to help someone carry
+          water, or read a letter, or listen to a person who needed listening to. The recipe
+          forgives this. So should you.
+        </p>
+
+        <h2>What you will need</h2>
+        <p>
+          Enough for eight cakes. Which is to say, enough for five, because you will give some
+          away. You will. I have watched people try not to.
+        </p>
+        <ul>
+          <li>2 cups flour. Any honest flour.</li>
+          <li>1/2 cup honey. From bees you trust, if you can arrange it. The bees work hard and deserve the mention.</li>
+          <li>1/2 cup butter, softened. Not melted. Melted butter is butter that was rushed, and the cakes can tell.</li>
+          <li>2 eggs.</li>
+          <li>1 teaspoon ground ginger, sharp enough to be noticed. Kindness is not the same as blandness. People forget this about both cakes and me.</li>
+          <li>1/2 teaspoon baking soda. There was no baking soda in 1527. We used beaten eggs and hope. Use the soda.</li>
+          <li>A pinch of salt.</li>
+          <li>A little milk, if the batter seems stubborn.</li>
+        </ul>
+
+        <h2>What you will do</h2>
+        <ol>
+          <li>
+            Warm your oven to 350 degrees, and forgive it if it lies to you a little. Ovens have
+            been lying to me for five hundred years. Bread ovens, hearth stones, a woodstove in a
+            very bad winter, and now a machine with a number on the front. The number helps. It
+            does not tell the whole truth. Nothing with a door ever does.
+          </li>
+          <li>
+            Beat the butter and honey together until they stop being two things. Take your time.
+            This is the part of the recipe where most of the tenderness happens, and it cannot be
+            added later.
+          </li>
+          <li>
+            Add the eggs, one at a time, and then the ginger and salt. The batter will look
+            briefly like a mistake. It is not a mistake. Very few things are, this early.
+          </li>
+          <li>
+            Add the flour and the soda a little at a time, with milk if it fights you. Stop when
+            it is soft and thick and drops slowly from the spoon, as if it would rather stay.
+          </li>
+          <li>
+            Spoon them onto a lined tray, smaller than you think. They spread, the way news does
+            in a small village.
+          </li>
+          <li>
+            Bake for 12 to 15 minutes, until the edges are golden and the centers are still
+            warm-hearted. You want them a little tender in the middle. Most good things are.
+          </li>
+          <li>
+            Eat one yourself, standing up, while they are too hot and the honey is still loud.
+            This is the baker's portion and it is not negotiable. I have outlived every argument
+            against it.
+          </li>
+          <li>
+            Give the rest away. If a little one drops hers in the mud, it does not count against
+            her total. Small children drop things. That is what the extra batch is for.
+          </li>
+        </ol>
+
+        <p>
+          A last note, from long practice: if someone in your house can catch falling food out of
+          the air and looks far too pleased about it, hide the tray until the cakes have cooled. I
+          will not say how I know this. He knows how I know this.
+        </p>
+
+        <p>Be kind. Bake often. The two are more related than most cookbooks admit.</p>
+
+        <p class="recipe-signature">
+          - R.W.<br />
+          <em>Elden Hollow, and everywhere since</em>
+        </p>
+      </article>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .recipe-page {
+    display: grid;
+    justify-items: center;
+  }
+
+  .recipe-card {
+    background: #fff8e9;
+    border: 1px solid #d7b98a;
+    color: #35251d;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.68;
+    max-width: 920px;
+    padding: clamp(24px, 5vw, 54px);
+  }
+
+  .recipe-card h2 {
+    border-bottom: 1px solid #e3d1b6;
+    color: #4d6b4b;
+    font-size: clamp(1.55rem, 3vw, 2.25rem);
+    line-height: 1.1;
+    margin: 32px 0 14px;
+    padding-bottom: 8px;
+  }
+
+  .recipe-card p,
+  .recipe-card li {
+    font-size: 1.04rem;
+  }
+
+  .recipe-card li {
+    margin-bottom: 10px;
+  }
+
+  .recipe-signature {
+    color: #6f2f38;
+    font-weight: 700;
+    margin-top: 30px;
+  }
+</style>
