@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Suno music catalog plate</title>
+  <desc id="desc">A dark soundboard with glowing waveform cards and amber audio paths.</desc>
+  <rect width="1200" height="675" fill="#101213"/>
+  <rect x="120" y="118" width="960" height="438" rx="12" fill="#1c2023" stroke="#394a58" stroke-width="4"/>
+  <g fill="#23292e" stroke="#6f9fd8" stroke-width="4">
+    <rect x="205" y="190" width="225" height="260" rx="10"/>
+    <rect x="488" y="160" width="225" height="260" rx="10"/>
+    <rect x="771" y="220" width="225" height="260" rx="10"/>
+  </g>
+  <g fill="none" stroke="#2bb3a3" stroke-width="8" stroke-linecap="round">
+    <path d="M240 320 h30 l20 -60 l30 120 l28 -92 l24 32 h26"/>
+    <path d="M523 290 h30 l20 -60 l30 120 l28 -92 l24 32 h26"/>
+    <path d="M806 350 h30 l20 -60 l30 120 l28 -92 l24 32 h26"/>
+  </g>
+  <path d="M258 502 C420 440 560 540 705 478 S895 430 1010 492" fill="none" stroke="#d98f3f" stroke-width="8" stroke-linecap="round"/>
+</svg>

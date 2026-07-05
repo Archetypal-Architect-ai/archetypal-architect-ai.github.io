@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Archetypal Mythos plate</title>
+  <desc id="desc">A symbolic map of systems, myth, agency, and stories arranged as a dark mandala.</desc>
+  <rect width="1200" height="675" fill="#101213"/>
+  <circle cx="600" cy="338" r="250" fill="#151819" stroke="#d98f3f" stroke-width="5"/>
+  <circle cx="600" cy="338" r="148" fill="none" stroke="#2bb3a3" stroke-width="5"/>
+  <polygon points="600,110 800,338 600,565 400,338" fill="none" stroke="#6f9fd8" stroke-width="8"/>
+  <polygon points="600,190 730,338 600,486 470,338" fill="#23292e" stroke="#c64d64" stroke-width="6"/>
+  <circle cx="600" cy="338" r="54" fill="#f4efe6"/>
+  <circle cx="600" cy="338" r="25" fill="#111315"/>
+  <g fill="#f7c477">
+    <circle cx="600" cy="110" r="20"/>
+    <circle cx="800" cy="338" r="20"/>
+    <circle cx="600" cy="565" r="20"/>
+    <circle cx="400" cy="338" r="20"/>
+  </g>
+</svg>

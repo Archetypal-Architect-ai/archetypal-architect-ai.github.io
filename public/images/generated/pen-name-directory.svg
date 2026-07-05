@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Pen Name Directory plate</title>
+  <desc id="desc">A set of masks and signature cards arranged on a dark archive table.</desc>
+  <rect width="1200" height="675" fill="#111315"/>
+  <rect x="130" y="118" width="940" height="440" fill="#1c2023" stroke="#654a5a" stroke-width="4"/>
+  <g fill="#f4efe6">
+    <rect x="205" y="210" width="210" height="120" rx="8"/>
+    <rect x="495" y="170" width="210" height="120" rx="8"/>
+    <rect x="785" y="250" width="210" height="120" rx="8"/>
+  </g>
+  <g fill="#23292e">
+    <path d="M250 250 q60 -55 120 0 q-18 65 -60 65 q-42 0 -60 -65z"/>
+    <path d="M540 210 q60 -55 120 0 q-18 65 -60 65 q-42 0 -60 -65z"/>
+    <path d="M830 290 q60 -55 120 0 q-18 65 -60 65 q-42 0 -60 -65z"/>
+  </g>
+  <g fill="#d98f3f">
+    <circle cx="285" cy="250" r="9"/>
+    <circle cx="335" cy="250" r="9"/>
+    <circle cx="575" cy="210" r="9"/>
+    <circle cx="625" cy="210" r="9"/>
+    <circle cx="865" cy="290" r="9"/>
+    <circle cx="915" cy="290" r="9"/>
+  </g>
+  <path d="M250 430 C340 385 410 460 500 420 S710 394 800 450 S930 410 1000 438" fill="none" stroke="#f7c477" stroke-width="10" stroke-linecap="round"/>
+</svg>

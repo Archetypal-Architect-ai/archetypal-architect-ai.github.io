@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">The Weight of Memory plate</title>
+  <desc id="desc">A silver thread crossing old letters, a small collar tag, and a dark candlelit archive.</desc>
+  <rect width="1200" height="675" fill="#101213"/>
+  <rect x="150" y="112" width="900" height="450" rx="8" fill="#1c2023" stroke="#4c5661" stroke-width="4"/>
+  <g fill="#f4efe6" opacity=".88">
+    <rect x="228" y="182" width="260" height="170" rx="4"/>
+    <rect x="520" y="248" width="260" height="170" rx="4"/>
+    <rect x="675" y="150" width="260" height="170" rx="4"/>
+  </g>
+  <g stroke="#23292e" stroke-width="8" stroke-linecap="round">
+    <path d="M270 232 H430"/>
+    <path d="M270 270 H410"/>
+    <path d="M560 298 H720"/>
+    <path d="M560 336 H690"/>
+    <path d="M715 200 H875"/>
+    <path d="M715 238 H850"/>
+  </g>
+  <path d="M230 480 C360 395 470 536 610 455 S820 390 960 470" fill="none" stroke="#cbd7e6" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="600" cy="455" r="42" fill="#d98f3f"/>
+  <circle cx="600" cy="455" r="22" fill="#101213"/>
+  <path d="M595 433 H605 V477 H595z" fill="#f7c477"/>
+</svg>

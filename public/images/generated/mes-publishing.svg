@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">MES Publishing plate</title>
+  <desc id="desc">A dark publisher seal with green system branches and a warm central book mark.</desc>
+  <rect width="1200" height="675" fill="#101314"/>
+  <circle cx="600" cy="338" r="222" fill="#182124" stroke="#2bb3a3" stroke-width="8"/>
+  <circle cx="600" cy="338" r="154" fill="none" stroke="#d98f3f" stroke-width="4" stroke-dasharray="18 18"/>
+  <path d="M600 170 V506 M430 338 H770 M493 231 L707 445 M707 231 L493 445" stroke="#2bb3a3" stroke-width="12" stroke-linecap="round"/>
+  <g fill="#f4efe6">
+    <path d="M545 264 h48 c30 0 54 24 54 54 v94 h-102z"/>
+    <path d="M607 264 h48 v148 h-48z" opacity=".65"/>
+  </g>
+  <g fill="#f7c477">
+    <circle cx="600" cy="170" r="19"/>
+    <circle cx="600" cy="506" r="19"/>
+    <circle cx="430" cy="338" r="19"/>
+    <circle cx="770" cy="338" r="19"/>
+  </g>
+</svg>

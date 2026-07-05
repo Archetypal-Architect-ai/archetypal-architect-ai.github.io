@@ -6,6 +6,7 @@ import WikiMap from "../components/WikiMap.astro";
 import { creator, publicProjects, wikiFacets } from "../content/projects";
 
 const recent = [...publicProjects]
+  .filter((project) => !project.featured)
   .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
   .reduce<typeof publicProjects>((entries, project) => {
     const key = project.series || project.id;

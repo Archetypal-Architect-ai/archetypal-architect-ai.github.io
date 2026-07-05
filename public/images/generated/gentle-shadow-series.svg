@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">The Gentle Shadow series plate</title>
+  <desc id="desc">Honey cakes, a lavender scarf, and soft gothic shadows on a moonlit table.</desc>
+  <rect width="1200" height="675" fill="#111315"/>
+  <path d="M0 0 H1200 V675 H0z" fill="#151819"/>
+  <rect x="110" y="395" width="980" height="120" rx="12" fill="#23201d"/>
+  <path d="M240 434 C375 374 500 516 635 435 S887 377 1000 446" fill="none" stroke="#b99ae2" stroke-width="42" stroke-linecap="round"/>
+  <g fill="#d98f3f" stroke="#f7c477" stroke-width="5">
+    <circle cx="355" cy="326" r="62"/>
+    <circle cx="470" cy="314" r="62"/>
+    <circle cx="585" cy="326" r="62"/>
+  </g>
+  <g fill="#6f2f38">
+    <circle cx="340" cy="310" r="8"/>
+    <circle cx="378" cy="337" r="7"/>
+    <circle cx="454" cy="294" r="8"/>
+    <circle cx="495" cy="333" r="7"/>
+    <circle cx="575" cy="308" r="8"/>
+    <circle cx="610" cy="340" r="7"/>
+  </g>
+  <path d="M790 142 C860 180 900 252 888 330 C830 324 768 285 745 226 C730 187 746 158 790 142z" fill="#f4efe6" opacity=".9"/>
+  <path d="M835 170 C802 210 792 260 812 304" fill="none" stroke="#6f2f38" stroke-width="8" stroke-linecap="round"/>
+</svg>
