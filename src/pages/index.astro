@@ -5,7 +5,21 @@ import ProjectGrid from "../components/ProjectGrid.astro";
 import WikiMap from "../components/WikiMap.astro";
 import { creator, publicProjects, wikiFacets } from "../content/projects";
 
-const recent = [...publicProjects].sort((a, b) => (b.date || "").localeCompare(a.date || "")).slice(0, 4);
+const recent = [...publicProjects]
+  .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
+  .reduce<typeof publicProjects>((entries, project) => {
+    const key = project.series || project.id;
+    const existingIndex = entries.findIndex((entry) => (entry.series || entry.id) === key);
+    if (existingIndex === -1) {
+      entries.push(project);
+      return entries;
+    }
+    if (entries[existingIndex].entryRole !== "Hub" && project.entryRole === "Hub") {
+      entries[existingIndex] = project;
+    }
+    return entries;
+  }, [])
+  .slice(0, 4);
 const entryCount = publicProjects.length;
 const connectionCount = publicProjects.reduce((total, project) => total + (project.connections?.length || 0), 0);
 ---

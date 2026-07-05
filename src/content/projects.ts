@@ -276,7 +276,8 @@ export const projects: Project[] = [
       { id: "the-gentle-shadow", label: "Book 1", type: "Contains" },
       { id: "the-weight-of-memory", label: "Book 2", type: "Contains" },
       { id: "archetypal-mythos", label: "Shares the mythos engine", type: "Related" }
-    ]
+    ],
+    series: "The Gentle Shadow"
   },
   {
     id: "the-gentle-shadow",
@@ -287,7 +288,7 @@ export const projects: Project[] = [
     entryRole: "Entry",
     maturity: "General",
     visibility: "Public",
-    featured: true,
+    featured: false,
     date: "2026-07-05",
     thumbnail: "/images/works/the-gentle-shadow-cover.jpg",
     thumbnailAlt: "Cover art for The Gentle Shadow by Archetypal Architect.",
