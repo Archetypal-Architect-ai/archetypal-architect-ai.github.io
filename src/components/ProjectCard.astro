@@ -1,7 +1,7 @@
 ---
 import ExternalLinks from "./ExternalLinks.astro";
 import TagList from "./TagList.astro";
-import type { Project } from "../content/projects";
+import { displayStatus, type Project } from "../content/projects";
 
 const { project } = Astro.props as { project: Project };
 const visibleTags = project.tags.slice(0, 3);
@@ -16,7 +16,7 @@ const hiddenTagCount = Math.max(project.tags.length - visibleTags.length, 0);
     <div class="card-meta">
       {project.entryRole && <span class="role-pill">{project.entryRole}</span>}
       <span>{project.kind}</span>
-      <span>{project.status}</span>
+      <span>{displayStatus(project.status)}</span>
     </div>
     <h2><a href={`/wiki/${project.id}`}>{project.title}</a></h2>
     <p>{project.summary}</p>

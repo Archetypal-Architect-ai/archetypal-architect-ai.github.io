@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ExternalLinks from "../../components/ExternalLinks.astro";
 import TagList from "../../components/TagList.astro";
-import { adultProjects, projects } from "../../content/projects";
+import { adultProjects, displayStatus, projects } from "../../content/projects";
 import { renderWikiText } from "../../lib/wikiLinks";
 
 export function getStaticPaths() {
@@ -30,7 +30,7 @@ const { entry } = Astro.props;
     <div class="is-locked" data-adult-content>
       <section class="detail-hero wiki-detail-hero">
         <div>
-          <p class="eyebrow">{entry.entryRole || "Entry"} / Adult Archive / {entry.status}</p>
+          <p class="eyebrow">{entry.entryRole || "Entry"} / Adult Archive / {displayStatus(entry.status)}</p>
           <h1>{entry.title}</h1>
           <p>{entry.summary}</p>
           <a class="button secondary" href="/adult-archive">Back to Adult Archive</a>
@@ -45,7 +45,7 @@ const { entry } = Astro.props;
           <dl>
             {entry.entryRole && <div><dt>Role</dt><dd>{entry.entryRole}</dd></div>}
             <div><dt>Type</dt><dd>{entry.kind}</dd></div>
-            <div><dt>Status</dt><dd>{entry.status}</dd></div>
+            <div><dt>Status</dt><dd>{displayStatus(entry.status)}</dd></div>
             <div><dt>Maturity</dt><dd>Adult</dd></div>
             {entry.date && <div><dt>Date</dt><dd>{entry.date}</dd></div>}
           </dl>
@@ -53,6 +53,14 @@ const { entry } = Astro.props;
         </aside>
         <article class="encyclopedia-main">
           <h2>Story Function</h2>
+          {
+            entry.status === "Seed" ? (
+              <div class="construction-note" role="note">
+                <strong>Under Construction</strong>
+                <span>This adult-archive chamber has a sign on the door while the fuller guide is being arranged.</span>
+              </div>
+            ) : null
+          }
           <p set:html={renderWikiText(entry.description, projects)} />
           {entry.body?.map((paragraph) => <p set:html={renderWikiText(paragraph, projects)} />)}
         </article>

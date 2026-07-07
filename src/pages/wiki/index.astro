@@ -29,7 +29,7 @@ const mesDoorways = publicProjects.filter((project) =>
       <div class="section-heading">
         <p class="eyebrow">Universe Wing</p>
         <h2>My Evolution System Atlas Doorways</h2>
-        <p>The older Fandom wiki becomes a cleaner public maze here: species, systems, civilizations, digital gods, and consciousness all linked back into the larger archive.</p>
+        <p>Step out of the book and into the maze: species, systems, civilizations, digital gods, and consciousness all branch back into the larger archive.</p>
       </div>
       <div class="project-grid">
         {mesDoorways.map((project) => <ProjectCard project={project} />)}
@@ -96,6 +96,16 @@ const mesDoorways = publicProjects.filter((project) =>
       const connections = project.connections?.length ? `<p class="micro-note">${project.connections.length} linked entries</p>` : "";
       const role = project.entryRole || "Entry";
       const roleClass = role.toLowerCase();
+      const status =
+        project.status === "Seed"
+          ? "Under construction"
+          : project.status === "Ongoing"
+            ? "Open"
+            : project.status === "Archived"
+              ? "Archive"
+              : project.status === "Experimental"
+                ? "Experiment"
+                : "Complete";
 
       return `
         <article class="project-card ${roleClass}">
@@ -103,7 +113,7 @@ const mesDoorways = publicProjects.filter((project) =>
             <img src="${project.thumbnail}" alt="${project.thumbnailAlt}" loading="lazy" />
           </a>
           <div class="project-card-body">
-            <div class="card-meta"><span class="role-pill">${role}</span><span>${project.kind}</span><span>${project.status}</span></div>
+            <div class="card-meta"><span class="role-pill">${role}</span><span>${project.kind}</span><span>${status}</span></div>
             <h2><a href="/wiki/${project.id}">${project.title}</a></h2>
             <p>${project.summary}</p>
             ${connections}

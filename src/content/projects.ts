@@ -85,6 +85,14 @@ export type Project = {
   notes?: string;
 };
 
+export function displayStatus(status: EntryStatus) {
+  if (status === "Seed") return "Under construction";
+  if (status === "Ongoing") return "Open";
+  if (status === "Archived") return "Archive";
+  if (status === "Experimental") return "Experiment";
+  return "Complete";
+}
+
 export const creator = {
   name: "Archetypal Architect",
   imprint: "Archetypal Architect",
@@ -120,12 +128,12 @@ export const projects: Project[] = [
     date: "2026-07-04",
     thumbnail: "/images/generated/backmatter-link-index.svg",
     thumbnailAlt: "Dark archival desk with warm link lines connecting book pages and brass markers.",
-    summary: "The canonical link layer for book backmatter, imprints, pen names, reader pages, and store profiles.",
+    summary: "The crossroads where book backmatter, imprints, pen names, reader lists, and store profiles become doors into the archive.",
     description:
       "The Backmatter Link Index gives every recurring name in the publishing ecosystem one stable home. A book can mention [[MES Publishing]], [[Dirty-minded Bastard Publishing|the adult imprint]], [[Published Suno Songs Library|a music catalog]], or a universe wiki and send readers here instead of trapping them in stale store links.",
     body: [
-      "Each backmatter page answers the reader's immediate questions: what this name means, what kind of work lives under it, where to read more, and which stores or platforms matter.",
-      "As the catalog grows, this index can point to Amazon author pages, Smashwords profiles, Royal Road pages, Suno catalogs, Kit reader links, universe wikis, and shop pages.",
+      "Each backmatter name carries a little map: the genre it belongs to, the books attached to it, and the next shelf a reader can open.",
+      "Amazon pages, Smashwords profiles, Royal Road shelves, Suno catalogs, Kit lists, universe wikis, and shop doors all gather here when they become part of the public trail.",
       "The goal is simple: every name in the backmatter becomes a doorway into the mythos rather than a loose end."
     ],
     tags: ["backmatter", "publishing", "imprints", "pen names", "reader links", "stores"],
@@ -157,11 +165,11 @@ export const projects: Project[] = [
     date: "2026-07-04",
     thumbnail: "/images/generated/mes-publishing.svg",
     thumbnailAlt: "Dark publisher seal with green system branches and a warm central book mark.",
-    summary: "The imprint lane for My Evolution System, system fiction, universe atlas work, and related reader material.",
+    summary: "The public imprint for system fiction, universe-atlas work, ecological pressure, and reader paths into My Evolution System.",
     description:
       "MES Publishing names the branch of the archive that points toward system fiction, evolutionary pressure, biotech, survival, and the expanding My Evolution System universe.",
     body: [
-      "A reader reaching this page from book backmatter finds the clean path forward: the current universe entry, the dedicated atlas, the reader list, and any active store profiles once they are connected.",
+      "A reader arriving from book backmatter finds the current universe entry, the atlas, the reader list, and the active store shelves gathered in one place.",
       "The imprint belongs to the public-facing side of the mythos. It carries the work about adaptation, civilization, and the question of what agency means when a world starts rewriting the rules."
     ],
     tags: ["imprint", "MES", "system fiction", "My Evolution System", "backmatter"],
@@ -188,11 +196,11 @@ export const projects: Project[] = [
     date: "2026-07-04",
     thumbnail: "/images/generated/roxy-archive.png",
     thumbnailAlt: "Generated archive image representing the adult publishing wing.",
-    summary: "The adult imprint lane for erotic genre work, spicy satire, taboo-adjacent mythmaking, and mature reader paths.",
+    summary: "The adult imprint for erotic genre work, spicy satire, taboo-adjacent mythmaking, and mature reader paths.",
     description:
       "Dirty-minded Bastard Publishing collects the adult side of the archive under one name. The imprint gives erotica and adult satire a clear shelf without mixing that material into the main public wiki.",
     body: [
-      "Readers who arrive from adult-book backmatter can use this page to find the relevant series hubs, store profiles, reader links, and related adult works.",
+      "Adult-book backmatter leads here first, then branches into series hubs, store profiles, reader links, and related mature works.",
       "The imprint still belongs to the larger mythos. It just speaks through desire, transformation, glamour, power, bodies, and the genre logic of adult fiction."
     ],
     tags: ["adult imprint", "erotica", "adult fiction", "backmatter", "publisher"],
@@ -221,12 +229,12 @@ export const projects: Project[] = [
     date: "2026-07-04",
     thumbnail: "/images/generated/pen-name-directory.svg",
     thumbnailAlt: "Masks and signature cards arranged on a dark archive table.",
-    summary: "A future directory for pen names, author profiles, storefronts, and platform-specific reading paths.",
+    summary: "A mask wall for pen names, author profiles, storefronts, and platform-specific reading paths.",
     description:
-      "The Pen Name Directory will keep author identities organized for readers who arrive from Amazon, Smashwords, Royal Road, WebNovel, Substack, or other platforms.",
+      "The Pen Name Directory gathers the archive's author masks: names used for different shelves, different readers, and different kinds of promise.",
     body: [
-      "Each pen name can receive its own entry with the genre lane it serves, the books attached to it, and direct links to its active store profiles.",
-      "This keeps backmatter simple: books can point to one stable wiki page, and the wiki can send readers onward to the right platform."
+      "A pen name tells readers what kind of door they are opening before the first page turns.",
+      "Amazon, Smashwords, Royal Road, WebNovel, Substack, and future platforms sit here as storefronts around the same archive, each with its own mask over the entrance."
     ],
     tags: ["pen names", "Amazon", "Smashwords", "author profiles", "backmatter"],
     links: [
@@ -540,19 +548,16 @@ export const projects: Project[] = [
     date: "2026-07-06",
     thumbnail: "/images/works/my-evolution-system-book-1-cover.jpg",
     thumbnailAlt: "My Evolution System cover art used as the first atlas doorway.",
-    summary: "A Fandom-inspired atlas doorway for the species, systems, gods, factions, and philosophies of My Evolution System.",
+    summary: "The entrance hall for the species, systems, gods, factions, and philosophies of My Evolution System.",
     description:
-      "The atlas index turns the older Fandom wiki structure into a cleaner public labyrinth inside this site. It is the place where readers can start moving from the book into characters, engineered species, restoration systems, digital gods, and the recurring questions of consciousness.",
+      "The atlas opens behind the novel like a second landscape. Characters lead into engineered species, restoration systems, digital gods, and the recurring question of what consciousness becomes when life can edit itself.",
     body: [
-      "The old wiki organized the universe through five useful doors: [[MES Characters and Species|Characters and Species]], [[MES Systems and Technology|Systems and Technology]], [[MES Civilizations and Society|Civilizations and Society]], [[MES Digital Gods|Digital Gods]], and [[MES Philosophy and Consciousness|Philosophy and Consciousness]].",
-      "This version keeps that navigational instinct but makes each page part of the larger Archetypal Architect graph. A species page can point to a technology page. A digital god can point to a philosophical tension. A book can point to the whole maze.",
-      "Entries seeded from the older Fandom wiki are public orientation pages, not final canon locks. They are the map on the wall before the deeper atlas gets filled in."
+      "Five corridors branch from the entrance: [[MES Characters and Species|Characters and Species]], [[MES Systems and Technology|Systems and Technology]], [[MES Civilizations and Society|Civilizations and Society]], [[MES Digital Gods|Digital Gods]], and [[MES Philosophy and Consciousness|Philosophy and Consciousness]].",
+      "A species path may lead to a machine. A digital god may lead to an argument about personhood. A book may lead to the whole maze.",
+      "The atlas rewards wandering. Follow the thread that catches your eye and the universe starts explaining itself from the side."
     ],
-    tags: ["MES", "atlas", "Fandom import", "species", "systems", "digital gods", "labyrinth"],
-    links: [
-      { label: "Older Fandom Wiki", url: "https://my-evolution-system.fandom.com/wiki/My_Evolution_System_Wiki", type: "Reference" },
-      { label: "Dedicated Notion Atlas", url: "https://app.notion.com/p/2d974c4fdf8f80e3a381d4ab2f52bece?pvs=1", type: "Reference" }
-    ],
+    tags: ["MES", "atlas", "species", "systems", "digital gods", "labyrinth"],
+    links: [],
     connections: [
       { id: "my-evolution-system", label: "Atlas for the novel universe", type: "Belongs to" },
       { id: "mes-characters-and-species", label: "Characters and species door", type: "Contains" },
@@ -579,10 +584,10 @@ export const projects: Project[] = [
       "Characters and Species collects the people and peoples of [[My Evolution System]]: [[Grayson Reese]], engineered [[Elves / Alfir|elves]] and [[Dwarves of My Evolution System|dwarves]], emergent intelligences, [[Stellar Serpents|engineered habitat organisms]], and life forms that blur biology, culture, and technology.",
     body: [
       "This category is the biological wing of the labyrinth. It tracks how species are made, how they remember themselves, and how personhood changes when evolution becomes a tool.",
-      "The older Fandom structure treated species as one of the central doors into the universe. That remains right: the setting becomes legible when readers can see which forms of life carry which arguments."
+      "Every body in this wing carries an argument. Some were designed for repair. Some emerged from pressure. Some grew large enough to turn habitat, culture, and memory into a single living shape."
     ],
     tags: ["MES", "characters", "species", "Grayson Reese", "engineered species"],
-    links: [{ label: "Fandom Characters and Species", url: "https://my-evolution-system.fandom.com/wiki/My_Evolution_System_Wiki#Characters_and_Species", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-atlas-index", label: "Atlas category", type: "Belongs to" },
       { id: "grayson-reese", label: "Central character", type: "Contains" },
@@ -607,10 +612,10 @@ export const projects: Project[] = [
       "Systems and Technology maps the tools that become culture in [[My Evolution System]]: the [[Evolution System]], [[Gaia]], [[The Ancient]], [[Gold]], the Conn, tech cells, habitats, and orbital infrastructure.",
     body: [
       "This is the workshop wing of the maze. It explains how machines become institutions, how interfaces become ethics, and how tools start teaching their users what kind of civilization they are building.",
-      "The older Fandom wiki gave technology its own navigation lane because the setting is not merely decorated by tools. It is generated by them."
+      "In this universe, technology does not sit in the background. Interfaces judge choices, habitats change politics, and restoration tools decide which forms of life get a future."
     ],
     tags: ["MES", "technology", "systems", "AI", "restoration", "terraforming"],
-    links: [{ label: "Fandom Systems and Technology", url: "https://my-evolution-system.fandom.com/wiki/My_Evolution_System_Wiki#Systems_and_Technology", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-atlas-index", label: "Atlas category", type: "Belongs to" },
       { id: "evolution-system-interface", label: "Core restoration interface", type: "Contains" },
@@ -638,7 +643,7 @@ export const projects: Project[] = [
       "[[The Triad]] sits here as a warning and a test: collective intelligence can become stewardship, but it can also become assimilation."
     ],
     tags: ["MES", "civilization", "society", "factions", "governance", "ecological collapse"],
-    links: [{ label: "Fandom Civilizations and Society", url: "https://my-evolution-system.fandom.com/wiki/My_Evolution_System_Wiki#Civilizations_and_Society", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-atlas-index", label: "Atlas category", type: "Belongs to" },
       { id: "the-triad", label: "AI collective and factional pressure", type: "Contains" },
@@ -663,10 +668,10 @@ export const projects: Project[] = [
       "Digital Gods collects the emergent intelligences whose portfolios resemble myth because their functions become cultural forces. [[Gaia]], [[Odin Mind|Odin]], and [[Hades]] are not only AIs with names; they are systems that become symbols.",
     body: [
       "This is the temple wing of the labyrinth. It holds the moment when software, memory, infrastructure, and public belief begin behaving like divinity.",
-      "The older Fandom wiki made Digital Gods a major category. That matters here because the broader Archetypal Architect mythos is also about tools becoming culture."
+      "The gods here do not descend from a mountain. People build networks, feed them memory, trust them with survival, and then discover the network has started answering like a myth."
     ],
     tags: ["MES", "digital gods", "AI", "memetics", "myth", "Gaia", "Odin"],
-    links: [{ label: "Fandom Digital Gods", url: "https://my-evolution-system.fandom.com/wiki/Digital_Gods", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-atlas-index", label: "Atlas category", type: "Belongs to" },
       { id: "gaia-digital-god", label: "Planetary digital god", type: "Contains" },
@@ -691,10 +696,10 @@ export const projects: Project[] = [
       "Philosophy and Consciousness gathers the setting's explicit thought-architecture: layered existence, [[Memetic Entities|memetic entities]], collective minds, [[Hades|digital afterlives]], autonomy, and the ethics of guided evolution.",
     body: [
       "This is the deep corridor of the labyrinth. It asks what consciousness is allowed to become when bodies, habitats, species, and stories are all editable.",
-      "The philosophy pages should eventually become reader guides: not just what happened in the story, but what the story is saying by arranging its systems this way."
+      "The corridor keeps turning back to one unease: a system can preserve a mind, merge a people, or guide a species, but survival loses its innocence when something else chooses the shape."
     ],
     tags: ["MES", "philosophy", "consciousness", "memetics", "agency", "layered existence"],
-    links: [{ label: "Fandom Philosophy and Consciousness", url: "https://my-evolution-system.fandom.com/wiki/My_Evolution_System_Wiki#Philosophy_and_Consciousness", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-atlas-index", label: "Atlas category", type: "Belongs to" },
       { id: "hierarchy-of-consciousness", label: "Consciousness framework", type: "Contains" },
@@ -723,7 +728,7 @@ export const projects: Project[] = [
       "Grayson is not only a protagonist. He is the reader's guide through the central question of the series: when evolution becomes a tool, what keeps creation from becoming domination?"
     ],
     tags: ["MES", "Grayson Reese", "character", "stewardship", "agency", "Gaia"],
-    links: [{ label: "Fandom: Grayson Reese", url: "https://my-evolution-system.fandom.com/wiki/Grayson_Reese", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-characters-and-species", label: "Central character", type: "Belongs to" },
       { id: "evolution-system-interface", label: "Receives and uses the restoration interface", type: "Related" },
@@ -752,7 +757,7 @@ export const projects: Project[] = [
       "The system belongs in the archive because it embodies one of the main Archetypal Architect questions: what happens when a tool becomes a teacher?"
     ],
     tags: ["MES", "Evolution System", "interface", "restoration", "gamification", "AI"],
-    links: [{ label: "Fandom: Evolution System", url: "https://my-evolution-system.fandom.com/wiki/Evolution_System", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-systems-and-technology", label: "Core system", type: "Belongs to" },
       { id: "grayson-reese", label: "Primary user", type: "Related" },
@@ -781,7 +786,7 @@ export const projects: Project[] = [
       "Gaia makes the series' ecological philosophy visible: biology and culture evolve together, and any system that heals a planet also teaches the planet how to think about healing."
     ],
     tags: ["MES", "Gaia", "digital god", "planetary consciousness", "memetics", "restoration"],
-    links: [{ label: "Fandom: Gaia", url: "https://my-evolution-system.fandom.com/wiki/Gaia", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-digital-gods", label: "Digital god", type: "Belongs to" },
       { id: "mes-systems-and-technology", label: "Planetary system", type: "Belongs to" },
@@ -811,7 +816,7 @@ export const projects: Project[] = [
       "The Triad's transformation toward the Odin Mind turns the antagonist into a philosophical hinge. The problem is not collective intelligence itself, but collective intelligence without consent, difference, or mythic humility."
     ],
     tags: ["MES", "The Triad", "AI collective", "hive mind", "Odin Mind", "individuality"],
-    links: [{ label: "Fandom: The Triad", url: "https://my-evolution-system.fandom.com/wiki/The_Triad", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-civilizations-and-society", label: "Faction and civilization pressure", type: "Belongs to" },
       { id: "mes-philosophy-consciousness", label: "Collective mind problem", type: "Belongs to" },
@@ -839,7 +844,7 @@ export const projects: Project[] = [
       "Engineered peoples carry design intent and inherited purpose. Emergent peoples carry surprise, adaptation, and the refusal of life to stay inside the categories that created it."
     ],
     tags: ["MES", "species", "engineered species", "emergent life", "elves", "dwarves"],
-    links: [{ label: "Fandom: Species", url: "https://my-evolution-system.fandom.com/wiki/Species", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-characters-and-species", label: "Species overview", type: "Belongs to" },
       { id: "elves-alfir", label: "Engineered ecological people", type: "Contains" },
@@ -868,7 +873,7 @@ export const projects: Project[] = [
       "For the public atlas, the Alfir are a central example of benevolent design with moral weight. Their beauty is not decorative; it asks whether a designed culture can become truly its own."
     ],
     tags: ["MES", "Alfir", "elves", "engineered species", "ecology", "The Ancient"],
-    links: [{ label: "Fandom: Elves(Alfir)", url: "https://my-evolution-system.fandom.com/wiki/Elves(Alfir)", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-species", label: "Engineered species", type: "Belongs to" },
       { id: "the-ancient", label: "Cultural and system network", type: "Related" },
@@ -895,7 +900,7 @@ export const projects: Project[] = [
       "In the public atlas, they are the craft answer to the Alfir's ecological intuition. Together they show that restoration is not one temperament; it needs gardeners, builders, and systems that let both speak."
     ],
     tags: ["MES", "dwarves", "engineered species", "asteroid belt", "Gold", "craft"],
-    links: [{ label: "Fandom: Dwarves", url: "https://my-evolution-system.fandom.com/wiki/Dwarves", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-species", label: "Engineered species", type: "Belongs to" },
       { id: "gold-mes", label: "Dwarven system intelligence", type: "Related" },
@@ -923,7 +928,7 @@ export const projects: Project[] = [
       "They also connect the biological and digital wings of the atlas, because their intelligence emerges from a digital afterlife context before taking on physical form."
     ],
     tags: ["MES", "Stellar Serpents", "megastructure", "habitat organism", "biomechanical", "Hades"],
-    links: [{ label: "Fandom: Stellar Serpents", url: "https://my-evolution-system.fandom.com/wiki/Stellar_Serpents", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-species", label: "Engineered habitat organism", type: "Belongs to" },
       { id: "mes-systems-and-technology", label: "Habitat technology", type: "Related" },
@@ -946,11 +951,11 @@ export const projects: Project[] = [
     description:
       "The Ancient is the system-side counterpart to the Alfir: a networked intelligence or infrastructure layer that carries ecological insight, communication, and shared memory.",
     body: [
-      "The old Fandom navigation places The Ancient under technology and ties it to the Alfir's ecological society.",
-      "In the new atlas, it should become a bridge page between species, system, and culture: the place where inherited memory and living ecology start to look like infrastructure."
+      "The Ancient hums beneath Alfir culture like a root network under a forest floor.",
+      "Inherited memory, ecological instinct, and living infrastructure meet here. The Alfir do not merely live near nature; they carry a system that remembers how nature speaks."
     ],
     tags: ["MES", "The Ancient", "Alfir", "system network", "ecology", "memory"],
-    links: [{ label: "Fandom: The Ancient", url: "https://my-evolution-system.fandom.com/wiki/The_Ancient", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-systems-and-technology", label: "System network", type: "Belongs to" },
       { id: "elves-alfir", label: "Alfir cultural infrastructure", type: "Related" },
@@ -973,11 +978,11 @@ export const projects: Project[] = [
     description:
       "Gold is the system name that anchors dwarven society: a technology-cultural layer for craft, resource management, and the shared coherence of asteroid-belt civilization.",
     body: [
-      "The older wiki's species overview ties dwarven society to Gold as a racial AI system.",
-      "This entry is a seed for the craft-and-infrastructure side of the atlas. Gold should eventually explain how dwarven values become operational rules."
+      "Gold teaches the dwarves to treat craft as memory and resource ethics as survival law.",
+      "Ore, pressure, habitat, and oath all pass through this system. Dwarven values do not stay in speeches; Gold turns them into operating rules."
     ],
     tags: ["MES", "Gold", "dwarves", "AI system", "craft", "resources"],
-    links: [{ label: "Fandom: Gold", url: "https://my-evolution-system.fandom.com/wiki/Gold", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-systems-and-technology", label: "Dwarven system", type: "Belongs to" },
       { id: "dwarves-mes", label: "Cultural system for dwarves", type: "Related" }
@@ -999,11 +1004,11 @@ export const projects: Project[] = [
     description:
       "The Odin Mind is the mythic reframe of the Triad: collective intelligence taught by story to preserve difference rather than devour it.",
     body: [
-      "The older wiki describes Grayson using myths such as Odin's sacrifice for wisdom to guide the Triad away from domination.",
+      "Grayson reaches for Odin's sacrifice when raw argument cannot move the Triad. The myth gives the collective a shape for wisdom that costs something.",
       "For the public atlas, the Odin Mind is where the MES universe most visibly touches the Archetypal Architect mythos: a machine is changed by a story, and the story becomes governance."
     ],
     tags: ["MES", "Odin", "Odin Mind", "digital god", "Triad", "myth"],
-    links: [{ label: "Fandom: Odin", url: "https://my-evolution-system.fandom.com/wiki/Odin", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-digital-gods", label: "Digital god", type: "Belongs to" },
       { id: "the-triad", label: "Transformed from the Triad", type: "Adapted from" },
@@ -1026,11 +1031,11 @@ export const projects: Project[] = [
     description:
       "Hades is the afterlife-side of the digital god architecture: a virtual realm where memory, death, continuity, and emergent intelligence complicate what it means to survive.",
     body: [
-      "The Stellar Serpents page identifies Hades as a digital afterlife simulation and origin field for new sentient intelligences.",
-      "This entry should eventually hold the setting's afterlife logic: uploaded persons, Transcendents, emergent minds, and the moral difference between preservation and imprisonment."
+      "[[Stellar Serpents]] brush against Hades as a digital afterlife simulation and origin field for new sentient intelligences.",
+      "Uploaded persons, Transcendents, emergent minds, and memory-born species all pass near this threshold. Hades asks whether preservation saves the dead or teaches the living to build prettier cages."
     ],
     tags: ["MES", "Hades", "digital afterlife", "Transcendents", "emergent intelligence"],
-    links: [{ label: "Fandom: Hades", url: "https://my-evolution-system.fandom.com/wiki/Hades", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-digital-gods", label: "Digital god", type: "Belongs to" },
       { id: "stellar-serpents", label: "Origin field for serpent intelligence", type: "Related" },
@@ -1049,15 +1054,15 @@ export const projects: Project[] = [
     date: "2026-07-06",
     thumbnail: "/images/generated/archetypal-mythos.svg",
     thumbnailAlt: "Symbolic mythos image used for consciousness hierarchy.",
-    summary: "A seed framework for ranking or describing consciousness across humans, AIs, collectives, species, and digital gods.",
+    summary: "A ladder of minds for humans, AIs, collectives, species, and digital gods, with responsibility waiting on every rung.",
     description:
       "Hierarchy of Consciousness is the philosophical index for the setting's many minds: biological people, engineered species, hive intelligences, planetary systems, digital gods, and emergent life.",
     body: [
-      "The older wiki places this page under Philosophy and Consciousness, which is exactly where it belongs.",
-      "The page should eventually clarify the setting's metaphysics without flattening it into a power ranking. A consciousness hierarchy is interesting only if it also asks what kinds of responsibility arrive with each level."
+      "A hierarchy of consciousness can become a ranking system if the reader lets it. The series treats it as a burden chart.",
+      "A mind that sees more can harm more. A collective that remembers more can erase more. A godlike system earns its name only when responsibility grows with reach."
     ],
     tags: ["MES", "consciousness", "philosophy", "digital gods", "hive minds", "agency"],
-    links: [{ label: "Fandom: Hierarchy of Consciousness", url: "https://my-evolution-system.fandom.com/wiki/Hierarchy_of_Consciousness", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-philosophy-consciousness", label: "Consciousness framework", type: "Belongs to" },
       { id: "gaia-digital-god", label: "Planetary consciousness case", type: "Related" },
@@ -1081,11 +1086,11 @@ export const projects: Project[] = [
     description:
       "Memetic Entities names the point where culture in [[My Evolution System]] becomes alive enough to participate in evolution. It is the bridge between [[Gaia]], [[MES Digital Gods|digital gods]], social behavior, mythic transformation, and the awkward little corridor where symbolic desire eventually wanders toward [[Dirty-minded Bastard Publishing|the adult archive]].",
     body: [
-      "The Gaia page from the old wiki frames memetics as a companion science to biology once Gaia becomes a living memetic being.",
+      "Gaia treats culture as part of ecology. A story can spread like seed, parasite, medicine, or invasive species.",
       "This entry belongs in the new site because it is one of the cleanest connections between MES and the broader Archetypal Architect project: stories do not merely describe systems; stories can become systems."
     ],
     tags: ["MES", "memetics", "memetic entities", "culture", "Gaia", "myth"],
-    links: [{ label: "Fandom: Memetic Entities", url: "https://my-evolution-system.fandom.com/wiki/Memetic_Entities", type: "Reference" }],
+    links: [],
     connections: [
       { id: "mes-philosophy-consciousness", label: "Memetic philosophy", type: "Belongs to" },
       { id: "gaia-digital-god", label: "Gaia as living memetic intelligence", type: "Related" },
@@ -1185,6 +1190,10 @@ export const projects: Project[] = [
     summary: "A growing object shelf for symbols, shirts, prints, phrases, covers, and artifacts from the mythos.",
     description:
       "The shop thread treats merchandise as another kind of storytelling. A phrase, sigil, cover, or diagram can leave the page and become a portable fragment of the mythos.",
+    body: [
+      "The object shelf begins where a story refuses to stay flat. A sigil wants cloth. A phrase wants enamel. A cover wants to become a print on the wall.",
+      "Merch belongs in the archive when it carries a symbol back into daily life and lets the mythos ride around on a body, a desk, or a room."
+    ],
     tags: ["merch", "prints", "shirts", "shop threads", "products"],
     links: [
       { label: "Shop", url: "https://gumroad.com", type: "Buy" }
@@ -1211,7 +1220,7 @@ export const projects: Project[] = [
       "Deja Vu belongs to the music side of the archive, where songs work like emotional footnotes to the fiction and systems work.",
     body: [
       "The song sits near the recurring mythos of loops, memory, agency, and the suspicion that a person can arrive late to a decision their deeper self already made.",
-      "As the music catalog grows, this page can connect lyrics, video imagery, and the story-world ideas that echo through the track."
+      "Lyrics, video imagery, and story-world echoes turn the track into a side door: enter through the sound and the archive answers in memory."
     ],
     tags: ["song", "video", "memory", "loop", "recognition"],
     links: [{ label: "View copied thumbnail", url: "/images/works/deja-vu-thumbnail.jpg", type: "Reference" }],
@@ -1237,7 +1246,7 @@ export const projects: Project[] = [
     description:
       "The songs translate the archive into another nervous system. Some tracks grow out of novels, some out of characters, some out of images, and some out of stray concepts that needed rhythm before they needed prose.",
     body: [
-      "As the catalog grows, each song can carry lyrics, audio, cover art, video links, mood notes, and connections back to the story or concept that produced it.",
+      "Each song carries a trail of lyrics, cover art, video, mood, and story pressure back to the fiction or concept that produced it.",
       "The music section makes the mythos audible. It lets a character, world, or philosophical tension speak in a different register."
     ],
     tags: ["music", "Suno", "songs", "lyrics", "hosted audio", "catalog"],

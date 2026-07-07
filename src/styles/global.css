@@ -751,6 +751,29 @@ code {
   color: #bcb4a7;
 }
 
+.construction-note {
+  background: rgba(247, 196, 119, 0.09);
+  border: 1px solid rgba(247, 196, 119, 0.34);
+  border-left: 4px solid #f7c477;
+  color: #f3e8d7;
+  display: grid;
+  gap: 4px;
+  margin: 0 0 10px;
+  padding: 12px 14px;
+}
+
+.construction-note strong {
+  color: #f7c477;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.construction-note span {
+  color: #ded5c7;
+  line-height: 1.5;
+}
+
 dl {
   display: grid;
   gap: 14px;

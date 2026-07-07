@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ConnectionList from "../../components/ConnectionList.astro";
 import ExternalLinks from "../../components/ExternalLinks.astro";
 import TagList from "../../components/TagList.astro";
-import { projects, publicProjects, creator } from "../../content/projects";
+import { displayStatus, projects, publicProjects, creator } from "../../content/projects";
 import { renderWikiText } from "../../lib/wikiLinks";
 
 export function getStaticPaths() {
@@ -20,7 +20,7 @@ const { entry } = Astro.props;
   <main>
     <section class="detail-hero wiki-detail-hero">
       <div>
-        <p class="eyebrow">{entry.entryRole || "Entry"} / {entry.kind} / {entry.status}</p>
+        <p class="eyebrow">{entry.entryRole || "Entry"} / {entry.kind} / {displayStatus(entry.status)}</p>
         <h1>{entry.title}</h1>
         <p>{entry.summary}</p>
         {entry.externalWikiUrl && <a class="button primary" href={entry.externalWikiUrl}>Open External Wiki</a>}
@@ -35,7 +35,7 @@ const { entry } = Astro.props;
         <dl>
           {entry.entryRole && <div><dt>Role</dt><dd>{entry.entryRole}</dd></div>}
           <div><dt>Type</dt><dd>{entry.kind}</dd></div>
-          <div><dt>Status</dt><dd>{entry.status}</dd></div>
+          <div><dt>Status</dt><dd>{displayStatus(entry.status)}</dd></div>
           <div><dt>Maturity</dt><dd>{entry.maturity || "General"}</dd></div>
           {entry.date && <div><dt>Date</dt><dd>{entry.date}</dd></div>}
           {entry.series && <div><dt>Series</dt><dd>{entry.series}</dd></div>}
@@ -58,6 +58,14 @@ const { entry } = Astro.props;
       </aside>
       <article class="encyclopedia-main">
         <h2>Place in the Mythos</h2>
+        {
+          entry.status === "Seed" ? (
+            <div class="construction-note" role="note">
+              <strong>Under Construction</strong>
+              <span>This chamber has a map on the wall, but more exhibits are still being brought in.</span>
+            </div>
+          ) : null
+        }
         <p set:html={renderWikiText(entry.description, projects)} />
         {
           entry.audioSrc ? (
