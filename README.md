@@ -13,12 +13,41 @@ Then open the local URL Astro prints in the terminal.
 
 ## Edit the content
 
-Most updates happen in `src/content/projects.ts`:
+Content is now stored as JSON so it can be edited by hand or through a Git-backed CMS.
 
-- Change the public brand, hero text, contact links, and footer in `creator`.
-- Add wiki entries in `projects`.
+- Archive/wiki entries live in `src/data/projects.json`.
+- Creator settings live in `src/data/creator.json`.
+- Wiki facet groups live in `src/data/wikiFacets.json`.
+- The TypeScript file at `src/content/projects.ts` is only the typed loader and helper functions.
+
+The public site has an editor doorway at:
+
+```text
+/admin
+```
+
+For the hosted site, open:
+
+```text
+https://archetypalarchitect.online/admin
+```
+
+That page links to Pages CMS. Sign in with GitHub, install or authorize the Pages CMS GitHub app for the `Archetypal-Architect-ai` organization, then open `archetypal-architect-ai.github.io`. Pages CMS reads `.pages.yml` and lets you edit the JSON fields in a form UI. Each save becomes a Git commit, and GitHub Pages redeploys the site.
+
+When editing body copy, use wiki brackets for cross-links:
+
+```text
+The [[Elves (Alfir)|Alfir]] are tied to [[web-of-minds|Web of Minds]] and [[The Ancient]].
+```
+
+Use the entry title or slug as the target. Use `[[target-slug|Visible Label]]` when the visible words differ from the slug.
+
+Core editing moves:
+
+- Change public brand, hero text, contact links, and footer in `src/data/creator.json`.
+- Add wiki entries in `src/data/projects.json`.
 - Set `featured: true` to highlight an entry on the homepage.
-- Use `kind` values like `Universe`, `Series`, `Novel`, `Song`, `Image`, `Video`, `Essay`, `Atlas`, `Tool`, or `Merch`.
+- Use `kind` values like `Universe`, `Series`, `Novel`, `Song`, `Image`, `Video`, `Essay`, `Atlas`, `Tool`, `Merch`, `Concept`, `Imprint`, or `Pen Name`.
 
 Each wiki entry supports:
 
@@ -47,12 +76,12 @@ Use `#` as a temporary link until you have the real URL.
 
 Connections make the site behave like a wiki.
 
-```ts
-connections: [
+```json
+"connections": [
   {
-    id: "midnight-arcade",
-    label: "Inspired song",
-    type: "Inspired"
+    "id": "midnight-arcade",
+    "label": "Inspired song",
+    "type": "Inspired"
   }
 ]
 ```
@@ -77,9 +106,9 @@ Useful connection types include:
 
 Use `merchLinks` inside any entry, not just merch entries:
 
-```ts
-merchLinks: [
-  { label: "Character print collection", url: "#", type: "Buy" }
+```json
+"merchLinks": [
+  { "label": "Character print collection", "url": "#", "type": "Buy" }
 ]
 ```
 
@@ -89,8 +118,8 @@ That lets a series, song, image set, or novel surface the relevant product links
 
 Put images in `public/images/`, then reference them like this:
 
-```ts
-thumbnail: "/images/my-cover.jpg"
+```json
+"thumbnail": "/images/my-cover.jpg"
 ```
 
 The current real-work starter assets are copied into `public/images/works/`.
@@ -118,7 +147,7 @@ Current source buckets used:
 
 ## Add a new project
 
-Copy an existing object in `src/content/projects.ts`, change the `id`, and update the fields. Astro automatically creates a detail page at:
+Copy an existing object in `src/data/projects.json`, change the `id`, and update the fields. Astro automatically creates a detail page at:
 
 ```text
 /wiki/your-id

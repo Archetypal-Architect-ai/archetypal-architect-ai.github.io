@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import { creator } from "../content/projects";
+
+const cmsUrl = "https://app.pagescms.org";
+const repoUrl = "https://github.com/Archetypal-Architect-ai/archetypal-architect-ai.github.io";
+---
+
+<BaseLayout title={`Admin | ${creator.name}`} description="Editor access for the Archetypal Architect archive.">
+  <main>
+    <PageHeader
+      eyebrow="Editor Console"
+      title="Archive Control Room"
+      description="A private doorway for editing wiki entries, links, images, facets, and creator settings through GitHub-backed content files."
+    />
+    <section class="section first-section">
+      <div class="admin-panel">
+        <div>
+          <p class="eyebrow">Login</p>
+          <h2>Open Pages CMS</h2>
+          <p>
+            Sign in with the GitHub account that owns or can edit the
+            <strong>Archetypal-Architect-ai</strong> repository. Changes saved there become commits, and GitHub Pages redeploys the site.
+          </p>
+          <div class="button-row">
+            <a class="button" href={cmsUrl}>Open CMS</a>
+            <a class="button secondary" href={repoUrl}>Open Repository</a>
+          </div>
+        </div>
+        <div class="admin-checklist">
+          <h2>Editable Now</h2>
+          <ul>
+            <li>Archive entries and wiki pages</li>
+            <li>Body paragraphs with <code>[[cross links]]</code></li>
+            <li>Connections, tags, external links, and adult/public visibility</li>
+            <li>Creator settings, social links, and wiki facet groups</li>
+            <li>Images uploaded into <code>/public/images</code></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

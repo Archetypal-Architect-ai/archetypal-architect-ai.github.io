@@ -1,0 +1,42 @@
+{
+  "name": "Archetypal Architect",
+  "imprint": "Archetypal Architect",
+  "tagline": "Stories, songs, systems, and strange machines for minds that like friction.",
+  "email": "mailto:contact@archetypalarchitect.online",
+  "bio": "Archetypal Architect builds fiction, songs, essays, tools, and symbolic systems around agency, myth, psychology, civilization, AI, and the places where tools become culture.",
+  "aboutTheWork": "This archive tells stories about how stories get made. A novel may become a song. A song may become an image. An image may become a symbol, a product, or an argument. The mythos grows through those crossings.",
+  "socialLinks": [
+    {
+      "label": "Email",
+      "url": "mailto:contact@archetypalarchitect.online"
+    },
+    {
+      "label": "Substack",
+      "url": "https://substack.com"
+    },
+    {
+      "label": "YouTube",
+      "url": "https://youtube.com"
+    },
+    {
+      "label": "Suno",
+      "url": "https://suno.com"
+    },
+    {
+      "label": "Gumroad",
+      "url": "https://gumroad.com"
+    },
+    {
+      "label": "Royal Road",
+      "url": "https://royalroad.com"
+    },
+    {
+      "label": "WebNovel",
+      "url": "https://webnovel.com"
+    },
+    {
+      "label": "Amazon Author Page",
+      "url": "https://amazon.com"
+    }
+  ]
+}

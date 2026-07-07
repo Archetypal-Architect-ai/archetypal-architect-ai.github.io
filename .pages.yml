@@ -1,0 +1,186 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: archive
+    label: Archive Entries
+    type: file
+    path: src/data/projects.json
+    format: json
+    list: true
+    view:
+      primary: title
+      fields: [kind, entryRole, status, visibility, featured]
+      sort: title
+    fields:
+      - name: id
+        label: Slug
+        type: string
+        required: true
+      - name: title
+        type: string
+        required: true
+      - name: kind
+        type: select
+        required: true
+        options:
+          values: [Universe, Series, Novel, Song, Album, Video, Image, Essay, Blog Post, Game, Tool, Merch, Atlas, Character, Place, Concept, Imprint, Pen Name, Other]
+      - name: category
+        type: select
+        required: true
+        options:
+          values: [Universe, Series, Novel, Song, Album, Video, Image, Essay, Blog Post, Game, Tool, Merch, Atlas, Character, Place, Concept, Imprint, Pen Name, Other]
+      - name: status
+        type: select
+        required: true
+        options:
+          values: [Completed, Ongoing, Archived, Experimental, Seed]
+      - name: entryRole
+        label: Entry role
+        type: select
+        options:
+          values: [Hub, Entry, Reference]
+      - name: maturity
+        type: select
+        options:
+          values: [General, Adult]
+      - name: visibility
+        type: select
+        options:
+          values: [Public, Adult]
+      - name: featured
+        type: boolean
+      - name: date
+        type: date
+      - name: thumbnail
+        type: image
+      - name: thumbnailAlt
+        label: Thumbnail alt text
+        type: string
+      - name: summary
+        type: text
+      - name: description
+        type: text
+      - name: body
+        label: Body paragraphs
+        type: text
+        list: true
+      - name: tags
+        type: string
+        list: true
+      - name: links
+        type: object
+        list: true
+        fields:
+          - name: label
+            type: string
+          - name: url
+            type: string
+          - name: type
+            type: select
+            options:
+              values: [Read, Listen, Watch, Buy, Download, Reference, External]
+      - name: merchLinks
+        label: Merch links
+        type: object
+        list: true
+        fields:
+          - name: label
+            type: string
+          - name: url
+            type: string
+          - name: type
+            type: select
+            options:
+              values: [Read, Listen, Watch, Buy, Download, Reference, External]
+      - name: connections
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: Target slug
+            type: string
+          - name: label
+            type: string
+          - name: type
+            type: select
+            options:
+              values: [Contains, Belongs to, Inspired by, Inspired, Adapted from, Adapted into, Soundtrack for, Visual for, Merch for, Atlas node, Related]
+      - name: externalWikiUrl
+        label: External wiki URL
+        type: string
+      - name: audioSrc
+        label: Audio file URL
+        type: string
+      - name: series
+        type: string
+      - name: bookNumber
+        label: Book number
+        type: number
+      - name: genre
+        type: string
+      - name: wordCount
+        label: Word count
+        type: string
+      - name: chapterCount
+        label: Chapter count
+        type: string
+      - name: mood
+        type: string
+      - name: price
+        type: string
+      - name: notes
+        type: text
+
+  - name: creator
+    label: Creator Settings
+    type: file
+    path: src/data/creator.json
+    format: json
+    fields:
+      - name: name
+        type: string
+      - name: imprint
+        type: string
+      - name: tagline
+        type: text
+      - name: email
+        type: string
+      - name: bio
+        type: text
+      - name: aboutTheWork
+        label: About the work
+        type: text
+      - name: socialLinks
+        label: Social links
+        type: object
+        list: true
+        fields:
+          - name: label
+            type: string
+          - name: url
+            type: string
+          - name: type
+            type: select
+            options:
+              values: [Read, Listen, Watch, Buy, Download, Reference, External]
+
+  - name: wiki-facets
+    label: Wiki Facets
+    type: file
+    path: src/data/wikiFacets.json
+    format: json
+    list: true
+    fields:
+      - name: label
+        type: string
+      - name: kinds
+        type: select
+        options:
+          multiple: true
+          values: [Universe, Series, Novel, Song, Album, Video, Image, Essay, Blog Post, Game, Tool, Merch, Atlas, Character, Place, Concept, Imprint, Pen Name, Other]
+
+settings:
+  content:
+    merge: true

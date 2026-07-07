@@ -1,0 +1,51 @@
+[
+  {
+    "label": "Backmatter",
+    "kinds": [
+      "Imprint",
+      "Pen Name",
+      "Concept"
+    ]
+  },
+  {
+    "label": "Series Hubs",
+    "kinds": [
+      "Series",
+      "Universe"
+    ]
+  },
+  {
+    "label": "Music",
+    "kinds": [
+      "Song",
+      "Album",
+      "Video"
+    ]
+  },
+  {
+    "label": "Visuals",
+    "kinds": [
+      "Image",
+      "Video",
+      "Merch"
+    ]
+  },
+  {
+    "label": "Thinking",
+    "kinds": [
+      "Essay",
+      "Blog Post",
+      "Concept",
+      "Tool"
+    ]
+  },
+  {
+    "label": "References",
+    "kinds": [
+      "Universe",
+      "Atlas",
+      "Essay",
+      "Other"
+    ]
+  }
+]

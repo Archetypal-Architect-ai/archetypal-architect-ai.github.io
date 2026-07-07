@@ -799,6 +799,49 @@ dd {
   grid-column: 1 / -1;
 }
 
+.admin-panel {
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  padding: clamp(22px, 4vw, 42px);
+}
+
+.admin-panel h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin: 0 0 14px;
+}
+
+.admin-panel p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 22px;
+  max-width: 720px;
+}
+
+.admin-checklist {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--line);
+  padding: 22px;
+}
+
+.admin-checklist h2 {
+  font-size: 1.25rem;
+}
+
+.admin-checklist ul {
+  color: var(--muted);
+  display: grid;
+  gap: 10px;
+  line-height: 1.55;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.admin-checklist code {
+  color: var(--paper);
+}
+
 .site-footer {
   align-items: center;
   border-top: 1px solid var(--line);
@@ -820,6 +863,7 @@ dd {
 
   .about-band,
   .detail-body,
+  .admin-panel,
   .detail-hero {
     grid-template-columns: 1fr;
   }

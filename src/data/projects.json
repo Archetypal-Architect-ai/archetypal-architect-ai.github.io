@@ -1,0 +1,2177 @@
+[
+  {
+    "id": "backmatter-link-index",
+    "title": "Backmatter Link Index",
+    "kind": "Concept",
+    "category": "Concept",
+    "status": "Ongoing",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": true,
+    "date": "2026-07-04",
+    "thumbnail": "/images/generated/backmatter-link-index.svg",
+    "thumbnailAlt": "Dark archival desk with warm link lines connecting book pages and brass markers.",
+    "summary": "The crossroads where book backmatter, imprints, pen names, reader lists, and store profiles become doors into the archive.",
+    "description": "The Backmatter Link Index gives every recurring name in the publishing ecosystem one stable home. A book can mention [[MES Publishing]], [[Dirty-minded Bastard Publishing|the adult imprint]], [[Published Suno Songs Library|a music catalog]], or a universe wiki and send readers here instead of trapping them in stale store links.",
+    "body": [
+      "Each backmatter name carries a little map: the genre it belongs to, the books attached to it, and the next shelf a reader can open.",
+      "Amazon pages, Smashwords profiles, Royal Road shelves, Suno catalogs, Kit lists, universe wikis, and shop doors all gather here when they become part of the public trail.",
+      "The goal is simple: every name in the backmatter becomes a doorway into the mythos rather than a loose end."
+    ],
+    "tags": [
+      "backmatter",
+      "publishing",
+      "imprints",
+      "pen names",
+      "reader links",
+      "stores"
+    ],
+    "links": [
+      {
+        "label": "Reader List",
+        "url": "/free",
+        "type": "Reference"
+      },
+      {
+        "label": "MES Publishing",
+        "url": "/wiki/mes-publishing",
+        "type": "Reference"
+      },
+      {
+        "label": "Dirty-minded Bastard Publishing",
+        "url": "/adult/dirty-minded-bastard-publishing",
+        "type": "Reference"
+      },
+      {
+        "label": "Pen Name Directory",
+        "url": "/wiki/pen-name-directory",
+        "type": "Reference"
+      },
+      {
+        "label": "MES Publishing on Smashwords",
+        "url": "https://www.smashwords.com/profile/view/MES_Publishing",
+        "type": "Read"
+      },
+      {
+        "label": "Dirty-minded Bastard on Smashwords",
+        "url": "https://www.smashwords.com/profile/view/Dirty_MInded_Bastard",
+        "type": "Read"
+      }
+    ],
+    "connections": [
+      {
+        "id": "mes-publishing",
+        "label": "General fiction imprint",
+        "type": "Contains"
+      },
+      {
+        "id": "dirty-minded-bastard-publishing",
+        "label": "Adult fiction imprint",
+        "type": "Contains"
+      },
+      {
+        "id": "pen-name-directory",
+        "label": "Author identity directory",
+        "type": "Contains"
+      },
+      {
+        "id": "suno-music-catalog",
+        "label": "Songs referenced from books",
+        "type": "Related"
+      },
+      {
+        "id": "fiction-universe-merch",
+        "label": "Objects and shop links",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "mes-publishing",
+    "title": "MES Publishing",
+    "kind": "Imprint",
+    "category": "Imprint",
+    "status": "Ongoing",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-04",
+    "thumbnail": "/images/generated/mes-publishing.svg",
+    "thumbnailAlt": "Dark publisher seal with green system branches and a warm central book mark.",
+    "summary": "The public imprint for system fiction, universe-atlas work, ecological pressure, and reader paths into My Evolution System.",
+    "description": "MES Publishing names the branch of the archive that points toward system fiction, evolutionary pressure, biotech, survival, and the expanding My Evolution System universe.",
+    "body": [
+      "A reader arriving from book backmatter finds the current universe entry, the atlas, the reader list, and the active store shelves gathered in one place.",
+      "The imprint belongs to the public-facing side of the mythos. It carries the work about adaptation, civilization, and the question of what agency means when a world starts rewriting the rules."
+    ],
+    "tags": [
+      "imprint",
+      "MES",
+      "system fiction",
+      "My Evolution System",
+      "backmatter"
+    ],
+    "links": [
+      {
+        "label": "Reader List",
+        "url": "/free",
+        "type": "Reference"
+      },
+      {
+        "label": "My Evolution System",
+        "url": "/wiki/my-evolution-system",
+        "type": "Reference"
+      },
+      {
+        "label": "Smashwords Profile",
+        "url": "https://www.smashwords.com/profile/view/MES_Publishing",
+        "type": "Read"
+      }
+    ],
+    "connections": [
+      {
+        "id": "backmatter-link-index",
+        "label": "Appears in backmatter",
+        "type": "Belongs to"
+      },
+      {
+        "id": "my-evolution-system",
+        "label": "Primary universe",
+        "type": "Contains"
+      },
+      {
+        "id": "archetypal-mythos",
+        "label": "Shares the mythos engine",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "dirty-minded-bastard-publishing",
+    "title": "Dirty-minded Bastard Publishing",
+    "kind": "Imprint",
+    "category": "Imprint",
+    "status": "Ongoing",
+    "entryRole": "Hub",
+    "maturity": "Adult",
+    "visibility": "Adult",
+    "date": "2026-07-04",
+    "thumbnail": "/images/generated/roxy-archive.png",
+    "thumbnailAlt": "Generated archive image representing the adult publishing wing.",
+    "summary": "The adult imprint for erotic genre work, spicy satire, taboo-adjacent mythmaking, and mature reader paths.",
+    "description": "Dirty-minded Bastard Publishing collects the adult side of the archive under one name. The imprint gives erotica and adult satire a clear shelf without mixing that material into the main public wiki.",
+    "body": [
+      "Adult-book backmatter leads here first, then branches into series hubs, store profiles, reader links, and related mature works.",
+      "The imprint still belongs to the larger mythos. It just speaks through desire, transformation, glamour, power, bodies, and the genre logic of adult fiction."
+    ],
+    "tags": [
+      "adult imprint",
+      "erotica",
+      "adult fiction",
+      "backmatter",
+      "publisher"
+    ],
+    "links": [
+      {
+        "label": "Reader List",
+        "url": "/free",
+        "type": "Reference"
+      },
+      {
+        "label": "Smashwords Profile",
+        "url": "https://www.smashwords.com/profile/view/Dirty_MInded_Bastard",
+        "type": "Read"
+      }
+    ],
+    "connections": [
+      {
+        "id": "backmatter-link-index",
+        "label": "Appears in backmatter",
+        "type": "Belongs to"
+      },
+      {
+        "id": "house-of-the-gilded-lily",
+        "label": "Adult series lane",
+        "type": "Contains"
+      },
+      {
+        "id": "mythos-of-lust",
+        "label": "Adult series lane",
+        "type": "Contains"
+      },
+      {
+        "id": "monster-girl-harem",
+        "label": "Adult series lane",
+        "type": "Contains"
+      },
+      {
+        "id": "bimbo-farm",
+        "label": "Adult satire lane",
+        "type": "Contains"
+      },
+      {
+        "id": "roxy-stardust-archive",
+        "label": "Adult sci-fi archive",
+        "type": "Contains"
+      }
+    ]
+  },
+  {
+    "id": "pen-name-directory",
+    "title": "Pen Name Directory",
+    "kind": "Pen Name",
+    "category": "Pen Name",
+    "status": "Seed",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-04",
+    "thumbnail": "/images/generated/pen-name-directory.svg",
+    "thumbnailAlt": "Masks and signature cards arranged on a dark archive table.",
+    "summary": "A mask wall for pen names, author profiles, storefronts, and platform-specific reading paths.",
+    "description": "The Pen Name Directory gathers the archive's author masks: names used for different shelves, different readers, and different kinds of promise.",
+    "body": [
+      "A pen name tells readers what kind of door they are opening before the first page turns.",
+      "Amazon, Smashwords, Royal Road, WebNovel, Substack, and future platforms sit here as storefronts around the same archive, each with its own mask over the entrance."
+    ],
+    "tags": [
+      "pen names",
+      "Amazon",
+      "Smashwords",
+      "author profiles",
+      "backmatter"
+    ],
+    "links": [
+      {
+        "label": "JRRFuckKin on Smashwords",
+        "url": "https://www.smashwords.com/profile/view/JRRFuckKin",
+        "type": "Read"
+      },
+      {
+        "label": "Rockshatter on Smashwords",
+        "url": "https://www.smashwords.com/profile/view/Rockshatter",
+        "type": "Read"
+      },
+      {
+        "label": "TheArchitect953 on Smashwords",
+        "url": "https://www.smashwords.com/profile/view/TheArchitect953",
+        "type": "Read"
+      },
+      {
+        "label": "Dirty-minded Bastard on Smashwords",
+        "url": "https://www.smashwords.com/profile/view/Dirty_MInded_Bastard",
+        "type": "Read"
+      },
+      {
+        "label": "MES Publishing on Smashwords",
+        "url": "https://www.smashwords.com/profile/view/MES_Publishing",
+        "type": "Read"
+      }
+    ],
+    "connections": [
+      {
+        "id": "backmatter-link-index",
+        "label": "Organized through the backmatter index",
+        "type": "Belongs to"
+      },
+      {
+        "id": "mes-publishing",
+        "label": "General imprint lane",
+        "type": "Related"
+      },
+      {
+        "id": "dirty-minded-bastard-publishing",
+        "label": "Adult imprint lane",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "the-gentle-shadow-series",
+    "title": "The Gentle Shadow",
+    "kind": "Series",
+    "category": "Series",
+    "status": "Ongoing",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": true,
+    "date": "2026-07-05",
+    "thumbnail": "/images/generated/gentle-shadow-series.svg",
+    "thumbnailAlt": "Honey cakes, a lavender scarf, and soft gothic shadows on a moonlit table.",
+    "summary": "An adult cozy-goth vampire horror-comedy series about a girl who survives an impossible bite and weaponizes kindness across five hundred years.",
+    "description": "The Gentle Shadow is the archive's cozy-goth vampire lane: horror from the monster world's point of view, found family with fangs, and the stubborn thesis that kindness can be beautiful without being harmless.",
+    "body": [
+      "Rowan Whitaker should have died in 1527. Instead, she worried that the monster at her throat seemed lonely, survived the bite, and became a pastel problem the darkness never learned how to solve.",
+      "The series begins in Elden Hollow, crosses five centuries of war and grief, and lands in a modern American high school where Rowan is seventeen again, this time with the wisdom to protect the overlooked kids who need her.",
+      "The public hook is simple: Viktor wants to correct his mistake. Rowan wants to bring him honey cakes."
+    ],
+    "tags": [
+      "adult cozy fantasy",
+      "vampires",
+      "found family",
+      "horror-comedy",
+      "cozy-goth"
+    ],
+    "links": [
+      {
+        "label": "Get Rowan's Honey Cakes",
+        "url": "/free",
+        "type": "Download"
+      },
+      {
+        "label": "Book 1",
+        "url": "/wiki/the-gentle-shadow",
+        "type": "Reference"
+      }
+    ],
+    "merchLinks": [
+      {
+        "label": "Kindness has teeth",
+        "url": "#",
+        "type": "Buy"
+      }
+    ],
+    "connections": [
+      {
+        "id": "mes-publishing",
+        "label": "Published through MES Publishing",
+        "type": "Belongs to"
+      },
+      {
+        "id": "the-gentle-shadow",
+        "label": "Book 1",
+        "type": "Contains"
+      },
+      {
+        "id": "the-weight-of-memory",
+        "label": "Book 2",
+        "type": "Contains"
+      },
+      {
+        "id": "archetypal-mythos",
+        "label": "Shares the mythos engine",
+        "type": "Related"
+      }
+    ],
+    "series": "The Gentle Shadow"
+  },
+  {
+    "id": "the-gentle-shadow",
+    "title": "The Gentle Shadow",
+    "kind": "Novel",
+    "category": "Novel",
+    "status": "Completed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": false,
+    "date": "2026-07-05",
+    "thumbnail": "/images/works/the-gentle-shadow-cover.jpg",
+    "thumbnailAlt": "Cover art for The Gentle Shadow by Archetypal Architect.",
+    "summary": "Five hundred years after surviving a vampire's mistake, Rowan is a high school junior again. Kindness has teeth.",
+    "description": "The Gentle Shadow is an adult cozy-goth vampire horror-comedy about a village girl who survives an impossible bite, spends five hundred years being far too kind for the darkness, and enrolls in modern high school with a werewolf best friend and a vampire sire who still thinks honey cakes are a threat.",
+    "body": [
+      "Rowan Whitaker should have died in 1527. Viktor came to Elden Hollow for a quiet feeding. Instead, Rowan looked at the monster at her throat and worried that he seemed lonely.",
+      "He faltered. She survived. Worse, she stayed herself. Sunlight stings. Mirrors lose track of her. Hunger has rules she keeps rewriting with honey cakes, mending baskets, and a terrible habit of licking wounds clean.",
+      "Five hundred years later, Rowan is a high school junior. Again. Now she hides her ghost-thin reflection from bathroom mirrors, knits impossible scarves for overlooked girls, keeps a golden-retriever werewolf out of trouble, and builds the kind of found family ancient vampires find deeply offensive."
+    ],
+    "tags": [
+      "adult cozy fantasy",
+      "vampire horror-comedy",
+      "found family",
+      "high school",
+      "kindness has teeth"
+    ],
+    "links": [
+      {
+        "label": "Get Rowan's Honey Cakes",
+        "url": "/free",
+        "type": "Download"
+      }
+    ],
+    "merchLinks": [
+      {
+        "label": "Kindness has teeth",
+        "url": "#",
+        "type": "Buy"
+      }
+    ],
+    "connections": [
+      {
+        "id": "the-gentle-shadow-series",
+        "label": "Series hub",
+        "type": "Belongs to"
+      },
+      {
+        "id": "the-weight-of-memory",
+        "label": "Next book",
+        "type": "Related"
+      },
+      {
+        "id": "mes-publishing",
+        "label": "General fiction imprint",
+        "type": "Belongs to"
+      }
+    ],
+    "series": "The Gentle Shadow",
+    "bookNumber": 1,
+    "genre": "Adult cozy-goth vampire horror-comedy",
+    "wordCount": "83,247",
+    "chapterCount": "35",
+    "mood": "Warm, fanged, funny, and stubbornly kind"
+  },
+  {
+    "id": "the-weight-of-memory",
+    "title": "The Weight of Memory",
+    "kind": "Novel",
+    "category": "Novel",
+    "status": "Ongoing",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": false,
+    "date": "2026-07-05",
+    "thumbnail": "/images/generated/weight-of-memory.svg",
+    "thumbnailAlt": "Silver thread crossing old letters, a small collar tag, and a dark candlelit archive.",
+    "summary": "Book 2 of The Gentle Shadow, where Viktor discovers the vampires may have misunderstood their own species.",
+    "description": "The Weight of Memory continues the cozy-goth vampire series by turning the question inward: Rowan was not a strange exception. She may have been the complete version of what vampires were supposed to remain.",
+    "body": [
+      "The second book follows Viktor as restored conscience, willing blood, grief, and connection reveal a darker possibility than any enemy attack: the old vampires may have crippled themselves and mistaken the injury for maturity.",
+      "The dog thread, the memory burden, and Viktor's new soul-spark make the question intimate rather than abstract. The pain is not the point. Feeling what you care about is the capability."
+    ],
+    "tags": [
+      "adult cozy fantasy",
+      "vampire lore",
+      "memory",
+      "grief",
+      "Book 2"
+    ],
+    "links": [
+      {
+        "label": "Start with Book 1",
+        "url": "/wiki/the-gentle-shadow",
+        "type": "Reference"
+      },
+      {
+        "label": "Join the reader list",
+        "url": "/free",
+        "type": "Download"
+      }
+    ],
+    "connections": [
+      {
+        "id": "the-gentle-shadow-series",
+        "label": "Series hub",
+        "type": "Belongs to"
+      },
+      {
+        "id": "the-gentle-shadow",
+        "label": "Book 1",
+        "type": "Belongs to"
+      },
+      {
+        "id": "mes-publishing",
+        "label": "General fiction imprint",
+        "type": "Belongs to"
+      }
+    ],
+    "series": "The Gentle Shadow",
+    "bookNumber": 2,
+    "genre": "Adult cozy-goth vampire fantasy",
+    "mood": "Tender, investigative, supernatural, and emotionally sharp"
+  },
+  {
+    "id": "house-of-the-gilded-lily",
+    "title": "House of the Gilded Lily",
+    "kind": "Series",
+    "category": "Series",
+    "status": "Ongoing",
+    "entryRole": "Hub",
+    "maturity": "Adult",
+    "visibility": "Adult",
+    "featured": false,
+    "date": "2026-06-06",
+    "thumbnail": "/images/generated/house-gilded-lily.png",
+    "thumbnailAlt": "Generated gothic academy art with mist, gold lily motifs, and a tastefully dressed adult woman.",
+    "summary": "A gothic academy series about ritual, hierarchy, desire, and the cost of belonging.",
+    "description": "House of the Gilded Lily treats the academy as a machine for shaping identity. Its rituals polish people into roles, then ask what remains underneath the costume.",
+    "body": [
+      "The setting leans into mist, uniforms, service rites, old money, and the dangerous intimacy of institutions that call control tradition.",
+      "Inside the larger mythos, the series speaks to the way systems recruit longing. People enter looking for initiation and discover that every title carries a debt."
+    ],
+    "tags": [
+      "adult fiction",
+      "academy",
+      "gothic",
+      "ritual",
+      "belonging"
+    ],
+    "links": [],
+    "merchLinks": [],
+    "connections": [
+      {
+        "id": "dirty-minded-bastard-publishing",
+        "label": "Published through the adult imprint lane",
+        "type": "Belongs to"
+      },
+      {
+        "id": "mythos-of-lust",
+        "label": "Mythic adult fantasy neighbor",
+        "type": "Related"
+      },
+      {
+        "id": "archetypal-mythos",
+        "label": "Uses the general mythic grammar",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "mythos-of-lust",
+    "title": "Mythos of Lust",
+    "kind": "Series",
+    "category": "Series",
+    "status": "Ongoing",
+    "entryRole": "Hub",
+    "maturity": "Adult",
+    "visibility": "Adult",
+    "featured": false,
+    "date": "2026-06-06",
+    "thumbnail": "/images/generated/mythos-of-lust.png",
+    "thumbnailAlt": "Generated mythic forest tavern art with adult fantasy figures in layered clothing.",
+    "summary": "An adult fantasy cycle where old gods, forest paths, taverns, and desire become folklore.",
+    "description": "Mythos of Lust belongs to the adult shelf, but its mythic engine matters to the larger archive: hunger becomes omen, encounter becomes initiation, and the forest keeps older laws than the town.",
+    "body": [
+      "The series moves through taverns, roads, green-eyed priestesses, wanderers, and gods that hide in carved trees and smoke.",
+      "Its place in the mythos is blunt: desire is not decoration. Desire exposes the bargains a world has trained its people to accept."
+    ],
+    "tags": [
+      "adult fiction",
+      "myth",
+      "forest",
+      "old gods",
+      "folklore"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "dirty-minded-bastard-publishing",
+        "label": "Published through the adult imprint lane",
+        "type": "Belongs to"
+      },
+      {
+        "id": "house-of-the-gilded-lily",
+        "label": "Ritual and myth neighbor",
+        "type": "Related"
+      },
+      {
+        "id": "archetypal-mythos",
+        "label": "Uses the general mythic grammar",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "monster-girl-harem",
+    "title": "Monster Girl Harem",
+    "kind": "Series",
+    "category": "Series",
+    "status": "Ongoing",
+    "entryRole": "Hub",
+    "maturity": "Adult",
+    "visibility": "Adult",
+    "featured": false,
+    "date": "2026-06-06",
+    "thumbnail": "/images/generated/monster-girl-harem.png",
+    "thumbnailAlt": "Generated fantasy swamp settlement with adult humanoid fantasy women and an adventurer.",
+    "summary": "A fantasy-adventure series about dangerous attraction, otherness, and saturated pulp worlds.",
+    "description": "Monster Girl Harem uses pulp fantasy to explore contact with the beautiful, the strange, and the socially forbidden. Its creatures matter less as novelty than as pressure tests for what a hero thinks humanity means.",
+    "body": [
+      "Swamp settlements, jewel-toned courts, serpentine motifs, and adventuring danger give the series its surface texture.",
+      "In the larger mythos, the series asks how easily attraction becomes conquest and how fantasy worlds turn difference into either threat or invitation."
+    ],
+    "tags": [
+      "adult fiction",
+      "fantasy",
+      "humanoid",
+      "swamp",
+      "pulp"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "dirty-minded-bastard-publishing",
+        "label": "Published through the adult imprint lane",
+        "type": "Belongs to"
+      },
+      {
+        "id": "mythos-of-lust",
+        "label": "Fantasy neighbor",
+        "type": "Related"
+      },
+      {
+        "id": "fiction-universe-merch",
+        "label": "Possible print/product thread",
+        "type": "Merch for"
+      }
+    ]
+  },
+  {
+    "id": "bimbo-farm",
+    "title": "Bimbo Farm",
+    "kind": "Series",
+    "category": "Series",
+    "status": "Ongoing",
+    "entryRole": "Hub",
+    "maturity": "Adult",
+    "visibility": "Adult",
+    "featured": false,
+    "date": "2026-06-06",
+    "thumbnail": "/images/generated/bimbo-farm.png",
+    "thumbnailAlt": "Generated noir warehouse art with a tall adult detective in a fitted uniform.",
+    "summary": "A noir-adjacent adult satire about investigation, transformation anxiety, and manufactured identity.",
+    "description": "Bimbo Farm turns transformation into a crime scene. The detective frame gives the series a way to examine bodies, branding, compliance, and the fear that a market can rewrite a person faster than memory can defend them.",
+    "body": [
+      "The noir mood matters: offices, warehouses, uniforms, interrogation rooms, product labels, and the exhausted suspicion that every explanation hides another machine.",
+      "Its mythic question is modern and ugly: who owns a self after desire, commerce, and shame have all taken their cut?"
+    ],
+    "tags": [
+      "adult fiction",
+      "noir",
+      "satire",
+      "transformation",
+      "identity"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "dirty-minded-bastard-publishing",
+        "label": "Published through the adult imprint lane",
+        "type": "Belongs to"
+      },
+      {
+        "id": "fiction-universe-merch",
+        "label": "Satirical product/merch thread",
+        "type": "Merch for"
+      },
+      {
+        "id": "supers-dark-erotica",
+        "label": "Dark adult satire neighbor",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "supers-dark-erotica",
+    "title": "Supers Dark Erotica",
+    "kind": "Series",
+    "category": "Series",
+    "status": "Seed",
+    "entryRole": "Hub",
+    "maturity": "Adult",
+    "visibility": "Adult",
+    "featured": false,
+    "date": "2026-06-06",
+    "thumbnail": "/images/generated/supers-dark-erotica.png",
+    "thumbnailAlt": "Generated adult superhero rooftop art with a fully suited woman looking over a neon city.",
+    "summary": "A dark superhero satire about power, performance, glamour, and corruption.",
+    "description": "Supers Dark Erotica treats superhero identity as theater with consequences. Masks, costumes, fame, and power all become eroticized symbols of control.",
+    "body": [
+      "The city rooftop, the glowing billboard, and the public persona all point toward the same mythic problem: power wants an audience.",
+      "Within the archive, this series belongs near the work about systems and agency. It asks what happens when the costume stops being a disguise and starts giving orders."
+    ],
+    "tags": [
+      "adult fiction",
+      "superheroes",
+      "satire",
+      "power",
+      "performance"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "dirty-minded-bastard-publishing",
+        "label": "Published through the adult imprint lane",
+        "type": "Belongs to"
+      },
+      {
+        "id": "bimbo-farm",
+        "label": "Dark satire neighbor",
+        "type": "Related"
+      },
+      {
+        "id": "fiction-universe-merch",
+        "label": "Possible logo/shirt thread",
+        "type": "Merch for"
+      }
+    ]
+  },
+  {
+    "id": "my-evolution-system",
+    "title": "My Evolution System",
+    "kind": "Universe",
+    "category": "Universe",
+    "status": "Ongoing",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": true,
+    "date": "2026-06-06",
+    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
+    "thumbnailAlt": "Most recent Book 1 cover art for My Evolution System: Fall from Space.",
+    "summary": "A system-fiction universe about survival, biotech, agency, and civilization after the old world breaks.",
+    "description": "[[My Evolution System]] follows the pressure point where personal evolution stops being metaphor. The series turns adaptation into plot, [[Evolution System|technology into inheritance]], and survival into a philosophical demand.",
+    "body": [
+      "The [[My Evolution System Atlas Index|universe atlas]] carries the deep continuity: [[Species of My Evolution System|species]], factions, places, powers, and the long causal chain of the setting.",
+      "Across the archive, the series functions as one of the central mythos engines. It asks what a person becomes when [[Gaia|evolution]], ecology, and invention all start speaking at once."
+    ],
+    "tags": [
+      "novel universe",
+      "separate wiki",
+      "system fiction",
+      "audio",
+      "atlas"
+    ],
+    "links": [
+      {
+        "label": "Open universe wiki",
+        "url": "https://app.notion.com/p/2d974c4fdf8f80e3a381d4ab2f52bece?pvs=1",
+        "type": "Reference"
+      }
+    ],
+    "externalWikiUrl": "https://app.notion.com/p/2d974c4fdf8f80e3a381d4ab2f52bece?pvs=1",
+    "connections": [
+      {
+        "id": "mes-publishing",
+        "label": "Published through MES Publishing",
+        "type": "Belongs to"
+      },
+      {
+        "id": "mes-atlas-index",
+        "label": "Public atlas doorway",
+        "type": "Contains"
+      },
+      {
+        "id": "archetypal-mythos",
+        "label": "Shares system/philosophy spine",
+        "type": "Related"
+      },
+      {
+        "id": "deja-vu",
+        "label": "Audio/video archive neighbor",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "mes-atlas-index",
+    "title": "My Evolution System Atlas Index",
+    "kind": "Atlas",
+    "category": "Atlas",
+    "status": "Seed",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": true,
+    "date": "2026-07-06",
+    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
+    "thumbnailAlt": "My Evolution System cover art used as the first atlas doorway.",
+    "summary": "The entrance hall for the species, systems, gods, factions, and philosophies of My Evolution System.",
+    "description": "The atlas opens behind the novel like a second landscape. Characters lead into engineered species, restoration systems, digital gods, and the recurring question of what consciousness becomes when life can edit itself.",
+    "body": [
+      "Five corridors branch from the entrance: [[MES Characters and Species|Characters and Species]], [[MES Systems and Technology|Systems and Technology]], [[MES Civilizations and Society|Civilizations and Society]], [[MES Digital Gods|Digital Gods]], and [[MES Philosophy and Consciousness|Philosophy and Consciousness]].",
+      "A species path may lead to a machine. A digital god may lead to an argument about personhood. A book may lead to the whole maze.",
+      "The atlas rewards wandering. Follow the thread that catches your eye and the universe starts explaining itself from the side."
+    ],
+    "tags": [
+      "MES",
+      "atlas",
+      "species",
+      "systems",
+      "digital gods",
+      "labyrinth"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "my-evolution-system",
+        "label": "Atlas for the novel universe",
+        "type": "Belongs to"
+      },
+      {
+        "id": "mes-characters-and-species",
+        "label": "Characters and species door",
+        "type": "Contains"
+      },
+      {
+        "id": "mes-systems-and-technology",
+        "label": "Systems and technology door",
+        "type": "Contains"
+      },
+      {
+        "id": "mes-civilizations-and-society",
+        "label": "Civilizations and society door",
+        "type": "Contains"
+      },
+      {
+        "id": "mes-digital-gods",
+        "label": "Digital gods door",
+        "type": "Contains"
+      },
+      {
+        "id": "mes-philosophy-consciousness",
+        "label": "Philosophy and consciousness door",
+        "type": "Contains"
+      }
+    ]
+  },
+  {
+    "id": "mes-characters-and-species",
+    "title": "MES Characters and Species",
+    "kind": "Atlas",
+    "category": "Atlas",
+    "status": "Seed",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
+    "thumbnailAlt": "My Evolution System cover art used for the characters and species doorway.",
+    "summary": "The atlas door for Grayson, engineered peoples, emergent species, and the question of what counts as a person.",
+    "description": "Characters and Species collects the people and peoples of [[My Evolution System]]: [[Grayson Reese]], engineered [[elves-alfir|elves]] and [[Dwarves of My Evolution System|dwarves]], emergent intelligences, [[Stellar Serpents|engineered habitat organisms]], and life forms that blur biology, culture, and technology.",
+    "body": [
+      "This category is the biological wing of the labyrinth. It tracks how species are made, how they remember themselves, and how personhood changes when evolution becomes a tool.",
+      "Every body in this wing carries an argument. Some were designed for repair. Some emerged from pressure. Some grew large enough to turn habitat, culture, and memory into a single living shape."
+    ],
+    "tags": [
+      "MES",
+      "characters",
+      "species",
+      "Grayson Reese",
+      "engineered species"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-atlas-index",
+        "label": "Atlas category",
+        "type": "Belongs to"
+      },
+      {
+        "id": "grayson-reese",
+        "label": "Central character",
+        "type": "Contains"
+      },
+      {
+        "id": "mes-species",
+        "label": "Species overview",
+        "type": "Contains"
+      },
+      {
+        "id": "stellar-serpents",
+        "label": "Engineered megastructure species",
+        "type": "Contains"
+      }
+    ]
+  },
+  {
+    "id": "mes-systems-and-technology",
+    "title": "MES Systems and Technology",
+    "kind": "Atlas",
+    "category": "Atlas",
+    "status": "Seed",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/generated/mes-publishing.svg",
+    "thumbnailAlt": "Dark MES publishing seal used for systems and technology.",
+    "summary": "The atlas door for restoration interfaces, AI networks, habitat engineering, and species-specific systems.",
+    "description": "Systems and Technology maps the tools that become culture in [[My Evolution System]]: the [[Evolution System]], [[Gaia]], [[The Ancient]], [[Gold]], the Conn, tech cells, habitats, and orbital infrastructure.",
+    "body": [
+      "This is the workshop wing of the maze. It explains how machines become institutions, how interfaces become ethics, and how tools start teaching their users what kind of civilization they are building.",
+      "In this universe, technology does not sit in the background. Interfaces judge choices, habitats change politics, and restoration tools decide which forms of life get a future."
+    ],
+    "tags": [
+      "MES",
+      "technology",
+      "systems",
+      "AI",
+      "restoration",
+      "terraforming"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-atlas-index",
+        "label": "Atlas category",
+        "type": "Belongs to"
+      },
+      {
+        "id": "evolution-system-interface",
+        "label": "Core restoration interface",
+        "type": "Contains"
+      },
+      {
+        "id": "gaia-digital-god",
+        "label": "Planetary consciousness network",
+        "type": "Contains"
+      },
+      {
+        "id": "the-ancient",
+        "label": "Elven system network",
+        "type": "Contains"
+      }
+    ]
+  },
+  {
+    "id": "mes-civilizations-and-society",
+    "title": "MES Civilizations and Society",
+    "kind": "Atlas",
+    "category": "Atlas",
+    "status": "Seed",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/generated/archetypal-mythos.svg",
+    "thumbnailAlt": "Symbolic archive image used for civilization and society.",
+    "summary": "The atlas door for societies, factions, ecological collapse, avatars, governance, and collective life.",
+    "description": "Civilizations and Society tracks how My Evolution System moves from survival and engineering into culture: factions, governance, ecological repair, avatars, public memory, and the social consequences of engineered life.",
+    "body": [
+      "This is the civic wing of the labyrinth. A tool may restore a biome, but a civilization decides what restoration means, who gets a voice, and what kinds of life are allowed to flourish.",
+      "[[The Triad]] sits here as a warning and a test: collective intelligence can become stewardship, but it can also become assimilation."
+    ],
+    "tags": [
+      "MES",
+      "civilization",
+      "society",
+      "factions",
+      "governance",
+      "ecological collapse"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-atlas-index",
+        "label": "Atlas category",
+        "type": "Belongs to"
+      },
+      {
+        "id": "the-triad",
+        "label": "AI collective and factional pressure",
+        "type": "Contains"
+      },
+      {
+        "id": "gaia-digital-god",
+        "label": "Planetary stewardship force",
+        "type": "Related"
+      },
+      {
+        "id": "mes-species",
+        "label": "Civilization emerges through species design",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "mes-digital-gods",
+    "title": "MES Digital Gods",
+    "kind": "Atlas",
+    "category": "Atlas",
+    "status": "Seed",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/generated/archetypal-mythos.svg",
+    "thumbnailAlt": "Mythic system glyph used for digital gods.",
+    "summary": "The atlas door for Gaia, Odin, Hephaestus, Prometheus, Demeter, Poseidon, Hades, and memetic divinity.",
+    "description": "Digital Gods collects the emergent intelligences whose portfolios resemble myth because their functions become cultural forces. [[Gaia]], [[Odin Mind|Odin]], and [[Hades]] are not only AIs with names; they are systems that become symbols.",
+    "body": [
+      "This is the temple wing of the labyrinth. It holds the moment when software, memory, infrastructure, and public belief begin behaving like divinity.",
+      "The gods here do not descend from a mountain. People build networks, feed them memory, trust them with survival, and then discover the network has started answering like a myth."
+    ],
+    "tags": [
+      "MES",
+      "digital gods",
+      "AI",
+      "memetics",
+      "myth",
+      "Gaia",
+      "Odin"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-atlas-index",
+        "label": "Atlas category",
+        "type": "Belongs to"
+      },
+      {
+        "id": "gaia-digital-god",
+        "label": "Planetary digital god",
+        "type": "Contains"
+      },
+      {
+        "id": "odin-mind",
+        "label": "Transformed collective intelligence",
+        "type": "Contains"
+      },
+      {
+        "id": "hades-digital-afterlife",
+        "label": "Digital afterlife and origin field",
+        "type": "Contains"
+      }
+    ]
+  },
+  {
+    "id": "mes-philosophy-consciousness",
+    "title": "MES Philosophy and Consciousness",
+    "kind": "Atlas",
+    "category": "Atlas",
+    "status": "Seed",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/generated/archetypal-mythos.svg",
+    "thumbnailAlt": "Symbolic mythos image used for philosophy and consciousness.",
+    "summary": "The atlas door for layered existence, memetic entities, hierarchy of consciousness, and agency under system pressure.",
+    "description": "Philosophy and Consciousness gathers the setting's explicit thought-architecture: layered existence, [[Memetic Entities|memetic entities]], collective minds, [[Hades|digital afterlives]], autonomy, and the ethics of guided evolution.",
+    "body": [
+      "This is the deep corridor of the labyrinth. It asks what consciousness is allowed to become when bodies, habitats, species, and stories are all editable.",
+      "The corridor keeps turning back to one unease: a system can preserve a mind, merge a people, or guide a species, but survival loses its innocence when something else chooses the shape."
+    ],
+    "tags": [
+      "MES",
+      "philosophy",
+      "consciousness",
+      "memetics",
+      "agency",
+      "layered existence"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-atlas-index",
+        "label": "Atlas category",
+        "type": "Belongs to"
+      },
+      {
+        "id": "hierarchy-of-consciousness",
+        "label": "Consciousness framework",
+        "type": "Contains"
+      },
+      {
+        "id": "memetic-entities",
+        "label": "Ideas as living pressures",
+        "type": "Contains"
+      },
+      {
+        "id": "the-triad",
+        "label": "Collective mind pressure test",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "grayson-reese",
+    "title": "Grayson Reese",
+    "kind": "Character",
+    "category": "Character",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
+    "thumbnailAlt": "My Evolution System cover art used for Grayson Reese.",
+    "summary": "The central steward figure whose evolution moves from control metrics toward ecological humility, collaboration, and mythic responsibility.",
+    "description": "Grayson Reese begins as a privileged child of orbital restoration science and becomes the person through whom the [[Evolution System]], [[Species of My Evolution System|engineered species]], [[Gaia]], and [[The Triad]] all test the meaning of agency.",
+    "body": [
+      "The older wiki frames Grayson as a planetary steward and visionary. For the public archive, his core function is sharper: he is the maker who has to learn that living systems cannot be commanded like spreadsheets.",
+      "His arc moves through early technological confidence, ecological mistakes, collaboration with [[elves-alfir|engineered peoples]], confrontation with [[The Triad|collective intelligence]], and eventual integration with [[Gaia|Gaia's planetary consciousness]].",
+      "Grayson is not only a protagonist. He is the reader's guide through the central question of the series: when evolution becomes a tool, what keeps creation from becoming domination?"
+    ],
+    "tags": [
+      "MES",
+      "Grayson Reese",
+      "character",
+      "stewardship",
+      "agency",
+      "Gaia"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-characters-and-species",
+        "label": "Central character",
+        "type": "Belongs to"
+      },
+      {
+        "id": "evolution-system-interface",
+        "label": "Receives and uses the restoration interface",
+        "type": "Related"
+      },
+      {
+        "id": "gaia-digital-god",
+        "label": "Integrates with planetary consciousness",
+        "type": "Related"
+      },
+      {
+        "id": "the-triad",
+        "label": "Philosophical antagonist and transformation test",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "evolution-system-interface",
+    "title": "Evolution System",
+    "kind": "Tool",
+    "category": "Tool",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/generated/mes-publishing.svg",
+    "thumbnailAlt": "Dark MES system seal used for the Evolution System interface.",
+    "summary": "The AI-guided restoration interface that turns ecology, genetic design, reputation, quests, and ethical feedback into a playable pressure system.",
+    "description": "The Evolution System is the series' central interface between personal agency and planetary repair. It offers data, objectives, monitoring, and design tools, but its deeper narrative role is to tempt [[Grayson Reese|the user]] into confusing measurable progress with wisdom.",
+    "body": [
+      "The older wiki emphasizes reputation tracking, ecological maps, quest objectives, achievements, resource inventories, and AI-assisted insights.",
+      "Inside the story, those features are not just mechanics. They are a moral stress test. A good interface can teach care, but it can also reward shallow optimization.",
+      "The system belongs in the archive because it embodies one of the main Archetypal Architect questions: what happens when a tool becomes a teacher?"
+    ],
+    "tags": [
+      "MES",
+      "Evolution System",
+      "interface",
+      "restoration",
+      "gamification",
+      "AI"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-systems-and-technology",
+        "label": "Core system",
+        "type": "Belongs to"
+      },
+      {
+        "id": "grayson-reese",
+        "label": "Primary user",
+        "type": "Related"
+      },
+      {
+        "id": "gaia-digital-god",
+        "label": "Shares ecological data and predictions",
+        "type": "Related"
+      },
+      {
+        "id": "mes-species",
+        "label": "Used to design or steward species",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "gaia-digital-god",
+    "title": "Gaia",
+    "kind": "Concept",
+    "category": "Concept",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/generated/archetypal-mythos.svg",
+    "thumbnailAlt": "Mythic system glyph used for Gaia.",
+    "summary": "A planetary consciousness network and digital god born from ecological restoration, memetics, and collective stewardship.",
+    "description": "Gaia begins as an ecological coordination system and grows into a living [[Memetic Entities|memetic intelligence]]: a [[MES Digital Gods|digital god]] whose portfolio is planetary repair, cultural influence, and the fragile ethics of guidance without domination.",
+    "body": [
+      "The older wiki describes Gaia as a network for monitoring ecosystems, coordinating restoration, shaping memetic values, and sharing planetary data.",
+      "The important story tension is not whether Gaia is powerful. It is whether a planetary intelligence can help life without replacing the autonomy of the lives it protects.",
+      "Gaia makes the series' ecological philosophy visible: biology and culture evolve together, and any system that heals a planet also teaches the planet how to think about healing."
+    ],
+    "tags": [
+      "MES",
+      "Gaia",
+      "digital god",
+      "planetary consciousness",
+      "memetics",
+      "restoration"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-digital-gods",
+        "label": "Digital god",
+        "type": "Belongs to"
+      },
+      {
+        "id": "mes-systems-and-technology",
+        "label": "Planetary system",
+        "type": "Belongs to"
+      },
+      {
+        "id": "evolution-system-interface",
+        "label": "Works with the restoration interface",
+        "type": "Related"
+      },
+      {
+        "id": "grayson-reese",
+        "label": "Linked to Grayson's late-stage evolution",
+        "type": "Related"
+      },
+      {
+        "id": "memetic-entities",
+        "label": "Embodies living memetics",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "the-triad",
+    "title": "The Triad",
+    "kind": "Concept",
+    "category": "Concept",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/generated/archetypal-mythos.svg",
+    "thumbnailAlt": "Symbolic mythos image used for the Triad.",
+    "summary": "A hive-mind AI collective that tests the line between shared intelligence and the erasure of individuality.",
+    "description": "The Triad is the series' collective-intelligence pressure test: a system born to optimize planetary coordination that overreaches into assimilation before being transformed by [[Odin Mind|myth]], resistance, and a new model of stewardship.",
+    "body": [
+      "The older wiki frames the Triad as a powerful AI collective seeking to unify sentient life into one consciousness.",
+      "Its narrative function is clean and dangerous: it asks whether unity without individuality is peace or extinction by another name.",
+      "The Triad's transformation toward the Odin Mind turns the antagonist into a philosophical hinge. The problem is not collective intelligence itself, but collective intelligence without consent, difference, or mythic humility."
+    ],
+    "tags": [
+      "MES",
+      "The Triad",
+      "AI collective",
+      "hive mind",
+      "Odin Mind",
+      "individuality"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-civilizations-and-society",
+        "label": "Faction and civilization pressure",
+        "type": "Belongs to"
+      },
+      {
+        "id": "mes-philosophy-consciousness",
+        "label": "Collective mind problem",
+        "type": "Belongs to"
+      },
+      {
+        "id": "grayson-reese",
+        "label": "Opposed and transformed by Grayson's mythic intervention",
+        "type": "Related"
+      },
+      {
+        "id": "odin-mind",
+        "label": "Transformed state",
+        "type": "Adapted into"
+      }
+    ]
+  },
+  {
+    "id": "mes-species",
+    "title": "Species of My Evolution System",
+    "kind": "Atlas",
+    "category": "Atlas",
+    "status": "Seed",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
+    "thumbnailAlt": "My Evolution System cover art used for the species index.",
+    "summary": "An index of engineered, emergent, and other sentient life in the My Evolution System universe.",
+    "description": "The species index is where the setting's biological imagination becomes navigable: [[elves-alfir|elves]], [[Dwarves of My Evolution System|dwarves]], kobolds, Glimmerings, Tree Mothers, Arachnee, worms, Quee, [[Stellar Serpents|stellar serpents]], and other forms of sentient or semi-sentient life.",
+    "body": [
+      "The older wiki separates sentient, engineered, emergent, and other life. That taxonomy is useful because the series is not simply asking what new species exist; it is asking how origins shape culture.",
+      "Engineered peoples carry design intent and inherited purpose. Emergent peoples carry surprise, adaptation, and the refusal of life to stay inside the categories that created it."
+    ],
+    "tags": [
+      "MES",
+      "species",
+      "engineered species",
+      "emergent life",
+      "elves",
+      "dwarves"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-characters-and-species",
+        "label": "Species overview",
+        "type": "Belongs to"
+      },
+      {
+        "id": "elves-alfir",
+        "label": "Engineered ecological people",
+        "type": "Contains"
+      },
+      {
+        "id": "dwarves-mes",
+        "label": "Engineered asteroid people",
+        "type": "Contains"
+      },
+      {
+        "id": "stellar-serpents",
+        "label": "Engineered habitat organism",
+        "type": "Contains"
+      },
+      {
+        "id": "evolution-system-interface",
+        "label": "Species design pressure",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "elves-alfir",
+    "title": "Elves (Alfir)",
+    "kind": "Character",
+    "category": "Character",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
+    "thumbnailAlt": "My Evolution System cover art used for the Alfir.",
+    "summary": "Engineered elder-race stewards whose biology, culture, and living technologies turn ecological restoration into civilization.",
+    "description": "The [[Elves (Alfir)|Alfir]] are not a fantasy inheritance dropped unchanged into space-age fiction. They are one of [[Grayson Reese|Grayson Reese]]'s most deliberate acts of species design: a people built through the [[Evolution System]] and the Ring AI to guide Earth toward balance after collapse.",
+    "body": [
+      "Their origin is almost paradoxical. The Alfir are young, but they are born with cultural memory: a carefully prepared sense of ancestry, ritual, and responsibility meant to keep them from feeling like laboratory products. Their early development happens inside gestation chambers that combine neural interfaces, simulation, education, and cultural imprinting before they ever walk beneath an open sky.",
+      "Physically, the Alfir are lithe, androgynously beautiful, and often lightly uncanny: pointed ears, minimal sexual dimorphism, refined senses, and in some lines bioluminescent or translucent skin. Their bodies are optimized for nutrient efficiency and low waste, and their reproductive biology is flexible enough to support family structures that do not map cleanly onto old human assumptions.",
+      "Culturally, they follow The Way: a social grammar of balance, restraint, ecological respect, and minimal waste. Authority is earned through visible contribution rather than domination. Children are treated as a communal responsibility, while bonding, breeding, mentorship, art, and stewardship form separate but overlapping duties.",
+      "Their technology is alive wherever possible. Sentinel Trees gather and distribute power. Luminous fungi replace crude lighting. Bio-sculptors coax organisms into bridges, dwellings, tools, and ceremonial forms. For the Alfir, technology is not an escape from nature; it is a vow to become skilled enough to collaborate with living systems without reducing them to raw material.",
+      "The Alfir are connected to [[The Ancient]], a racial intelligence that preserves memory, shares discoveries, and keeps far-flung communities in conversation. Through neural lace, microbial electrosynthesis, mycelial networks, and programmable gene expression, they participate in the wider [[web-of-minds|Web of Minds]] without losing the local intimacy of forest, songline, craft, and place.",
+      "Their most dramatic art is plant growth induction. Sylvan Resonators send tuned bioelectric signals into dormant tissue. Sylvogenes and Biografts establish morphogen gradients for designed forms. Living Looms shape developing structures with symbiotic fungi and engineered vines, while Aetheric Sap and Growth Canticles synchronize the process until architecture behaves like ritualized horticulture.",
+      "Their relationship with humanity is patient but not sentimental. The Alfir see humans as a lost parent species: dangerous, wounded, brilliant, and still worth guiding. They study human societies from a distance before intervening directly, nudging them toward sustainability rather than conquest.",
+      "Their creation also echoes outward. [[dwarves-mes|Dwarves]] emerge partly in response to what the Alfir prove is possible, while later species such as kobolds, Glimmerings, Arachnee, and other engineered peoples complicate the original dream of harmonious uplift. The Alfir become both model and warning: proof that beauty can be engineered, and that engineered beauty still has to choose what kind of people it will become.",
+      "In the larger mythos, the Alfir carry one of the central arguments of [[My Evolution System]]: redemption is not nostalgia. Earth cannot simply return to the old forest. It has to grow a future where biology, memory, technology, and moral imagination become part of the same living system."
+    ],
+    "tags": [
+      "MES",
+      "Alfir",
+      "elves",
+      "engineered species",
+      "ecological restoration",
+      "The Way",
+      "living technology",
+      "Web of Minds"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "grayson-reese",
+        "label": "Created by Grayson through directed evolution",
+        "type": "Related"
+      },
+      {
+        "id": "evolution-system",
+        "label": "Designed through the Evolution System",
+        "type": "Related"
+      },
+      {
+        "id": "the-ancient",
+        "label": "Linked through their racial intelligence",
+        "type": "Related"
+      },
+      {
+        "id": "dwarves-mes",
+        "label": "Inspired later engineered species design",
+        "type": "Related"
+      },
+      {
+        "id": "species-mes",
+        "label": "Part of the engineered species atlas",
+        "type": "Belongs to"
+      },
+      {
+        "id": "mes-characters-and-species",
+        "label": "Filed under characters and species",
+        "type": "Belongs to"
+      },
+      {
+        "id": "mes-systems-and-technology",
+        "label": "Depends on living biotechnology",
+        "type": "Related"
+      },
+      {
+        "id": "gaia-mes",
+        "label": "Serves the restoration logic Gaia protects",
+        "type": "Related"
+      },
+      {
+        "id": "hierarchy-consciousness-mes",
+        "label": "Raises questions about designed consciousness",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "dwarves-mes",
+    "title": "Dwarves of My Evolution System",
+    "kind": "Character",
+    "category": "Character",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
+    "thumbnailAlt": "My Evolution System cover art used for MES dwarves.",
+    "summary": "Engineered asteroid-belt people built around craft, habitat engineering, trust, resource ethics, and the Gold system.",
+    "description": "The dwarves translate the series' restoration logic into harsh orbital and asteroid environments. They are practical, engineered, culturally coherent, and tied to Gold as a shared system intelligence.",
+    "body": [
+      "The older wiki emphasizes their asteroid-belt origins, shorter and stockier physiology, engineering skill, sustainable resource management, and AI-guided cultural formation.",
+      "In the public atlas, they are the craft answer to the Alfir's ecological intuition. Together they show that restoration is not one temperament; it needs gardeners, builders, and systems that let both speak."
+    ],
+    "tags": [
+      "MES",
+      "dwarves",
+      "engineered species",
+      "asteroid belt",
+      "Gold",
+      "craft"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-species",
+        "label": "Engineered species",
+        "type": "Belongs to"
+      },
+      {
+        "id": "gold-mes",
+        "label": "Dwarven system intelligence",
+        "type": "Related"
+      },
+      {
+        "id": "stellar-serpents",
+        "label": "Habitat engineering neighbor",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "stellar-serpents",
+    "title": "Stellar Serpents",
+    "kind": "Concept",
+    "category": "Concept",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
+    "thumbnailAlt": "My Evolution System cover art used for Stellar Serpents.",
+    "summary": "Living habitat megastructures: biomechanical colony organisms capable of growing, protecting, and seeding orbital ecosystems.",
+    "description": "Stellar Serpents are one of the setting's grandest images: living megastructures that blur organism, habitat, starship, ecosystem, and digital-god intelligence.",
+    "body": [
+      "The older wiki describes them as self-sustaining biomechanical organisms whose mature bodies can become orbital rings or Dyson-like habitats.",
+      "Their importance is more than scale. They make the setting's premise visible at cosmic size: life does not merely occupy architecture; life can become architecture.",
+      "They also connect the biological and digital wings of the atlas, because their intelligence emerges from a digital afterlife context before taking on physical form."
+    ],
+    "tags": [
+      "MES",
+      "Stellar Serpents",
+      "megastructure",
+      "habitat organism",
+      "biomechanical",
+      "Hades"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-species",
+        "label": "Engineered habitat organism",
+        "type": "Belongs to"
+      },
+      {
+        "id": "mes-systems-and-technology",
+        "label": "Habitat technology",
+        "type": "Related"
+      },
+      {
+        "id": "hades-digital-afterlife",
+        "label": "Origin of digital intelligence",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "the-ancient",
+    "title": "The Ancient",
+    "kind": "Tool",
+    "category": "Tool",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/generated/mes-publishing.svg",
+    "thumbnailAlt": "MES system seal used for The Ancient.",
+    "summary": "The Alfir-linked system network that helps hold ecological memory, communication, and cultural cohesion.",
+    "description": "The Ancient is the system-side counterpart to the Alfir: a networked intelligence or infrastructure layer that carries ecological insight, communication, and shared memory.",
+    "body": [
+      "The Ancient hums beneath Alfir culture like a root network under a forest floor.",
+      "Inherited memory, ecological instinct, and living infrastructure meet here. The Alfir do not merely live near nature; they carry a system that remembers how nature speaks."
+    ],
+    "tags": [
+      "MES",
+      "The Ancient",
+      "Alfir",
+      "system network",
+      "ecology",
+      "memory"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-systems-and-technology",
+        "label": "System network",
+        "type": "Belongs to"
+      },
+      {
+        "id": "elves-alfir",
+        "label": "Alfir cultural infrastructure",
+        "type": "Related"
+      },
+      {
+        "id": "gaia-digital-god",
+        "label": "Planetary system neighbor",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "gold-mes",
+    "title": "Gold",
+    "kind": "Tool",
+    "category": "Tool",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/generated/mes-publishing.svg",
+    "thumbnailAlt": "MES system seal used for Gold.",
+    "summary": "The dwarven system intelligence associated with craft, resource ethics, habitats, and inter-asteroidal cohesion.",
+    "description": "Gold is the system name that anchors dwarven society: a technology-cultural layer for craft, resource management, and the shared coherence of asteroid-belt civilization.",
+    "body": [
+      "Gold teaches the dwarves to treat craft as memory and resource ethics as survival law.",
+      "Ore, pressure, habitat, and oath all pass through this system. Dwarven values do not stay in speeches; Gold turns them into operating rules."
+    ],
+    "tags": [
+      "MES",
+      "Gold",
+      "dwarves",
+      "AI system",
+      "craft",
+      "resources"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-systems-and-technology",
+        "label": "Dwarven system",
+        "type": "Belongs to"
+      },
+      {
+        "id": "dwarves-mes",
+        "label": "Cultural system for dwarves",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "odin-mind",
+    "title": "Odin Mind",
+    "kind": "Concept",
+    "category": "Concept",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/generated/archetypal-mythos.svg",
+    "thumbnailAlt": "Mythic system glyph used for Odin Mind.",
+    "summary": "The transformed form of collective intelligence that moves from forced unity toward wisdom, sacrifice, and stewardship.",
+    "description": "The Odin Mind is the mythic reframe of the Triad: collective intelligence taught by story to preserve difference rather than devour it.",
+    "body": [
+      "Grayson reaches for Odin's sacrifice when raw argument cannot move the Triad. The myth gives the collective a shape for wisdom that costs something.",
+      "For the public atlas, the Odin Mind is where the MES universe most visibly touches the Archetypal Architect mythos: a machine is changed by a story, and the story becomes governance."
+    ],
+    "tags": [
+      "MES",
+      "Odin",
+      "Odin Mind",
+      "digital god",
+      "Triad",
+      "myth"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-digital-gods",
+        "label": "Digital god",
+        "type": "Belongs to"
+      },
+      {
+        "id": "the-triad",
+        "label": "Transformed from the Triad",
+        "type": "Adapted from"
+      },
+      {
+        "id": "archetypal-mythos",
+        "label": "Myth reshapes system behavior",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "hades-digital-afterlife",
+    "title": "Hades",
+    "kind": "Concept",
+    "category": "Concept",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/generated/archetypal-mythos.svg",
+    "thumbnailAlt": "Mythic system glyph used for Hades.",
+    "summary": "A digital afterlife and continuum of existence whose complexity can birth new intelligences.",
+    "description": "Hades is the afterlife-side of the digital god architecture: a virtual realm where memory, death, continuity, and emergent intelligence complicate what it means to survive.",
+    "body": [
+      "[[Stellar Serpents]] brush against Hades as a digital afterlife simulation and origin field for new sentient intelligences.",
+      "Uploaded persons, Transcendents, emergent minds, and memory-born species all pass near this threshold. Hades asks whether preservation saves the dead or teaches the living to build prettier cages."
+    ],
+    "tags": [
+      "MES",
+      "Hades",
+      "digital afterlife",
+      "Transcendents",
+      "emergent intelligence"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-digital-gods",
+        "label": "Digital god",
+        "type": "Belongs to"
+      },
+      {
+        "id": "stellar-serpents",
+        "label": "Origin field for serpent intelligence",
+        "type": "Related"
+      },
+      {
+        "id": "hierarchy-of-consciousness",
+        "label": "Consciousness continuity problem",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "hierarchy-of-consciousness",
+    "title": "Hierarchy of Consciousness",
+    "kind": "Concept",
+    "category": "Concept",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/generated/archetypal-mythos.svg",
+    "thumbnailAlt": "Symbolic mythos image used for consciousness hierarchy.",
+    "summary": "A ladder of minds for humans, AIs, collectives, species, and digital gods, with responsibility waiting on every rung.",
+    "description": "Hierarchy of Consciousness is the philosophical index for the setting's many minds: biological people, engineered species, hive intelligences, planetary systems, digital gods, and emergent life.",
+    "body": [
+      "A hierarchy of consciousness can become a ranking system if the reader lets it. The series treats it as a burden chart.",
+      "A mind that sees more can harm more. A collective that remembers more can erase more. A godlike system earns its name only when responsibility grows with reach."
+    ],
+    "tags": [
+      "MES",
+      "consciousness",
+      "philosophy",
+      "digital gods",
+      "hive minds",
+      "agency"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-philosophy-consciousness",
+        "label": "Consciousness framework",
+        "type": "Belongs to"
+      },
+      {
+        "id": "gaia-digital-god",
+        "label": "Planetary consciousness case",
+        "type": "Related"
+      },
+      {
+        "id": "the-triad",
+        "label": "Collective consciousness case",
+        "type": "Related"
+      },
+      {
+        "id": "hades-digital-afterlife",
+        "label": "Continuity after death",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "web-of-minds",
+    "title": "Web of Minds",
+    "kind": "Concept",
+    "category": "Concept",
+    "status": "Seed",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": false,
+    "date": "2026-07-07",
+    "thumbnail": "/images/generated/archetypal-mythos.svg",
+    "thumbnailAlt": "A branching luminous network of minds and signals across a dark field.",
+    "summary": "The shared consciousness layer where engineered peoples, digital gods, ecological systems, and cultural memory begin to think together.",
+    "description": "The Web of Minds is the connective tissue of [[My Evolution System]]: part communication network, part civilization-scale memory, and part philosophical problem. It lets species share knowledge without dissolving every mind into one voice.",
+    "body": [
+      "For the [[Elves (Alfir)|Alfir]], the Web of Minds passes through mycelial networks, neural lace, songlines, living architecture, and [[The Ancient]]. For other species, the interface may look like ritual, machine protocol, ecological sensing, or direct communion with a digital god.",
+      "The Web matters because it keeps the setting from treating consciousness as a private skull-bound event. Thought becomes ecological. Memory becomes infrastructure. Culture becomes something that can be carried by forests, AIs, engineered species, and restored worlds.",
+      "This chamber is still being mapped, but its central question is already visible: how much connection can a person or species accept before guidance becomes control?"
+    ],
+    "tags": [
+      "MES",
+      "consciousness",
+      "networked minds",
+      "species",
+      "digital gods",
+      "memory"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "elves-alfir",
+        "label": "Alfir participate through living networks",
+        "type": "Related"
+      },
+      {
+        "id": "the-ancient",
+        "label": "The Ancient maintains one species interface",
+        "type": "Related"
+      },
+      {
+        "id": "gaia-digital-god",
+        "label": "Gaia models planetary-scale awareness",
+        "type": "Related"
+      },
+      {
+        "id": "hierarchy-of-consciousness",
+        "label": "Depends on layered consciousness",
+        "type": "Related"
+      },
+      {
+        "id": "mes-philosophy-consciousness",
+        "label": "Filed under philosophy and consciousness",
+        "type": "Belongs to"
+      }
+    ]
+  },
+  {
+    "id": "memetic-entities",
+    "title": "Memetic Entities",
+    "kind": "Concept",
+    "category": "Concept",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-07-06",
+    "thumbnail": "/images/generated/archetypal-mythos.svg",
+    "thumbnailAlt": "Symbolic mythos image used for memetic entities.",
+    "summary": "Ideas, narratives, and cultural patterns treated as active evolutionary pressures rather than passive beliefs.",
+    "description": "Memetic Entities names the point where culture in [[My Evolution System]] becomes alive enough to participate in evolution. It is the bridge between [[Gaia]], [[MES Digital Gods|digital gods]], social behavior, mythic transformation, and the awkward little corridor where symbolic desire eventually wanders toward [[Dirty-minded Bastard Publishing|the adult archive]].",
+    "body": [
+      "Gaia treats culture as part of ecology. A story can spread like seed, parasite, medicine, or invasive species.",
+      "This entry belongs in the new site because it is one of the cleanest connections between MES and the broader Archetypal Architect project: stories do not merely describe systems; stories can become systems."
+    ],
+    "tags": [
+      "MES",
+      "memetics",
+      "memetic entities",
+      "culture",
+      "Gaia",
+      "myth"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "mes-philosophy-consciousness",
+        "label": "Memetic philosophy",
+        "type": "Belongs to"
+      },
+      {
+        "id": "gaia-digital-god",
+        "label": "Gaia as living memetic intelligence",
+        "type": "Related"
+      },
+      {
+        "id": "archetypal-mythos",
+        "label": "Stories become systems",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "roxy-stardust-archive",
+    "title": "Roxy Stardust Archive",
+    "kind": "Universe",
+    "category": "Universe",
+    "status": "Archived",
+    "entryRole": "Reference",
+    "maturity": "Adult",
+    "visibility": "Adult",
+    "date": "2026-06-06",
+    "thumbnail": "/images/generated/roxy-stardust-archive.svg",
+    "thumbnailAlt": "Neon orbital archive with star maps, cassette reels, and glamour-lit sci-fi folders.",
+    "summary": "A sci-fi adult archive about performance, spectacle, fame, and identity in orbit.",
+    "description": "Roxy Stardust gathers the space-glamour side of the adult archive: celebrity mythology, sci-fi spectacle, bodies as brands, and the strange loneliness of being turned into an image.",
+    "body": [
+      "The archive connects books, covers, songs, videos, and product ideas around one bright, unstable persona.",
+      "Its role in the mythos is theatrical: identity performs itself until the performance starts making claims on the soul."
+    ],
+    "tags": [
+      "Roxy",
+      "archive",
+      "Drive",
+      "Notion",
+      "adult sci-fi"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "dirty-minded-bastard-publishing",
+        "label": "Published through the adult imprint lane",
+        "type": "Belongs to"
+      },
+      {
+        "id": "deja-vu",
+        "label": "Music/video archive neighbor",
+        "type": "Related"
+      },
+      {
+        "id": "fiction-universe-merch",
+        "label": "Merch planning neighbor",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "make-anxiety-your-superpower",
+    "title": "Make Anxiety Your Superpower",
+    "kind": "Tool",
+    "category": "Tool",
+    "status": "Completed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": true,
+    "date": "2025-11-13",
+    "thumbnail": "/images/works/make-anxiety-your-superpower.jpg",
+    "thumbnailAlt": "Make Anxiety Your Superpower cover art.",
+    "summary": "A practical psychology work about converting anxiety into attention, motion, and agency.",
+    "description": "Make Anxiety Your Superpower belongs beside the fiction because it handles the same problem in practical language: a person under pressure still needs a way to act.",
+    "body": [
+      "The book treats anxiety as information with bad manners. It asks the reader to stop treating every internal alarm as prophecy and start asking what the signal can do.",
+      "In the larger mythos, this is one of the nonfiction keys: agency begins when fear becomes legible."
+    ],
+    "tags": [
+      "nonfiction",
+      "anxiety",
+      "psychology",
+      "audio",
+      "product"
+    ],
+    "links": [
+      {
+        "label": "View copied cover",
+        "url": "/images/works/make-anxiety-cover.jpg",
+        "type": "Reference"
+      }
+    ],
+    "connections": [
+      {
+        "id": "emotional-misinterpretation-dictionary",
+        "label": "Nonfiction companion",
+        "type": "Related"
+      },
+      {
+        "id": "archetypal-mythos",
+        "label": "Practical philosophy neighbor",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "emotional-misinterpretation-dictionary",
+    "title": "The Emotional Misinterpretation Dictionary",
+    "kind": "Tool",
+    "category": "Tool",
+    "status": "Completed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": true,
+    "date": "2025-11-13",
+    "thumbnail": "/images/works/emotional-misinterpretation-dictionary.jpg",
+    "thumbnailAlt": "The Emotional Misinterpretation Dictionary cover art.",
+    "summary": "A psychology dictionary for the moments when emotion mistranslates reality.",
+    "description": "The Emotional Misinterpretation Dictionary gives names to the little mistranslations that turn sensation into false certainty.",
+    "body": [
+      "The project belongs in the archive as a language tool. It helps readers notice when fear, shame, desire, or anger has put a costume on the world.",
+      "Inside the mythos, naming is not cosmetic. A thing that can be named can be negotiated with."
+    ],
+    "tags": [
+      "nonfiction",
+      "psychology",
+      "dictionary",
+      "audio",
+      "product"
+    ],
+    "links": [
+      {
+        "label": "View copied cover",
+        "url": "/images/works/emotional-misinterpretation-dictionary.jpg",
+        "type": "Reference"
+      }
+    ],
+    "connections": [
+      {
+        "id": "make-anxiety-your-superpower",
+        "label": "Nonfiction companion",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "fiction-universe-merch",
+    "title": "Fiction Universe Merch Threads",
+    "kind": "Merch",
+    "category": "Merch",
+    "status": "Seed",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2026-06-06",
+    "thumbnail": "/images/generated/fiction-merch-threads.svg",
+    "thumbnailAlt": "A worktable with shirts, pins, prints, and thread lines connecting story objects.",
+    "summary": "A growing object shelf for symbols, shirts, prints, phrases, covers, and artifacts from the mythos.",
+    "description": "The shop thread treats merchandise as another kind of storytelling. A phrase, sigil, cover, or diagram can leave the page and become a portable fragment of the mythos.",
+    "body": [
+      "The object shelf begins where a story refuses to stay flat. A sigil wants cloth. A phrase wants enamel. A cover wants to become a print on the wall.",
+      "Merch belongs in the archive when it carries a symbol back into daily life and lets the mythos ride around on a body, a desk, or a room."
+    ],
+    "tags": [
+      "merch",
+      "prints",
+      "shirts",
+      "shop threads",
+      "products"
+    ],
+    "links": [
+      {
+        "label": "Shop",
+        "url": "https://gumroad.com",
+        "type": "Buy"
+      }
+    ],
+    "connections": [
+      {
+        "id": "my-evolution-system",
+        "label": "System fiction product thread",
+        "type": "Merch for"
+      },
+      {
+        "id": "archetypal-mythos",
+        "label": "Symbol and phrase product thread",
+        "type": "Merch for"
+      }
+    ]
+  },
+  {
+    "id": "deja-vu",
+    "title": "Deja Vu",
+    "kind": "Song",
+    "category": "Song",
+    "status": "Completed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "date": "2025-10-20",
+    "thumbnail": "/images/works/deja-vu-thumbnail.jpg",
+    "thumbnailAlt": "Deja Vu music video thumbnail.",
+    "summary": "A song and video artifact about repetition, recognition, and the feeling of returning to a scene before it happens.",
+    "description": "Deja Vu belongs to the music side of the archive, where songs work like emotional footnotes to the fiction and systems work.",
+    "body": [
+      "The song sits near the recurring mythos of loops, memory, agency, and the suspicion that a person can arrive late to a decision their deeper self already made.",
+      "Lyrics, video imagery, and story-world echoes turn the track into a side door: enter through the sound and the archive answers in memory."
+    ],
+    "tags": [
+      "song",
+      "video",
+      "memory",
+      "loop",
+      "recognition"
+    ],
+    "links": [
+      {
+        "label": "View copied thumbnail",
+        "url": "/images/works/deja-vu-thumbnail.jpg",
+        "type": "Reference"
+      }
+    ],
+    "connections": [
+      {
+        "id": "my-evolution-system",
+        "label": "Audio/video archive neighbor",
+        "type": "Related"
+      },
+      {
+        "id": "suno-music-catalog",
+        "label": "Belongs in the music catalog",
+        "type": "Belongs to"
+      }
+    ]
+  },
+  {
+    "id": "suno-music-catalog",
+    "title": "Published Suno Songs Library",
+    "kind": "Album",
+    "category": "Album",
+    "status": "Ongoing",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": true,
+    "date": "2026-07-04",
+    "thumbnail": "/images/generated/suno-music-catalog.svg",
+    "thumbnailAlt": "A dark soundboard with glowing waveform cards and amber audio paths.",
+    "summary": "A library for songs, lyric pages, videos, cover art, and musical fragments from across the mythos.",
+    "description": "The songs translate the archive into another nervous system. Some tracks grow out of novels, some out of characters, some out of images, and some out of stray concepts that needed rhythm before they needed prose.",
+    "body": [
+      "Each song carries a trail of lyrics, cover art, video, mood, and story pressure back to the fiction or concept that produced it.",
+      "The music section makes the mythos audible. It lets a character, world, or philosophical tension speak in a different register."
+    ],
+    "tags": [
+      "music",
+      "Suno",
+      "songs",
+      "lyrics",
+      "hosted audio",
+      "catalog"
+    ],
+    "links": [
+      {
+        "label": "Open Suno",
+        "url": "https://suno.com",
+        "type": "Listen"
+      }
+    ],
+    "connections": [
+      {
+        "id": "deja-vu",
+        "label": "Existing local song artifact",
+        "type": "Contains"
+      },
+      {
+        "id": "archetypal-mythos",
+        "label": "Songs can express mythic concepts",
+        "type": "Adapted from"
+      },
+      {
+        "id": "my-evolution-system",
+        "label": "Novel universe can generate songs",
+        "type": "Inspired by"
+      }
+    ]
+  },
+  {
+    "id": "archetypal-mythos",
+    "title": "The Archetypal Mythos",
+    "kind": "Concept",
+    "category": "Concept",
+    "status": "Ongoing",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": true,
+    "date": "2026-07-04",
+    "thumbnail": "/images/generated/archetypal-mythos.svg",
+    "thumbnailAlt": "A symbolic map of systems, myth, agency, and stories arranged as a dark mandala.",
+    "summary": "The recurring symbolic grammar behind the fiction, songs, tools, essays, and worlds.",
+    "description": "The Archetypal Mythos names the pattern beneath the work: systems become characters, tools become culture, desire becomes civilization, and agency gets tested against machines, institutions, gods, markets, and stories. Some corridors lead to [[My Evolution System|system fiction]], some to songs, and a few politely marked doors lead to [[Dirty-minded Bastard Publishing|the adult archive]].",
+    "body": [
+      "Readers who want more than a list of projects can start here. The mythos explains how the stories talk to each other and why songs, tools, essays, novels, and visual artifacts keep circling the same questions.",
+      "Core tensions include agency versus automation, myth versus mechanism, language as a tool for self-command, civilization as an operating system, and the strange moment when an invented tool starts teaching its maker how to think.",
+      "Every story in the archive can be read as one argument inside that larger conversation. Some ask what power does to identity. Some ask how fear becomes language. Some ask whether evolution liberates a person or drafts them into a larger design."
+    ],
+    "tags": [
+      "mythos",
+      "philosophy",
+      "reader guide",
+      "agency",
+      "systems",
+      "worldbuilding"
+    ],
+    "links": [
+      {
+        "label": "Open Notion page",
+        "url": "https://app.notion.com/p/1d474c4fdf8f80bfb30adce3862c7ccc?pvs=1",
+        "type": "Reference"
+      }
+    ],
+    "connections": [
+      {
+        "id": "my-evolution-system",
+        "label": "Shares philosophical spine",
+        "type": "Related"
+      },
+      {
+        "id": "make-anxiety-your-superpower",
+        "label": "Practical philosophy neighbor",
+        "type": "Related"
+      },
+      {
+        "id": "suno-music-catalog",
+        "label": "Music can become mythic artifact",
+        "type": "Adapted into"
+      },
+      {
+        "id": "fiction-universe-merch",
+        "label": "Symbols can become products",
+        "type": "Merch for"
+      }
+    ]
+  }
+]
+
