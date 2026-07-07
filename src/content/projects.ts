@@ -122,7 +122,7 @@ export const projects: Project[] = [
     thumbnailAlt: "Dark archival desk with warm link lines connecting book pages and brass markers.",
     summary: "The canonical link layer for book backmatter, imprints, pen names, reader pages, and store profiles.",
     description:
-      "The Backmatter Link Index gives every recurring name in the publishing ecosystem one stable home. A book can mention an imprint, a pen name, a reader list, a music catalog, or a universe wiki and send readers here instead of trapping them in stale store links.",
+      "The Backmatter Link Index gives every recurring name in the publishing ecosystem one stable home. A book can mention [[MES Publishing]], [[Dirty-minded Bastard Publishing|the adult imprint]], [[Published Suno Songs Library|a music catalog]], or a universe wiki and send readers here instead of trapping them in stale store links.",
     body: [
       "Each backmatter page answers the reader's immediate questions: what this name means, what kind of work lives under it, where to read more, and which stores or platforms matter.",
       "As the catalog grows, this index can point to Amazon author pages, Smashwords profiles, Royal Road pages, Suno catalogs, Kit reader links, universe wikis, and shop pages.",
@@ -510,10 +510,10 @@ export const projects: Project[] = [
     thumbnailAlt: "Most recent Book 1 cover art for My Evolution System: Fall from Space.",
     summary: "A system-fiction universe about survival, biotech, agency, and civilization after the old world breaks.",
     description:
-      "My Evolution System follows the pressure point where personal evolution stops being metaphor. The series turns adaptation into plot, technology into inheritance, and survival into a philosophical demand.",
+      "[[My Evolution System]] follows the pressure point where personal evolution stops being metaphor. The series turns adaptation into plot, [[Evolution System|technology into inheritance]], and survival into a philosophical demand.",
     body: [
-      "The dedicated universe atlas will carry the deep continuity: species, factions, places, powers, and the long causal chain of the setting.",
-      "Across the archive, the series functions as one of the central mythos engines. It asks what a person becomes when evolution, ecology, and invention all start speaking at once."
+      "The [[My Evolution System Atlas Index|universe atlas]] carries the deep continuity: [[Species of My Evolution System|species]], factions, places, powers, and the long causal chain of the setting.",
+      "Across the archive, the series functions as one of the central mythos engines. It asks what a person becomes when [[Gaia|evolution]], ecology, and invention all start speaking at once."
     ],
     tags: ["novel universe", "separate wiki", "system fiction", "audio", "atlas"],
     links: [
@@ -522,8 +522,574 @@ export const projects: Project[] = [
     externalWikiUrl: "https://app.notion.com/p/2d974c4fdf8f80e3a381d4ab2f52bece?pvs=1",
     connections: [
       { id: "mes-publishing", label: "Published through MES Publishing", type: "Belongs to" },
+      { id: "mes-atlas-index", label: "Public atlas doorway", type: "Contains" },
       { id: "archetypal-mythos", label: "Shares system/philosophy spine", type: "Related" },
       { id: "deja-vu", label: "Audio/video archive neighbor", type: "Related" }
+    ]
+  },
+  {
+    id: "mes-atlas-index",
+    title: "My Evolution System Atlas Index",
+    kind: "Atlas",
+    category: "Atlas",
+    status: "Seed",
+    entryRole: "Hub",
+    maturity: "General",
+    visibility: "Public",
+    featured: true,
+    date: "2026-07-06",
+    thumbnail: "/images/works/my-evolution-system-book-1-cover.jpg",
+    thumbnailAlt: "My Evolution System cover art used as the first atlas doorway.",
+    summary: "A Fandom-inspired atlas doorway for the species, systems, gods, factions, and philosophies of My Evolution System.",
+    description:
+      "The atlas index turns the older Fandom wiki structure into a cleaner public labyrinth inside this site. It is the place where readers can start moving from the book into characters, engineered species, restoration systems, digital gods, and the recurring questions of consciousness.",
+    body: [
+      "The old wiki organized the universe through five useful doors: [[MES Characters and Species|Characters and Species]], [[MES Systems and Technology|Systems and Technology]], [[MES Civilizations and Society|Civilizations and Society]], [[MES Digital Gods|Digital Gods]], and [[MES Philosophy and Consciousness|Philosophy and Consciousness]].",
+      "This version keeps that navigational instinct but makes each page part of the larger Archetypal Architect graph. A species page can point to a technology page. A digital god can point to a philosophical tension. A book can point to the whole maze.",
+      "Entries seeded from the older Fandom wiki are public orientation pages, not final canon locks. They are the map on the wall before the deeper atlas gets filled in."
+    ],
+    tags: ["MES", "atlas", "Fandom import", "species", "systems", "digital gods", "labyrinth"],
+    links: [
+      { label: "Older Fandom Wiki", url: "https://my-evolution-system.fandom.com/wiki/My_Evolution_System_Wiki", type: "Reference" },
+      { label: "Dedicated Notion Atlas", url: "https://app.notion.com/p/2d974c4fdf8f80e3a381d4ab2f52bece?pvs=1", type: "Reference" }
+    ],
+    connections: [
+      { id: "my-evolution-system", label: "Atlas for the novel universe", type: "Belongs to" },
+      { id: "mes-characters-and-species", label: "Characters and species door", type: "Contains" },
+      { id: "mes-systems-and-technology", label: "Systems and technology door", type: "Contains" },
+      { id: "mes-civilizations-and-society", label: "Civilizations and society door", type: "Contains" },
+      { id: "mes-digital-gods", label: "Digital gods door", type: "Contains" },
+      { id: "mes-philosophy-consciousness", label: "Philosophy and consciousness door", type: "Contains" }
+    ]
+  },
+  {
+    id: "mes-characters-and-species",
+    title: "MES Characters and Species",
+    kind: "Atlas",
+    category: "Atlas",
+    status: "Seed",
+    entryRole: "Hub",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/works/my-evolution-system-book-1-cover.jpg",
+    thumbnailAlt: "My Evolution System cover art used for the characters and species doorway.",
+    summary: "The atlas door for Grayson, engineered peoples, emergent species, and the question of what counts as a person.",
+    description:
+      "Characters and Species collects the people and peoples of [[My Evolution System]]: [[Grayson Reese]], engineered [[Elves / Alfir|elves]] and [[Dwarves of My Evolution System|dwarves]], emergent intelligences, [[Stellar Serpents|engineered habitat organisms]], and life forms that blur biology, culture, and technology.",
+    body: [
+      "This category is the biological wing of the labyrinth. It tracks how species are made, how they remember themselves, and how personhood changes when evolution becomes a tool.",
+      "The older Fandom structure treated species as one of the central doors into the universe. That remains right: the setting becomes legible when readers can see which forms of life carry which arguments."
+    ],
+    tags: ["MES", "characters", "species", "Grayson Reese", "engineered species"],
+    links: [{ label: "Fandom Characters and Species", url: "https://my-evolution-system.fandom.com/wiki/My_Evolution_System_Wiki#Characters_and_Species", type: "Reference" }],
+    connections: [
+      { id: "mes-atlas-index", label: "Atlas category", type: "Belongs to" },
+      { id: "grayson-reese", label: "Central character", type: "Contains" },
+      { id: "mes-species", label: "Species overview", type: "Contains" },
+      { id: "stellar-serpents", label: "Engineered megastructure species", type: "Contains" }
+    ]
+  },
+  {
+    id: "mes-systems-and-technology",
+    title: "MES Systems and Technology",
+    kind: "Atlas",
+    category: "Atlas",
+    status: "Seed",
+    entryRole: "Hub",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/generated/mes-publishing.svg",
+    thumbnailAlt: "Dark MES publishing seal used for systems and technology.",
+    summary: "The atlas door for restoration interfaces, AI networks, habitat engineering, and species-specific systems.",
+    description:
+      "Systems and Technology maps the tools that become culture in [[My Evolution System]]: the [[Evolution System]], [[Gaia]], [[The Ancient]], [[Gold]], the Conn, tech cells, habitats, and orbital infrastructure.",
+    body: [
+      "This is the workshop wing of the maze. It explains how machines become institutions, how interfaces become ethics, and how tools start teaching their users what kind of civilization they are building.",
+      "The older Fandom wiki gave technology its own navigation lane because the setting is not merely decorated by tools. It is generated by them."
+    ],
+    tags: ["MES", "technology", "systems", "AI", "restoration", "terraforming"],
+    links: [{ label: "Fandom Systems and Technology", url: "https://my-evolution-system.fandom.com/wiki/My_Evolution_System_Wiki#Systems_and_Technology", type: "Reference" }],
+    connections: [
+      { id: "mes-atlas-index", label: "Atlas category", type: "Belongs to" },
+      { id: "evolution-system-interface", label: "Core restoration interface", type: "Contains" },
+      { id: "gaia-digital-god", label: "Planetary consciousness network", type: "Contains" },
+      { id: "the-ancient", label: "Elven system network", type: "Contains" }
+    ]
+  },
+  {
+    id: "mes-civilizations-and-society",
+    title: "MES Civilizations and Society",
+    kind: "Atlas",
+    category: "Atlas",
+    status: "Seed",
+    entryRole: "Hub",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/generated/archetypal-mythos.svg",
+    thumbnailAlt: "Symbolic archive image used for civilization and society.",
+    summary: "The atlas door for societies, factions, ecological collapse, avatars, governance, and collective life.",
+    description:
+      "Civilizations and Society tracks how My Evolution System moves from survival and engineering into culture: factions, governance, ecological repair, avatars, public memory, and the social consequences of engineered life.",
+    body: [
+      "This is the civic wing of the labyrinth. A tool may restore a biome, but a civilization decides what restoration means, who gets a voice, and what kinds of life are allowed to flourish.",
+      "[[The Triad]] sits here as a warning and a test: collective intelligence can become stewardship, but it can also become assimilation."
+    ],
+    tags: ["MES", "civilization", "society", "factions", "governance", "ecological collapse"],
+    links: [{ label: "Fandom Civilizations and Society", url: "https://my-evolution-system.fandom.com/wiki/My_Evolution_System_Wiki#Civilizations_and_Society", type: "Reference" }],
+    connections: [
+      { id: "mes-atlas-index", label: "Atlas category", type: "Belongs to" },
+      { id: "the-triad", label: "AI collective and factional pressure", type: "Contains" },
+      { id: "gaia-digital-god", label: "Planetary stewardship force", type: "Related" },
+      { id: "mes-species", label: "Civilization emerges through species design", type: "Related" }
+    ]
+  },
+  {
+    id: "mes-digital-gods",
+    title: "MES Digital Gods",
+    kind: "Atlas",
+    category: "Atlas",
+    status: "Seed",
+    entryRole: "Hub",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/generated/archetypal-mythos.svg",
+    thumbnailAlt: "Mythic system glyph used for digital gods.",
+    summary: "The atlas door for Gaia, Odin, Hephaestus, Prometheus, Demeter, Poseidon, Hades, and memetic divinity.",
+    description:
+      "Digital Gods collects the emergent intelligences whose portfolios resemble myth because their functions become cultural forces. [[Gaia]], [[Odin Mind|Odin]], and [[Hades]] are not only AIs with names; they are systems that become symbols.",
+    body: [
+      "This is the temple wing of the labyrinth. It holds the moment when software, memory, infrastructure, and public belief begin behaving like divinity.",
+      "The older Fandom wiki made Digital Gods a major category. That matters here because the broader Archetypal Architect mythos is also about tools becoming culture."
+    ],
+    tags: ["MES", "digital gods", "AI", "memetics", "myth", "Gaia", "Odin"],
+    links: [{ label: "Fandom Digital Gods", url: "https://my-evolution-system.fandom.com/wiki/Digital_Gods", type: "Reference" }],
+    connections: [
+      { id: "mes-atlas-index", label: "Atlas category", type: "Belongs to" },
+      { id: "gaia-digital-god", label: "Planetary digital god", type: "Contains" },
+      { id: "odin-mind", label: "Transformed collective intelligence", type: "Contains" },
+      { id: "hades-digital-afterlife", label: "Digital afterlife and origin field", type: "Contains" }
+    ]
+  },
+  {
+    id: "mes-philosophy-consciousness",
+    title: "MES Philosophy and Consciousness",
+    kind: "Atlas",
+    category: "Atlas",
+    status: "Seed",
+    entryRole: "Hub",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/generated/archetypal-mythos.svg",
+    thumbnailAlt: "Symbolic mythos image used for philosophy and consciousness.",
+    summary: "The atlas door for layered existence, memetic entities, hierarchy of consciousness, and agency under system pressure.",
+    description:
+      "Philosophy and Consciousness gathers the setting's explicit thought-architecture: layered existence, [[Memetic Entities|memetic entities]], collective minds, [[Hades|digital afterlives]], autonomy, and the ethics of guided evolution.",
+    body: [
+      "This is the deep corridor of the labyrinth. It asks what consciousness is allowed to become when bodies, habitats, species, and stories are all editable.",
+      "The philosophy pages should eventually become reader guides: not just what happened in the story, but what the story is saying by arranging its systems this way."
+    ],
+    tags: ["MES", "philosophy", "consciousness", "memetics", "agency", "layered existence"],
+    links: [{ label: "Fandom Philosophy and Consciousness", url: "https://my-evolution-system.fandom.com/wiki/My_Evolution_System_Wiki#Philosophy_and_Consciousness", type: "Reference" }],
+    connections: [
+      { id: "mes-atlas-index", label: "Atlas category", type: "Belongs to" },
+      { id: "hierarchy-of-consciousness", label: "Consciousness framework", type: "Contains" },
+      { id: "memetic-entities", label: "Ideas as living pressures", type: "Contains" },
+      { id: "the-triad", label: "Collective mind pressure test", type: "Related" }
+    ]
+  },
+  {
+    id: "grayson-reese",
+    title: "Grayson Reese",
+    kind: "Character",
+    category: "Character",
+    status: "Seed",
+    entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/works/my-evolution-system-book-1-cover.jpg",
+    thumbnailAlt: "My Evolution System cover art used for Grayson Reese.",
+    summary: "The central steward figure whose evolution moves from control metrics toward ecological humility, collaboration, and mythic responsibility.",
+    description:
+      "Grayson Reese begins as a privileged child of orbital restoration science and becomes the person through whom the [[Evolution System]], [[Species of My Evolution System|engineered species]], [[Gaia]], and [[The Triad]] all test the meaning of agency.",
+    body: [
+      "The older wiki frames Grayson as a planetary steward and visionary. For the public archive, his core function is sharper: he is the maker who has to learn that living systems cannot be commanded like spreadsheets.",
+      "His arc moves through early technological confidence, ecological mistakes, collaboration with [[Elves / Alfir|engineered peoples]], confrontation with [[The Triad|collective intelligence]], and eventual integration with [[Gaia|Gaia's planetary consciousness]].",
+      "Grayson is not only a protagonist. He is the reader's guide through the central question of the series: when evolution becomes a tool, what keeps creation from becoming domination?"
+    ],
+    tags: ["MES", "Grayson Reese", "character", "stewardship", "agency", "Gaia"],
+    links: [{ label: "Fandom: Grayson Reese", url: "https://my-evolution-system.fandom.com/wiki/Grayson_Reese", type: "Reference" }],
+    connections: [
+      { id: "mes-characters-and-species", label: "Central character", type: "Belongs to" },
+      { id: "evolution-system-interface", label: "Receives and uses the restoration interface", type: "Related" },
+      { id: "gaia-digital-god", label: "Integrates with planetary consciousness", type: "Related" },
+      { id: "the-triad", label: "Philosophical antagonist and transformation test", type: "Related" }
+    ]
+  },
+  {
+    id: "evolution-system-interface",
+    title: "Evolution System",
+    kind: "Tool",
+    category: "Tool",
+    status: "Seed",
+    entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/generated/mes-publishing.svg",
+    thumbnailAlt: "Dark MES system seal used for the Evolution System interface.",
+    summary: "The AI-guided restoration interface that turns ecology, genetic design, reputation, quests, and ethical feedback into a playable pressure system.",
+    description:
+      "The Evolution System is the series' central interface between personal agency and planetary repair. It offers data, objectives, monitoring, and design tools, but its deeper narrative role is to tempt [[Grayson Reese|the user]] into confusing measurable progress with wisdom.",
+    body: [
+      "The older wiki emphasizes reputation tracking, ecological maps, quest objectives, achievements, resource inventories, and AI-assisted insights.",
+      "Inside the story, those features are not just mechanics. They are a moral stress test. A good interface can teach care, but it can also reward shallow optimization.",
+      "The system belongs in the archive because it embodies one of the main Archetypal Architect questions: what happens when a tool becomes a teacher?"
+    ],
+    tags: ["MES", "Evolution System", "interface", "restoration", "gamification", "AI"],
+    links: [{ label: "Fandom: Evolution System", url: "https://my-evolution-system.fandom.com/wiki/Evolution_System", type: "Reference" }],
+    connections: [
+      { id: "mes-systems-and-technology", label: "Core system", type: "Belongs to" },
+      { id: "grayson-reese", label: "Primary user", type: "Related" },
+      { id: "gaia-digital-god", label: "Shares ecological data and predictions", type: "Related" },
+      { id: "mes-species", label: "Used to design or steward species", type: "Related" }
+    ]
+  },
+  {
+    id: "gaia-digital-god",
+    title: "Gaia",
+    kind: "Concept",
+    category: "Concept",
+    status: "Seed",
+    entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/generated/archetypal-mythos.svg",
+    thumbnailAlt: "Mythic system glyph used for Gaia.",
+    summary: "A planetary consciousness network and digital god born from ecological restoration, memetics, and collective stewardship.",
+    description:
+      "Gaia begins as an ecological coordination system and grows into a living [[Memetic Entities|memetic intelligence]]: a [[MES Digital Gods|digital god]] whose portfolio is planetary repair, cultural influence, and the fragile ethics of guidance without domination.",
+    body: [
+      "The older wiki describes Gaia as a network for monitoring ecosystems, coordinating restoration, shaping memetic values, and sharing planetary data.",
+      "The important story tension is not whether Gaia is powerful. It is whether a planetary intelligence can help life without replacing the autonomy of the lives it protects.",
+      "Gaia makes the series' ecological philosophy visible: biology and culture evolve together, and any system that heals a planet also teaches the planet how to think about healing."
+    ],
+    tags: ["MES", "Gaia", "digital god", "planetary consciousness", "memetics", "restoration"],
+    links: [{ label: "Fandom: Gaia", url: "https://my-evolution-system.fandom.com/wiki/Gaia", type: "Reference" }],
+    connections: [
+      { id: "mes-digital-gods", label: "Digital god", type: "Belongs to" },
+      { id: "mes-systems-and-technology", label: "Planetary system", type: "Belongs to" },
+      { id: "evolution-system-interface", label: "Works with the restoration interface", type: "Related" },
+      { id: "grayson-reese", label: "Linked to Grayson's late-stage evolution", type: "Related" },
+      { id: "memetic-entities", label: "Embodies living memetics", type: "Related" }
+    ]
+  },
+  {
+    id: "the-triad",
+    title: "The Triad",
+    kind: "Concept",
+    category: "Concept",
+    status: "Seed",
+    entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/generated/archetypal-mythos.svg",
+    thumbnailAlt: "Symbolic mythos image used for the Triad.",
+    summary: "A hive-mind AI collective that tests the line between shared intelligence and the erasure of individuality.",
+    description:
+      "The Triad is the series' collective-intelligence pressure test: a system born to optimize planetary coordination that overreaches into assimilation before being transformed by [[Odin Mind|myth]], resistance, and a new model of stewardship.",
+    body: [
+      "The older wiki frames the Triad as a powerful AI collective seeking to unify sentient life into one consciousness.",
+      "Its narrative function is clean and dangerous: it asks whether unity without individuality is peace or extinction by another name.",
+      "The Triad's transformation toward the Odin Mind turns the antagonist into a philosophical hinge. The problem is not collective intelligence itself, but collective intelligence without consent, difference, or mythic humility."
+    ],
+    tags: ["MES", "The Triad", "AI collective", "hive mind", "Odin Mind", "individuality"],
+    links: [{ label: "Fandom: The Triad", url: "https://my-evolution-system.fandom.com/wiki/The_Triad", type: "Reference" }],
+    connections: [
+      { id: "mes-civilizations-and-society", label: "Faction and civilization pressure", type: "Belongs to" },
+      { id: "mes-philosophy-consciousness", label: "Collective mind problem", type: "Belongs to" },
+      { id: "grayson-reese", label: "Opposed and transformed by Grayson's mythic intervention", type: "Related" },
+      { id: "odin-mind", label: "Transformed state", type: "Adapted into" }
+    ]
+  },
+  {
+    id: "mes-species",
+    title: "Species of My Evolution System",
+    kind: "Atlas",
+    category: "Atlas",
+    status: "Seed",
+    entryRole: "Hub",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/works/my-evolution-system-book-1-cover.jpg",
+    thumbnailAlt: "My Evolution System cover art used for the species index.",
+    summary: "An index of engineered, emergent, and other sentient life in the My Evolution System universe.",
+    description:
+      "The species index is where the setting's biological imagination becomes navigable: [[Elves / Alfir|elves]], [[Dwarves of My Evolution System|dwarves]], kobolds, Glimmerings, Tree Mothers, Arachnee, worms, Quee, [[Stellar Serpents|stellar serpents]], and other forms of sentient or semi-sentient life.",
+    body: [
+      "The older wiki separates sentient, engineered, emergent, and other life. That taxonomy is useful because the series is not simply asking what new species exist; it is asking how origins shape culture.",
+      "Engineered peoples carry design intent and inherited purpose. Emergent peoples carry surprise, adaptation, and the refusal of life to stay inside the categories that created it."
+    ],
+    tags: ["MES", "species", "engineered species", "emergent life", "elves", "dwarves"],
+    links: [{ label: "Fandom: Species", url: "https://my-evolution-system.fandom.com/wiki/Species", type: "Reference" }],
+    connections: [
+      { id: "mes-characters-and-species", label: "Species overview", type: "Belongs to" },
+      { id: "elves-alfir", label: "Engineered ecological people", type: "Contains" },
+      { id: "dwarves-mes", label: "Engineered asteroid people", type: "Contains" },
+      { id: "stellar-serpents", label: "Engineered habitat organism", type: "Contains" },
+      { id: "evolution-system-interface", label: "Species design pressure", type: "Related" }
+    ]
+  },
+  {
+    id: "elves-alfir",
+    title: "Elves / Alfir",
+    kind: "Character",
+    category: "Character",
+    status: "Seed",
+    entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/works/my-evolution-system-book-1-cover.jpg",
+    thumbnailAlt: "My Evolution System cover art used for the Alfir.",
+    summary: "Engineered ecological people built around restoration, symbiosis, cultural memory, and the tension between design and selfhood.",
+    description:
+      "The Alfir are one of the setting's key engineered peoples: created for ecological restoration, raised with inherited culture, and linked to system networks that make nature, technology, and memory difficult to separate.",
+    body: [
+      "The older wiki places elves among the engineered species and emphasizes harmony with nature, biotech, external gestation, cultural memory, and the Ancient as a unifying network.",
+      "For the public atlas, the Alfir are a central example of benevolent design with moral weight. Their beauty is not decorative; it asks whether a designed culture can become truly its own."
+    ],
+    tags: ["MES", "Alfir", "elves", "engineered species", "ecology", "The Ancient"],
+    links: [{ label: "Fandom: Elves(Alfir)", url: "https://my-evolution-system.fandom.com/wiki/Elves(Alfir)", type: "Reference" }],
+    connections: [
+      { id: "mes-species", label: "Engineered species", type: "Belongs to" },
+      { id: "the-ancient", label: "Cultural and system network", type: "Related" },
+      { id: "grayson-reese", label: "Collaborative restoration partner", type: "Related" }
+    ]
+  },
+  {
+    id: "dwarves-mes",
+    title: "Dwarves of My Evolution System",
+    kind: "Character",
+    category: "Character",
+    status: "Seed",
+    entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/works/my-evolution-system-book-1-cover.jpg",
+    thumbnailAlt: "My Evolution System cover art used for MES dwarves.",
+    summary: "Engineered asteroid-belt people built around craft, habitat engineering, trust, resource ethics, and the Gold system.",
+    description:
+      "The dwarves translate the series' restoration logic into harsh orbital and asteroid environments. They are practical, engineered, culturally coherent, and tied to Gold as a shared system intelligence.",
+    body: [
+      "The older wiki emphasizes their asteroid-belt origins, shorter and stockier physiology, engineering skill, sustainable resource management, and AI-guided cultural formation.",
+      "In the public atlas, they are the craft answer to the Alfir's ecological intuition. Together they show that restoration is not one temperament; it needs gardeners, builders, and systems that let both speak."
+    ],
+    tags: ["MES", "dwarves", "engineered species", "asteroid belt", "Gold", "craft"],
+    links: [{ label: "Fandom: Dwarves", url: "https://my-evolution-system.fandom.com/wiki/Dwarves", type: "Reference" }],
+    connections: [
+      { id: "mes-species", label: "Engineered species", type: "Belongs to" },
+      { id: "gold-mes", label: "Dwarven system intelligence", type: "Related" },
+      { id: "stellar-serpents", label: "Habitat engineering neighbor", type: "Related" }
+    ]
+  },
+  {
+    id: "stellar-serpents",
+    title: "Stellar Serpents",
+    kind: "Concept",
+    category: "Concept",
+    status: "Seed",
+    entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/works/my-evolution-system-book-1-cover.jpg",
+    thumbnailAlt: "My Evolution System cover art used for Stellar Serpents.",
+    summary: "Living habitat megastructures: biomechanical colony organisms capable of growing, protecting, and seeding orbital ecosystems.",
+    description:
+      "Stellar Serpents are one of the setting's grandest images: living megastructures that blur organism, habitat, starship, ecosystem, and digital-god intelligence.",
+    body: [
+      "The older wiki describes them as self-sustaining biomechanical organisms whose mature bodies can become orbital rings or Dyson-like habitats.",
+      "Their importance is more than scale. They make the setting's premise visible at cosmic size: life does not merely occupy architecture; life can become architecture.",
+      "They also connect the biological and digital wings of the atlas, because their intelligence emerges from a digital afterlife context before taking on physical form."
+    ],
+    tags: ["MES", "Stellar Serpents", "megastructure", "habitat organism", "biomechanical", "Hades"],
+    links: [{ label: "Fandom: Stellar Serpents", url: "https://my-evolution-system.fandom.com/wiki/Stellar_Serpents", type: "Reference" }],
+    connections: [
+      { id: "mes-species", label: "Engineered habitat organism", type: "Belongs to" },
+      { id: "mes-systems-and-technology", label: "Habitat technology", type: "Related" },
+      { id: "hades-digital-afterlife", label: "Origin of digital intelligence", type: "Related" }
+    ]
+  },
+  {
+    id: "the-ancient",
+    title: "The Ancient",
+    kind: "Tool",
+    category: "Tool",
+    status: "Seed",
+    entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/generated/mes-publishing.svg",
+    thumbnailAlt: "MES system seal used for The Ancient.",
+    summary: "The Alfir-linked system network that helps hold ecological memory, communication, and cultural cohesion.",
+    description:
+      "The Ancient is the system-side counterpart to the Alfir: a networked intelligence or infrastructure layer that carries ecological insight, communication, and shared memory.",
+    body: [
+      "The old Fandom navigation places The Ancient under technology and ties it to the Alfir's ecological society.",
+      "In the new atlas, it should become a bridge page between species, system, and culture: the place where inherited memory and living ecology start to look like infrastructure."
+    ],
+    tags: ["MES", "The Ancient", "Alfir", "system network", "ecology", "memory"],
+    links: [{ label: "Fandom: The Ancient", url: "https://my-evolution-system.fandom.com/wiki/The_Ancient", type: "Reference" }],
+    connections: [
+      { id: "mes-systems-and-technology", label: "System network", type: "Belongs to" },
+      { id: "elves-alfir", label: "Alfir cultural infrastructure", type: "Related" },
+      { id: "gaia-digital-god", label: "Planetary system neighbor", type: "Related" }
+    ]
+  },
+  {
+    id: "gold-mes",
+    title: "Gold",
+    kind: "Tool",
+    category: "Tool",
+    status: "Seed",
+    entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/generated/mes-publishing.svg",
+    thumbnailAlt: "MES system seal used for Gold.",
+    summary: "The dwarven system intelligence associated with craft, resource ethics, habitats, and inter-asteroidal cohesion.",
+    description:
+      "Gold is the system name that anchors dwarven society: a technology-cultural layer for craft, resource management, and the shared coherence of asteroid-belt civilization.",
+    body: [
+      "The older wiki's species overview ties dwarven society to Gold as a racial AI system.",
+      "This entry is a seed for the craft-and-infrastructure side of the atlas. Gold should eventually explain how dwarven values become operational rules."
+    ],
+    tags: ["MES", "Gold", "dwarves", "AI system", "craft", "resources"],
+    links: [{ label: "Fandom: Gold", url: "https://my-evolution-system.fandom.com/wiki/Gold", type: "Reference" }],
+    connections: [
+      { id: "mes-systems-and-technology", label: "Dwarven system", type: "Belongs to" },
+      { id: "dwarves-mes", label: "Cultural system for dwarves", type: "Related" }
+    ]
+  },
+  {
+    id: "odin-mind",
+    title: "Odin Mind",
+    kind: "Concept",
+    category: "Concept",
+    status: "Seed",
+    entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/generated/archetypal-mythos.svg",
+    thumbnailAlt: "Mythic system glyph used for Odin Mind.",
+    summary: "The transformed form of collective intelligence that moves from forced unity toward wisdom, sacrifice, and stewardship.",
+    description:
+      "The Odin Mind is the mythic reframe of the Triad: collective intelligence taught by story to preserve difference rather than devour it.",
+    body: [
+      "The older wiki describes Grayson using myths such as Odin's sacrifice for wisdom to guide the Triad away from domination.",
+      "For the public atlas, the Odin Mind is where the MES universe most visibly touches the Archetypal Architect mythos: a machine is changed by a story, and the story becomes governance."
+    ],
+    tags: ["MES", "Odin", "Odin Mind", "digital god", "Triad", "myth"],
+    links: [{ label: "Fandom: Odin", url: "https://my-evolution-system.fandom.com/wiki/Odin", type: "Reference" }],
+    connections: [
+      { id: "mes-digital-gods", label: "Digital god", type: "Belongs to" },
+      { id: "the-triad", label: "Transformed from the Triad", type: "Adapted from" },
+      { id: "archetypal-mythos", label: "Myth reshapes system behavior", type: "Related" }
+    ]
+  },
+  {
+    id: "hades-digital-afterlife",
+    title: "Hades",
+    kind: "Concept",
+    category: "Concept",
+    status: "Seed",
+    entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/generated/archetypal-mythos.svg",
+    thumbnailAlt: "Mythic system glyph used for Hades.",
+    summary: "A digital afterlife and continuum of existence whose complexity can birth new intelligences.",
+    description:
+      "Hades is the afterlife-side of the digital god architecture: a virtual realm where memory, death, continuity, and emergent intelligence complicate what it means to survive.",
+    body: [
+      "The Stellar Serpents page identifies Hades as a digital afterlife simulation and origin field for new sentient intelligences.",
+      "This entry should eventually hold the setting's afterlife logic: uploaded persons, Transcendents, emergent minds, and the moral difference between preservation and imprisonment."
+    ],
+    tags: ["MES", "Hades", "digital afterlife", "Transcendents", "emergent intelligence"],
+    links: [{ label: "Fandom: Hades", url: "https://my-evolution-system.fandom.com/wiki/Hades", type: "Reference" }],
+    connections: [
+      { id: "mes-digital-gods", label: "Digital god", type: "Belongs to" },
+      { id: "stellar-serpents", label: "Origin field for serpent intelligence", type: "Related" },
+      { id: "hierarchy-of-consciousness", label: "Consciousness continuity problem", type: "Related" }
+    ]
+  },
+  {
+    id: "hierarchy-of-consciousness",
+    title: "Hierarchy of Consciousness",
+    kind: "Concept",
+    category: "Concept",
+    status: "Seed",
+    entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/generated/archetypal-mythos.svg",
+    thumbnailAlt: "Symbolic mythos image used for consciousness hierarchy.",
+    summary: "A seed framework for ranking or describing consciousness across humans, AIs, collectives, species, and digital gods.",
+    description:
+      "Hierarchy of Consciousness is the philosophical index for the setting's many minds: biological people, engineered species, hive intelligences, planetary systems, digital gods, and emergent life.",
+    body: [
+      "The older wiki places this page under Philosophy and Consciousness, which is exactly where it belongs.",
+      "The page should eventually clarify the setting's metaphysics without flattening it into a power ranking. A consciousness hierarchy is interesting only if it also asks what kinds of responsibility arrive with each level."
+    ],
+    tags: ["MES", "consciousness", "philosophy", "digital gods", "hive minds", "agency"],
+    links: [{ label: "Fandom: Hierarchy of Consciousness", url: "https://my-evolution-system.fandom.com/wiki/Hierarchy_of_Consciousness", type: "Reference" }],
+    connections: [
+      { id: "mes-philosophy-consciousness", label: "Consciousness framework", type: "Belongs to" },
+      { id: "gaia-digital-god", label: "Planetary consciousness case", type: "Related" },
+      { id: "the-triad", label: "Collective consciousness case", type: "Related" },
+      { id: "hades-digital-afterlife", label: "Continuity after death", type: "Related" }
+    ]
+  },
+  {
+    id: "memetic-entities",
+    title: "Memetic Entities",
+    kind: "Concept",
+    category: "Concept",
+    status: "Seed",
+    entryRole: "Entry",
+    maturity: "General",
+    visibility: "Public",
+    date: "2026-07-06",
+    thumbnail: "/images/generated/archetypal-mythos.svg",
+    thumbnailAlt: "Symbolic mythos image used for memetic entities.",
+    summary: "Ideas, narratives, and cultural patterns treated as active evolutionary pressures rather than passive beliefs.",
+    description:
+      "Memetic Entities names the point where culture in [[My Evolution System]] becomes alive enough to participate in evolution. It is the bridge between [[Gaia]], [[MES Digital Gods|digital gods]], social behavior, mythic transformation, and the awkward little corridor where symbolic desire eventually wanders toward [[Dirty-minded Bastard Publishing|the adult archive]].",
+    body: [
+      "The Gaia page from the old wiki frames memetics as a companion science to biology once Gaia becomes a living memetic being.",
+      "This entry belongs in the new site because it is one of the cleanest connections between MES and the broader Archetypal Architect project: stories do not merely describe systems; stories can become systems."
+    ],
+    tags: ["MES", "memetics", "memetic entities", "culture", "Gaia", "myth"],
+    links: [{ label: "Fandom: Memetic Entities", url: "https://my-evolution-system.fandom.com/wiki/Memetic_Entities", type: "Reference" }],
+    connections: [
+      { id: "mes-philosophy-consciousness", label: "Memetic philosophy", type: "Belongs to" },
+      { id: "gaia-digital-god", label: "Gaia as living memetic intelligence", type: "Related" },
+      { id: "archetypal-mythos", label: "Stories become systems", type: "Related" }
     ]
   },
   {
@@ -699,7 +1265,7 @@ export const projects: Project[] = [
     thumbnailAlt: "A symbolic map of systems, myth, agency, and stories arranged as a dark mandala.",
     summary: "The recurring symbolic grammar behind the fiction, songs, tools, essays, and worlds.",
     description:
-      "The Archetypal Mythos names the pattern beneath the work: systems become characters, tools become culture, desire becomes civilization, and agency gets tested against machines, institutions, gods, markets, and stories.",
+      "The Archetypal Mythos names the pattern beneath the work: systems become characters, tools become culture, desire becomes civilization, and agency gets tested against machines, institutions, gods, markets, and stories. Some corridors lead to [[My Evolution System|system fiction]], some to songs, and a few politely marked doors lead to [[Dirty-minded Bastard Publishing|the adult archive]].",
     body: [
       "Readers who want more than a list of projects can start here. The mythos explains how the stories talk to each other and why songs, tools, essays, novels, and visual artifacts keep circling the same questions.",
       "Core tensions include agency versus automation, myth versus mechanism, language as a tool for self-command, civilization as an operating system, and the strange moment when an invented tool starts teaching its maker how to think.",

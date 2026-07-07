@@ -3,7 +3,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ConnectionList from "../../components/ConnectionList.astro";
 import ExternalLinks from "../../components/ExternalLinks.astro";
 import TagList from "../../components/TagList.astro";
-import { publicProjects, creator } from "../../content/projects";
+import { projects, publicProjects, creator } from "../../content/projects";
+import { renderWikiText } from "../../lib/wikiLinks";
 
 export function getStaticPaths() {
   return publicProjects.map((entry) => ({
@@ -57,7 +58,7 @@ const { entry } = Astro.props;
       </aside>
       <article class="encyclopedia-main">
         <h2>Place in the Mythos</h2>
-        <p>{entry.description}</p>
+        <p set:html={renderWikiText(entry.description, projects)} />
         {
           entry.audioSrc ? (
             <div class="audio-panel">
@@ -66,8 +67,8 @@ const { entry } = Astro.props;
             </div>
           ) : null
         }
-        {entry.body?.map((paragraph) => <p>{paragraph}</p>)}
-        {entry.notes && <p>{entry.notes}</p>}
+        {entry.body?.map((paragraph) => <p set:html={renderWikiText(paragraph, projects)} />)}
+        {entry.notes && <p set:html={renderWikiText(entry.notes, projects)} />}
       </article>
     </section>
 

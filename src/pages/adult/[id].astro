@@ -2,7 +2,8 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ExternalLinks from "../../components/ExternalLinks.astro";
 import TagList from "../../components/TagList.astro";
-import { adultProjects } from "../../content/projects";
+import { adultProjects, projects } from "../../content/projects";
+import { renderWikiText } from "../../lib/wikiLinks";
 
 export function getStaticPaths() {
   return adultProjects.map((entry) => ({
@@ -52,8 +53,8 @@ const { entry } = Astro.props;
         </aside>
         <article class="encyclopedia-main">
           <h2>Story Function</h2>
-          <p>{entry.description}</p>
-          {entry.body?.map((paragraph) => <p>{paragraph}</p>)}
+          <p set:html={renderWikiText(entry.description, projects)} />
+          {entry.body?.map((paragraph) => <p set:html={renderWikiText(paragraph, projects)} />)}
         </article>
       </section>
     </div>

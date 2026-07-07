@@ -5,6 +5,17 @@ import PageHeader from "../../components/PageHeader.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
 import WikiMap from "../../components/WikiMap.astro";
 import { creator, publicProjects, wikiFacets } from "../../content/projects";
+
+const mesDoorways = publicProjects.filter((project) =>
+  [
+    "mes-atlas-index",
+    "mes-characters-and-species",
+    "mes-systems-and-technology",
+    "mes-civilizations-and-society",
+    "mes-digital-gods",
+    "mes-philosophy-consciousness"
+  ].includes(project.id)
+);
 ---
 
 <BaseLayout title={`Wiki | ${creator.name}`} description="A public archive of mythos, fiction, songs, tools, and symbolic systems.">
@@ -12,9 +23,17 @@ import { creator, publicProjects, wikiFacets } from "../../content/projects";
     <PageHeader
       eyebrow="Creator Wiki"
       title="The Public Archive"
-      description="This wiki follows the stories behind the stories: the recurring symbols, systems, songs, tools, and worlds that keep answering one another."
+      description="This wiki follows the stories behind the stories: a growing digital labyrinth of symbols, systems, songs, tools, fictional worlds, and the doors between them."
     />
     <section class="section first-section">
+      <div class="section-heading">
+        <p class="eyebrow">Universe Wing</p>
+        <h2>My Evolution System Atlas Doorways</h2>
+        <p>The older Fandom wiki becomes a cleaner public maze here: species, systems, civilizations, digital gods, and consciousness all linked back into the larger archive.</p>
+      </div>
+      <div class="project-grid">
+        {mesDoorways.map((project) => <ProjectCard project={project} />)}
+      </div>
       <div class="facet-row" aria-label="Wiki facets">
         {
           wikiFacets.map((facet) => (

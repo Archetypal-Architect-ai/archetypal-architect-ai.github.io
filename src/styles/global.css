@@ -718,6 +718,39 @@ code {
   line-height: 1.68;
 }
 
+.wiki-link {
+  border-bottom: 1px solid rgba(62, 196, 183, 0.72);
+  color: #b9f4ed;
+  font-weight: 780;
+  text-decoration: none;
+}
+
+.wiki-link:hover,
+.wiki-link:focus-visible {
+  background: rgba(62, 196, 183, 0.12);
+  color: #f2fffb;
+  outline: none;
+}
+
+.adult-boundary-link {
+  border-bottom-color: rgba(247, 196, 119, 0.82);
+  color: #ffdca7;
+}
+
+.adult-boundary-link::after {
+  content: " 18+";
+  color: #f7c477;
+  font-size: 0.68em;
+  font-weight: 900;
+  letter-spacing: 0;
+  vertical-align: super;
+}
+
+.missing-wiki-link {
+  border-bottom-color: rgba(155, 148, 137, 0.55);
+  color: #bcb4a7;
+}
+
 dl {
   display: grid;
   gap: 14px;
