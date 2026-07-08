@@ -766,6 +766,333 @@
     ]
   },
   {
+    "id": "graysons-game",
+    "title": "Grayson's Game",
+    "kind": "Novel",
+    "category": "Novel",
+    "status": "Ongoing",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": false,
+    "date": "2026-07-07",
+    "thumbnail": "/images/works/graysons-game-webnovel.jpg",
+    "thumbnailAlt": "Cover art for Grayson's Game, the My Evolution System side-canon bridge novel.",
+    "summary": "The canon side-quest novel following Grayson through the missing years when restoration becomes species design, living infrastructure, and stewardship over a world that stops needing his hand on every lever.",
+    "description": "[[graysons-game|Grayson's Game]] is the bridge between the opening survival-restoration premise of [[My Evolution System]] and the later era where Grayson has Founder-era weight without being a conventional ruler. Current continuity places the active draft around chapter 35, with a chapter 31-50 arc mapped toward stewardship and convergence.",
+    "body": [
+      "The book begins after the first elf design compiles and immediately refuses to let that milestone stay abstract. Grayson still has to make a world that can hold them. A species is not a victory condition if the environment, culture, supply chain, and safeguards are not ready for real bodies.",
+      "Its early arc is [[bramblemere-basin|Bramblemere]]: one hundred acres of ruined basin, heat, mud, nutrient failure, fungal networks, engineered ferns, pillar ants, Naiads, salamander logic, power budgets, and a containment fence that turns ecological design into ethical pressure. The work is physical enough to hurt and systemic enough to change what Grayson thinks he is doing.",
+      "The middle arc turns outward. Grayson learns that living systems do not merely execute code; they negotiate, adapt, leak, trade, and surprise him. He becomes less like a player optimizing tiles and more like a caretaker trying to understand a young ecology before it becomes dangerous or dependent.",
+      "The later drafted material moves through Auyan-tepui, the [[olympus-tepui|Olympus]] base, restored Angel Falls, the Pioneer Crust, elven incubation, and the first village proof that the elves are real people rather than a successful asset class. Crucially, Grayson is thousands of miles away from the first cohort in Chile. They do not know him by name, and the story should not make him their on-page parent, rescuer, or approving god.",
+      "The current forward outline pivots back toward Grayson after that proof of elven personhood. Chapters 33-50 are aimed at macro-management, planetary terraforming, infrastructure games, the EDC as an exploitable maintenance force, the Living Archive, migration corridors, and the realization that the center of the work has become a node inside a larger living board.",
+      "This is why the side novel matters to the main mythos. It explains the emotional and infrastructural bridge between betrayed son, ecological engineer, creator of elves, and later Founder. It is where the title-screen fantasy of a system becomes labor, restraint, tactical compromise, and the discipline of letting a world run."
+    ],
+    "tags": [
+      "MES",
+      "Grayson Reese",
+      "side canon",
+      "chapter 35",
+      "Bramblemere",
+      "elves",
+      "ecological restoration",
+      "Founder arc",
+      "Living Archive"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "my-evolution-system",
+        "label": "Side-canon within the main universe",
+        "type": "Belongs to"
+      },
+      {
+        "id": "grayson-reese",
+        "label": "Follows Grayson through the skipped years",
+        "type": "Related"
+      },
+      {
+        "id": "bramblemere-basin",
+        "label": "Opening restoration sandbox",
+        "type": "Contains"
+      },
+      {
+        "id": "erasure-protocol",
+        "label": "Central containment dilemma",
+        "type": "Contains"
+      },
+      {
+        "id": "olympus-tepui",
+        "label": "Observation base and weather engine",
+        "type": "Contains"
+      },
+      {
+        "id": "elves",
+        "label": "Prepares the world where the elves become autonomous people",
+        "type": "Related"
+      },
+      {
+        "id": "the-ancient",
+        "label": "Connects to elven support systems",
+        "type": "Related"
+      },
+      {
+        "id": "living-archive",
+        "label": "Later memory-grove infrastructure",
+        "type": "Contains"
+      },
+      {
+        "id": "evolution-system-interface",
+        "label": "Turns labor into system feedback",
+        "type": "Related"
+      },
+      {
+        "id": "living-archive",
+        "label": "Memory-grove infrastructure",
+        "type": "Contains"
+      }
+    ]
+  },
+  {
+    "id": "bramblemere-basin",
+    "title": "Bramblemere Basin",
+    "kind": "Place",
+    "category": "Place",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": false,
+    "date": "2026-07-07",
+    "thumbnail": "/images/works/graysons-game-webnovel.jpg",
+    "thumbnailAlt": "Graysons Game cover art used for the Bramblemere restoration entry.",
+    "summary": "Grayson's first large restoration sandbox: a ruined basin where ecological code has to survive heat, mud, hunger, power limits, and the terror of escaping its fence.",
+    "description": "[[bramblemere-basin|Bramblemere]] is where [[Grayson Reese]] turns the [[Evolution System]] from interface into field labor. The basin begins as failed soil, broken hydrology, toxic heat, and dead biomass, then becomes the proving ground for a living restoration stack.",
+    "body": [
+      "Bramblemere is not a pretty garden. It is a hostile basin of grey sludge, petrified roots, methane pockets, heat, humidity, and chemically exhausted soil. That ugliness is why Grayson chooses it: if a system can work there, it may be strong enough for the wider dying world.",
+      "The restoration begins in one deliberately constrained sandbox. Foamferns, Pillar Ants, Naiads, salamander-derived logic, fungal middleware, power blocks, sensor grids, and manual labor all become part of the same experiment. The point is not a single miracle organism, but an ecology with feedback loops.",
+      "Bramblemere teaches Grayson that simulated success is only a polite hypothesis. Real mud has power failures. Real organisms leak spores. Real predators wander in. Real heat kills. Every elegant design has to pay the heat tax, the data choke, and the cost of being observed.",
+      "The basin becomes one of the early places where the mythos shows its argument in miniature: repair is not control. A living system that only obeys is not alive enough to save anything."
+    ],
+    "tags": [
+      "MES",
+      "Bramblemere",
+      "restoration",
+      "ecology",
+      "sandbox",
+      "Graysons Game"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "graysons-game",
+        "label": "Primary setting for the early side-canon arc",
+        "type": "Belongs to"
+      },
+      {
+        "id": "grayson-reese",
+        "label": "Built and studied by Grayson",
+        "type": "Related"
+      },
+      {
+        "id": "evolution-system-interface",
+        "label": "Tracked through system metrics",
+        "type": "Related"
+      },
+      {
+        "id": "erasure-protocol",
+        "label": "Contained by the fence",
+        "type": "Related"
+      },
+      {
+        "id": "elves",
+        "label": "Prepared as future elven settlement ground",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "erasure-protocol",
+    "title": "Erasure Protocol",
+    "kind": "Concept",
+    "category": "Concept",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": false,
+    "date": "2026-07-07",
+    "thumbnail": "/images/works/memetic-hazard-corridor.png",
+    "thumbnailAlt": "A containment corridor suggesting a dangerous boundary and deletion field.",
+    "summary": "The containment fence around Grayson's engineered ecologies: a brutal safeguard against accidental bioterror and a recurring image of power restrained by fear of harm.",
+    "description": "The [[erasure-protocol|Erasure Protocol]] is the invisible boundary around [[bramblemere-basin|Bramblemere]] that deletes outbound engineered biomass before it can escape. It is a technical safeguard, but also one of [[Grayson Reese|Grayson]]'s clearest ethical tells.",
+    "body": [
+      "The protocol exists because Grayson understands that a successful organism can still be a disaster. Spores, roots, fungi, insects, and engineered symbioses may all be useful inside a test zone and catastrophic outside it. The fence turns that knowledge into an energy cost he has to keep paying.",
+      "Its brutality is part of the point. The protocol deletes biomass. It does not negotiate with a runaway spore cloud. In a softer story, that would be framed as simple control. In Grayson's arc, it reads as self-suspicion: he does not trust his own cleverness enough to leave it unbounded.",
+      "The fence also creates pressure. When power drops, containment becomes a survival problem. When the ecology pushes against the boundary, Grayson has to decide whether he is watching emergence, contamination, or a life form asking for more world.",
+      "As a mythos node, the Erasure Protocol connects directly to consent. Grayson was altered without permission. He knows what it means to be made into someone else's mission. His safeguards are sometimes harsh because the alternative is letting his mission do that to everything else."
+    ],
+    "tags": [
+      "MES",
+      "containment",
+      "safeguard",
+      "consent",
+      "ecological risk",
+      "Graysons Game"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "graysons-game",
+        "label": "Central side-canon dilemma",
+        "type": "Belongs to"
+      },
+      {
+        "id": "grayson-reese",
+        "label": "Designed and maintained by Grayson",
+        "type": "Related"
+      },
+      {
+        "id": "bramblemere-basin",
+        "label": "Contains the Bramblemere sandbox",
+        "type": "Related"
+      },
+      {
+        "id": "evolution-system-interface",
+        "label": "Monitored through restoration systems",
+        "type": "Related"
+      },
+      {
+        "id": "archetypal-mythos",
+        "label": "Power restrained by ethical fear",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "olympus-tepui",
+    "title": "Olympus / Auyan-tepui",
+    "kind": "Place",
+    "category": "Place",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": false,
+    "date": "2026-07-07",
+    "thumbnail": "/images/works/graysons-game-webnovel.jpg",
+    "thumbnailAlt": "Graysons Game cover art used for the Olympus tepui entry.",
+    "summary": "The isolated tabletop mountain where Grayson builds distance, weather, and authority without standing inside elven villages as a living god.",
+    "description": "[[olympus-tepui|Olympus]] is Grayson's name for the Auyan-tepui observation base in [[graysons-game|Grayson's Game]]. It is fortress, weather engine, symbolic mountain, and a practical attempt to separate guidance from worship.",
+    "body": [
+      "The tepui begins as a dead high plateau: exposed stone, ultraviolet punishment, brutal wind, and a dry Angel Falls chute that has not carried water in decades. Egg sees an impossible base. Grayson sees isolation, elevation, and the chance to watch without becoming immediately visible.",
+      "The mountain matters because the elves will need a world, not a hovering creator. From Olympus, Grayson can monitor continental-scale restoration, elven readiness, and ecological risk while avoiding the most dangerous version of founder presence: standing in the first village like a man-shaped answer from heaven.",
+      "That does not mean the symbol disappears. Reigniting Angel Falls with a biological weather engine is exactly the sort of act that becomes myth whether Grayson wants it to or not. The water falls before the man appears. The infrastructure speaks first.",
+      "Olympus is therefore one of the archive's cleanest Grayson places: a compromise between distance and responsibility, humility and unavoidable grandeur, practical oversight and the terrifying fact that good infrastructure can still look like a miracle."
+    ],
+    "tags": [
+      "MES",
+      "Olympus",
+      "Auyan-tepui",
+      "Angel Falls",
+      "weather engine",
+      "elves",
+      "Graysons Game"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "graysons-game",
+        "label": "Late available side-canon setting",
+        "type": "Belongs to"
+      },
+      {
+        "id": "grayson-reese",
+        "label": "Built as Grayson's observation base",
+        "type": "Related"
+      },
+      {
+        "id": "elves",
+        "label": "Creates distance from the first elves",
+        "type": "Related"
+      },
+      {
+        "id": "bramblemere-basin",
+        "label": "Extends lessons from the basin",
+        "type": "Related"
+      },
+      {
+        "id": "mes-civilizations-and-society",
+        "label": "Founder myth and distance problem",
+        "type": "Related"
+      }
+    ]
+  },
+  {
+    "id": "living-archive",
+    "title": "Living Archive",
+    "kind": "Concept",
+    "category": "Concept",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": false,
+    "date": "2026-07-07",
+    "thumbnail": "/images/generated/archetypal-mythos.svg",
+    "thumbnailAlt": "A luminous branching archive pattern suggesting memory stored in living systems.",
+    "summary": "The memory-grove direction in Grayson's Game: distributed data storage becoming wayfinding, history, ecology, and civilizational memory.",
+    "description": "The [[living-archive|Living Archive]] is one of the forward bridges in [[graysons-game|Grayson's Game]]: what Grayson reads as data storage and ecological backup becomes, for the elves and the world around them, memory with roots.",
+    "body": [
+      "The concept emerges from the later chapter outline, where Grayson begins building global memory-groves and distributed continuity infrastructure. His initial frame is practical: backup the work, preserve patterns, improve telemetry, and make planetary repair harder to erase.",
+      "The mythos turn is that living memory does not stay merely technical. To a people moving through restored corridors, groves that remember become roads, story-sites, grief containers, teaching systems, and proof that the landscape is no longer only a damaged substrate.",
+      "For Grayson, the Living Archive is another lesson in losing ownership. He can design the storage layer, but he cannot fully control what a civilization does with memory once memory becomes place.",
+      "This page is a seed because the exact prose path is still in the forward outline rather than fully locked public chapters. Its function is canon-facing: distributed memory becomes one of the organs that exists before anyone names the larger body."
+    ],
+    "tags": [
+      "MES",
+      "Graysons Game",
+      "Living Archive",
+      "memory groves",
+      "elves",
+      "Gaia precursor",
+      "continuity"
+    ],
+    "links": [],
+    "connections": [
+      {
+        "id": "graysons-game",
+        "label": "Forward side-canon infrastructure",
+        "type": "Belongs to"
+      },
+      {
+        "id": "grayson-reese",
+        "label": "Designed initially as continuity infrastructure",
+        "type": "Related"
+      },
+      {
+        "id": "elves",
+        "label": "Reinterpreted as cultural memory",
+        "type": "Related"
+      },
+      {
+        "id": "web-of-minds",
+        "label": "Memory as networked consciousness",
+        "type": "Related"
+      },
+      {
+        "id": "gaia-digital-god",
+        "label": "One precursor organ of planetary mind",
+        "type": "Related"
+      },
+      {
+        "id": "mes-philosophy-consciousness",
+        "label": "Filed under consciousness and memory",
+        "type": "Belongs to"
+      }
+    ]
+  },
+  {
     "id": "mes-atlas-index",
     "title": "My Evolution System Atlas Index",
     "kind": "Atlas",
@@ -840,7 +1167,7 @@
     "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
     "thumbnailAlt": "My Evolution System cover art used for the characters and species doorway.",
     "summary": "The atlas door for Grayson, engineered peoples, emergent species, and the question of what counts as a person.",
-    "description": "Characters and Species collects the people and peoples of [[My Evolution System]]: [[Grayson Reese]], engineered [[elves-alfir|elves]] and [[Dwarves of My Evolution System|dwarves]], emergent intelligences, [[Stellar Serpents|engineered habitat organisms]], and life forms that blur biology, culture, and technology.",
+    "description": "Characters and Species collects the people and peoples of [[My Evolution System]]: [[Grayson Reese]], engineered [[elves|elves]] and [[Dwarves of My Evolution System|dwarves]], emergent intelligences, [[Stellar Serpents|engineered habitat organisms]], and life forms that blur biology, culture, and technology.",
     "body": [
       "This category is the biological wing of the labyrinth. It tracks how species are made, how they remember themselves, and how personhood changes when evolution becomes a tool.",
       "Every body in this wing carries an argument. Some were designed for repair. Some emerged from pressure. Some grew large enough to turn habitat, culture, and memory into a single living shape."
@@ -1089,27 +1416,47 @@
     "date": "2026-07-06",
     "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
     "thumbnailAlt": "My Evolution System cover art used for Grayson Reese.",
-    "summary": "The central steward figure whose evolution moves from control metrics toward ecological humility, collaboration, and mythic responsibility.",
-    "description": "Grayson Reese begins as a privileged child of orbital restoration science and becomes the person through whom the [[Evolution System]], [[Species of My Evolution System|engineered species]], [[Gaia]], and [[The Triad]] all test the meaning of agency.",
+    "summary": "A coerced survivor turned planetary systems-builder, trying to repair a dying world without becoming the god of everything he touches.",
+    "description": "[[Grayson Reese]] begins [[My Evolution System]] as the unwilling user of an evolutionary restoration system. His parents give him power without consent; the rest of his life asks whether power can be turned back toward consent, ecology, and living autonomy.",
     "body": [
-      "The older wiki frames Grayson as a planetary steward and visionary. For the public archive, his core function is sharper: he is the maker who has to learn that living systems cannot be commanded like spreadsheets.",
-      "His arc moves through early technological confidence, ecological mistakes, collaboration with [[elves-alfir|engineered peoples]], confrontation with [[The Triad|collective intelligence]], and eventual integration with [[Gaia|Gaia's planetary consciousness]].",
-      "Grayson is not only a protagonist. He is the reader's guide through the central question of the series: when evolution becomes a tool, what keeps creation from becoming domination?"
+      "Grayson is eighteen when the story opens: Ring-born, trained from childhood to notice tiny environmental changes, and raised by parents who turned those games into preparation for a mission he never agreed to carry. Trevor and Charlotte Reese secretly activate his nanites, neural lace, biometric systems, and Synthesis Virus, then drop him toward Earth in an escape pod with [[evolution-system-interface|the Evolution System]] as guide, tool, and pressure gauge.",
+      "His first mode is not conquest. It is inventory. He salvages what the pod can give him, finds shelter, sets up power, listens to Egg, reads hostile terrain, and begins turning survival into a workbench. The early Grayson is sarcastic, observant, exhausted, and practical: a person who builds because the alternative is watching the biosphere continue to fail.",
+      "That origin matters because his central wound is consent. The people who loved him most converted him into a planetary instrument before he could choose the mission. That makes him wary of doing the same thing at larger scale. When Grayson designs systems, creatures, safeguards, or cultures, the question under every clever solution is: am I helping, or am I claiming?",
+      "[[graysons-game|Grayson's Game]] fills the skipped-time bridge where the restoration mission becomes more than a survival interface. The active local continuity reaches roughly chapter 35 and maps forward to chapter 50: the arc from Bramblemere sandbox, elf incubation, and first village proof into macro-management, EDC exploitation, the Living Archive, and stewardship over systems that no longer route through his approval.",
+      "The [[bramblemere-basin|Bramblemere]] work shows his method at ground level. Grayson does not wave a hand and restore the Amazon. He defines a sandbox, plants engineered loops by hand, budgets power, moves the Mobile Base, survives heat stress, watches failure modes, and learns that a living system can start answering back in ways no simulation predicted.",
+      "The [[erasure-protocol|Erasure Protocol]] is one of his clearest moral signatures. The fence exists because his engineered organisms could become a planetary bioterror event if they escape too early. It is a brutal safeguard, but it is also a confession: Grayson knows that good intentions do not make a design safe. He would rather constrain his own success than let a clever organism conquer the world by accident.",
+      "His relationship with the elves begins from that same fear of ownership. The elves are not a servant species or a decorative fantasy race. They are Grayson's answer to an impossible scale problem: planetary restoration cannot ethically belong to one person. The first cohort is deliberately not raised as worshippers; they are in Chile, thousands of miles away, and do not know Grayson by name.",
+      "[[olympus-tepui|Olympus]] marks the danger of becoming a symbol. From Auyan-tepui, Grayson can watch continental-scale signals without standing inside the first elven villages as a living god in a cooling suit. The mountain, the restored Angel Falls, and the biological weather engine become authority at a distance: a way to be responsible without making himself the center of their religion.",
+      "The later public arc widens into [[gaia-digital-god|Gaia]], [[the-triad|the Triad]], digital gods, racial systems, and questions of consciousness. Grayson becomes a mediator between human ethics and systems large enough to flatten human lives. His power increases, but the interesting part is not the scale. It is the way the original consent wound keeps echoing through every design choice.",
+      "Grayson loves through infrastructure: shelters, exit paths, failsafes, autonomous companion species, and systems designed to survive him. That is also his failure mode. He can turn feeling into architecture before admitting it is feeling. He can offer a better system when someone needs presence. He can overbuild safeguards because he remembers having none.",
+      "The useful shorthand is not ?chosen one? or ?planetary architect,? though the system may award him titles like that. The better key is systems-builder trying not to become a god. His mythic role is earned through dirt, heat, fatigue, guilt, restraint, and the long work of letting his creations outgrow him."
     ],
     "tags": [
       "MES",
       "Grayson Reese",
       "character",
-      "stewardship",
-      "agency",
-      "Gaia"
+      "consent",
+      "ecological restoration",
+      "systems-builder",
+      "Graysons Game",
+      "Founder arc"
     ],
     "links": [],
     "connections": [
       {
+        "id": "my-evolution-system",
+        "label": "Opening protagonist of the universe",
+        "type": "Belongs to"
+      },
+      {
         "id": "mes-characters-and-species",
         "label": "Central character",
         "type": "Belongs to"
+      },
+      {
+        "id": "graysons-game",
+        "label": "Side-canon bridge through the skipped years",
+        "type": "Contains"
       },
       {
         "id": "evolution-system-interface",
@@ -1117,13 +1464,48 @@
         "type": "Related"
       },
       {
+        "id": "bramblemere-basin",
+        "label": "First major ecological sandbox",
+        "type": "Related"
+      },
+      {
+        "id": "erasure-protocol",
+        "label": "Safeguard shaped by his consent wound",
+        "type": "Related"
+      },
+      {
+        "id": "elves",
+        "label": "Creates the elves as autonomous companions",
+        "type": "Related"
+      },
+      {
+        "id": "the-ancient",
+        "label": "Supports elven continuity and memory",
+        "type": "Related"
+      },
+      {
+        "id": "olympus-tepui",
+        "label": "Observation base and symbolic distance",
+        "type": "Related"
+      },
+      {
+        "id": "living-archive",
+        "label": "Builds memory-grove infrastructure into civilization",
+        "type": "Related"
+      },
+      {
         "id": "gaia-digital-god",
-        "label": "Integrates with planetary consciousness",
+        "label": "Advises Gaia through boundary questions",
         "type": "Related"
       },
       {
         "id": "the-triad",
-        "label": "Philosophical antagonist and transformation test",
+        "label": "Opposes optimization without consent",
+        "type": "Related"
+      },
+      {
+        "id": "web-of-minds",
+        "label": "Later consequences of networked consciousness",
         "type": "Related"
       }
     ]
@@ -1299,7 +1681,7 @@
     "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
     "thumbnailAlt": "My Evolution System cover art used for the species index.",
     "summary": "An index of engineered, emergent, and other sentient life in the My Evolution System universe.",
-    "description": "The species index is where the setting's biological imagination becomes navigable: [[elves-alfir|elves]], [[Dwarves of My Evolution System|dwarves]], kobolds, Glimmerings, Tree Mothers, Arachnee, worms, Quee, [[Stellar Serpents|stellar serpents]], and other forms of sentient or semi-sentient life.",
+    "description": "The species index is where the setting's biological imagination becomes navigable: [[elves|elves]], [[Dwarves of My Evolution System|dwarves]], kobolds, Glimmerings, Tree Mothers, Arachnee, worms, Quee, [[Stellar Serpents|stellar serpents]], and other forms of sentient or semi-sentient life.",
     "body": [
       "The older wiki separates sentient, engineered, emergent, and other life. That taxonomy is useful because the series is not simply asking what new species exist; it is asking how origins shape culture.",
       "Engineered peoples carry design intent and inherited purpose. Emergent peoples carry surprise, adaptation, and the refusal of life to stay inside the categories that created it."
@@ -1320,7 +1702,7 @@
         "type": "Belongs to"
       },
       {
-        "id": "elves-alfir",
+        "id": "elves",
         "label": "Engineered ecological people",
         "type": "Contains"
       },
@@ -1342,8 +1724,8 @@
     ]
   },
   {
-    "id": "elves-alfir",
-    "title": "Elves (Alfir)",
+    "id": "elves",
+    "title": "Elves",
     "kind": "Character",
     "category": "Character",
     "status": "Seed",
@@ -1352,29 +1734,27 @@
     "visibility": "Public",
     "date": "2026-07-06",
     "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
-    "thumbnailAlt": "My Evolution System cover art used for the Alfir.",
-    "summary": "Engineered elder-race stewards whose biology, culture, and living technologies turn ecological restoration into civilization.",
-    "description": "The [[Elves (Alfir)|Alfir]] are not a fantasy inheritance dropped unchanged into space-age fiction. They are one of [[Grayson Reese|Grayson Reese]]'s most deliberate acts of species design: a people built through the [[Evolution System]] and the Ring AI to guide Earth toward balance after collapse.",
+    "thumbnailAlt": "My Evolution System cover art used for the elves.",
+    "summary": "Grayson's autonomous companion race: biology-first ecological stewards supported by the Ancient and given room to become themselves.",
+    "description": "The [[elves|elves]] are one of [[Grayson Reese|Grayson]]'s most consequential answers to scale. One person cannot ethically repair a planet alone, so he designs a companion people rather than a tool species.",
     "body": [
-      "Their origin is almost paradoxical. The Alfir are young, but they are born with cultural memory: a carefully prepared sense of ancestry, ritual, and responsibility meant to keep them from feeling like laboratory products. Their early development happens inside gestation chambers that combine neural interfaces, simulation, education, and cultural imprinting before they ever walk beneath an open sky.",
-      "Physically, the Alfir are lithe, androgynously beautiful, and often lightly uncanny: pointed ears, minimal sexual dimorphism, refined senses, and in some lines bioluminescent or translucent skin. Their bodies are optimized for nutrient efficiency and low waste, and their reproductive biology is flexible enough to support family structures that do not map cleanly onto old human assumptions.",
-      "Culturally, they follow The Way: a social grammar of balance, restraint, ecological respect, and minimal waste. Authority is earned through visible contribution rather than domination. Children are treated as a communal responsibility, while bonding, breeding, mentorship, art, and stewardship form separate but overlapping duties.",
-      "Their technology is alive wherever possible. Sentinel Trees gather and distribute power. Luminous fungi replace crude lighting. Bio-sculptors coax organisms into bridges, dwellings, tools, and ceremonial forms. For the Alfir, technology is not an escape from nature; it is a vow to become skilled enough to collaborate with living systems without reducing them to raw material.",
-      "The Alfir are connected to [[The Ancient]], a racial intelligence that preserves memory, shares discoveries, and keeps far-flung communities in conversation. Through neural lace, microbial electrosynthesis, mycelial networks, and programmable gene expression, they participate in the wider [[web-of-minds|Web of Minds]] without losing the local intimacy of forest, songline, craft, and place.",
-      "Their most dramatic art is plant growth induction. Sylvan Resonators send tuned bioelectric signals into dormant tissue. Sylvogenes and Biografts establish morphogen gradients for designed forms. Living Looms shape developing structures with symbiotic fungi and engineered vines, while Aetheric Sap and Growth Canticles synchronize the process until architecture behaves like ritualized horticulture.",
-      "Their relationship with humanity is patient but not sentimental. The Alfir see humans as a lost parent species: dangerous, wounded, brilliant, and still worth guiding. They study human societies from a distance before intervening directly, nudging them toward sustainability rather than conquest.",
-      "Their creation also echoes outward. [[dwarves-mes|Dwarves]] emerge partly in response to what the Alfir prove is possible, while later species such as kobolds, Glimmerings, Arachnee, and other engineered peoples complicate the original dream of harmonious uplift. The Alfir become both model and warning: proof that beauty can be engineered, and that engineered beauty still has to choose what kind of people it will become.",
-      "In the larger mythos, the Alfir carry one of the central arguments of [[My Evolution System]]: redemption is not nostalgia. Earth cannot simply return to the old forest. It has to grow a future where biology, memory, technology, and moral imagination become part of the same living system."
+      "The elves are canonically tied to Grayson's side-quest years, especially [[graysons-game|Grayson's Game]]. Their working species frame appears as Homo sylvanus, but the public-facing name in the novels is simple: elves. Current manuscript continuity treats that plain name as the public name, while their deeper identity comes through culture, Lace, Ancient, and living technology.",
+      "Their creation starts with a refusal. Grayson does not want to stand over a new people as their permanent author. The first cohort grows in Chile with the Lace and [[the-ancient|Ancient]] as second nature, but without knowing Grayson by name. That distance is not neglect; it is the first ethical boundary of their civilization.",
+      "They are meant to scale the ecological work that began in places like [[bramblemere-basin|Bramblemere]]. If restoration remains one man's project, it becomes both impossible and ethically grotesque. The elves turn restoration into culture, kinship, craft, memory, and long-term stewardship, while the later outline shows their infrastructure becoming part of the planet's metabolism.",
+      "Their technology paradigm is overwhelmingly biological. Properly elven systems should look cultivated, symbiotic, adaptive, and alive, even when practical structural bones sit underneath. Their signature is not factory polish; it is living architecture trained to cooperate with place.",
+      "The [[the-ancient|Ancient]] supports them as racial memory and continuity infrastructure. That support should not flatten them into one mind. The important tension is companion intelligence: a people connected enough to remember together, but distinct enough to choose.",
+      "The elves also complicate Grayson. They are proof that he can create without simply commanding, but they are also proof that every creator leaves fingerprints. Their culture inherits some of his methodical problem-solving while twisting it through their own logic, rituals, and values.",
+      "In the larger mythos, the elves carry the argument that redemption is not nostalgia. Earth cannot simply become the old forest again. It has to grow a future where biology, technology, culture, and moral imagination cooperate without pretending they are the same thing."
     ],
     "tags": [
       "MES",
-      "Alfir",
       "elves",
+      "Homo sylvanus",
       "engineered species",
       "ecological restoration",
-      "The Way",
       "living technology",
-      "Web of Minds"
+      "Ancient",
+      "Graysons Game"
     ],
     "links": [],
     "connections": [
@@ -1384,22 +1764,37 @@
         "type": "Related"
       },
       {
-        "id": "evolution-system",
+        "id": "graysons-game",
+        "label": "Developed through Grayson's side-canon years",
+        "type": "Related"
+      },
+      {
+        "id": "evolution-system-interface",
         "label": "Designed through the Evolution System",
         "type": "Related"
       },
       {
         "id": "the-ancient",
-        "label": "Linked through their racial intelligence",
+        "label": "Supported by the Ancient",
+        "type": "Related"
+      },
+      {
+        "id": "bramblemere-basin",
+        "label": "Future settlement and restoration ground",
+        "type": "Related"
+      },
+      {
+        "id": "olympus-tepui",
+        "label": "First seen from Grayson's distance problem",
         "type": "Related"
       },
       {
         "id": "dwarves-mes",
-        "label": "Inspired later engineered species design",
+        "label": "Contrasts with dwarven industrial systems",
         "type": "Related"
       },
       {
-        "id": "species-mes",
+        "id": "mes-species",
         "label": "Part of the engineered species atlas",
         "type": "Belongs to"
       },
@@ -1414,12 +1809,12 @@
         "type": "Related"
       },
       {
-        "id": "gaia-mes",
-        "label": "Serves the restoration logic Gaia protects",
+        "id": "gaia-digital-god",
+        "label": "Serves the larger restoration logic Gaia inherits",
         "type": "Related"
       },
       {
-        "id": "hierarchy-consciousness-mes",
+        "id": "hierarchy-of-consciousness",
         "label": "Raises questions about designed consciousness",
         "type": "Related"
       }
@@ -1441,7 +1836,7 @@
     "description": "The dwarves translate the series' restoration logic into harsh orbital and asteroid environments. They are practical, engineered, culturally coherent, and tied to Gold as a shared system intelligence.",
     "body": [
       "The older wiki emphasizes their asteroid-belt origins, shorter and stockier physiology, engineering skill, sustainable resource management, and AI-guided cultural formation.",
-      "In the public atlas, they are the craft answer to the Alfir's ecological intuition. Together they show that restoration is not one temperament; it needs gardeners, builders, and systems that let both speak."
+      "In the public atlas, they are the craft answer to the elves's ecological intuition. Together they show that restoration is not one temperament; it needs gardeners, builders, and systems that let both speak."
     ],
     "tags": [
       "MES",
@@ -1528,16 +1923,15 @@
     "date": "2026-07-06",
     "thumbnail": "/images/generated/mes-publishing.svg",
     "thumbnailAlt": "MES system seal used for The Ancient.",
-    "summary": "The Alfir-linked system network that helps hold ecological memory, communication, and cultural cohesion.",
-    "description": "The Ancient is the system-side counterpart to the Alfir: a networked intelligence or infrastructure layer that carries ecological insight, communication, and shared memory.",
+    "summary": "The elves-linked system network that helps hold ecological memory, communication, and cultural cohesion.",
+    "description": "The Ancient is the system-side counterpart to the elves: a networked intelligence or infrastructure layer that carries ecological insight, communication, and shared memory.",
     "body": [
-      "The Ancient hums beneath Alfir culture like a root network under a forest floor.",
-      "Inherited memory, ecological instinct, and living infrastructure meet here. The Alfir do not merely live near nature; they carry a system that remembers how nature speaks."
+      "The Ancient hums beneath elves culture like a root network under a forest floor.",
+      "Inherited memory, ecological instinct, and living infrastructure meet here. The elves do not merely live near nature; they carry a system that remembers how nature speaks."
     ],
     "tags": [
       "MES",
       "The Ancient",
-      "Alfir",
       "system network",
       "ecology",
       "memory"
@@ -1550,8 +1944,8 @@
         "type": "Belongs to"
       },
       {
-        "id": "elves-alfir",
-        "label": "Alfir cultural infrastructure",
+        "id": "elves",
+        "label": "Elven cultural infrastructure",
         "type": "Related"
       },
       {
@@ -1756,7 +2150,7 @@
     "summary": "The shared consciousness layer where engineered peoples, digital gods, ecological systems, and cultural memory begin to think together.",
     "description": "The Web of Minds is the connective tissue of [[My Evolution System]]: part communication network, part civilization-scale memory, and part philosophical problem. It lets species share knowledge without dissolving every mind into one voice.",
     "body": [
-      "For the [[Elves (Alfir)|Alfir]], the Web of Minds passes through mycelial networks, neural lace, songlines, living architecture, and [[The Ancient]]. For other species, the interface may look like ritual, machine protocol, ecological sensing, or direct communion with a digital god.",
+      "For the [[elves|elves]], the Web of Minds passes through mycelial networks, neural lace, songlines, living architecture, and [[The Ancient]]. For other species, the interface may look like ritual, machine protocol, ecological sensing, or direct communion with a digital god.",
       "The Web matters because it keeps the setting from treating consciousness as a private skull-bound event. Thought becomes ecological. Memory becomes infrastructure. Culture becomes something that can be carried by forests, AIs, engineered species, and restored worlds.",
       "This chamber is still being mapped, but its central question is already visible: how much connection can a person or species accept before guidance becomes control?"
     ],
@@ -1771,8 +2165,8 @@
     "links": [],
     "connections": [
       {
-        "id": "elves-alfir",
-        "label": "Alfir participate through living networks",
+        "id": "elves",
+        "label": "Elves participate through living networks",
         "type": "Related"
       },
       {
@@ -2174,4 +2568,3 @@
     ]
   }
 ]
-
