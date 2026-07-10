@@ -927,6 +927,10 @@ dd {
   .detail-hero {
     grid-template-columns: 1fr;
   }
+
+  .encyclopedia-panel {
+    position: static;
+  }
 }
 
 @media (max-width: 760px) {
