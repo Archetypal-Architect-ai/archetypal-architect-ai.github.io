@@ -1,0 +1,49 @@
+{
+  "playlists": [
+    {
+      "id": "myth-and-machines",
+      "title": "Myth and Machines",
+      "description": "Songs for the corridor where old gods, systems, and human hands begin answering one another.",
+      "sunoUrl": "https://suno.com/playlist/e5d04f86-d497-4808-85ca-84c08f27897a",
+      "tracks": ["gaia-awakening", "recursive-eden", "technologys-not-cheating", "the-architect-of-ashes", "no-longer-yours-to-take"]
+    },
+    {
+      "id": "fire-and-recovery",
+      "title": "Fire and Recovery",
+      "description": "Pressure, grief, refusal, and the stubborn decision to keep becoming.",
+      "sunoUrl": "https://suno.com/@archetypalarchitect",
+      "tracks": ["splinter-and-flame", "beautiful-disaster", "architect-of-her-fall", "keyboard-conqueror"]
+    },
+    {
+      "id": "night-archive",
+      "title": "Night Archive",
+      "description": "A slower shelf for memory, atmosphere, and the things that keep moving after the lights go out.",
+      "sunoUrl": "https://suno.com/@archetypalarchitect",
+      "tracks": ["sci-fi-ambiance", "the-rolling-waves-lament", "the-tavern-at-the-edge-of-night"]
+    },
+    {
+      "id": "comic-fantasy",
+      "title": "Comic Fantasy and Trouble",
+      "description": "The archive remembers that a mythic system can still trip over its own coat.",
+      "sunoUrl": "https://suno.com/playlist/abc5eaf5-7e16-450a-832e-377c3a08455d",
+      "tracks": ["the-dungeon-sings", "type-oh-the-writers-sea-shanty", "the-gen-x-bs-detector"]
+    }
+  ],
+  "tracks": [
+    {"id":"gaia-awakening","title":"Gaia's Awakening","artist":"Archetypal Architect","src":"/audio/music/gaia-awakening.wav","format":"wav","downloadUrl":null,"tags":["MES","digital gods","restoration"]},
+    {"id":"recursive-eden","title":"Recursive Eden","artist":"Archetypal Architect","src":"/audio/music/recursive-eden.mp3","downloadUrl":null,"tags":["MES","ecology","systems"]},
+    {"id":"technologys-not-cheating","title":"Technology's Not Cheating","artist":"Archetypal Architect","src":"/audio/music/technologys-not-cheating.mp3","downloadUrl":null,"tags":["systems","philosophy","playful"]},
+    {"id":"the-architect-of-ashes","title":"The Architect of Ashes","artist":"Archetypal Architect","src":"/audio/music/the-architect-of-ashes.mp3","downloadUrl":null,"tags":["myth","fire","creation"]},
+    {"id":"no-longer-yours-to-take","title":"No Longer Yours to Take","artist":"Archetypal Architect","src":"/audio/music/no-longer-yours-to-take.mp3","downloadUrl":null,"tags":["agency","boundaries","recovery"]},
+    {"id":"splinter-and-flame","title":"Splinter and Flame","artist":"Archetypal Architect","src":"/audio/music/splinter-and-flame.mp3","downloadUrl":null,"tags":["fire","transformation","rock"]},
+    {"id":"beautiful-disaster","title":"Beautiful Disaster","artist":"Archetypal Architect","src":"/audio/music/beautiful-disaster.mp3","downloadUrl":null,"tags":["alt-rock","coherence","imperfection"]},
+    {"id":"architect-of-her-fall","title":"Architect of Her Fall","artist":"Archetypal Architect","src":"/audio/music/architect-of-her-fall.mp3","downloadUrl":null,"tags":["story","character","dark-pop"]},
+    {"id":"keyboard-conqueror","title":"Keyboard Conqueror","artist":"Archetypal Architect","src":"/audio/music/keyboard-conqueror.mp3","downloadUrl":null,"tags":["humor","creator life","energy"]},
+    {"id":"sci-fi-ambiance","title":"Sci Fi Ambiance","artist":"Archetypal Architect","src":"/audio/music/sci-fi-ambiance.mp3","downloadUrl":null,"tags":["atmosphere","space","MES"]},
+    {"id":"the-rolling-waves-lament","title":"The Rolling Wave's Lament","artist":"Archetypal Architect","src":"/audio/music/the-rolling-waves-lament.mp3","downloadUrl":null,"tags":["lament","water","fantasy"]},
+    {"id":"the-tavern-at-the-edge-of-night","title":"The Tavern at the Edge of Night","artist":"Archetypal Architect","src":"/audio/music/the-tavern-at-the-edge-of-night.mp3","downloadUrl":null,"tags":["fantasy","tavern","night"]},
+    {"id":"the-dungeon-sings","title":"The Dungeon Sings","artist":"Archetypal Architect","src":"/audio/music/the-dungeon-sings.mp3","downloadUrl":null,"tags":["fantasy","dungeon","comic"]},
+    {"id":"type-oh-the-writers-sea-shanty","title":"Type-Oh! The Writer's Sea Shanty","artist":"Archetypal Architect","src":"/audio/music/type-oh-the-writers-sea-shanty.mp3","downloadUrl":null,"tags":["writing","humor","shanty"]},
+    {"id":"the-gen-x-bs-detector","title":"The Gen X BS Detector","artist":"Archetypal Architect","src":"/audio/music/the-gen-x-bs-detector.mp3","downloadUrl":null,"tags":["satire","humor","culture"]}
+  ]
+}

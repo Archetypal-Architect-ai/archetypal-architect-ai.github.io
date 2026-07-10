@@ -799,6 +799,66 @@ dd {
   grid-column: 1 / -1;
 }
 
+.music-console {
+  background: rgba(28, 32, 35, 0.88);
+  border: 1px solid var(--line);
+  margin-bottom: 42px;
+  padding: clamp(18px, 3vw, 32px);
+}
+
+.playlist-tabs {
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 26px;
+  padding-bottom: 14px;
+}
+
+.playlist-tab,
+.track-play {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 850;
+  padding: 10px 13px;
+  text-transform: uppercase;
+}
+
+.playlist-tab:hover,
+.playlist-tab.is-active,
+.track-play:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #071313;
+}
+
+.playlist-view { display: none; }
+.playlist-view.is-active { display: block; }
+
+.playlist-intro { max-width: 680px; }
+.playlist-intro h2 { font-size: clamp(2rem, 4vw, 3.5rem); margin: 8px 0 12px; }
+.playlist-intro p:not(.eyebrow) { color: var(--muted); line-height: 1.65; }
+.suno-link { color: var(--teal); display: inline-block; font-size: 0.8rem; font-weight: 850; margin-top: 6px; text-transform: uppercase; }
+
+.track-list { list-style: none; margin: 24px 0 0; padding: 0; }
+.track-row { align-items: center; border-top: 1px solid var(--line); display: grid; gap: 14px; grid-template-columns: 64px 32px minmax(0, 1fr) auto; padding: 13px 0; }
+.track-row.is-playing { background: rgba(43, 179, 163, 0.08); }
+.track-number, .track-info small { color: var(--muted); }
+.track-info { display: grid; gap: 4px; min-width: 0; }
+.track-info strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.track-info small { font-size: 0.75rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.track-download { color: var(--amber); font-size: 0.78rem; font-weight: 850; text-transform: uppercase; }
+.track-download[href="#"] { color: var(--muted); cursor: default; }
+.music-note { color: var(--muted); font-size: 0.82rem; margin: 24px 0 0; }
+
+@media (max-width: 600px) {
+  .track-row { gap: 9px; grid-template-columns: 58px 24px minmax(0, 1fr); }
+  .track-download { grid-column: 3; }
+}
+
 .admin-panel {
   border: 1px solid var(--line);
   display: grid;

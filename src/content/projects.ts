@@ -1,5 +1,6 @@
 import creatorData from "../data/creator.json";
 import projectData from "../data/projects.json";
+import wikiExpansionData from "../data/wiki-expansion.json";
 import wikiFacetData from "../data/wikiFacets.json";
 
 export type EntryKind =
@@ -108,7 +109,7 @@ export function displayStatus(status: EntryStatus) {
 }
 
 export const creator = creatorData as Creator;
-export const projects = projectData as Project[];
+export const projects = [...(projectData as Project[]), ...(wikiExpansionData as Project[])];
 
 export const categories: EntryKind[] = [
   "Universe",

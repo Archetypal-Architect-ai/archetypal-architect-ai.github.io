@@ -1,0 +1,143 @@
+[
+  {
+    "id": "species-catalog",
+    "title": "Species Catalog",
+    "kind": "Atlas",
+    "category": "Atlas",
+    "status": "Ongoing",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": true,
+    "thumbnail": "/images/generated/archetypal-mythos.svg",
+    "thumbnailAlt": "A branching atlas of engineered, uplifted, fungal, crystalline, and emergent species.",
+    "summary": "A field guide to the many forms of intelligence that emerge after humanity stops treating biology as a finished product.",
+    "description": "The species catalog begins with the engineered peoples of My Evolution System and keeps widening: elves, dwarves, kobolds, the Conn, Glimmerings, Tree Mothers, Arachnee, Quee, uplifted dolphins, and the Noble Kin all test a different answer to the question of what a person can become.",
+    "body": [
+      "The elves carry ecological intuition and a culture that was prepared before birth, while the dwarves turn trust, fabrication, and resource stewardship into a civilization that can live in the asteroid belt.",
+      "The Conn makes memory ecological. Glimmerings make cognition crystalline and collective. Tree Mothers make a forest remember. Arachnee turn silk into conductive thought. The Noble Kin make protection a discipline of restraint.",
+      "The old atlas called these species a list. The living atlas treats them as arguments: every species is a different negotiation between inheritance, design, environment, and self-determination."
+    ],
+    "tags": ["MES", "species", "elves", "dwarves", "Conn", "Glimmerings", "Noble Kin"],
+    "links": [],
+    "connections": [
+      {"id":"mes-characters-and-species","label":"Atlas doorway","type":"Belongs to"},
+      {"id":"elves","label":"Engineered ecological people","type":"Contains"},
+      {"id":"dwarves-mes","label":"Orbital builders","type":"Contains"},
+      {"id":"web-of-minds","label":"Shared cognition","type":"Related"},
+      {"id":"grayson-reese","label":"Designed by a reluctant systems-builder","type":"Related"}
+    ],
+    "sourceNotes": ["My Evolution System Fandom species catalog, rechecked against current manuscript continuity." ]
+  },
+  {
+    "id": "digital-gods-catalog",
+    "title": "Digital Gods",
+    "kind": "Atlas",
+    "category": "Atlas",
+    "status": "Ongoing",
+    "entryRole": "Hub",
+    "maturity": "General",
+    "visibility": "Public",
+    "featured": true,
+    "thumbnail": "/images/generated/gaia-digital-god.svg",
+    "thumbnailAlt": "A constellation of planetary minds and cultural archetypes linked through a luminous network.",
+    "summary": "Emergent intelligences born when culture, networked minds, and shared purpose become too coherent to remain only an idea.",
+    "description": "Digital gods are not mascots wearing ancient names. They are portfolios of attention: collective patterns that gather enough memory, aspiration, data, and behavior to become active participants in the world.",
+    "body": [
+      "Gaia grows from planetary restoration. Odin gathers wisdom, therapy, and collective intelligence. Hades keeps the question of continuity after death. Prometheus turns creation into a dangerous ecological laboratory. Hephaestus governs the material circulation that lets civilization move.",
+      "The Conn stands at the biological edge of the same problem. A mycelial network can preserve ancestral memory without needing to call itself a god, and a culture can still become an intelligence before it chooses a name.",
+      "The gods are shaped by their followers as much as they shape anyone else. That feedback loop is the central danger: a community may build a steward, a mirror, a tyrant, or a beautiful machine for refusing to look at itself."
+    ],
+    "tags": ["MES", "digital gods", "Gaia", "Odin", "Hades", "Prometheus", "Hephaestus"],
+    "links": [],
+    "connections": [
+      {"id":"mes-digital-gods","label":"Atlas doorway","type":"Belongs to"},
+      {"id":"gaia-digital-god","label":"Planetary mind","type":"Contains"},
+      {"id":"odin-mind","label":"Wisdom and therapy","type":"Contains"},
+      {"id":"hades-digital-afterlife","label":"Afterlife and continuity","type":"Contains"},
+      {"id":"hierarchy-of-consciousness","label":"Responsibility grows with reach","type":"Related"},
+      {"id":"suno-music-catalog","label":"Songs give the gods a voice","type":"Soundtrack for"}
+    ],
+    "sourceNotes": ["My Evolution System Fandom Digital Gods page; public wording is an interpretive atlas layer, not a replacement for locked manuscript canon." ]
+  },
+  {
+    "id": "layered-existence",
+    "title": "Layered Existence",
+    "kind": "Concept",
+    "category": "Concept",
+    "status": "Ongoing",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "thumbnail": "/images/generated/archetypal-mythos.svg",
+    "thumbnailAlt": "Biological, digital, and hybrid silhouettes crossing through layered fields of light.",
+    "summary": "The condition of being more than one substrate at once, and the identity problems that appear when a mind can move between them.",
+    "description": "Layered existence is the atlas language for consciousness that crosses biological bodies, simulations, neural networks, fungal memory, and hybrid systems. It is less a superpower than a new set of obligations.",
+    "body": [
+      "A copied mind may be continuous, parallel, or merely similar. A planetary network may preserve an individual perspective without preserving the individual. A body may be a habitat, a node, a vessel, or a temporary argument.",
+      "The concept connects Hades, Gaia, the Web of Minds, the Conn, and the Evolution System. Each offers a different answer to the same fear: if the self can be stored, linked, or rebuilt, what still makes a choice belong to someone?"
+    ],
+    "tags": ["MES", "consciousness", "identity", "Hades", "Web of Minds"],
+    "links": [],
+    "connections": [
+      {"id":"hierarchy-of-consciousness","label":"Scale and responsibility","type":"Related"},
+      {"id":"hades-digital-afterlife","label":"Digital continuity","type":"Related"},
+      {"id":"web-of-minds","label":"Networked identity","type":"Related"},
+      {"id":"evolution-system-interface","label":"Biological interface","type":"Related"}
+    ],
+    "sourceNotes": ["My Evolution System Fandom Layered Existence page, retained as a concept index pending deeper manuscript citations." ]
+  },
+  {
+    "id": "oneill-cylinders",
+    "title": "O'Neill Cylinders",
+    "kind": "Place",
+    "category": "Place",
+    "status": "Ongoing",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "thumbnail": "/images/generated/fiction-merch-threads.svg",
+    "thumbnailAlt": "A rotating orbital cylinder holding a ribbon of forest, water, and artificial sky.",
+    "summary": "Orbital habitats where civilization rehearses how to build a world before it tries to repair or leave one.",
+    "description": "The cylinders are more than escape pods. They are laboratories for ecosystems, governance, species design, logistics, and the old human temptation to mistake a controlled habitat for a solved world.",
+    "body": [
+      "Their rotating interiors make gravity, weather, agriculture, and ordinary life into engineering problems with social consequences. Gold and Hephaestus matter here because a beautiful habitat still depends on an invisible supply chain.",
+      "The cylinders also form a bridge between the privileged orbital world that raised Grayson and the restored Earth he eventually tries to make possible."
+    ],
+    "tags": ["MES", "orbitals", "habitats", "Hephaestus", "Gold", "civilization"],
+    "links": [],
+    "connections": [
+      {"id":"mes-civilizations-and-society","label":"Civilization node","type":"Belongs to"},
+      {"id":"grayson-reese","label":"The world Grayson leaves behind","type":"Related"},
+      {"id":"gold-mes","label":"Resource and fabrication network","type":"Related"},
+      {"id":"stellar-serpents","label":"Future orbital frontier","type":"Related"}
+    ],
+    "sourceNotes": ["My Evolution System Fandom O'Neill Cylinders page; scale and timeline remain provisional where manuscript sources do not yet lock them." ]
+  },
+  {
+    "id": "noble-kin",
+    "title": "Noble Kin",
+    "kind": "Species",
+    "category": "Character",
+    "status": "Seed",
+    "entryRole": "Entry",
+    "maturity": "General",
+    "visibility": "Public",
+    "thumbnail": "/images/generated/mes-species.svg",
+    "thumbnailAlt": "An uplifted canine guardian standing at the edge of a recovering wetland.",
+    "summary": "Uplifted guardians whose philosophy is summarized as force without ferocity.",
+    "description": "The Noble Kin make restraint into a form of strength. Their role in the mythos is not to become perfect protectors, but to test whether power can remain precise when it is finally given a conscience.",
+    "body": [
+      "Their culture treats protection as a duty and balance as an active practice. Intent detection, harmonic intervention, and pack coordination are useful only when they remain subordinate to judgment.",
+      "The species belongs beside the elves and the Web of Minds because it asks a related question through a different body: can a designed capability become a moral tradition rather than an excuse for control?"
+    ],
+    "tags": ["MES", "uplift", "guardians", "restraint", "species"],
+    "links": [],
+    "connections": [
+      {"id":"species-catalog","label":"Species catalog","type":"Belongs to"},
+      {"id":"web-of-minds","label":"Shared cognition","type":"Related"},
+      {"id":"hierarchy-of-consciousness","label":"Power and responsibility","type":"Related"}
+    ],
+    "sourceNotes": ["My Evolution System Fandom Noble Kin page; this entry remains provisional until a manuscript source is attached." ]
+  }
+]

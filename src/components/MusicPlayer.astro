@@ -1,0 +1,35 @@
+---
+import musicData from "../data/music.json";
+const { playlists, tracks } = musicData;
+---
+<div class="music-console" data-music-console>
+  <div class="playlist-tabs" role="tablist" aria-label="Music playlists">
+    {playlists.map((playlist, index) => <button class:list={['playlist-tab', { 'is-active': index === 0 }]} type="button" data-playlist={playlist.id}>{playlist.title}</button>)}
+  </div>
+  <div class="playlist-stage">
+    {playlists.map((playlist, index) => <section class:list={['playlist-view', { 'is-active': index === 0 }]} data-playlist-view={playlist.id}>
+      <div class="playlist-intro"><p class="eyebrow">Playlist / {playlist.tracks.length} tracks</p><h2>{playlist.title}</h2><p>{playlist.description}</p><a class="suno-link" href={playlist.sunoUrl}>Find the wider shelf on Suno -&gt;</a></div>
+      <ol class="track-list">
+        {playlist.tracks.map((trackId) => { const track = tracks.find((item) => item.id === trackId); return track ? <li class="track-row" data-track-id={track.id}>
+          <button class="track-play" type="button" data-play="{track.id}" aria-label={`Play ${track.title}`}>Play</button>
+          <span class="track-number">{String(playlist.tracks.indexOf(trackId) + 1).padStart(2, '0')}</span>
+          <span class="track-info"><strong>{track.title}</strong><small>{track.artist} / {track.tags.join(' / ')}</small></span>
+          <a class="track-download" href={track.downloadUrl || '#'} data-download={track.id} aria-label={`Download ${track.title}`}>{track.downloadUrl ? 'Download' : 'Tip jar soon'}</a>
+          <audio preload="none" src={track.src} data-audio={track.id}></audio>
+        </li> : null; })}
+      </ol>
+    </section>)}
+  </div>
+  <p class="music-note">Every track plays here for free. Download links will point to the small-pay storefront once the checkout shelf is connected.</p>
+</div>
+<script is:inline>
+  const consoleEl = document.querySelector('[data-music-console]');
+  if (consoleEl) {
+    const tabs = [...consoleEl.querySelectorAll('[data-playlist]')];
+    const views = [...consoleEl.querySelectorAll('[data-playlist-view]')];
+    const buttons = [...consoleEl.querySelectorAll('[data-play]')];
+    let current;
+    tabs.forEach((tab) => tab.addEventListener('click', () => { tabs.forEach((item) => item.classList.toggle('is-active', item === tab)); views.forEach((view) => view.classList.toggle('is-active', view.dataset.playlistView === tab.dataset.playlist)); }));
+    buttons.forEach((button) => button.addEventListener('click', () => { const audio = consoleEl.querySelector(`[data-audio="${button.dataset.play}"]`); if (!audio) return; if (current && current !== audio) { current.pause(); current.closest('.track-row')?.classList.remove('is-playing'); } if (audio.paused) { audio.play(); button.textContent = 'Pause'; audio.closest('.track-row')?.classList.add('is-playing'); current = audio; } else { audio.pause(); button.textContent = 'Play'; audio.closest('.track-row')?.classList.remove('is-playing'); } }));
+  }
+</script>
