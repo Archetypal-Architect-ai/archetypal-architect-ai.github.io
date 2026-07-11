@@ -31,7 +31,7 @@ const mesDoorways = publicProjects.filter((project) =>
         <h2>My Evolution System Atlas Doorways</h2>
         <p>Step out of the book and into the maze: species, systems, civilizations, digital gods, and consciousness all branch back into the larger archive.</p>
       </div>
-      <div class="project-grid">
+      <div class="wiki-entry-list">
         {mesDoorways.map((project) => <ProjectCard project={project} />)}
       </div>
       <div class="facet-row" aria-label="Wiki facets">
@@ -44,7 +44,7 @@ const mesDoorways = publicProjects.filter((project) =>
         }
       </div>
       <CategoryFilter />
-      <div class="project-grid" data-project-grid>
+      <div class="wiki-entry-list" data-project-grid>
         {publicProjects.map((project) => <ProjectCard project={project} />)}
       </div>
       <div class="archive-callout">
@@ -88,6 +88,13 @@ const mesDoorways = publicProjects.filter((project) =>
         .includes(query.toLowerCase());
     }
 
+    function worldFor(project) {
+      if (project.tags?.includes("MES") || project.id.includes("mes") || ["my-evolution-system", "graysons-game", "bramblemere-basin", "erasure-protocol", "olympus-tepui", "living-archive", "grayson-reese", "evolution-system-interface", "gaia-digital-god", "the-triad", "elves", "dwarves-mes", "stellar-serpents", "the-ancient", "gold-mes", "odin-mind", "hades-digital-afterlife", "hierarchy-of-consciousness", "web-of-minds", "memetic-entities", "species-catalog", "digital-gods-catalog", "layered-existence", "oneill-cylinders", "noble-kin"].includes(project.id)) return { className: "world-mes", backdrop: "/images/works/my-evolution-system-book-1-cover.jpg" };
+      if (["suno-music-catalog", "deja-vu"].includes(project.id)) return { className: "world-music", backdrop: "/images/generated/suno-music-catalog.svg" };
+      if (["make-anxiety-your-superpower", "emotional-misinterpretation-dictionary"].includes(project.id)) return { className: "world-tools", backdrop: "/images/works/make-anxiety-your-superpower.jpg" };
+      return { className: "world-mythos", backdrop: "/images/generated/archetypal-mythos.svg" };
+    }
+
     function card(project) {
       const visibleTags = project.tags.slice(0, 3);
       const tags = visibleTags.map((tag) => `<li>${tag}</li>`).join("");
@@ -96,6 +103,7 @@ const mesDoorways = publicProjects.filter((project) =>
       const connections = project.connections?.length ? `<p class="micro-note">${project.connections.length} linked entries</p>` : "";
       const role = project.entryRole || "Entry";
       const roleClass = role.toLowerCase();
+      const world = worldFor(project);
       const status =
         project.status === "Seed"
           ? "Under construction"
@@ -108,7 +116,7 @@ const mesDoorways = publicProjects.filter((project) =>
                 : "Complete";
 
       return `
-        <article class="project-card ${roleClass}">
+        <article class="project-card ${roleClass} ${world.className}" style="--entry-backdrop: url('${world.backdrop}')">
           <a class="thumb-link" href="/wiki/${project.id}" aria-label="Open ${project.title}">
             <img src="${project.thumbnail}" alt="${project.thumbnailAlt}" loading="lazy" />
           </a>

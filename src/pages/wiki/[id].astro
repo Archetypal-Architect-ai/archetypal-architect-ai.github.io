@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ConnectionList from "../../components/ConnectionList.astro";
 import ExternalLinks from "../../components/ExternalLinks.astro";
 import TagList from "../../components/TagList.astro";
-import { displayStatus, projects, publicProjects, creator } from "../../content/projects";
+import { displayStatus, getUniverseBackdrop, getVisualWorld, projects, publicProjects, creator } from "../../content/projects";
 import { renderWikiText } from "../../lib/wikiLinks";
 
 export function getStaticPaths() {
@@ -17,7 +17,7 @@ const { entry } = Astro.props;
 ---
 
 <BaseLayout title={`${entry.title} | ${creator.name} Wiki`} description={entry.summary} image={entry.thumbnail}>
-  <main>
+  <main class={`wiki-world wiki-world-${getVisualWorld(entry)}`} style={`--world-backdrop: url("${getUniverseBackdrop(entry)}")`}>
     <section class="detail-hero wiki-detail-hero">
       <div>
         <p class="eyebrow">{entry.entryRole || "Entry"} / {entry.kind} / {displayStatus(entry.status)}</p>

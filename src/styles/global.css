@@ -718,6 +718,47 @@ code {
   line-height: 1.68;
 }
 
+.wiki-world {
+  background:
+    linear-gradient(rgba(15, 17, 18, 0.88), rgba(15, 17, 18, 0.96)),
+    var(--world-backdrop) center top / cover fixed;
+}
+
+.wiki-entry-list {
+  display: grid;
+  gap: 10px;
+}
+
+.wiki-entry-list .project-card {
+  background:
+    linear-gradient(90deg, rgba(28, 32, 35, 0.98) 0%, rgba(28, 32, 35, 0.91) 58%, rgba(28, 32, 35, 0.72) 100%),
+    var(--entry-backdrop) center / cover;
+  display: grid;
+  grid-template-columns: minmax(160px, 22%) minmax(0, 1fr);
+  min-height: 150px;
+}
+
+.wiki-entry-list .thumb-link {
+  aspect-ratio: auto;
+  min-height: 100%;
+}
+
+.wiki-entry-list .project-card-body {
+  padding: 16px 18px;
+}
+
+.wiki-entry-list .project-card h2 {
+  font-size: 1.2rem;
+}
+
+.wiki-entry-list .project-card-body > p:first-of-type {
+  -webkit-line-clamp: 2;
+}
+
+.wiki-entry-list .project-card.world-mes { border-left: 4px solid #2bb3a3; }
+.wiki-entry-list .project-card.world-music { border-left: 4px solid #6f9fd8; }
+.wiki-entry-list .project-card.world-tools { border-left: 4px solid #d98f3f; }
+
 .wiki-link {
   border-bottom: 1px solid rgba(62, 196, 183, 0.72);
   color: #b9f4ed;
@@ -965,6 +1006,7 @@ dd {
   }
 
   .project-grid,
+  .wiki-entry-list,
   .medium-grid,
   .contact-grid,
   .filter-panel,
@@ -979,5 +1021,13 @@ dd {
   .detail-hero {
     padding-left: 18px;
     padding-right: 18px;
+  }
+
+  .wiki-entry-list .project-card {
+    grid-template-columns: 88px minmax(0, 1fr);
+  }
+
+  .wiki-entry-list .thumb-link {
+    min-height: 136px;
   }
 }

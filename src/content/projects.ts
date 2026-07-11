@@ -90,6 +90,36 @@ export type Project = {
   notes?: string;
 };
 
+export function getVisualWorld(project: Project) {
+  if (["the-gentle-shadow-series", "the-gentle-shadow", "the-weight-of-memory"].includes(project.id)) return "gentle-shadow";
+  if (project.id === "house-of-the-gilded-lily") return "gilded-lily";
+  if (project.id === "mythos-of-lust") return "mythos-of-lust";
+  if (project.id === "monster-girl-harem") return "monster-girl-harem";
+  if (project.id === "bimbo-farm") return "bimbo-farm";
+  if (project.id === "supers-dark-erotica") return "supers";
+  if (project.id === "roxy-stardust-archive") return "roxy";
+  if (project.tags?.includes("MES") || project.id.includes("mes") || ["my-evolution-system", "graysons-game", "bramblemere-basin", "erasure-protocol", "olympus-tepui", "living-archive", "grayson-reese", "evolution-system-interface", "gaia-digital-god", "the-triad", "elves", "dwarves-mes", "stellar-serpents", "the-ancient", "gold-mes", "odin-mind", "hades-digital-afterlife", "hierarchy-of-consciousness", "web-of-minds", "memetic-entities", "species-catalog", "digital-gods-catalog", "layered-existence", "oneill-cylinders", "noble-kin"].includes(project.id)) return "mes";
+  if (["suno-music-catalog", "deja-vu"].includes(project.id)) return "music";
+  if (["make-anxiety-your-superpower", "emotional-misinterpretation-dictionary"].includes(project.id)) return "tools";
+  return "mythos";
+}
+
+export function getUniverseBackdrop(project: Project) {
+  return {
+    mes: "/images/works/my-evolution-system-book-1-cover.jpg",
+    "gentle-shadow": "/images/generated/gentle-shadow-series.svg",
+    "gilded-lily": "/images/generated/house-gilded-lily.png",
+    "mythos-of-lust": "/images/generated/mythos-of-lust.png",
+    "monster-girl-harem": "/images/generated/monster-girl-harem.png",
+    "bimbo-farm": "/images/generated/bimbo-farm.png",
+    supers: "/images/generated/supers-dark-erotica.png",
+    roxy: "/images/generated/roxy-stardust-archive.svg",
+    music: "/images/generated/suno-music-catalog.svg",
+    tools: "/images/works/make-anxiety-your-superpower.jpg",
+    mythos: "/images/generated/archetypal-mythos.svg"
+  }[getVisualWorld(project)];
+}
+
 export type Creator = {
   name: string;
   imprint: string;

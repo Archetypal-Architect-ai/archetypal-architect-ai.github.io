@@ -1,14 +1,14 @@
 ---
 import ExternalLinks from "./ExternalLinks.astro";
 import TagList from "./TagList.astro";
-import { displayStatus, type Project } from "../content/projects";
+import { displayStatus, getUniverseBackdrop, getVisualWorld, type Project } from "../content/projects";
 
 const { project } = Astro.props as { project: Project };
 const visibleTags = project.tags.slice(0, 3);
 const hiddenTagCount = Math.max(project.tags.length - visibleTags.length, 0);
 ---
 
-<article class:list={["project-card", project.entryRole?.toLowerCase()]}>
+<article class:list={["project-card", project.entryRole?.toLowerCase(), `world-${getVisualWorld(project)}`]} style={`--entry-backdrop: url("${getUniverseBackdrop(project)}")`}>
   <a class="thumb-link" href={`/wiki/${project.id}`} aria-label={`Open ${project.title}`}>
     <img src={project.thumbnail} alt={project.thumbnailAlt} loading="lazy" />
   </a>
