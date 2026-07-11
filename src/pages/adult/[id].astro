@@ -74,14 +74,28 @@ const { entry } = Astro.props;
     const button = document.querySelector("[data-confirm-adult]");
     const key = "aa-adult-archive-confirmed";
 
+    function hasConsent() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("adult") === "yes") return true;
+      try { if (window.localStorage.getItem(key) === "yes") return true; } catch {}
+      try { if (window.sessionStorage.getItem(key) === "yes") return true; } catch {}
+      return document.cookie.split("; ").some((item) => item === `${key}=yes`);
+    }
+
+    function saveConsent() {
+      try { window.localStorage.setItem(key, "yes"); } catch {}
+      try { window.sessionStorage.setItem(key, "yes"); } catch {}
+      try { document.cookie = `${key}=yes; path=/; max-age=2592000; SameSite=Lax`; } catch {}
+    }
+
     function unlock() {
       gate?.classList.add("is-hidden");
       content?.classList.remove("is-locked");
     }
 
-    if (window.localStorage.getItem(key) === "yes") unlock();
+    if (hasConsent()) unlock();
     button?.addEventListener("click", () => {
-      window.localStorage.setItem(key, "yes");
+      saveConsent();
       unlock();
     });
   </script>
