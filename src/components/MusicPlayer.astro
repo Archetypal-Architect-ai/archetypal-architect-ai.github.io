@@ -1,5 +1,6 @@
 ---
 import musicData from "../data/music.json";
+import { musicLyrics } from "../data/musicLyrics";
 const { playlists, tracks } = musicData;
 ---
 <div class="music-console" data-music-console>
@@ -16,6 +17,7 @@ const { playlists, tracks } = musicData;
           <span class="track-info"><strong>{track.title}</strong><small>{track.artist} / {track.tags.join(' / ')}</small></span>
           <a class="track-download" href={track.downloadUrl || '#'} data-download={track.id} aria-label={`Download ${track.title}`}>{track.downloadUrl ? 'Download' : 'Tip jar soon'}</a>
           <audio preload="none" src={track.src} data-audio={track.id}></audio>
+          {track.lyricsKey && musicLyrics[track.lyricsKey] && <details class="track-lyrics"><summary>Read lyrics</summary><pre>{musicLyrics[track.lyricsKey]}</pre></details>}
         </li> : null; })}
       </ol>
     </section>)}
