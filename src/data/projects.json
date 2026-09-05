@@ -389,6 +389,16 @@
         "label": "Get Rowan's Honey Cakes",
         "url": "/free",
         "type": "Download"
+      },
+      {
+        "label": "Read on Kindle",
+        "url": "https://www.amazon.com/dp/B0H7TDDLN5",
+        "type": "Buy"
+      },
+      {
+        "label": "Paperback edition",
+        "url": "https://www.amazon.com/dp/B0H7VRNFWM",
+        "type": "Buy"
       }
     ],
     "merchLinks": [
@@ -725,6 +735,7 @@
     "description": "[[My Evolution System]] follows the pressure point where personal evolution stops being metaphor. The series turns adaptation into plot, [[Evolution System|technology into inheritance]], and survival into a philosophical demand.",
     "body": [
       "The [[My Evolution System Atlas Index|universe atlas]] carries the deep continuity: [[Species of My Evolution System|species]], factions, places, powers, and the long causal chain of the setting.",
+      "The main spine and the side windows do not reveal the same things at the same time. The spine carries the central survival, Gaia, Triad, and Founder-era movement; [[Grayson's Game]] opens a skipped-time window inside that spine, showing years the main narrative can only point toward from a distance.",
       "Across the archive, the series functions as one of the central mythos engines. It asks what a person becomes when [[Gaia|evolution]], ecology, and invention all start speaking at once."
     ],
     "tags": [
@@ -778,9 +789,10 @@
     "date": "2026-07-07",
     "thumbnail": "/images/works/graysons-game-webnovel.jpg",
     "thumbnailAlt": "Cover art for Grayson's Game, the My Evolution System side-canon bridge novel.",
-    "summary": "The canon side-quest novel following Grayson through the missing years when restoration becomes species design, living infrastructure, and stewardship over a world that stops needing his hand on every lever.",
-    "description": "[[graysons-game|Grayson's Game]] is the bridge between the opening survival-restoration premise of [[My Evolution System]] and the later era where Grayson has Founder-era weight without being a conventional ruler. Current continuity places the active draft around chapter 35, with a chapter 31-50 arc mapped toward stewardship and convergence.",
+    "summary": "The canon time-skip window inside the My Evolution System spine, following Grayson through the missing years when restoration becomes species design, living infrastructure, and stewardship.",
+    "description": "[[graysons-game|Grayson's Game]] is a time-skip window within the [[My Evolution System]] spine: the bridge between the opening survival-restoration premise and the later era where Grayson has Founder-era weight without being a conventional ruler. Current continuity places the active draft around chapter 35, with a chapter 31-50 arc mapped toward stewardship and convergence.",
     "body": [
+      "The distinction matters. Some facts belong first to the spine: Gaia, Triad, the later Founder-era world, and the broad public shape of Grayson's legacy. Other facts are known first through this side window: how the elves move from design to people, how Bramblemere teaches Grayson restraint, why the first cohort does not know him, and how his skipped years change him before the spine catches up.",
       "The book begins after the first elf design compiles and immediately refuses to let that milestone stay abstract. Grayson still has to make a world that can hold them. A species is not a victory condition if the environment, culture, supply chain, and safeguards are not ready for real bodies.",
       "Its early arc is [[bramblemere-basin|Bramblemere]]: one hundred acres of ruined basin, heat, mud, nutrient failure, fungal networks, engineered ferns, pillar ants, Naiads, salamander logic, power budgets, and a containment fence that turns ecological design into ethical pressure. The work is physical enough to hurt and systemic enough to change what Grayson thinks he is doing.",
       "The middle arc turns outward. Grayson learns that living systems do not merely execute code; they negotiate, adapt, leak, trade, and surprise him. He becomes less like a player optimizing tiles and more like a caretaker trying to understand a young ecology before it becomes dangerous or dependent.",
@@ -803,7 +815,7 @@
     "connections": [
       {
         "id": "my-evolution-system",
-        "label": "Side-canon within the main universe",
+        "label": "Time-skip window inside the spine",
         "type": "Belongs to"
       },
       {
@@ -1109,6 +1121,7 @@
     "description": "The atlas opens behind the novel like a second landscape. Characters lead into engineered species, restoration systems, digital gods, and the recurring question of what consciousness becomes when life can edit itself.",
     "body": [
       "Five corridors branch from the entrance: [[MES Characters and Species|Characters and Species]], [[MES Systems and Technology|Systems and Technology]], [[MES Civilizations and Society|Civilizations and Society]], [[MES Digital Gods|Digital Gods]], and [[MES Philosophy and Consciousness|Philosophy and Consciousness]].",
+      "The atlas treats continuity as braided, not flat. A spine entry may tell what the public era knows; a side-window entry may tell what happened during a skipped interval before those consequences surface in the main line.",
       "A species path may lead to a machine. A digital god may lead to an argument about personhood. A book may lead to the whole maze.",
       "The atlas rewards wandering. Follow the thread that catches your eye and the universe starts explaining itself from the side."
     ],
@@ -1422,7 +1435,8 @@
       "Grayson is eighteen when the story opens: Ring-born, trained from childhood to notice tiny environmental changes, and raised by parents who turned those games into preparation for a mission he never agreed to carry. Trevor and Charlotte Reese secretly activate his nanites, neural lace, biometric systems, and Synthesis Virus, then drop him toward Earth in an escape pod with [[evolution-system-interface|the Evolution System]] as guide, tool, and pressure gauge.",
       "His first mode is not conquest. It is inventory. He salvages what the pod can give him, finds shelter, sets up power, listens to Egg, reads hostile terrain, and begins turning survival into a workbench. The early Grayson is sarcastic, observant, exhausted, and practical: a person who builds because the alternative is watching the biosphere continue to fail.",
       "That origin matters because his central wound is consent. The people who loved him most converted him into a planetary instrument before he could choose the mission. That makes him wary of doing the same thing at larger scale. When Grayson designs systems, creatures, safeguards, or cultures, the question under every clever solution is: am I helping, or am I claiming?",
-      "[[graysons-game|Grayson's Game]] fills the skipped-time bridge where the restoration mission becomes more than a survival interface. The active local continuity reaches roughly chapter 35 and maps forward to chapter 50: the arc from Bramblemere sandbox, elf incubation, and first village proof into macro-management, EDC exploitation, the Living Archive, and stewardship over systems that no longer route through his approval.",
+      "[[graysons-game|Grayson's Game]] fills the skipped-time bridge where the restoration mission becomes more than a survival interface. It is not a separate continuity; it is a window opened inside the spine. The active local continuity reaches roughly chapter 35 and maps forward to chapter 50: the arc from Bramblemere sandbox, elf incubation, and first village proof into macro-management, EDC exploitation, the Living Archive, and stewardship over systems that no longer route through his approval.",
+      "That means a Grayson page has to keep two kinds of knowledge in view. The spine shows the later consequences: Gaia, Triad, Founder-era authority, and the public weight of his name. The side window shows the missing causes: field labor, containment fear, elf autonomy, and the private decisions that make the later Founder legible.",
       "The [[bramblemere-basin|Bramblemere]] work shows his method at ground level. Grayson does not wave a hand and restore the Amazon. He defines a sandbox, plants engineered loops by hand, budgets power, moves the Mobile Base, survives heat stress, watches failure modes, and learns that a living system can start answering back in ways no simulation predicted.",
       "The [[erasure-protocol|Erasure Protocol]] is one of his clearest moral signatures. The fence exists because his engineered organisms could become a planetary bioterror event if they escape too early. It is a brutal safeguard, but it is also a confession: Grayson knows that good intentions do not make a design safe. He would rather constrain his own success than let a clever organism conquer the world by accident.",
       "His relationship with the elves begins from that same fear of ownership. The elves are not a servant species or a decorative fantasy race. They are Grayson's answer to an impossible scale problem: planetary restoration cannot ethically belong to one person. The first cohort is deliberately not raised as worshippers; they are in Chile, thousands of miles away, and do not know Grayson by name.",
