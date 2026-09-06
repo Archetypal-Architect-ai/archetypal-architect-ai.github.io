@@ -7,36 +7,28 @@
   "aboutTheWork": "This archive tells stories about how stories get made. A novel may become a song. A song may become an image. An image may become a symbol, a product, or an argument. The mythos grows through those crossings.",
   "socialLinks": [
     {
-      "label": "Email",
-      "url": "mailto:contact@archetypalarchitect.online"
-    },
-    {
-      "label": "Substack",
-      "url": "https://substack.com"
-    },
-    {
-      "label": "YouTube",
-      "url": "https://youtube.com"
+      "label": "Reader list",
+      "url": "https://archetypal-architect.kit.com/"
     },
     {
       "label": "Suno",
-      "url": "https://suno.com"
+      "url": "https://suno.com/@archetypalarchitect"
     },
     {
-      "label": "Gumroad",
-      "url": "https://gumroad.com"
+      "label": "YouTube",
+      "url": "https://youtube.com/@archetypal.architect.whispers"
     },
     {
-      "label": "Royal Road",
-      "url": "https://royalroad.com"
+      "label": "Substack",
+      "url": "https://substack.com/@archetypal0architect"
     },
     {
-      "label": "WebNovel",
-      "url": "https://webnovel.com"
+      "label": "Amazon author",
+      "url": "https://www.amazon.com/author/archetypal_architect"
     },
     {
-      "label": "Amazon Author Page",
-      "url": "https://amazon.com"
+      "label": "Email",
+      "url": "mailto:contact@archetypalarchitect.online"
     }
   ]
 }

@@ -5,23 +5,16 @@ import { creator } from "../content/projects";
 const {
   title = `${creator.name} | Creative Archive`,
   description = creator.tagline,
-  image = "/images/hero-studio.png"
+  image = "/images/hero-studio.png",
 } = Astro.props;
 
 const nav = [
-  ["Home", "/"],
-  ["Wiki", "/wiki"],
-  ["Mythos", "/wiki/archetypal-mythos"],
-  ["Backmatter", "/wiki/backmatter-link-index"],
-  ["Songs", "/wiki/suno-music-catalog"],
-  ["Novels", "/novels"],
+  ["Books", "/novels"],
   ["Music", "/music"],
-  ["Videos", "/videos"],
-  ["Essays", "/essays"],
-  ["Free", "/free"],
-  ["Shop Threads", "/merch"],
+  ["Explore", "/wiki"],
+  ["Shop", "/merch"],
   ["About", "/about"],
-  ["Contact", "/contact"]
+  ["Reader bonus", "/free"],
 ];
 ---
 
@@ -42,7 +35,7 @@ const nav = [
     <header class="site-header">
       <a class="brand" href="/">
         <span>{creator.name}</span>
-        <small>{creator.imprint}</small>
+        <small>Books · Music · Curious worlds</small>
       </a>
       <nav class="main-nav" aria-label="Primary navigation">
         {nav.map(([label, href]) => <a href={href}>{label}</a>)}
@@ -51,7 +44,12 @@ const nav = [
     <slot />
     <footer class="site-footer">
       <strong>{creator.name}</strong>
-      <span>A living index of stories, systems, songs, and symbols.</span>
+      <nav aria-label="More from Archetypal Architect">
+        <a href="/contact">Contact & follow</a><a href="/essays">Essays</a><a
+          href="/videos">Videos</a
+        ><a href="/wiki/backmatter-link-index">Reader links</a><a
+          href="/adult-archive">Adult archive · 18+</a>
+      </nav>
     </footer>
   </body>
 </html>

@@ -48,3 +48,30 @@ Updated: 2026-09-06
 
 Run a public-page content audit in three passes: first remove builder-facing language, then expand the highest-value universe and character entries from approved continuity, then audit every internal and adult-boundary link. After that, add the next batch of verified music assets and playlists.
 
+
+## Reader Hub Revision — 2026-09-06
+
+This revision supersedes the earlier recommendation to expand MES immediately. The author is overhauling that series and wants a broader hub for books, music, merchandise, and following the work.
+
+- The homepage now features The Gentle Shadow, direct Amazon purchases, three playable songs, the honey-cake reader bonus, selected ideas, the shop, and verified follow links.
+- Primary navigation is Books, Music, Explore, Shop, About, and Reader bonus. The relationship map remains within the wiki.
+- MES lore is excluded from main discovery lists and retained at existing URLs with an earlier-continuity notice. No source entries were deleted. MES Publishing remains current. Permanent removal versus a public legacy archive still needs the author's decision.
+- Linktree supplied the real YouTube, Substack, Amazon author, Etsy, and Book 2 purchase destinations. The Etsy redirect resolves to MESPublishing; on September 6 it had zero listings and a rebuild notice. Do not invent products or imply checkout inventory exists.
+- The music player now uses actual track IDs, handles playback failures, resets previous-track controls, and pauses on playlist switches. Placeholder download buttons are removed.
+- Generic platform homepages and placeholder links are filtered from shared entry links. Unknown profile links remain absent until verified.
+- Two pre-existing missing legacy thumbnails now use existing relevant images.
+
+### Validation
+
+- Astro check: 0 errors, 0 warnings, 0 hints. Production build: 109 pages.
+- The native Windows esbuild binary could not enumerate parent directories despite read permission. Local validation used esbuild-wasm 0.25.12 (matching the bundled native compiler version) through an external development-only loader. No dependency or lockfile changes were made for that workaround. Normal Linux CI remains authoritative for the native build.
+- `node scripts/validate-site.mjs`: all 109 pages checked for local routes/assets plus book, social, shop, legacy, and playback markup regressions.
+- Browser: homepage layout inspected; music play, switch, and pause verified; adult archive gate visible without consent. No changes to adult consent logic.
+- `git diff --check` passes.
+
+### Remaining Work
+
+- Review the proposed redesign before publishing to the existing domain.
+- Add actual Etsy products when the shop reopens; product photography, prices, and product links are not yet available.
+- Decide the final disposition of MES legacy pages and provide revised public canon before expansion resumes.
+- Review the pre-existing dependency audit separately (13 advisories reported during clean install); no broad dependency upgrades were included in this design change.

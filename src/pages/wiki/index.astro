@@ -5,39 +5,27 @@ import PageHeader from "../../components/PageHeader.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
 import WikiMap from "../../components/WikiMap.astro";
 import { creator, publicProjects, wikiFacets } from "../../content/projects";
-
-const mesDoorways = publicProjects.filter((project) =>
-  [
-    "mes-atlas-index",
-    "mes-characters-and-species",
-    "mes-systems-and-technology",
-    "mes-civilizations-and-society",
-    "mes-digital-gods",
-    "mes-philosophy-consciousness"
-  ].includes(project.id)
-);
 ---
 
-<BaseLayout title={`Wiki | ${creator.name}`} description="A public archive of mythos, fiction, songs, tools, and symbolic systems.">
+<BaseLayout
+  title={`Wiki | ${creator.name}`}
+  description="A public archive of mythos, fiction, songs, tools, and symbolic systems."
+>
   <main>
     <PageHeader
       eyebrow="Creator Wiki"
       title="The Public Archive"
-      description="This wiki follows the stories behind the stories: a growing digital labyrinth of symbols, systems, songs, tools, fictional worlds, and the doors between them."
+      description="Explore the books, songs, psychology, and ideas behind the work. Search for a title or follow a connection."
     />
     <section class="section first-section">
-      <div class="section-heading">
-        <p class="eyebrow">Universe Wing</p>
-        <h2>My Evolution System Atlas Doorways</h2>
-        <p>Step out of the book and into the maze: species, systems, civilizations, digital gods, and consciousness all branch back into the larger archive.</p>
-      </div>
-      <div class="wiki-entry-list">
-        {mesDoorways.map((project) => <ProjectCard project={project} />)}
-      </div>
       <div class="facet-row" aria-label="Wiki facets">
         {
           wikiFacets.map((facet) => (
-            <button type="button" data-facet={facet.label} data-kinds={facet.kinds.join("|")}>
+            <button
+              type="button"
+              data-facet={facet.label}
+              data-kinds={facet.kinds.join("|")}
+            >
               {facet.label}
             </button>
           ))
@@ -49,7 +37,10 @@ const mesDoorways = publicProjects.filter((project) =>
       </div>
       <div class="archive-callout">
         <h2>Adult Archive</h2>
-        <p>Some stories deal directly with adult desire, transformation, and erotic genre material. They live in a separate wing of the archive.</p>
+        <p>
+          Some stories deal directly with adult desire, transformation, and
+          erotic genre material. They live in a separate wing of the archive.
+        </p>
         <a class="button secondary" href="/adult-archive">Open Adult Archive</a>
       </div>
     </section>
@@ -67,7 +58,9 @@ const mesDoorways = publicProjects.filter((project) =>
 
     const requestedFacet = params.get("facet");
     if (requestedFacet) {
-      const facet = facets.find((button) => button.dataset.facet === requestedFacet);
+      const facet = facets.find(
+        (button) => button.dataset.facet === requestedFacet,
+      );
       if (facet) activeKinds = facet.dataset.kinds.split("|");
     }
 
@@ -80,7 +73,7 @@ const mesDoorways = publicProjects.filter((project) =>
         project.summary,
         project.description,
         ...(project.tags || []),
-        ...(project.connections || []).map((connection) => connection.label)
+        ...(project.connections || []).map((connection) => connection.label),
       ]
         .flat()
         .join(" ")
@@ -89,18 +82,75 @@ const mesDoorways = publicProjects.filter((project) =>
     }
 
     function worldFor(project) {
-      if (project.tags?.includes("MES") || project.id.includes("mes") || ["my-evolution-system", "graysons-game", "bramblemere-basin", "erasure-protocol", "olympus-tepui", "living-archive", "grayson-reese", "evolution-system-interface", "gaia-digital-god", "the-triad", "elves", "dwarves-mes", "stellar-serpents", "the-ancient", "gold-mes", "odin-mind", "hades-digital-afterlife", "hierarchy-of-consciousness", "web-of-minds", "memetic-entities", "species-catalog", "digital-gods-catalog", "layered-existence", "oneill-cylinders", "noble-kin"].includes(project.id)) return { className: "world-mes", backdrop: "/images/works/my-evolution-system-book-1-cover.jpg" };
-      if (["suno-music-catalog", "deja-vu"].includes(project.id)) return { className: "world-music", backdrop: "/images/generated/suno-music-catalog.svg" };
-      if (["make-anxiety-your-superpower", "emotional-misinterpretation-dictionary"].includes(project.id)) return { className: "world-tools", backdrop: "/images/works/make-anxiety-your-superpower.jpg" };
-      return { className: "world-mythos", backdrop: "/images/generated/archetypal-mythos.svg" };
+      if (
+        project.tags?.includes("MES") ||
+        project.id.includes("mes") ||
+        [
+          "my-evolution-system",
+          "graysons-game",
+          "bramblemere-basin",
+          "erasure-protocol",
+          "olympus-tepui",
+          "living-archive",
+          "grayson-reese",
+          "evolution-system-interface",
+          "gaia-digital-god",
+          "the-triad",
+          "elves",
+          "dwarves-mes",
+          "stellar-serpents",
+          "the-ancient",
+          "gold-mes",
+          "odin-mind",
+          "hades-digital-afterlife",
+          "hierarchy-of-consciousness",
+          "web-of-minds",
+          "memetic-entities",
+          "species-catalog",
+          "digital-gods-catalog",
+          "layered-existence",
+          "oneill-cylinders",
+          "noble-kin",
+        ].includes(project.id)
+      )
+        return {
+          className: "world-mes",
+          backdrop: "/images/works/my-evolution-system-book-1-cover.jpg",
+        };
+      if (["suno-music-catalog", "deja-vu"].includes(project.id))
+        return {
+          className: "world-music",
+          backdrop: "/images/generated/suno-music-catalog.svg",
+        };
+      if (
+        [
+          "make-anxiety-your-superpower",
+          "emotional-misinterpretation-dictionary",
+        ].includes(project.id)
+      )
+        return {
+          className: "world-tools",
+          backdrop: "/images/works/make-anxiety-your-superpower.jpg",
+        };
+      return {
+        className: "world-mythos",
+        backdrop: "/images/generated/archetypal-mythos.svg",
+      };
     }
 
     function card(project) {
       const visibleTags = project.tags.slice(0, 3);
       const tags = visibleTags.map((tag) => `<li>${tag}</li>`).join("");
-      const hiddenTagCount = Math.max(project.tags.length - visibleTags.length, 0);
-      const moreTags = hiddenTagCount ? `<p class="micro-note">+${hiddenTagCount} more tags</p>` : "";
-      const connections = project.connections?.length ? `<p class="micro-note">${project.connections.length} linked entries</p>` : "";
+      const hiddenTagCount = Math.max(
+        project.tags.length - visibleTags.length,
+        0,
+      );
+      const moreTags = hiddenTagCount
+        ? `<p class="micro-note">+${hiddenTagCount} more tags</p>`
+        : "";
+      const connections = project.connections?.length
+        ? `<p class="micro-note">${project.connections.length} linked entries</p>`
+        : "";
       const role = project.entryRole || "Entry";
       const roleClass = role.toLowerCase();
       const world = worldFor(project);
@@ -134,10 +184,18 @@ const mesDoorways = publicProjects.filter((project) =>
     }
 
     function render() {
-      buttons.forEach((button) => button.classList.toggle("is-active", button.dataset.category === active));
+      buttons.forEach((button) =>
+        button.classList.toggle(
+          "is-active",
+          button.dataset.category === active,
+        ),
+      );
       facets.forEach((button) => {
         const kinds = button.dataset.kinds.split("|");
-        button.classList.toggle("is-active", Boolean(activeKinds && kinds.join("|") === activeKinds.join("|")));
+        button.classList.toggle(
+          "is-active",
+          Boolean(activeKinds && kinds.join("|") === activeKinds.join("|")),
+        );
       });
 
       const query = search.value.trim();
@@ -148,8 +206,10 @@ const mesDoorways = publicProjects.filter((project) =>
           return categoryMatch && facetMatch && matches(project, query);
         })
         .sort((a, b) => {
-          if (sort.value === "newest") return (b.date || "").localeCompare(a.date || "");
-          if (sort.value === "oldest") return (a.date || "").localeCompare(b.date || "");
+          if (sort.value === "newest")
+            return (b.date || "").localeCompare(a.date || "");
+          if (sort.value === "oldest")
+            return (a.date || "").localeCompare(b.date || "");
           if (sort.value === "alpha") return a.title.localeCompare(b.title);
           return Number(Boolean(b.featured)) - Number(Boolean(a.featured));
         });

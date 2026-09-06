@@ -70,7 +70,7 @@ Each wiki entry supports:
 - `artPrompt`
 - `externalWikiUrl`
 
-Use `#` as a temporary link until you have the real URL.
+Leave unknown destinations unpublished. Placeholder `#` links and generic platform homepages are filtered from visitor-facing buttons; add the actual profile or product URL before featuring it.
 
 ## Add connections
 

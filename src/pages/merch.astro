@@ -1,27 +1,71 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHeader from "../components/PageHeader.astro";
-import ProjectGrid from "../components/ProjectGrid.astro";
-import { creator, getProjectsByCategory } from "../content/projects";
-import { mediumPages } from "../content/pages";
-
-const page = mediumPages.merch;
-const items = page.categories.flatMap((category) => getProjectsByCategory(category));
+import { publicProjects } from "../content/projects";
+import { isUsableDestination } from "../lib/destinations";
+const products = publicProjects.flatMap((entry) =>
+  (entry.merchLinks || [])
+    .filter((link) => isUsableDestination(link.url))
+    .map((link) => ({ entry, link })),
+);
 ---
 
-<BaseLayout title={`Merch | ${creator.name}`} description={page.description}>
-  <main>
-    <PageHeader eyebrow={page.eyebrow} title={page.title} description={page.description} />
-    <section class="section first-section">
-      <ProjectGrid projects={items} />
+<BaseLayout title="Shop | Archetypal Architect"
+  ><main>
+    <PageHeader
+      eyebrow="From the stories"
+      title="Take a piece of the world home."
+      description="Wear the words. Keep the art close."
+    /><section class="section first-section">
       {
-        items.length === 0 && (
+        products.length ? (
+          <div class="reader-discoveries">
+            {products.map(({ entry, link }) => (
+              <a href={link.url}>
+                <img
+                  src={entry.thumbnail}
+                  alt={entry.thumbnailAlt}
+                  loading="lazy"
+                />
+                <h2>{link.label}</h2>
+                <p>From {entry.title}</p>
+                <span>View in the shop →</span>
+              </a>
+            ))}
+          </div>
+        ) : (
           <div class="empty-panel">
-            <h2>Objects are forming.</h2>
-            <p>Symbols, slogans, covers, signed editions, apparel, prints, bundles, and other objects from the archive gather here.</p>
+            <>
+              <h2>The Etsy shop is being rebuilt.</h2>
+              <p>
+                There are no items listed right now. Follow the shop or join the
+                reader list to hear when new pieces arrive.
+              </p>
+              <div class="hero-actions">
+                <>
+                  <a
+                    class="button primary"
+                    href="https://www.etsy.com/shop/MESPublishing"
+                  >
+                    Visit the Etsy shop
+                  </a>
+                  <a
+                    class="button secondary"
+                    href="https://archetypal-architect.kit.com/"
+                  >
+                    Join the reader list
+                  </a>
+                </>
+              </div>
+            </>
           </div>
         )
       }
+    </section><section class="section">
+      <h2>Bring Rowan’s honey cakes home today.</h2><p>
+        A free recipe from The Gentle Shadow, ready for your kitchen.
+      </p><a class="reader-text-link" href="/rowans-honey-cakes"
+        >Read the recipe →</a>
     </section>
-  </main>
-</BaseLayout>
+  </main></BaseLayout
+>

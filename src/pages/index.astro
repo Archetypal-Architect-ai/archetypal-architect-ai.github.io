@@ -1,99 +1,167 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import FeaturedProjects from "../components/FeaturedProjects.astro";
-import ProjectGrid from "../components/ProjectGrid.astro";
-import WikiMap from "../components/WikiMap.astro";
-import { creator, publicProjects, wikiFacets } from "../content/projects";
-
-const recent = [...publicProjects]
-  .filter((project) => !project.featured)
-  .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
-  .reduce<typeof publicProjects>((entries, project) => {
-    const key = project.series || project.id;
-    const existingIndex = entries.findIndex((entry) => (entry.series || entry.id) === key);
-    if (existingIndex === -1) {
-      entries.push(project);
-      return entries;
-    }
-    if (entries[existingIndex].entryRole !== "Hub" && project.entryRole === "Hub") {
-      entries[existingIndex] = project;
-    }
-    return entries;
-  }, [])
-  .slice(0, 4);
-const entryCount = publicProjects.length;
-const connectionCount = publicProjects.reduce((total, project) => total + (project.connections?.length || 0), 0);
+import { creator, publicProjects } from "../content/projects";
+import music from "../data/music.json";
+const book = publicProjects.find((p) => p.id === "the-gentle-shadow")!;
+const discoveries = publicProjects.filter((p) =>
+  [
+    "emotional-misinterpretation-dictionary",
+    "make-anxiety-your-superpower",
+    "archetypal-mythos",
+  ].includes(p.id),
+);
+const tracks = [
+  "the-tavern-at-the-edge-of-night",
+  "technologys-not-cheating",
+  "splinter-and-flame",
+].map((id) => music.tracks.find((t) => t.id === id)!);
 ---
 
-<BaseLayout title={`${creator.name} | ${creator.imprint}`} description={creator.tagline}>
-  <main>
-    <section class="home-hero">
-      <div class="hero-copy">
-        <p class="eyebrow">{creator.imprint}</p>
-        <h1>{creator.tagline}</h1>
-        <p>{creator.aboutTheWork}</p>
-        <div class="hero-actions">
-          <a class="button primary" href="/wiki">Enter the Wiki</a>
-          <a class="button secondary" href="#map">View the Map</a>
-          <a class="button secondary" href="/adult-archive">Adult Archive</a>
-          <a class="button secondary" href="/contact">Contact</a>
+<BaseLayout title={creator.name + " | Books, music & curious worlds"}>
+  <main class="reader-home">
+    <section class="reader-hero">
+      <div class="reader-intro">
+        <p class="eyebrow">Fiction / Music / Uncomfortable questions</p><h1>
+          Strange worlds.<br /><em>Stay a while.</em>
+        </h1><p>
+          Vampires with a weakness for kindness. Songs for the end of the night.
+          Ideas that follow you home.
+        </p><div class="hero-actions">
+          <a class="button primary" href="/novels">Find your next read</a><a
+            class="button secondary"
+            href="#listen">Play something</a>
+        </div><a class="reader-text-link" href="/wiki"
+          >Follow your curiosity into the wiki →</a>
+      </div><a class="hero-book" href="/wiki/the-gentle-shadow"
+        ><img
+          src={book.thumbnail}
+          alt={book.thumbnailAlt}
+          fetchpriority="high"
+        /><span>The Gentle Shadow <small>Kindness has teeth. →</small></span
+        ></a>
+    </section>
+    <section class="section reader-feature">
+      <div>
+        <p class="eyebrow">Start with The Gentle Shadow</p><h2>
+          Five hundred years.<br />Still the kind girl.
+        </h2>
+      </div><div>
+        <p>
+          Rowan survived a vampire’s mistake. Now she’s a high school junior
+          again, with a werewolf best friend, impossible scarves, and a found
+          family ancient vampires find deeply offensive.
+        </p><div class="hero-actions">
+          {
+            book.links
+              .filter((l) => l.url.includes("amazon.com/dp/"))
+              .map((l) => (
+                <a class="button primary" href={l.url}>
+                  {l.label}
+                </a>
+              ))
+          }<a class="reader-text-link" href="/wiki/the-gentle-shadow"
+            >Meet Rowan →</a>
         </div>
       </div>
     </section>
-
-    <section class="section wiki-stats">
-      <div>
-        <strong>{entryCount}</strong>
-        <span>Entries</span>
-      </div>
-      <div>
-        <strong>{connectionCount}</strong>
-        <span>Explicit links</span>
-      </div>
-      <div>
-        <strong>{wikiFacets.length}</strong>
-        <span>Browse lenses</span>
+    <section class="section" id="listen">
+      <div class="reader-section-heading">
+        <div>
+          <p class="eyebrow">Stay for a song</p><h2>What’s your mood?</h2>
+        </div><a class="reader-text-link" href="/music">All playlists →</a>
+      </div><div class="reader-tracks">
+        {
+          tracks.map((track, i) => (
+            <article>
+              <>
+                <span class="reader-number">0{i + 1}</span>
+                <p class="eyebrow">
+                  {["After hours", "A little irreverence", "Start again"][i]}
+                </p>
+                <h3>{track.title}</h3>
+                <audio
+                  controls
+                  preload="none"
+                  src={track.src}
+                  aria-label={track.title}
+                />
+              </>
+            </article>
+          ))
+        }
       </div>
     </section>
-
-    <FeaturedProjects />
-
+    <section class="section reader-bonus">
+      <div>
+        <p class="eyebrow">A seat at Rowan’s table</p><h2>
+          There will be honey cakes.
+        </h2><p>
+          Bring a little of The Gentle Shadow into your kitchen. Get Rowan’s
+          third-batch recipe and join the reader list for what comes next.
+        </p><div class="hero-actions">
+          <a class="button primary" href="https://archetypal-architect.kit.com/"
+            >Send me the recipe</a
+          ><a class="reader-text-link" href="/rowans-honey-cakes"
+            >Read the recipe here →</a>
+        </div>
+      </div><span class="reader-bonus-aside"
+        >Honey cakes.<br />Scarves aplenty.<br /><em>Kindness with teeth.</em
+        ></span>
+    </section>
     <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Browse</p>
-        <h2>Explore by Relationship</h2>
-        <p>Each lens follows a different way the work moves: story, sound, image, object, argument, reference.</p>
-      </div>
-      <div class="medium-grid">
+      <div class="reader-section-heading">
+        <div>
+          <p class="eyebrow">Follow a thought</p><h2>
+            A few places to get lost.
+          </h2>
+        </div><a class="reader-text-link" href="/wiki">Explore the wiki →</a>
+      </div><div class="reader-discoveries">
         {
-          wikiFacets.map((facet) => (
-            <a href={`/wiki?facet=${encodeURIComponent(facet.label)}`}>
-              <strong>{facet.label}</strong>
-              <span>{facet.kinds.join(" / ")}</span>
+          discoveries.map((entry) => (
+            <a href={"/wiki/" + entry.id}>
+              <>
+                <p class="eyebrow">
+                  {entry.kind === "Tool"
+                    ? "Psychology & everyday life"
+                    : "Myth & imagination"}
+                </p>
+                <h3>{entry.title}</h3>
+                <p>{entry.summary}</p>
+                <span>Take a look →</span>
+              </>
             </a>
           ))
         }
       </div>
     </section>
-
-    <div id="map">
-      <WikiMap />
-    </div>
-
-    <section class="section about-band">
+    <section class="section reader-feature">
       <div>
-        <p class="eyebrow">About the Structure</p>
-        <h2>A web of recurring questions.</h2>
+        <p class="eyebrow">Beyond the page</p><h2>
+          Words to wear.<br />Worlds to keep.
+        </h2>
+      </div><div>
+        <p>
+          The Etsy shop is being rebuilt. Follow along for the next collection
+          of pieces from the work.
+        </p><a class="button secondary" href="/merch">Visit the shop →</a>
       </div>
-      <p>{creator.bio}</p>
     </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Recent</p>
-        <h2>Latest Entries</h2>
+    <section class="section reader-follow">
+      <div>
+        <p class="eyebrow">Find me again</p><h2>
+          The next story is still unfolding.
+        </h2><p>Follow the music, join the reader list, or drop me a line.</p>
+      </div><div class="hero-actions">
+        {
+          creator.socialLinks
+            .filter((l) => l.label !== "Email")
+            .map((link) => (
+              <a class="button secondary" href={link.url}>
+                {link.label}
+              </a>
+            ))
+        }<a class="reader-text-link" href="/contact">Say hello →</a>
       </div>
-      <ProjectGrid projects={recent} />
     </section>
-  </main>
-</BaseLayout>
+  </main></BaseLayout
+>

@@ -3,35 +3,148 @@ import musicData from "../data/music.json";
 import { musicLyrics } from "../data/musicLyrics";
 const { playlists, tracks } = musicData;
 ---
+
 <div class="music-console" data-music-console>
   <div class="playlist-tabs" role="tablist" aria-label="Music playlists">
-    {playlists.map((playlist, index) => <button class:list={['playlist-tab', { 'is-active': index === 0 }]} type="button" data-playlist={playlist.id}>{playlist.title}</button>)}
+    {
+      playlists.map((playlist, index) => (
+        <button
+          class:list={["playlist-tab", { "is-active": index === 0 }]}
+          type="button"
+          data-playlist={playlist.id}
+        >
+          {playlist.title}
+        </button>
+      ))
+    }
   </div>
   <div class="playlist-stage">
-    {playlists.map((playlist, index) => <section class:list={['playlist-view', { 'is-active': index === 0 }]} data-playlist-view={playlist.id}>
-      <div class="playlist-intro"><p class="eyebrow">Playlist / {playlist.tracks.length} tracks</p><h2>{playlist.title}</h2><p>{playlist.description}</p><a class="suno-link" href={playlist.sunoUrl}>Find the wider shelf on Suno -&gt;</a></div>
-      <ol class="track-list">
-        {playlist.tracks.map((trackId) => { const track = tracks.find((item) => item.id === trackId); return track ? <li class="track-row" data-track-id={track.id}>
-          <button class="track-play" type="button" data-play="{track.id}" aria-label={`Play ${track.title}`}>Play</button>
-          <span class="track-number">{String(playlist.tracks.indexOf(trackId) + 1).padStart(2, '0')}</span>
-          <span class="track-info"><strong>{track.title}</strong><small>{track.artist} / {track.tags.join(' / ')}</small></span>
-          <a class="track-download" href={track.downloadUrl || '#'} data-download={track.id} aria-label={`Download ${track.title}`}>{track.downloadUrl ? 'Download' : 'Tip jar soon'}</a>
-          <audio preload="none" src={track.src} data-audio={track.id}></audio>
-          {track.lyricsKey && musicLyrics[track.lyricsKey] && <details class="track-lyrics"><summary>Read lyrics</summary><pre>{musicLyrics[track.lyricsKey]}</pre></details>}
-        </li> : null; })}
-      </ol>
-    </section>)}
+    {
+      playlists.map((playlist, index) => (
+        <section
+          class:list={["playlist-view", { "is-active": index === 0 }]}
+          data-playlist-view={playlist.id}
+        >
+          <div class="playlist-intro">
+            <>
+              <p class="eyebrow">Playlist / {playlist.tracks.length} tracks</p>
+              <h2>{playlist.title}</h2>
+              <p>{playlist.description}</p>
+              <a class="suno-link" href={playlist.sunoUrl}>
+                Find the wider shelf on Suno -&gt;
+              </a>
+            </>
+          </div>
+          <ol class="track-list">
+            {playlist.tracks.map((trackId) => {
+              const track = tracks.find((item) => item.id === trackId);
+              return track ? (
+                <li class="track-row" data-track-id={track.id}>
+                  <button
+                    class="track-play"
+                    type="button"
+                    data-play={track.id}
+                    aria-label={`Play ${track.title}`}
+                  >
+                    Play
+                  </button>
+                  <span class="track-number">
+                    {String(playlist.tracks.indexOf(trackId) + 1).padStart(
+                      2,
+                      "0",
+                    )}
+                  </span>
+                  <span class="track-info">
+                    <strong>{track.title}</strong>
+                    <small>
+                      {track.artist} / {track.tags.join(" / ")}
+                    </small>
+                  </span>
+                  {track.downloadUrl && (
+                    <a
+                      class="track-download"
+                      href={track.downloadUrl}
+                      aria-label={`Download ${track.title}`}
+                    >
+                      Download
+                    </a>
+                  )}
+                  <audio preload="none" src={track.src} data-audio={track.id} />
+                  {track.lyricsKey && musicLyrics[track.lyricsKey] && (
+                    <details class="track-lyrics">
+                      <summary>Read lyrics</summary>
+                      <pre>{musicLyrics[track.lyricsKey]}</pre>
+                    </details>
+                  )}
+                </li>
+              ) : null;
+            })}
+          </ol>
+        </section>
+      ))
+    }
   </div>
-  <p class="music-note">Every track plays here for free. Download links will point to the small-pay storefront once the checkout shelf is connected.</p>
+  <p class="music-note">
+    Listen here for free. Follow Archetypal Architect on Suno for more songs.
+  </p>
 </div>
 <script is:inline>
-  const consoleEl = document.querySelector('[data-music-console]');
-  if (consoleEl) {
-    const tabs = [...consoleEl.querySelectorAll('[data-playlist]')];
-    const views = [...consoleEl.querySelectorAll('[data-playlist-view]')];
-    const buttons = [...consoleEl.querySelectorAll('[data-play]')];
+  const player = document.querySelector("[data-music-console]");
+  if (player) {
     let current;
-    tabs.forEach((tab) => tab.addEventListener('click', () => { tabs.forEach((item) => item.classList.toggle('is-active', item === tab)); views.forEach((view) => view.classList.toggle('is-active', view.dataset.playlistView === tab.dataset.playlist)); }));
-    buttons.forEach((button) => button.addEventListener('click', () => { const audio = consoleEl.querySelector(`[data-audio="${button.dataset.play}"]`); if (!audio) return; if (current && current !== audio) { current.pause(); current.closest('.track-row')?.classList.remove('is-playing'); } if (audio.paused) { audio.play(); button.textContent = 'Pause'; audio.closest('.track-row')?.classList.add('is-playing'); current = audio; } else { audio.pause(); button.textContent = 'Play'; audio.closest('.track-row')?.classList.remove('is-playing'); } }));
+    const reset = (audio) => {
+      const row = audio.closest(".track-row");
+      const button = row.querySelector("[data-play]");
+      row.classList.remove("is-playing");
+      button.textContent = "Play";
+      button.setAttribute(
+        "aria-label",
+        "Play " + row.querySelector("strong").textContent,
+      );
+    };
+    player.querySelectorAll("audio").forEach((audio) => {
+      audio.addEventListener("pause", () => reset(audio));
+      audio.addEventListener("ended", () => reset(audio));
+    });
+    player.querySelectorAll("[data-playlist]").forEach((tab) =>
+      tab.addEventListener("click", () => {
+        if (current) current.pause();
+        player
+          .querySelectorAll("[data-playlist]")
+          .forEach((t) => t.classList.toggle("is-active", t === tab));
+        player
+          .querySelectorAll("[data-playlist-view]")
+          .forEach((v) =>
+            v.classList.toggle(
+              "is-active",
+              v.dataset.playlistView === tab.dataset.playlist,
+            ),
+          );
+      }),
+    );
+    player.querySelectorAll("[data-play]").forEach((button) =>
+      button.addEventListener("click", async () => {
+        const audio = button.closest(".track-row").querySelector("audio");
+        if (current && current !== audio) current.pause();
+        if (!audio.paused) {
+          audio.pause();
+          return;
+        }
+        current = audio;
+        try {
+          await audio.play();
+          button.textContent = "Pause";
+          button.setAttribute(
+            "aria-label",
+            "Pause " +
+              button.closest(".track-row").querySelector("strong").textContent,
+          );
+          audio.closest(".track-row").classList.add("is-playing");
+        } catch {
+          reset(audio);
+          button.textContent = "Try again";
+        }
+      }),
+    );
   }
 </script>
