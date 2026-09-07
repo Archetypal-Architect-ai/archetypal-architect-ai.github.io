@@ -368,8 +368,8 @@
     "visibility": "Public",
     "featured": false,
     "date": "2026-07-05",
-    "thumbnail": "/images/works/the-gentle-shadow-cover.jpg",
-    "thumbnailAlt": "Cover art for The Gentle Shadow by Archetypal Architect.",
+    "thumbnail": "/images/books/the-gentle-shadow.jpg",
+    "thumbnailAlt": "The Gentle Shadow — official Amazon cover",
     "summary": "Five hundred years after surviving a vampire's mistake, Rowan is a high school junior again. Kindness has teeth.",
     "description": "The Gentle Shadow is an adult cozy-goth vampire horror-comedy about a village girl who survives an impossible bite, spends five hundred years being far too kind for the darkness, and enrolls in modern high school with a werewolf best friend and a vampire sire who still thinks honey cakes are a threat.",
     "body": [
@@ -437,16 +437,16 @@
     "title": "The Weight of Memory",
     "kind": "Novel",
     "category": "Novel",
-    "status": "Ongoing",
+    "status": "Completed",
     "entryRole": "Entry",
     "maturity": "General",
     "visibility": "Public",
     "featured": false,
     "date": "2026-07-05",
-    "thumbnail": "/images/generated/weight-of-memory.svg",
-    "thumbnailAlt": "Silver thread crossing old letters, a small collar tag, and a dark candlelit archive.",
-    "summary": "Book 2 of The Gentle Shadow, where Viktor discovers the vampires may have misunderstood their own species.",
-    "description": "The Weight of Memory continues the cozy-goth vampire series by turning the question inward: Rowan was not a strange exception. She may have been the complete version of what vampires were supposed to remain.",
+    "thumbnail": "/images/books/the-weight-of-memory.jpg",
+    "thumbnailAlt": "The Weight of Memory — official Amazon cover",
+    "summary": "Viktor has a soul again. Being a monster was simpler.",
+    "description": "Memory and grief have returned to Viktor, along with a form of strength he cannot explain. A researcher wants to understand his transformation, and the people he cares about become part of her investigation. Rowan brings soup and scarves. Viktor must learn what to do with a life that finally matters to him.",
     "body": [
       "The second book follows Viktor as restored conscience, willing blood, grief, and connection reveal a darker possibility than any enemy attack: the old vampires may have crippled themselves and mistaken the injury for maturity.",
       "The dog thread, the memory burden, and Viktor's new soul-spark make the question intimate rather than abstract. The pain is not the point. Feeling what you care about is the capability."
@@ -455,7 +455,7 @@
     "links": [
       {
         "label": "Read on Kindle",
-        "url": "https://a.co/d/0ceG8cHV",
+        "url": "https://www.amazon.com/dp/B0GX3FKFYQ",
         "type": "Buy"
       }
     ],
@@ -688,8 +688,8 @@
     "visibility": "Public",
     "featured": true,
     "date": "2026-06-06",
-    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
-    "thumbnailAlt": "Most recent Book 1 cover art for My Evolution System: Fall from Space.",
+    "thumbnail": "/images/books/fall-from-space.jpg",
+    "thumbnailAlt": "Fall from Space — official Amazon cover",
     "summary": "A system-fiction universe about survival, biotech, agency, and civilization after the old world breaks.",
     "description": "[[My Evolution System]] follows the pressure point where personal evolution stops being metaphor. The series turns adaptation into plot, [[Evolution System|technology into inheritance]], and survival into a philosophical demand.",
     "body": [

@@ -1,55 +1,89 @@
 ---
 import "../styles/global.css";
 import { creator } from "../content/projects";
-
 const {
-  title = `${creator.name} | Creative Archive`,
-  description = creator.tagline,
+  title = creator.name,
+  description = "Books, music, and beautifully strange worlds by Archetypal Architect.",
   image = "/images/hero-studio.png",
 } = Astro.props;
-
 const nav = [
   ["Books", "/novels"],
-  ["Music", "/music"],
+  ["Listen", "/music"],
   ["Explore", "/wiki"],
-  ["Shop", "/merch"],
-  ["About", "/about"],
-  ["Reader bonus", "/free"],
+  ["Objects", "/merch"],
 ];
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:type" content="website" />
-    <link rel="icon" href="/favicon.svg" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="/">
-        <span>{creator.name}</span>
-        <small>Books · Music · Curious worlds</small>
-      </a>
-      <nav class="main-nav" aria-label="Primary navigation">
-        {nav.map(([label, href]) => <a href={href}>{label}</a>)}
-      </nav>
-    </header>
-    <slot />
-    <footer class="site-footer">
-      <strong>{creator.name}</strong>
-      <nav aria-label="More from Archetypal Architect">
-        <a href="/contact">Contact & follow</a><a href="/essays">Essays</a><a
-          href="/videos">Videos</a
-        ><a href="/wiki/backmatter-link-index">Reader links</a><a
-          href="/adult-archive">Adult archive · 18+</a>
-      </nav>
-    </footer>
-  </body>
+  <head
+    ><meta charset="utf-8" /><meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    /><title>{title}</title><meta
+      name="description"
+      content={description}
+    /><meta property="og:title" content={title} /><meta
+      property="og:description"
+      content={description}
+    /><meta property="og:image" content={image} /><meta
+      property="og:type"
+      content="website"
+    /><link rel="icon" href="/favicon.svg" /></head
+  ><body
+    ><a href="#site-main" class="skip-link">Skip to content</a><header
+      class="site-header"
+    >
+      <a class="brand" href="/" aria-label="Archetypal Architect home"
+        ><span class="brand-monogram" aria-hidden="true">a<span>a</span></span
+        ><span class="brand-wordmark">ARCHETYPAL<br />ARCHITECT</span></a
+      ><nav class="main-nav" aria-label="Primary navigation">
+        {
+          nav.map(([label, href]) => (
+            <a
+              href={href}
+              aria-current={
+                Astro.url.pathname === href || Astro.url.pathname === href + "/"
+                  ? "page"
+                  : undefined
+              }
+            >
+              {label}
+            </a>
+          ))
+        }
+      </nav><a class="header-invitation" href="/free"
+        >Join the story <span>↗</span></a
+      >
+    </header><div id="site-main" tabindex="-1"><slot /></div><footer
+      class="site-footer"
+    >
+      <div class="footer-top">
+        <a class="footer-name" href="/">Archetypal<br /><em>Architect.</em></a
+        ><p>
+          Strange worlds.<br />Human questions.<br />A place for the curious.
+        </p><div class="footer-follow">
+          <span class="eyebrow">Elsewhere, still making things</span>{
+            creator.socialLinks
+              .filter((l) =>
+                ["YouTube", "Suno", "Substack", "Amazon author"].includes(
+                  l.label,
+                ),
+              )
+              .map((l) => <a href={l.url}>{l.label} ↗</a>)
+          }
+        </div>
+      </div><div class="footer-bottom">
+        <span>© {new Date().getFullYear()} Archetypal Architect</span><nav
+          aria-label="More from Archetypal Architect"
+        >
+          <a href="/about">About</a><a href="/contact">Contact</a><a
+            href="/videos">Videos</a
+          ><a href="/essays">Essays</a><a href="/wiki/backmatter-link-index"
+            >Reader links</a
+          ><a href="/adult-archive">Adult archive · 18+</a>
+        </nav><a href="#site-main">Back to top ↑</a>
+      </div>
+    </footer></body
+  >
 </html>

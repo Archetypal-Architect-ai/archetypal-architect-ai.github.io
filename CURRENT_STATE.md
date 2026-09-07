@@ -75,3 +75,11 @@ This revision supersedes the earlier recommendation to expand MES immediately. T
 - Add actual Etsy products when the shop reopens; product photography, prices, and product links are not yet available.
 - Decide the final disposition of MES legacy pages and provide revised public canon before expansion resumes.
 - Review the pre-existing dependency audit separately (13 advisories reported during clean install); no broad dependency upgrades were included in this design change.
+
+## Approved storefront redesign — 2026-09-07
+
+The author approved the preview and authorized live publication. This supersedes the first reader-hub layout above. Cream, ink, and red editorial styling now leads with three verified Amazon books and their official cover art. Book filters, preview dialogs, dedicated book pages, a playlist listening room, and reader-bonus signup form the main visitor journey. Wiki discovery remains secondary; earlier MES routes and adult consent boundaries remain intact.
+
+Book catalogue: `src/data/books.json`; cover provenance: `src/data/book-sources.json`; local cover assets: `public/images/books/`. Etsy still has no verified inventory; its page explicitly describes the shop rebuild and concept art.
+
+Validation: production build generated 112 pages with zero errors, warnings, or hints. The built-site route and asset validator passes. Local build used the previously documented external WASM compiler workaround without repository dependency changes. GitHub Pages performs the native Linux build before deploying.

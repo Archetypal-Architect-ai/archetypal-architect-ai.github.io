@@ -1,19 +1,29 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PageHeader from "../components/PageHeader.astro";
-import ProjectGrid from "../components/ProjectGrid.astro";
-import { creator, getProjectsByCategory } from "../content/projects";
-import { mediumPages } from "../content/pages";
-
-const page = mediumPages.essays;
-const items = page.categories.flatMap((category) => getProjectsByCategory(category));
 ---
 
-<BaseLayout title={`Essays | ${creator.name}`} description={page.description}>
-  <main>
-    <PageHeader eyebrow={page.eyebrow} title={page.title} description={page.description} />
-    <section class="section first-section">
-      <ProjectGrid projects={items} />
+<BaseLayout title="Ideas that follow you home — Archetypal Architect"
+  ><main>
+    <section class="page-header">
+      <p class="eyebrow">Essays & questions</p><h1>
+        Some ideas<br /><em>won’t sit still.</em>
+      </h1><p>
+        Psychology, agency, civilization, and the systems we learn to live
+        inside.
+      </p><a
+        class="button primary"
+        href="https://substack.com/@archetypal0architect">Read on Substack ↗</a
+      >
+    </section><section class="section first-section curiosity-links">
+      <a href="/wiki/make-anxiety-your-superpower"
+        ><p class="eyebrow">Practical psychology</p><h3>
+          Make Anxiety Your Superpower
+        </h3><p>Explore the work →</p></a
+      ><a href="/wiki/emotional-misinterpretation-dictionary"
+        ><p class="eyebrow">Emotion & interpretation</p><h3>
+          The Emotional Misinterpretation Dictionary
+        </h3><p>Open the dictionary →</p></a
+      >
     </section>
-  </main>
-</BaseLayout>
+  </main></BaseLayout
+>

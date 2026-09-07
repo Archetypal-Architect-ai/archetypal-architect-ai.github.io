@@ -1,0 +1,154 @@
+---
+import music from "../data/music.json";
+import { musicLyrics } from "../data/musicLyrics";
+const { compact = false } = Astro.props;
+---
+
+<section class:list={["listening-room", { compact }]} data-listening-room>
+  <div class="room-intro">
+    <p class="eyebrow"><span class="live-dot"></span> The listening room</p><h2>
+      Turn the world<br /><em>down a little.</em>
+    </h2><p>
+      Myth, mischief, late nights, and starting over.<br />Find the frequency
+      you came for.
+    </p><a class="text-link" href="https://suno.com/@archetypalarchitect"
+      >Follow the music on Suno ↗</a>
+  </div>
+  <div class="room-console">
+    <div class="room-tabs" aria-label="Choose a playlist">
+      {
+        music.playlists.map((p, i) => (
+          <button data-room-list={p.id} aria-pressed={i === 0}>
+            {p.title}
+          </button>
+        ))
+      }
+    </div>
+    <div class="now-playing">
+      <span class="now-label">ON THE TURNTABLE</span><h3 data-now-title>
+        {music.tracks[0].title}
+      </h3><p data-now-artist>Archetypal Architect</p><audio
+        controls
+        preload="none"
+        src={music.tracks[0].src}
+        data-room-audio
+        aria-label="Music player"></audio><p
+        class="audio-status"
+        role="status"
+        data-room-status
+      >
+      </p>
+    </div>
+    <div class="room-tracks">
+      {
+        music.playlists.map((p, i) => (
+          <ol data-room-panel={p.id} hidden={i !== 0}>
+            {p.tracks.map((id, n) => {
+              const t = music.tracks.find((t) => t.id === id)!;
+              return (
+                <li>
+                  <button
+                    data-room-track={t.id}
+                    data-src={t.src}
+                    data-title={t.title}
+                  >
+                    <span class="track-index">
+                      {String(n + 1).padStart(2, "0")}
+                    </span>
+                    <span>
+                      {t.title}
+                      <small>
+                        {t.tags.filter((t) => t !== "MES").join(" / ")}
+                      </small>
+                    </span>
+                    <span class="track-icon" aria-hidden="true">
+                      ▶
+                    </span>
+                  </button>
+                  {t.lyricsKey && musicLyrics[t.lyricsKey] && (
+                    <details class="room-lyrics">
+                      <summary>Read lyrics</summary>
+                      <pre>{musicLyrics[t.lyricsKey]}</pre>
+                    </details>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+        ))
+      }
+    </div>
+  </div>
+</section>
+<script>
+  document
+    .querySelectorAll<HTMLElement>("[data-listening-room]")
+    .forEach((room) => {
+      const audio = room.querySelector<HTMLAudioElement>("audio")!;
+      const status = room.querySelector("[data-room-status]")!;
+      let active: HTMLButtonElement | null = null;
+      const clear = () => {
+        room.querySelectorAll("[data-room-track]").forEach((b) => {
+          b.classList.remove("playing");
+          b.setAttribute("aria-pressed", "false");
+        });
+      };
+      audio.addEventListener("pause", () =>
+        active?.classList.remove("playing"),
+      );
+      audio.addEventListener("play", () => {
+        document.querySelectorAll("audio").forEach((other) => {
+          if (other !== audio) other.pause();
+        });
+        active?.classList.add("playing");
+      });
+      audio.addEventListener("ended", clear);
+      audio.addEventListener("error", () => {
+        status.textContent =
+          "This track could not load. Try another, or listen on Suno.";
+        clear();
+      });
+      room
+        .querySelectorAll<HTMLButtonElement>("[data-room-list]")
+        .forEach((button) =>
+          button.addEventListener("click", () => {
+            room
+              .querySelectorAll("[data-room-list]")
+              .forEach((b) =>
+                b.setAttribute("aria-pressed", String(b === button)),
+              );
+            room
+              .querySelectorAll<HTMLElement>("[data-room-panel]")
+              .forEach(
+                (panel) =>
+                  (panel.hidden =
+                    panel.dataset.roomPanel !== button.dataset.roomList),
+              );
+          }),
+        );
+      room
+        .querySelectorAll<HTMLButtonElement>("[data-room-track]")
+        .forEach((button) => {
+          button.setAttribute("aria-label", "Play " + button.dataset.title);
+          button.addEventListener("click", async () => {
+            status.textContent = "";
+            if (active === button && !audio.paused) {
+              audio.pause();
+              return;
+            }
+            clear();
+            active = button;
+            if (audio.getAttribute("src") !== button.dataset.src)
+              audio.src = button.dataset.src!;
+            room.querySelector("[data-now-title]")!.textContent =
+              button.dataset.title!;
+            button.setAttribute("aria-pressed", "true");
+            try {
+              await audio.play();
+            } catch {
+              status.textContent = "Press play on the audio player to listen.";
+            }
+          });
+        });
+    });
+</script>

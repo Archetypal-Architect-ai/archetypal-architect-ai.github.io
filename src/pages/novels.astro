@@ -1,56 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PageHeader from "../components/PageHeader.astro";
-import ExternalLinks from "../components/ExternalLinks.astro";
-import { publicProjects } from "../content/projects";
-const books = publicProjects.filter((p) => p.kind === "Novel");
+import BookShelf from "../components/BookShelf.astro";
 ---
 
-<BaseLayout title="Books | Archetypal Architect"
+<BaseLayout title="The books — Archetypal Architect"
   ><main>
-    <PageHeader
-      eyebrow="The book shelf"
-      title="Find your next obsession."
-      description="Begin with The Gentle Shadow: vampires, found family, and kindness that refuses to die."
-    /><section class="section first-section reader-books">
-      {
-        books.map((book) => (
-          <article class="reader-book">
-            <>
-              <a href={"/wiki/" + book.id}>
-                <img
-                  src={book.thumbnail}
-                  alt={book.thumbnailAlt}
-                  loading="lazy"
-                />
-              </a>
-              <div>
-                <>
-                  <p class="eyebrow">
-                    {book.series}
-                    {book.bookNumber ? " / Book " + book.bookNumber : ""}
-                  </p>
-                  <h2>{book.title}</h2>
-                  <p>{book.summary}</p>
-                  <ExternalLinks
-                    links={book.links.filter((l) => l.type === "Buy")}
-                    variant="button"
-                  />
-                  <a class="reader-text-link" href={"/wiki/" + book.id}>
-                    Explore the book →
-                  </a>
-                </>
-              </div>
-            </>
-          </article>
-        ))
-      }
-    </section><section class="section reader-bonus">
-      <div>
-        <h2>A little more Rowan.</h2><p>
-          Take the honey-cake recipe home and join the reader list.
-        </p><a class="button primary" href="/free">Get the reader bonus</a>
-      </div>
+    <section class="page-header">
+      <p class="eyebrow">Fiction by Archetypal Architect</p><h1>
+        Choose your<br /><em>beautiful trouble.</em>
+      </h1><p>
+        Three books. Kind-hearted vampires, memories that bite, and an Earth
+        that refuses to stay a simulation.
+      </p>
+    </section><section class="section first-section">
+      <BookShelf />
+    </section><section class="compact-invitation">
+      <h2>A little more story,<br /><em>delivered.</em></h2><a
+        class="button primary"
+        href="/free">Join the reader table ↗</a
+      >
     </section>
   </main></BaseLayout
 >

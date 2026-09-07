@@ -1,167 +1,143 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { creator, publicProjects } from "../content/projects";
-import music from "../data/music.json";
-const book = publicProjects.find((p) => p.id === "the-gentle-shadow")!;
-const discoveries = publicProjects.filter((p) =>
-  [
-    "emotional-misinterpretation-dictionary",
-    "make-anxiety-your-superpower",
-    "archetypal-mythos",
-  ].includes(p.id),
-);
-const tracks = [
-  "the-tavern-at-the-edge-of-night",
-  "technologys-not-cheating",
-  "splinter-and-flame",
-].map((id) => music.tracks.find((t) => t.id === id)!);
+import BookShelf from "../components/BookShelf.astro";
+import ListeningRoom from "../components/ListeningRoom.astro";
+import books from "../data/books.json";
 ---
 
-<BaseLayout title={creator.name + " | Books, music & curious worlds"}>
-  <main class="reader-home">
-    <section class="reader-hero">
-      <div class="reader-intro">
-        <p class="eyebrow">Fiction / Music / Uncomfortable questions</p><h1>
-          Strange worlds.<br /><em>Stay a while.</em>
-        </h1><p>
-          Vampires with a weakness for kindness. Songs for the end of the night.
-          Ideas that follow you home.
-        </p><div class="hero-actions">
-          <a class="button primary" href="/novels">Find your next read</a><a
-            class="button secondary"
-            href="#listen">Play something</a>
-        </div><a class="reader-text-link" href="/wiki"
-          >Follow your curiosity into the wiki →</a>
-      </div><a class="hero-book" href="/wiki/the-gentle-shadow"
-        ><img
-          src={book.thumbnail}
-          alt={book.thumbnailAlt}
-          fetchpriority="high"
-        /><span>The Gentle Shadow <small>Kindness has teeth. →</small></span
-        ></a>
-    </section>
-    <section class="section reader-feature">
-      <div>
-        <p class="eyebrow">Start with The Gentle Shadow</p><h2>
-          Five hundred years.<br />Still the kind girl.
-        </h2>
-      </div><div>
-        <p>
-          Rowan survived a vampire’s mistake. Now she’s a high school junior
-          again, with a werewolf best friend, impossible scarves, and a found
-          family ancient vampires find deeply offensive.
-        </p><div class="hero-actions">
-          {
-            book.links
-              .filter((l) => l.url.includes("amazon.com/dp/"))
-              .map((l) => (
-                <a class="button primary" href={l.url}>
-                  {l.label}
-                </a>
-              ))
-          }<a class="reader-text-link" href="/wiki/the-gentle-shadow"
-            >Meet Rowan →</a>
-        </div>
+<BaseLayout title="Archetypal Architect — Beautifully strange stories"
+  ><main>
+    <section class="editorial-hero">
+      <div class="hero-topline">
+        <span>THE WORLDS OF ARCHETYPAL ARCHITECT</span><span
+          >Read. Listen. Wander.</span
+        >
       </div>
-    </section>
-    <section class="section" id="listen">
-      <div class="reader-section-heading">
-        <div>
-          <p class="eyebrow">Stay for a song</p><h2>What’s your mood?</h2>
-        </div><a class="reader-text-link" href="/music">All playlists →</a>
-      </div><div class="reader-tracks">
-        {
-          tracks.map((track, i) => (
-            <article>
-              <>
-                <span class="reader-number">0{i + 1}</span>
-                <p class="eyebrow">
-                  {["After hours", "A little irreverence", "Start again"][i]}
-                </p>
-                <h3>{track.title}</h3>
-                <audio
-                  controls
-                  preload="none"
-                  src={track.src}
-                  aria-label={track.title}
+      <div class="hero-composition">
+        <div class="hero-statement">
+          <p class="eyebrow">
+            For the curious. And the beautifully strange.
+          </p><h1>Some stories<br />get <em>under<br />your skin.</em></h1><p
+            class="hero-description"
+          >
+            Kind-hearted monsters. Living worlds.<br />Songs that follow you out
+            of the room.
+          </p><a class="button primary" href="#books"
+            >Find your next obsession <span>↗</span></a
+          >
+        </div>
+        <div class="cover-composition">
+          <span class="cover-orbit-label">THREE DOORS. NO ORDINARY WORLDS.</span
+          >{
+            books.map((book, i) => (
+              <a
+                class={"hero-cover cover-" + i}
+                href={"/books/" + book.id}
+                aria-label={"Explore " + book.title}
+              >
+                <img
+                  src={book.cover}
+                  alt={book.title + " cover"}
+                  width="938"
+                  height="1500"
+                  fetchpriority={i === 0 ? "high" : "auto"}
                 />
-              </>
-            </article>
-          ))
-        }
-      </div>
-    </section>
-    <section class="section reader-bonus">
-      <div>
-        <p class="eyebrow">A seat at Rowan’s table</p><h2>
-          There will be honey cakes.
-        </h2><p>
-          Bring a little of The Gentle Shadow into your kitchen. Get Rowan’s
-          third-batch recipe and join the reader list for what comes next.
-        </p><div class="hero-actions">
-          <a class="button primary" href="https://archetypal-architect.kit.com/"
-            >Send me the recipe</a
-          ><a class="reader-text-link" href="/rowans-honey-cakes"
-            >Read the recipe here →</a>
-        </div>
-      </div><span class="reader-bonus-aside"
-        >Honey cakes.<br />Scarves aplenty.<br /><em>Kindness with teeth.</em
-        ></span>
-    </section>
-    <section class="section">
-      <div class="reader-section-heading">
-        <div>
-          <p class="eyebrow">Follow a thought</p><h2>
-            A few places to get lost.
-          </h2>
-        </div><a class="reader-text-link" href="/wiki">Explore the wiki →</a>
-      </div><div class="reader-discoveries">
-        {
-          discoveries.map((entry) => (
-            <a href={"/wiki/" + entry.id}>
-              <>
-                <p class="eyebrow">
-                  {entry.kind === "Tool"
-                    ? "Psychology & everyday life"
-                    : "Myth & imagination"}
-                </p>
-                <h3>{entry.title}</h3>
-                <p>{entry.summary}</p>
-                <span>Take a look →</span>
-              </>
-            </a>
-          ))
-        }
-      </div>
-    </section>
-    <section class="section reader-feature">
-      <div>
-        <p class="eyebrow">Beyond the page</p><h2>
-          Words to wear.<br />Worlds to keep.
-        </h2>
-      </div><div>
-        <p>
-          The Etsy shop is being rebuilt. Follow along for the next collection
-          of pieces from the work.
-        </p><a class="button secondary" href="/merch">Visit the shop →</a>
-      </div>
-    </section>
-    <section class="section reader-follow">
-      <div>
-        <p class="eyebrow">Find me again</p><h2>
-          The next story is still unfolding.
-        </h2><p>Follow the music, join the reader list, or drop me a line.</p>
-      </div><div class="hero-actions">
-        {
-          creator.socialLinks
-            .filter((l) => l.label !== "Email")
-            .map((link) => (
-              <a class="button secondary" href={link.url}>
-                {link.label}
               </a>
             ))
-        }<a class="reader-text-link" href="/contact">Say hello →</a>
+          }<span class="cover-footnote"
+            >Choose a cover.<br /><em>See what’s waiting.</em></span
+          >
+        </div>
+      </div><div class="hero-bottomline">
+        <span>FICTION WITH TEETH. IDEAS WITH CONSEQUENCES.</span><a
+          href="#books">THE BOOKS ↓</a
+        >
       </div>
+    </section>
+    <section class="section catalog-section" id="books">
+      <div class="section-heading editorial-heading">
+        <div>
+          <p class="eyebrow">01 / The book shelf</p><h2>
+            Not quite<br /><em>your usual escape.</em>
+          </h2>
+        </div><p>
+          A soft spot for monsters. A taste for impossible systems. Pick a world
+          and make yourself at home.
+        </p>
+      </div><BookShelf />
+    </section>
+    <ListeningRoom compact />
+    <section class="section curiosity-section">
+      <div class="section-heading editorial-heading">
+        <div>
+          <p class="eyebrow">03 / Down the rabbit hole</p><h2>
+            One thing<br /><em>leads to another.</em>
+          </h2>
+        </div><a class="text-link" href="/wiki">Enter the whole archive ↗</a>
+      </div>
+      <div class="curiosity-grid">
+        <a class="curiosity-feature" href="/wiki/archetypal-mythos"
+          ><img
+            src="/images/works/memetic-hazard-corridor.png"
+            alt="A figure looking into a luminous, uncanny corridor"
+            loading="lazy"
+          /><div>
+            <span class="eyebrow">Myth & imagination</span><h3>
+              What happens when<br />an idea starts living?
+            </h3><span class="text-link">Explore the mythos ↗</span>
+          </div></a
+        ><div class="curiosity-links">
+          <a href="/wiki/make-anxiety-your-superpower"
+            ><span class="eyebrow">Psychology / 01</span><h3>
+              Make Anxiety<br />Your Superpower
+            </h3><p>
+              Attention, agency, and a different relationship with an anxious
+              mind.
+            </p><span class="arrow-circle">↗</span></a
+          ><a href="/wiki/emotional-misinterpretation-dictionary"
+            ><span class="eyebrow">Psychology / 02</span><h3>
+              When feelings<br />get the translation wrong.
+            </h3><p>Open The Emotional Misinterpretation Dictionary.</p><span
+              class="arrow-circle">↗</span
+            ></a
+          >
+        </div>
+      </div>
+    </section>
+    <section class="objects-section">
+      <div class="object-image">
+        <img
+          src="/images/works/class-1-memetic-hazard-tee.png"
+          alt="Concept artwork: Class 1 Memetic Hazard shirt"
+          loading="lazy"
+        /><span>FROM THE DESIGN ARCHIVE · CONCEPT ART</span>
+      </div><div class="object-copy">
+        <p class="eyebrow">04 / Objects from the worlds</p><h2>
+          Wear your<br /><em>weird.</em>
+        </h2><p>
+          A phrase leaves a story. A symbol finds a shirt. A little of the world
+          comes home with you.
+        </p><p class="edition-note">
+          The Etsy shop is being rebuilt. This is a design preview; there are no
+          items for sale there yet.
+        </p><a class="button outline" href="/merch"
+          >Follow the next collection ↗</a
+        >
+      </div>
+    </section>
+    <section class="letter-section">
+      <span class="letter-kicker">AN INVITATION, FROM ROWAN</span><h2>
+        Come in.<br />The honey cakes<br /><em>are still warm.</em>
+      </h2><p>
+        A free recipe from The Gentle Shadow, and a place at the table for
+        whatever comes next.
+      </p><div class="hero-actions">
+        <a class="button primary" href="https://archetypal-architect.kit.com/"
+          >Save me a seat ↗</a
+        ><a class="text-link" href="/rowans-honey-cakes"
+          >Just here for the recipe →</a
+        >
+      </div><span class="letter-signature">With kindness, and teeth.</span>
     </section>
   </main></BaseLayout
 >

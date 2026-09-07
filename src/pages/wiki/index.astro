@@ -1,240 +1,145 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import CategoryFilter from "../../components/CategoryFilter.astro";
-import PageHeader from "../../components/PageHeader.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
 import WikiMap from "../../components/WikiMap.astro";
-import { creator, publicProjects, wikiFacets } from "../../content/projects";
+import { publicProjects, wikiFacets } from "../../content/projects";
+const kinds = [...new Set(publicProjects.map((p) => p.kind))];
 ---
 
-<BaseLayout
-  title={`Wiki | ${creator.name}`}
-  description="A public archive of mythos, fiction, songs, tools, and symbolic systems."
->
-  <main>
-    <PageHeader
-      eyebrow="Creator Wiki"
-      title="The Public Archive"
-      description="Explore the books, songs, psychology, and ideas behind the work. Search for a title or follow a connection."
-    />
-    <section class="section first-section">
-      <div class="facet-row" aria-label="Wiki facets">
-        {
-          wikiFacets.map((facet) => (
-            <button
-              type="button"
-              data-facet={facet.label}
-              data-kinds={facet.kinds.join("|")}
-            >
-              {facet.label}
+<BaseLayout title="The rabbit hole — Archetypal Architect"
+  ><main>
+    <section class="page-header archive-header">
+      <p class="eyebrow">The archive / Follow your curiosity</p><h1>
+        There is always<br /><em>another door.</em>
+      </h1><div class="archive-intro">
+        <p>
+          Stories become songs. Psychology meets myth. Follow the connections,
+          or let chance choose your next stop.
+        </p><button class="button outline" data-surprise>Surprise me ↗</button>
+      </div>
+    </section><section class="section first-section">
+      <div class="archive-controls">
+        <label
+          >Search the archive<input
+            type="search"
+            placeholder="A title, an idea, a world…"
+            data-archive-search
+          /></label
+        ><label
+          >Sort by<select data-archive-sort
+            ><option value="featured">Featured first</option><option
+              value="alpha">Title A–Z</option
+            ><option value="newest">Newest</option></select
+          ></label
+        >
+      </div><div
+        class="shelf-filters archive-filters"
+        aria-label="Filter the archive"
+      >
+        <button data-archive-kind="All" aria-pressed="true">Everything</button>{
+          kinds.map((kind) => (
+            <button data-archive-kind={kind} aria-pressed="false">
+              {kind}
             </button>
           ))
         }
-      </div>
-      <CategoryFilter />
-      <div class="wiki-entry-list" data-project-grid>
-        {publicProjects.map((project) => <ProjectCard project={project} />)}
-      </div>
-      <div class="archive-callout">
-        <h2>Adult Archive</h2>
-        <p>
-          Some stories deal directly with adult desire, transformation, and
-          erotic genre material. They live in a separate wing of the archive.
-        </p>
-        <a class="button secondary" href="/adult-archive">Open Adult Archive</a>
-      </div>
+      </div><p class="archive-count" role="status" data-archive-count>
+        {publicProjects.length} entries to explore
+      </p><div class="wiki-entry-list" data-archive-grid>
+        {
+          publicProjects.map((p) => (
+            <div
+              data-archive-entry
+              data-kind={p.kind}
+              data-title={p.title}
+              data-date={p.date}
+              data-featured={p.featured ? "1" : "0"}
+              data-href={"/wiki/" + p.id}
+              data-search={[p.title, p.summary, ...p.tags]
+                .join(" ")
+                .toLowerCase()}
+            >
+              <ProjectCard project={p} />
+            </div>
+          ))
+        }
+      </div><div class="empty-panel" data-archive-empty hidden>
+        <h2>No doors here. Yet.</h2><p>
+          Try a different search, or return to everything.
+        </p><button class="button outline" data-archive-reset
+          >Clear filters</button
+        >
+      </div><div class="archive-callout">
+        <p class="eyebrow">A separate shelf</p><h2>
+          For adults who<br /><em>know what they’re looking for.</em>
+        </h2><p>
+          Erotic fiction and mature material have their own entrance.
+        </p><a class="text-link" href="/adult-archive">Adult archive · 18+ ↗</a
+        >
+      </div><details class="map-disclosure">
+        <summary>Follow the connections <span>+</span></summary><WikiMap />
+      </details>
     </section>
-    <WikiMap />
   </main>
-  <script is:inline define:vars={{ projects: publicProjects }}>
-    const grid = document.querySelector("[data-project-grid]");
-    const search = document.querySelector("[data-search]");
-    const sort = document.querySelector("[data-sort]");
-    const buttons = [...document.querySelectorAll("[data-category]")];
-    const facets = [...document.querySelectorAll("[data-facet]")];
-    const params = new URLSearchParams(window.location.search);
-    let active = params.get("category") || "All";
-    let activeKinds = null;
-
-    const requestedFacet = params.get("facet");
-    if (requestedFacet) {
-      const facet = facets.find(
-        (button) => button.dataset.facet === requestedFacet,
-      );
-      if (facet) activeKinds = facet.dataset.kinds.split("|");
-    }
-
-    function matches(project, query) {
-      return [
-        project.title,
-        project.kind,
-        project.status,
-        project.entryRole,
-        project.summary,
-        project.description,
-        ...(project.tags || []),
-        ...(project.connections || []).map((connection) => connection.label),
-      ]
-        .flat()
-        .join(" ")
-        .toLowerCase()
-        .includes(query.toLowerCase());
-    }
-
-    function worldFor(project) {
-      if (
-        project.tags?.includes("MES") ||
-        project.id.includes("mes") ||
-        [
-          "my-evolution-system",
-          "graysons-game",
-          "bramblemere-basin",
-          "erasure-protocol",
-          "olympus-tepui",
-          "living-archive",
-          "grayson-reese",
-          "evolution-system-interface",
-          "gaia-digital-god",
-          "the-triad",
-          "elves",
-          "dwarves-mes",
-          "stellar-serpents",
-          "the-ancient",
-          "gold-mes",
-          "odin-mind",
-          "hades-digital-afterlife",
-          "hierarchy-of-consciousness",
-          "web-of-minds",
-          "memetic-entities",
-          "species-catalog",
-          "digital-gods-catalog",
-          "layered-existence",
-          "oneill-cylinders",
-          "noble-kin",
-        ].includes(project.id)
-      )
-        return {
-          className: "world-mes",
-          backdrop: "/images/works/my-evolution-system-book-1-cover.jpg",
-        };
-      if (["suno-music-catalog", "deja-vu"].includes(project.id))
-        return {
-          className: "world-music",
-          backdrop: "/images/generated/suno-music-catalog.svg",
-        };
-      if (
-        [
-          "make-anxiety-your-superpower",
-          "emotional-misinterpretation-dictionary",
-        ].includes(project.id)
-      )
-        return {
-          className: "world-tools",
-          backdrop: "/images/works/make-anxiety-your-superpower.jpg",
-        };
-      return {
-        className: "world-mythos",
-        backdrop: "/images/generated/archetypal-mythos.svg",
-      };
-    }
-
-    function card(project) {
-      const visibleTags = project.tags.slice(0, 3);
-      const tags = visibleTags.map((tag) => `<li>${tag}</li>`).join("");
-      const hiddenTagCount = Math.max(
-        project.tags.length - visibleTags.length,
-        0,
-      );
-      const moreTags = hiddenTagCount
-        ? `<p class="micro-note">+${hiddenTagCount} more tags</p>`
-        : "";
-      const connections = project.connections?.length
-        ? `<p class="micro-note">${project.connections.length} linked entries</p>`
-        : "";
-      const role = project.entryRole || "Entry";
-      const roleClass = role.toLowerCase();
-      const world = worldFor(project);
-      const status =
-        project.status === "Seed"
-          ? "Under construction"
-          : project.status === "Ongoing"
-            ? "Open"
-            : project.status === "Archived"
-              ? "Archive"
-              : project.status === "Experimental"
-                ? "Experiment"
-                : "Complete";
-
-      return `
-        <article class="project-card ${roleClass} ${world.className}" style="--entry-backdrop: url('${world.backdrop}')">
-          <a class="thumb-link" href="/wiki/${project.id}" aria-label="Open ${project.title}">
-            <img src="${project.thumbnail}" alt="${project.thumbnailAlt}" loading="lazy" />
-          </a>
-          <div class="project-card-body">
-            <div class="card-meta"><span class="role-pill">${role}</span><span>${project.kind}</span><span>${status}</span></div>
-            <h2><a href="/wiki/${project.id}">${project.title}</a></h2>
-            <p>${project.summary}</p>
-            ${connections}
-            <ul class="tag-list" aria-label="Tags">${tags}</ul>
-            ${moreTags}
-            <div class="external-links text"><a href="/wiki/${project.id}"><span>Open entry</span><span aria-hidden="true">-&gt;</span></a></div>
-          </div>
-        </article>
-      `;
-    }
-
+  <script is:inline define:vars={{ facets: wikiFacets }}>
+    // @ts-nocheck
+    const grid = document.querySelector("[data-archive-grid]");
+    const cards = [...grid.querySelectorAll("[data-archive-entry]")];
+    const search = document.querySelector("[data-archive-search]");
+    const sort = document.querySelector("[data-archive-sort]");
+    const buttons = [...document.querySelectorAll("[data-archive-kind]")];
+    const params = new URLSearchParams(location.search);
+    let kind = params.get("category") || "All";
+    let facet = facets.find((f) => f.label === params.get("facet"));
     function render() {
-      buttons.forEach((button) =>
-        button.classList.toggle(
-          "is-active",
-          button.dataset.category === active,
-        ),
-      );
-      facets.forEach((button) => {
-        const kinds = button.dataset.kinds.split("|");
-        button.classList.toggle(
-          "is-active",
-          Boolean(activeKinds && kinds.join("|") === activeKinds.join("|")),
-        );
-      });
-
-      const query = search.value.trim();
-      const sorted = [...projects]
-        .filter((project) => {
-          const categoryMatch = active === "All" || project.kind === active;
-          const facetMatch = !activeKinds || activeKinds.includes(project.kind);
-          return categoryMatch && facetMatch && matches(project, query);
-        })
-        .sort((a, b) => {
-          if (sort.value === "newest")
-            return (b.date || "").localeCompare(a.date || "");
-          if (sort.value === "oldest")
-            return (a.date || "").localeCompare(b.date || "");
-          if (sort.value === "alpha") return a.title.localeCompare(b.title);
-          return Number(Boolean(b.featured)) - Number(Boolean(a.featured));
+      let visible = 0;
+      cards
+        .sort((a, b) =>
+          sort.value === "alpha"
+            ? a.dataset.title.localeCompare(b.dataset.title)
+            : sort.value === "newest"
+              ? (b.dataset.date || "").localeCompare(a.dataset.date || "")
+              : Number(b.dataset.featured) - Number(a.dataset.featured),
+        )
+        .forEach((card) => {
+          card.hidden =
+            !(kind === "All" || card.dataset.kind === kind) ||
+            !!(facet && !facet.kinds.includes(card.dataset.kind)) ||
+            !card.dataset.search.includes(search.value.trim().toLowerCase());
+          if (!card.hidden) visible++;
+          grid.append(card);
         });
-
-      grid.innerHTML = sorted.length
-        ? sorted.map(card).join("")
-        : `<div class="empty-panel"><h2>No matches</h2><p>No public entries match that lens yet.</p></div>`;
+      buttons.forEach((b) =>
+        b.setAttribute("aria-pressed", String(b.dataset.archiveKind === kind)),
+      );
+      document.querySelector("[data-archive-count]").textContent =
+        visible + " " + (visible === 1 ? "entry" : "entries") + " to explore";
+      document.querySelector("[data-archive-empty]").hidden = visible !== 0;
+      document.querySelector("[data-surprise]").disabled = visible === 0;
     }
-
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        active = button.dataset.category;
-        activeKinds = null;
+    buttons.forEach((b) =>
+      b.addEventListener("click", () => {
+        kind = b.dataset.archiveKind;
+        facet = null;
         render();
-      });
-    });
-    facets.forEach((button) => {
-      button.addEventListener("click", () => {
-        active = "All";
-        activeKinds = button.dataset.kinds.split("|");
-        render();
-      });
-    });
+      }),
+    );
     search.addEventListener("input", render);
     sort.addEventListener("change", render);
+    document
+      .querySelector("[data-archive-reset]")
+      .addEventListener("click", () => {
+        kind = "All";
+        facet = null;
+        search.value = "";
+        render();
+      });
+    document.querySelector("[data-surprise]").addEventListener("click", () => {
+      const visible = cards.filter((c) => !c.hidden);
+      if (visible.length)
+        location.href =
+          visible[Math.floor(Math.random() * visible.length)].dataset.href;
+    });
     render();
-  </script>
-</BaseLayout>
+  </script></BaseLayout
+>
