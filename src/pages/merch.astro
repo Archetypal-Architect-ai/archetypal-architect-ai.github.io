@@ -1,27 +1,44 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PageHeader from "../components/PageHeader.astro";
-import ProjectGrid from "../components/ProjectGrid.astro";
-import { creator, getProjectsByCategory } from "../content/projects";
-import { mediumPages } from "../content/pages";
-
-const page = mediumPages.merch;
-const items = page.categories.flatMap((category) => getProjectsByCategory(category));
 ---
 
-<BaseLayout title={`Merch | ${creator.name}`} description={page.description}>
-  <main>
-    <PageHeader eyebrow={page.eyebrow} title={page.title} description={page.description} />
-    <section class="section first-section">
-      <ProjectGrid projects={items} />
-      {
-        items.length === 0 && (
-          <div class="empty-panel">
-            <h2>Objects are forming.</h2>
-            <p>Symbols, slogans, covers, signed editions, apparel, prints, bundles, and other objects from the archive gather here.</p>
-          </div>
-        )
-      }
+<BaseLayout title="Objects from the worlds — Archetypal Architect"
+  ><main>
+    <section class="objects-section shop-hero">
+      <div class="object-image">
+        <img
+          src="/images/works/class-1-memetic-hazard-tee.png"
+          alt="Class 1 Memetic Hazard shirt concept artwork"
+        /><span>CONCEPT ART · NOT A CURRENT PRODUCT LISTING</span>
+      </div><div class="object-copy">
+        <p class="eyebrow">Objects from the worlds</p><h1>
+          Wear your<br /><em>weird.</em>
+        </h1><p>
+          Words that belong on a shirt. Art that refuses to stay in a book.
+          Small pieces of these worlds, made for the one you live in.
+        </p><div class="shop-status">
+          <span class="eyebrow">The shop is being rebuilt</span><p>
+            The Etsy shelf is empty for now. Follow MESPublishing there, or join
+            the reader list to hear when the next collection arrives.
+          </p>
+        </div><div class="hero-actions">
+          <a
+            class="button primary"
+            href="https://www.etsy.com/shop/MESPublishing"
+            >Visit the Etsy shop ↗</a
+          ><a class="text-link" href="https://archetypal-architect.kit.com/"
+            >Keep me posted →</a
+          >
+        </div>
+      </div>
+    </section><section class="compact-invitation">
+      <div>
+        <p class="eyebrow">Something you can take home today</p><h2>
+          Rowan brought<br /><em>honey cakes.</em>
+        </h2>
+      </div><a class="button primary" href="/rowans-honey-cakes"
+        >Get the free recipe ↗</a
+      >
     </section>
-  </main>
-</BaseLayout>
+  </main></BaseLayout
+>

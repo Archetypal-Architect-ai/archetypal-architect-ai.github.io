@@ -24,7 +24,12 @@ export type EntryKind =
   | "Pen Name"
   | "Other";
 
-export type EntryStatus = "Completed" | "Ongoing" | "Archived" | "Experimental" | "Seed";
+export type EntryStatus =
+  | "Completed"
+  | "Ongoing"
+  | "Archived"
+  | "Experimental"
+  | "Seed";
 export type EntryRole = "Hub" | "Entry" | "Reference";
 export type EntryMaturity = "General" | "Adult";
 export type EntryVisibility = "Public" | "Adult";
@@ -32,7 +37,14 @@ export type EntryVisibility = "Public" | "Adult";
 export type EntryLink = {
   label: string;
   url: string;
-  type?: "Read" | "Listen" | "Watch" | "Buy" | "Download" | "Reference" | "External";
+  type?:
+    | "Read"
+    | "Listen"
+    | "Watch"
+    | "Buy"
+    | "Download"
+    | "Reference"
+    | "External";
 };
 
 export type ProjectCategory = EntryKind;
@@ -91,16 +103,60 @@ export type Project = {
 };
 
 export function getVisualWorld(project: Project) {
-  if (["the-gentle-shadow-series", "the-gentle-shadow", "the-weight-of-memory"].includes(project.id)) return "gentle-shadow";
+  if (
+    [
+      "the-gentle-shadow-series",
+      "the-gentle-shadow",
+      "the-weight-of-memory",
+    ].includes(project.id)
+  )
+    return "gentle-shadow";
   if (project.id === "house-of-the-gilded-lily") return "gilded-lily";
   if (project.id === "mythos-of-lust") return "mythos-of-lust";
   if (project.id === "monster-girl-harem") return "monster-girl-harem";
   if (project.id === "bimbo-farm") return "bimbo-farm";
   if (project.id === "supers-dark-erotica") return "supers";
   if (project.id === "roxy-stardust-archive") return "roxy";
-  if (project.tags?.includes("MES") || project.id.includes("mes") || ["my-evolution-system", "graysons-game", "bramblemere-basin", "erasure-protocol", "olympus-tepui", "living-archive", "grayson-reese", "evolution-system-interface", "gaia-digital-god", "the-triad", "elves", "dwarves-mes", "stellar-serpents", "the-ancient", "gold-mes", "odin-mind", "hades-digital-afterlife", "hierarchy-of-consciousness", "web-of-minds", "memetic-entities", "species-catalog", "digital-gods-catalog", "layered-existence", "oneill-cylinders", "noble-kin"].includes(project.id)) return "mes";
+  if (
+    project.tags?.includes("MES") ||
+    project.id.includes("mes") ||
+    [
+      "my-evolution-system",
+      "graysons-game",
+      "bramblemere-basin",
+      "erasure-protocol",
+      "olympus-tepui",
+      "living-archive",
+      "grayson-reese",
+      "evolution-system-interface",
+      "gaia-digital-god",
+      "the-triad",
+      "elves",
+      "dwarves-mes",
+      "stellar-serpents",
+      "the-ancient",
+      "gold-mes",
+      "odin-mind",
+      "hades-digital-afterlife",
+      "hierarchy-of-consciousness",
+      "web-of-minds",
+      "memetic-entities",
+      "species-catalog",
+      "digital-gods-catalog",
+      "layered-existence",
+      "oneill-cylinders",
+      "noble-kin",
+    ].includes(project.id)
+  )
+    return "mes";
   if (["suno-music-catalog", "deja-vu"].includes(project.id)) return "music";
-  if (["make-anxiety-your-superpower", "emotional-misinterpretation-dictionary"].includes(project.id)) return "tools";
+  if (
+    [
+      "make-anxiety-your-superpower",
+      "emotional-misinterpretation-dictionary",
+    ].includes(project.id)
+  )
+    return "tools";
   return "mythos";
 }
 
@@ -116,7 +172,7 @@ export function getUniverseBackdrop(project: Project) {
     roxy: "/images/generated/roxy-stardust-archive.svg",
     music: "/images/generated/suno-music-catalog.svg",
     tools: "/images/works/make-anxiety-your-superpower.jpg",
-    mythos: "/images/generated/archetypal-mythos.svg"
+    mythos: "/images/generated/archetypal-mythos.svg",
   }[getVisualWorld(project)];
 }
 
@@ -139,7 +195,10 @@ export function displayStatus(status: EntryStatus) {
 }
 
 export const creator = creatorData as Creator;
-export const projects = [...(projectData as Project[]), ...(wikiExpansionData as Project[])];
+export const projects = [
+  ...(projectData as Project[]),
+  ...(wikiExpansionData as Project[]),
+];
 
 export const categories: EntryKind[] = [
   "Universe",
@@ -160,14 +219,27 @@ export const categories: EntryKind[] = [
   "Concept",
   "Imprint",
   "Pen Name",
-  "Other"
+  "Other",
 ];
 
 export function isAdultEntry(project: Project) {
   return project.visibility === "Adult" || project.maturity === "Adult";
 }
 
-export const publicProjects = projects.filter((project) => !isAdultEntry(project));
+// Retain old URLs during the rewrite; exclude legacy lore from discovery.
+export function isLegacyMes(project: Project) {
+  return (
+    project.id !== "mes-publishing" &&
+    (project.id === "my-evolution-system" || project.tags.includes("MES")) &&
+    !["Song", "Album", "Merch", "Imprint"].includes(project.kind)
+  );
+}
+export const publicRouteProjects = projects.filter(
+  (project) => !isAdultEntry(project),
+);
+export const publicProjects = publicRouteProjects.filter(
+  (project) => !isLegacyMes(project),
+);
 export const adultProjects = projects.filter(isAdultEntry);
 
 export function getProjectsByCategory(category: EntryKind) {
@@ -183,18 +255,26 @@ export function getProjectById(id: string) {
 }
 
 export function getBacklinks(id: string, entries: Project[] = publicProjects) {
-  return entries.filter((project) => project.connections?.some((connection) => connection.id === id));
+  return entries.filter((project) =>
+    project.connections?.some((connection) => connection.id === id),
+  );
 }
 
-export function getConnectedEntries(id: string, entries: Project[] = publicProjects) {
+export function getConnectedEntries(
+  id: string,
+  entries: Project[] = publicProjects,
+) {
   const entry = getProjectById(id);
   return (entry?.connections || [])
     .map((connection) => ({
       connection,
-      entry: entries.find((project) => project.id === connection.id)
+      entry: entries.find((project) => project.id === connection.id),
     }))
     .filter((item) => item.entry);
 }
 
-export const wikiFacets = wikiFacetData as { label: string; kinds: EntryKind[] }[];
+export const wikiFacets = wikiFacetData as {
+  label: string;
+  kinds: EntryKind[];
+}[];
 export const allEntries = publicProjects;

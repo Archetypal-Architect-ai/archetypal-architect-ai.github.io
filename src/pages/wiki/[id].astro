@@ -1,29 +1,70 @@
 ---
+import { isUsableDestination } from "../../lib/destinations";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ConnectionList from "../../components/ConnectionList.astro";
 import ExternalLinks from "../../components/ExternalLinks.astro";
 import TagList from "../../components/TagList.astro";
-import { displayStatus, getUniverseBackdrop, getVisualWorld, projects, publicProjects, creator } from "../../content/projects";
+import {
+  isLegacyMes,
+  displayStatus,
+  getUniverseBackdrop,
+  getVisualWorld,
+  projects,
+  publicRouteProjects,
+  creator,
+} from "../../content/projects";
 import { renderWikiText } from "../../lib/wikiLinks";
 
 export function getStaticPaths() {
-  return publicProjects.map((entry) => ({
+  return publicRouteProjects.map((entry) => ({
     params: { id: entry.id },
-    props: { entry }
+    props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
 ---
 
-<BaseLayout title={`${entry.title} | ${creator.name} Wiki`} description={entry.summary} image={entry.thumbnail}>
-  <main class={`wiki-world wiki-world-${getVisualWorld(entry)}`} style={`--world-backdrop: url("${getUniverseBackdrop(entry)}")`}>
+<BaseLayout
+  title={`${entry.title} | ${creator.name} Wiki`}
+  description={entry.summary}
+  image={entry.thumbnail}
+>
+  <main
+    class={`wiki-world wiki-world-${getVisualWorld(entry)}`}
+    style={`--world-backdrop: url("${getUniverseBackdrop(entry)}")`}
+  >
+    {
+      isLegacyMes(entry) && (
+        <aside class="legacy-notice" role="note">
+          <>
+            <strong>Earlier MES continuity</strong>
+            <p>
+              My Evolution System is being overhauled. This page preserves an
+              earlier version of the setting and may no longer reflect the
+              developing series.
+            </p>
+            <a href="/novels">Explore the current book shelf →</a>
+          </>
+        </aside>
+      )
+    }
     <section class="detail-hero wiki-detail-hero">
       <div>
-        <p class="eyebrow">{entry.entryRole || "Entry"} / {entry.kind} / {displayStatus(entry.status)}</p>
+        <p class="eyebrow">
+          {entry.entryRole || "Entry"} / {entry.kind} / {
+            displayStatus(entry.status)
+          }
+        </p>
         <h1>{entry.title}</h1>
         <p>{entry.summary}</p>
-        {entry.externalWikiUrl && <a class="button primary" href={entry.externalWikiUrl}>Open External Wiki</a>}
+        {
+          entry.externalWikiUrl && (
+            <a class="button primary" href={entry.externalWikiUrl}>
+              Open External Wiki
+            </a>
+          )
+        }
         <ExternalLinks links={entry.links} variant="button" />
       </div>
       <img src={entry.thumbnail} alt={entry.thumbnailAlt} />
@@ -33,22 +74,103 @@ const { entry } = Astro.props;
       <aside class="encyclopedia-panel">
         <h2>Index</h2>
         <dl>
-          {entry.entryRole && <div><dt>Role</dt><dd>{entry.entryRole}</dd></div>}
+          {
+            entry.entryRole && (
+              <div>
+                <>
+                  <dt>Role</dt>
+                  <dd>{entry.entryRole}</dd>
+                </>
+              </div>
+            )
+          }
           <div><dt>Type</dt><dd>{entry.kind}</dd></div>
           <div><dt>Status</dt><dd>{displayStatus(entry.status)}</dd></div>
           <div><dt>Maturity</dt><dd>{entry.maturity || "General"}</dd></div>
-          {entry.date && <div><dt>Date</dt><dd>{entry.date}</dd></div>}
-          {entry.series && <div><dt>Series</dt><dd>{entry.series}</dd></div>}
-          {entry.bookNumber && <div><dt>Book</dt><dd>{entry.bookNumber}</dd></div>}
-          {entry.genre && <div><dt>Genre</dt><dd>{entry.genre}</dd></div>}
-          {entry.wordCount && <div><dt>Word Count</dt><dd>{entry.wordCount}</dd></div>}
-          {entry.chapterCount && <div><dt>Chapters</dt><dd>{entry.chapterCount}</dd></div>}
-          {entry.mood && <div><dt>Mood</dt><dd>{entry.mood}</dd></div>}
-          {entry.price && <div><dt>Price</dt><dd>{entry.price}</dd></div>}
+          {
+            entry.date && (
+              <div>
+                <>
+                  <dt>Date</dt>
+                  <dd>{entry.date}</dd>
+                </>
+              </div>
+            )
+          }
+          {
+            entry.series && (
+              <div>
+                <>
+                  <dt>Series</dt>
+                  <dd>{entry.series}</dd>
+                </>
+              </div>
+            )
+          }
+          {
+            entry.bookNumber && (
+              <div>
+                <>
+                  <dt>Book</dt>
+                  <dd>{entry.bookNumber}</dd>
+                </>
+              </div>
+            )
+          }
+          {
+            entry.genre && (
+              <div>
+                <>
+                  <dt>Genre</dt>
+                  <dd>{entry.genre}</dd>
+                </>
+              </div>
+            )
+          }
+          {
+            entry.wordCount && (
+              <div>
+                <>
+                  <dt>Word Count</dt>
+                  <dd>{entry.wordCount}</dd>
+                </>
+              </div>
+            )
+          }
+          {
+            entry.chapterCount && (
+              <div>
+                <>
+                  <dt>Chapters</dt>
+                  <dd>{entry.chapterCount}</dd>
+                </>
+              </div>
+            )
+          }
+          {
+            entry.mood && (
+              <div>
+                <>
+                  <dt>Mood</dt>
+                  <dd>{entry.mood}</dd>
+                </>
+              </div>
+            )
+          }
+          {
+            entry.price && (
+              <div>
+                <>
+                  <dt>Price</dt>
+                  <dd>{entry.price}</dd>
+                </>
+              </div>
+            )
+          }
         </dl>
         <TagList tags={entry.tags} />
         {
-          entry.merchLinks?.length ? (
+          entry.merchLinks?.some((link) => isUsableDestination(link.url)) ? (
             <div class="shop-panel">
               <h2>Shop Thread</h2>
               <ExternalLinks links={entry.merchLinks} />
@@ -62,7 +184,10 @@ const { entry } = Astro.props;
           entry.status === "Seed" ? (
             <div class="construction-note" role="note">
               <strong>Under Construction</strong>
-              <span>This chamber has a map on the wall, but more exhibits are still being brought in.</span>
+              <span>
+                This chamber has a map on the wall, but more exhibits are still
+                being brought in.
+              </span>
             </div>
           ) : null
         }
@@ -71,11 +196,15 @@ const { entry } = Astro.props;
           entry.audioSrc ? (
             <div class="audio-panel">
               <h2>Hosted Audio</h2>
-              <audio controls preload="metadata" src={entry.audioSrc}></audio>
+              <audio controls preload="metadata" src={entry.audioSrc} />
             </div>
           ) : null
         }
-        {entry.body?.map((paragraph) => <p set:html={renderWikiText(paragraph, projects)} />)}
+        {
+          entry.body?.map((paragraph) => (
+            <p set:html={renderWikiText(paragraph, projects)} />
+          ))
+        }
         {entry.notes && <p set:html={renderWikiText(entry.notes, projects)} />}
       </article>
     </section>

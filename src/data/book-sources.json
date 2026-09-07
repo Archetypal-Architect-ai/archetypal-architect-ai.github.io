@@ -1,0 +1,24 @@
+{
+  "verified": "2026-09-06",
+  "authorPage": "https://www.amazon.com/stores/author/B0GC4YZ3SH/allbooks",
+  "covers": [
+    {
+      "book": "the-gentle-shadow",
+      "page": "https://www.amazon.com/dp/B0H7TDDLN5",
+      "asset": "/images/books/the-gentle-shadow.jpg",
+      "source": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T1/images/I/81Mjn5kgk+L._SL1500_.jpg"
+    },
+    {
+      "book": "the-weight-of-memory",
+      "page": "https://www.amazon.com/dp/B0GX3FKFYQ",
+      "asset": "/images/books/the-weight-of-memory.jpg",
+      "source": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T1/images/I/81IVPfve7JL._SL1500_.jpg"
+    },
+    {
+      "book": "fall-from-space",
+      "page": "https://www.amazon.com/dp/B0GC2HBXJF",
+      "asset": "/images/books/fall-from-space.jpg",
+      "source": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T1/images/I/81e9Ogwt7AL._SL1500_.jpg"
+    }
+  ]
+}

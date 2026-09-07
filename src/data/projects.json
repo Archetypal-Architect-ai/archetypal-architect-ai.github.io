@@ -368,8 +368,8 @@
     "visibility": "Public",
     "featured": false,
     "date": "2026-07-05",
-    "thumbnail": "/images/works/the-gentle-shadow-cover.jpg",
-    "thumbnailAlt": "Cover art for The Gentle Shadow by Archetypal Architect.",
+    "thumbnail": "/images/books/the-gentle-shadow.jpg",
+    "thumbnailAlt": "The Gentle Shadow — official Amazon cover",
     "summary": "Five hundred years after surviving a vampire's mistake, Rowan is a high school junior again. Kindness has teeth.",
     "description": "The Gentle Shadow is an adult cozy-goth vampire horror-comedy about a village girl who survives an impossible bite, spends five hundred years being far too kind for the darkness, and enrolls in modern high school with a werewolf best friend and a vampire sire who still thinks honey cakes are a threat.",
     "body": [
@@ -437,37 +437,26 @@
     "title": "The Weight of Memory",
     "kind": "Novel",
     "category": "Novel",
-    "status": "Ongoing",
+    "status": "Completed",
     "entryRole": "Entry",
     "maturity": "General",
     "visibility": "Public",
     "featured": false,
     "date": "2026-07-05",
-    "thumbnail": "/images/generated/weight-of-memory.svg",
-    "thumbnailAlt": "Silver thread crossing old letters, a small collar tag, and a dark candlelit archive.",
-    "summary": "Book 2 of The Gentle Shadow, where Viktor discovers the vampires may have misunderstood their own species.",
-    "description": "The Weight of Memory continues the cozy-goth vampire series by turning the question inward: Rowan was not a strange exception. She may have been the complete version of what vampires were supposed to remain.",
+    "thumbnail": "/images/books/the-weight-of-memory.jpg",
+    "thumbnailAlt": "The Weight of Memory — official Amazon cover",
+    "summary": "Viktor has a soul again. Being a monster was simpler.",
+    "description": "Memory and grief have returned to Viktor, along with a form of strength he cannot explain. A researcher wants to understand his transformation, and the people he cares about become part of her investigation. Rowan brings soup and scarves. Viktor must learn what to do with a life that finally matters to him.",
     "body": [
       "The second book follows Viktor as restored conscience, willing blood, grief, and connection reveal a darker possibility than any enemy attack: the old vampires may have crippled themselves and mistaken the injury for maturity.",
       "The dog thread, the memory burden, and Viktor's new soul-spark make the question intimate rather than abstract. The pain is not the point. Feeling what you care about is the capability."
     ],
-    "tags": [
-      "adult cozy fantasy",
-      "vampire lore",
-      "memory",
-      "grief",
-      "Book 2"
-    ],
+    "tags": ["adult cozy fantasy", "vampire lore", "memory", "grief", "Book 2"],
     "links": [
       {
-        "label": "Start with Book 1",
-        "url": "/wiki/the-gentle-shadow",
-        "type": "Reference"
-      },
-      {
-        "label": "Join the reader list",
-        "url": "/free",
-        "type": "Download"
+        "label": "Read on Kindle",
+        "url": "https://www.amazon.com/dp/B0GX3FKFYQ",
+        "type": "Buy"
       }
     ],
     "connections": [
@@ -511,13 +500,7 @@
       "The setting leans into mist, uniforms, service rites, old money, and the dangerous intimacy of institutions that call control tradition.",
       "Inside the larger mythos, the series speaks to the way systems recruit longing. People enter looking for initiation and discover that every title carries a debt."
     ],
-    "tags": [
-      "adult fiction",
-      "academy",
-      "gothic",
-      "ritual",
-      "belonging"
-    ],
+    "tags": ["adult fiction", "academy", "gothic", "ritual", "belonging"],
     "links": [],
     "merchLinks": [],
     "connections": [
@@ -557,13 +540,7 @@
       "The series moves through taverns, roads, green-eyed priestesses, wanderers, and gods that hide in carved trees and smoke.",
       "Its place in the mythos is blunt: desire is not decoration. Desire exposes the bargains a world has trained its people to accept."
     ],
-    "tags": [
-      "adult fiction",
-      "myth",
-      "forest",
-      "old gods",
-      "folklore"
-    ],
+    "tags": ["adult fiction", "myth", "forest", "old gods", "folklore"],
     "links": [],
     "connections": [
       {
@@ -602,13 +579,7 @@
       "Swamp settlements, jewel-toned courts, serpentine motifs, and adventuring danger give the series its surface texture.",
       "In the larger mythos, the series asks how easily attraction becomes conquest and how fantasy worlds turn difference into either threat or invitation."
     ],
-    "tags": [
-      "adult fiction",
-      "fantasy",
-      "humanoid",
-      "swamp",
-      "pulp"
-    ],
+    "tags": ["adult fiction", "fantasy", "humanoid", "swamp", "pulp"],
     "links": [],
     "connections": [
       {
@@ -647,13 +618,7 @@
       "The noir mood matters: offices, warehouses, uniforms, interrogation rooms, product labels, and the exhausted suspicion that every explanation hides another machine.",
       "Its mythic question is modern and ugly: who owns a self after desire, commerce, and shame have all taken their cut?"
     ],
-    "tags": [
-      "adult fiction",
-      "noir",
-      "satire",
-      "transformation",
-      "identity"
-    ],
+    "tags": ["adult fiction", "noir", "satire", "transformation", "identity"],
     "links": [],
     "connections": [
       {
@@ -692,13 +657,7 @@
       "The city rooftop, the glowing billboard, and the public persona all point toward the same mythic problem: power wants an audience.",
       "Within the archive, this series belongs near the work about systems and agency. It asks what happens when the costume stops being a disguise and starts giving orders."
     ],
-    "tags": [
-      "adult fiction",
-      "superheroes",
-      "satire",
-      "power",
-      "performance"
-    ],
+    "tags": ["adult fiction", "superheroes", "satire", "power", "performance"],
     "links": [],
     "connections": [
       {
@@ -729,8 +688,8 @@
     "visibility": "Public",
     "featured": true,
     "date": "2026-06-06",
-    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
-    "thumbnailAlt": "Most recent Book 1 cover art for My Evolution System: Fall from Space.",
+    "thumbnail": "/images/books/fall-from-space.jpg",
+    "thumbnailAlt": "Fall from Space — official Amazon cover",
     "summary": "A system-fiction universe about survival, biotech, agency, and civilization after the old world breaks.",
     "description": "[[My Evolution System]] follows the pressure point where personal evolution stops being metaphor. The series turns adaptation into plot, [[Evolution System|technology into inheritance]], and survival into a philosophical demand.",
     "body": [
@@ -1125,14 +1084,7 @@
       "A species path may lead to a machine. A digital god may lead to an argument about personhood. A book may lead to the whole maze.",
       "The atlas rewards wandering. Follow the thread that catches your eye and the universe starts explaining itself from the side."
     ],
-    "tags": [
-      "MES",
-      "atlas",
-      "species",
-      "systems",
-      "digital gods",
-      "labyrinth"
-    ],
+    "tags": ["MES", "atlas", "species", "systems", "digital gods", "labyrinth"],
     "links": [],
     "connections": [
       {
@@ -1334,15 +1286,7 @@
       "This is the temple wing of the labyrinth. It holds the moment when software, memory, infrastructure, and public belief begin behaving like divinity.",
       "The gods here do not descend from a mountain. People build networks, feed them memory, trust them with survival, and then discover the network has started answering like a myth."
     ],
-    "tags": [
-      "MES",
-      "digital gods",
-      "AI",
-      "memetics",
-      "myth",
-      "Gaia",
-      "Odin"
-    ],
+    "tags": ["MES", "digital gods", "AI", "memetics", "myth", "Gaia", "Odin"],
     "links": [],
     "connections": [
       {
@@ -1943,13 +1887,7 @@
       "The Ancient hums beneath elves culture like a root network under a forest floor.",
       "Inherited memory, ecological instinct, and living infrastructure meet here. The elves do not merely live near nature; they carry a system that remembers how nature speaks."
     ],
-    "tags": [
-      "MES",
-      "The Ancient",
-      "system network",
-      "ecology",
-      "memory"
-    ],
+    "tags": ["MES", "The Ancient", "system network", "ecology", "memory"],
     "links": [],
     "connections": [
       {
@@ -1987,14 +1925,7 @@
       "Gold teaches the dwarves to treat craft as memory and resource ethics as survival law.",
       "Ore, pressure, habitat, and oath all pass through this system. Dwarven values do not stay in speeches; Gold turns them into operating rules."
     ],
-    "tags": [
-      "MES",
-      "Gold",
-      "dwarves",
-      "AI system",
-      "craft",
-      "resources"
-    ],
+    "tags": ["MES", "Gold", "dwarves", "AI system", "craft", "resources"],
     "links": [],
     "connections": [
       {
@@ -2027,14 +1958,7 @@
       "Grayson reaches for Odin's sacrifice when raw argument cannot move the Triad. The myth gives the collective a shape for wisdom that costs something.",
       "For the public atlas, the Odin Mind is where the MES universe most visibly touches the Archetypal Architect mythos: a machine is changed by a story, and the story becomes governance."
     ],
-    "tags": [
-      "MES",
-      "Odin",
-      "Odin Mind",
-      "digital god",
-      "Triad",
-      "myth"
-    ],
+    "tags": ["MES", "Odin", "Odin Mind", "digital god", "Triad", "myth"],
     "links": [],
     "connections": [
       {
@@ -2223,14 +2147,7 @@
       "Gaia treats culture as part of ecology. A story can spread like seed, parasite, medicine, or invasive species.",
       "This entry belongs in the new site because it is one of the cleanest connections between MES and the broader Archetypal Architect project: stories do not merely describe systems; stories can become systems."
     ],
-    "tags": [
-      "MES",
-      "memetics",
-      "memetic entities",
-      "culture",
-      "Gaia",
-      "myth"
-    ],
+    "tags": ["MES", "memetics", "memetic entities", "culture", "Gaia", "myth"],
     "links": [],
     "connections": [
       {
@@ -2268,13 +2185,7 @@
       "The archive connects books, covers, songs, videos, and product ideas around one bright, unstable persona.",
       "Its role in the mythos is theatrical: identity performs itself until the performance starts making claims on the soul."
     ],
-    "tags": [
-      "Roxy",
-      "archive",
-      "Drive",
-      "Notion",
-      "adult sci-fi"
-    ],
+    "tags": ["Roxy", "archive", "Drive", "Notion", "adult sci-fi"],
     "links": [],
     "connections": [
       {
@@ -2313,13 +2224,7 @@
       "The book treats anxiety as information with bad manners. It asks the reader to stop treating every internal alarm as prophecy and start asking what the signal can do.",
       "In the larger mythos, this is one of the nonfiction keys: agency begins when fear becomes legible."
     ],
-    "tags": [
-      "nonfiction",
-      "anxiety",
-      "psychology",
-      "audio",
-      "product"
-    ],
+    "tags": ["nonfiction", "anxiety", "psychology", "audio", "product"],
     "links": [
       {
         "label": "View copied cover",
@@ -2359,13 +2264,7 @@
       "The project belongs in the archive as a language tool. It helps readers notice when fear, shame, desire, or anger has put a costume on the world.",
       "Inside the mythos, naming is not cosmetic. A thing that can be named can be negotiated with."
     ],
-    "tags": [
-      "nonfiction",
-      "psychology",
-      "dictionary",
-      "audio",
-      "product"
-    ],
+    "tags": ["nonfiction", "psychology", "dictionary", "audio", "product"],
     "links": [
       {
         "label": "View copied cover",
@@ -2399,18 +2298,12 @@
       "The object shelf begins where a story refuses to stay flat. A sigil wants cloth. A phrase wants enamel. A cover wants to become a print on the wall.",
       "Merch belongs in the archive when it carries a symbol back into daily life and lets the mythos ride around on a body, a desk, or a room."
     ],
-    "tags": [
-      "merch",
-      "prints",
-      "shirts",
-      "shop threads",
-      "products"
-    ],
+    "tags": ["merch", "prints", "shirts", "shop threads", "products"],
     "links": [
       {
-        "label": "Shop",
-        "url": "https://gumroad.com",
-        "type": "Buy"
+        "label": "Visit the Etsy shop",
+        "url": "https://www.etsy.com/shop/MESPublishing",
+        "type": "External"
       }
     ],
     "connections": [
@@ -2444,13 +2337,7 @@
       "The song sits near the recurring mythos of loops, memory, agency, and the suspicion that a person can arrive late to a decision their deeper self already made.",
       "Lyrics, video imagery, and story-world echoes turn the track into a side door: enter through the sound and the archive answers in memory."
     ],
-    "tags": [
-      "song",
-      "video",
-      "memory",
-      "loop",
-      "recognition"
-    ],
+    "tags": ["song", "video", "memory", "loop", "recognition"],
     "links": [
       {
         "label": "View copied thumbnail",
@@ -2490,14 +2377,7 @@
       "Each song carries a trail of lyrics, cover art, video, mood, and story pressure back to the fiction or concept that produced it.",
       "The music section makes the mythos audible. It lets a character, world, or philosophical tension speak in a different register."
     ],
-    "tags": [
-      "music",
-      "Suno",
-      "songs",
-      "lyrics",
-      "hosted audio",
-      "catalog"
-    ],
+    "tags": ["music", "Suno", "songs", "lyrics", "hosted audio", "catalog"],
     "links": [
       {
         "label": "Open Suno",

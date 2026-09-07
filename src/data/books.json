@@ -1,0 +1,53 @@
+[
+  {
+    "id": "the-gentle-shadow",
+    "title": "The Gentle Shadow",
+    "tagline": "Kindness has teeth.",
+    "series": "The Gentle Shadow",
+    "number": 1,
+    "genre": "Cozy-goth fantasy",
+    "mood": "For the beautifully strange",
+    "cover": "/images/books/the-gentle-shadow.jpg",
+    "amazon": "https://www.amazon.com/dp/B0H7TDDLN5",
+    "paperback": "https://www.amazon.com/dp/B0H7VRNFWM",
+    "wiki": "/wiki/the-gentle-shadow",
+    "hook": "A vampire’s worst mistake is a girl who refuses to become cruel.",
+    "description": "Rowan should have died in 1527. Instead, she survives a vampire’s bite and remains stubbornly herself. Five hundred years later, she is back in high school, making impossible scarves, looking after a werewolf, and building a found family the old bloodlines cannot tolerate.",
+    "themes": ["Found family", "Vampires", "Horror-comedy"],
+    "note": ""
+  },
+  {
+    "id": "the-weight-of-memory",
+    "title": "The Weight of Memory",
+    "tagline": "Memory has teeth.",
+    "series": "The Gentle Shadow",
+    "number": 2,
+    "genre": "Cozy-goth fantasy",
+    "mood": "For monsters learning to feel",
+    "cover": "/images/books/the-weight-of-memory.jpg",
+    "amazon": "https://www.amazon.com/dp/B0GX3FKFYQ",
+    "paperback": null,
+    "wiki": "/wiki/the-weight-of-memory",
+    "hook": "Viktor has a soul again. Being a monster was simpler.",
+    "description": "Memory and grief have returned to Viktor, along with a form of strength he cannot explain. A researcher wants to understand his transformation, and the people he cares about become part of her investigation. Rowan brings soup and scarves. Viktor must learn what to do with a life that finally matters to him.",
+    "themes": ["Memory", "Vampires", "Belonging"],
+    "note": ""
+  },
+  {
+    "id": "fall-from-space",
+    "title": "Fall from Space",
+    "tagline": "The world can answer back.",
+    "series": "My Evolution System",
+    "number": 1,
+    "genre": "Science fiction",
+    "mood": "For minds that build worlds",
+    "cover": "/images/books/fall-from-space.jpg",
+    "amazon": "https://www.amazon.com/dp/B0GC2HBXJF",
+    "paperback": null,
+    "wiki": "/wiki/my-evolution-system",
+    "hook": "An orbital childhood. A damaged Earth. A system that can make ideas live.",
+    "description": "Sent down to Earth with an AI named Egg and a biological design system, Grayson must build the basics of survival before he can repair an ecosystem. Every living solution creates consequences, dependencies, and questions that a simulation cannot answer for him.",
+    "themes": ["Ecological restoration", "AI", "System fiction"],
+    "note": "This is the published edition. The series and its earlier wiki continuity are being revised."
+  }
+]
