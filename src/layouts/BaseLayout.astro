@@ -5,7 +5,11 @@ const {
   title = creator.name,
   description = "Books, music, and beautifully strange worlds by Archetypal Architect.",
   image = "/images/hero-studio.png",
+  noindex = false,
 } = Astro.props;
+const site = Astro.site ?? new URL("https://archetypalarchitect.online");
+const canonical = new URL(Astro.url.pathname, site).href;
+const imageUrl = new URL(image, site).href;
 const nav = [
   ["Books", "/novels"],
   ["Listen", "/music"],
@@ -23,12 +27,24 @@ const nav = [
     /><title>{title}</title><meta
       name="description"
       content={description}
+    />{noindex && <meta name="robots" content="noindex,nofollow" />}<link
+      rel="canonical"
+      href={canonical}
     /><meta property="og:title" content={title} /><meta
       property="og:description"
       content={description}
-    /><meta property="og:image" content={image} /><meta
-      property="og:type"
-      content="website"
+    /><meta property="og:image" content={imageUrl} /><meta
+      property="og:url"
+      content={canonical}
+    /><meta property="og:type" content="website" /><meta
+      property="og:site_name"
+      content="Archetypal Architect"
+    /><meta name="twitter:card" content="summary_large_image" /><meta
+      name="twitter:title"
+      content={title}
+    /><meta name="twitter:description" content={description} /><meta
+      name="twitter:image"
+      content={imageUrl}
     /><link rel="icon" href="/favicon.svg" /></head
   ><body
     ><a href="#site-main" class="skip-link">Skip to content</a><header
@@ -66,7 +82,7 @@ const nav = [
           <span class="eyebrow">Elsewhere, still making things</span>{
             creator.socialLinks
               .filter((l) =>
-                ["YouTube", "Suno", "Substack", "Amazon author"].includes(
+                ["YouTube", "TikTok", "Suno", "Substack", "Amazon author", "Etsy"].includes(
                   l.label,
                 ),
               )
@@ -81,7 +97,7 @@ const nav = [
             href="/videos">Videos</a
           ><a href="/essays">Essays</a><a href="/wiki/backmatter-link-index"
             >Reader links</a
-          ><a href="/adult-archive">Adult archive · 18+</a>
+          >
         </nav><a href="#site-main">Back to top ↑</a>
       </div>
     </footer></body

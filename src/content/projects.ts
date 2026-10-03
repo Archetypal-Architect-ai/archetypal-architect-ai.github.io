@@ -78,6 +78,8 @@ export type Project = {
   maturity?: EntryMaturity;
   visibility?: EntryVisibility;
   featured?: boolean;
+  /** Keeps the URL live but leaves the entry out of discovery lists. */
+  unlisted?: boolean;
   date?: string;
   thumbnail: string;
   thumbnailAlt: string;
@@ -149,7 +151,7 @@ export function getVisualWorld(project: Project) {
     ].includes(project.id)
   )
     return "mes";
-  if (["suno-music-catalog", "deja-vu"].includes(project.id)) return "music";
+  if (project.id === "suno-music-catalog") return "music";
   if (
     [
       "make-anxiety-your-superpower",
@@ -162,17 +164,17 @@ export function getVisualWorld(project: Project) {
 
 export function getUniverseBackdrop(project: Project) {
   return {
-    mes: "/images/works/my-evolution-system-book-1-cover.jpg",
-    "gentle-shadow": "/images/generated/gentle-shadow-series.svg",
+    mes: "/images/books/fall-from-space.jpg",
+    "gentle-shadow": "/images/books/the-gentle-shadow.jpg",
     "gilded-lily": "/images/generated/house-gilded-lily.png",
     "mythos-of-lust": "/images/generated/mythos-of-lust.png",
     "monster-girl-harem": "/images/generated/monster-girl-harem.png",
     "bimbo-farm": "/images/generated/bimbo-farm.png",
     supers: "/images/generated/supers-dark-erotica.png",
     roxy: "/images/generated/roxy-stardust-archive.svg",
-    music: "/images/generated/suno-music-catalog.svg",
+    music: "/images/cards/suno-music-catalog.webp",
     tools: "/images/works/make-anxiety-your-superpower.jpg",
-    mythos: "/images/generated/archetypal-mythos.svg",
+    mythos: "/images/cards/archetypal-mythos.webp",
   }[getVisualWorld(project)];
 }
 
@@ -238,7 +240,7 @@ export const publicRouteProjects = projects.filter(
   (project) => !isAdultEntry(project),
 );
 export const publicProjects = publicRouteProjects.filter(
-  (project) => !isLegacyMes(project),
+  (project) => !isLegacyMes(project) && !project.unlisted,
 );
 export const adultProjects = projects.filter(isAdultEntry);
 

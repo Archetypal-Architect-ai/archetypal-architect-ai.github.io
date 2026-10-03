@@ -23,7 +23,11 @@ import { creator } from "../content/projects";
                   : "Follow along"}
               </span>
               <strong>{link.label} ↗</strong>
-              <span>{link.url.replace("mailto:", "")}</span>
+              <span>
+                {link.url.startsWith("/")
+                  ? "archetypalarchitect.online" + link.url
+                  : link.url.replace("mailto:", "").replace(/^https:\/\/(www\.)?/, "")}
+              </span>
             </>
           </a>
         ))

@@ -31,12 +31,11 @@ export function renderWikiText(text: string, entries: Project[]) {
     const label = (match[2] || target).trim();
     const entry = resolveEntry(target, entries);
 
-    if (entry) {
-      const href = entry.visibility === "Adult" ? `/adult/${entry.id}` : `/wiki/${entry.id}`;
-      const className = entry.visibility === "Adult" ? "wiki-link adult-boundary-link" : "wiki-link";
-      const title = entry.visibility === "Adult" ? "Crosses into the adult archive age gate" : `Open ${entry.title}`;
-      output += `<a class="${className}" href="${href}" title="${escapeHtml(title)}">${escapeHtml(label)}</a>`;
+    if (entry && entry.visibility !== "Adult" && entry.maturity !== "Adult") {
+      output += `<a class="wiki-link" href="/wiki/${entry.id}" title="${escapeHtml(`Open ${entry.title}`)}">${escapeHtml(label)}</a>`;
     } else {
+      // Unknown targets and age-restricted entries render as plain text: the
+      // public wiki never links into the adult archive.
       output += `<span class="wiki-link missing-wiki-link">${escapeHtml(label)}</span>`;
     }
 

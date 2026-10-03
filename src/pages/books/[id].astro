@@ -5,7 +5,13 @@ export function getStaticPaths() {
   return books.map((book) => ({ params: { id: book.id }, props: { book } }));
 }
 const { book } = Astro.props;
-const other = books.filter((b) => b.id !== book.id);
+// Each world stands on its own: the upcoming series never sits beside the
+// earlier system-fiction book in "Keep reading".
+const apart = ["fall-from-space", "the-thousandfold-gate"];
+const other = books.filter(
+  (b) =>
+    b.id !== book.id && !(apart.includes(book.id) && apart.includes(b.id)),
+);
 ---
 
 <BaseLayout
@@ -22,7 +28,9 @@ const other = books.filter((b) => b.id !== book.id);
           height="1500"
         /><a class="text-link" href="/novels">← All books</a>
       </div><article>
-        <p class="eyebrow">{book.series} / Book {book.number}</p><h1>
+        <p class="eyebrow">
+          {book.series} / Book {book.number}{book.upcoming && " / Coming soon"}
+        </p><h1>
           {book.title}
         </h1><p class="book-tagline">{book.tagline}</p><p class="book-hook">
           {book.hook}
@@ -31,19 +39,39 @@ const other = books.filter((b) => b.id !== book.id);
         </ul>{book.note && <p class="edition-note">{book.note}</p>}<div
           class="hero-actions"
         >
-          <a class="button primary" href={book.amazon}>Read on Kindle ↗</a>{
+          {
+            book.amazon ? (
+              <a class="button primary" href={book.amazon}>
+                Read on Kindle ↗
+              </a>
+            ) : (
+              <a class="button primary" href="/free">
+                Hear when it’s out ↗
+              </a>
+            )
+          }{
             book.paperback && (
               <a class="button outline" href={book.paperback}>
                 Paperback ↗
               </a>
             )
+          }{
+            book.otherStores && (
+              <a class="button outline" href={book.otherStores}>
+                Other ebook stores ↗
+              </a>
+            )
           }
-        </div><a class="text-link" href={book.wiki}
-          >{
-            book.id === "fall-from-space"
-              ? "Earlier continuity archive"
-              : "Explore the story’s wiki"
-          } →</a>
+        </div>{
+          book.wiki && (
+            <a class="text-link" href={book.wiki}>
+              {book.id === "fall-from-space"
+                ? "Earlier continuity archive"
+                : "Explore the story’s wiki"}{" "}
+              →
+            </a>
+          )
+        }
       </article>
     </section><section class="section more-books">
       <p class="eyebrow">Keep reading</p><h2>

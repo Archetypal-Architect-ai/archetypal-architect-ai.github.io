@@ -1,6 +1,6 @@
 # Current State
 
-Updated: 2026-09-06
+Updated: 2026-10-03
 
 ## Repository And Deployment
 
@@ -83,3 +83,26 @@ The author approved the preview and authorized live publication. This supersedes
 Book catalogue: `src/data/books.json`; cover provenance: `src/data/book-sources.json`; local cover assets: `public/images/books/`. Etsy still has no verified inventory; its page explicitly describes the shop rebuild and concept art.
 
 Validation: production build generated 112 pages with zero errors, warnings, or hints. The built-site route and asset validator passes. Local build used the previously documented external WASM compiler workaround without repository dependency changes. GitHub Pages performs the native Linux build before deploying.
+
+
+## Brand wall, shop, and Explore refresh — 2026-10-03
+
+Approved by the author and published live. This section supersedes earlier notes about the Etsy shop being empty and about adult-archive links in public navigation.
+
+**Brand wall (SFW site).** No public page links to or names adult work. The footer "Adult archive · 18+" link and the Explore-page adult callout are gone. Wiki text that resolves to an adult entry now renders as plain text (`src/lib/wikiLinks.ts`), and card link counts only count public connections. Adult names, the adult imprint, and adult Smashwords profiles were removed from the Backmatter Link Index and the former Pen Name Directory (now "Author Profiles": unlisted via the new `unlisted` flag, URL kept). Adult pages still exist at `/adult-archive` and `/adult/*` and their content is untouched, but they carry `noindex,nofollow`, a neutral title, description, and share image, are excluded from `/sitemap.xml`, and are disallowed in `public/robots.txt`. `scripts/validate-site.mjs` fails the build check if any public page links to `/adult`, names the adult imprint or pen names, or if an adult page lacks `noindex`.
+
+**Shop.** Every Etsy link points to `https://www.etsy.com/shop/archetypalarchitect`. The merch page shows the Kindness Has Teeth tee, Care Is a Force tee, Built from Deep Structures tote, Wonder with Machinery mug (all link to the shop, because individual listing URLs weren't available), and the Vault Reading Ledger ($6.99, listing 4586779156). Product images are in `public/images/shop/`.
+
+**Signup.** Homepage, merch, contact, and creator reader-list links go to `/free`, which hands off to the Kit landing page `rowans-table` (two recipes plus Chapter One of The Gentle Shadow). The honey-cake PDF is regenerated from `scripts/rowans-honey-cakes.html`, with step numbering fixed and a `/free` link added.
+
+**Meta.** `astro.config.mjs` site is `https://archetypalarchitect.online`. `BaseLayout` emits canonical, absolute `og:image`, `og:url`, and `twitter:card` tags and takes a `noindex` prop. `/free` has its own description and uses the Gentle Shadow cover as its share image. The honey-cake page uses a PNG share card.
+
+**Books.** The Thousandfold Gate is listed as an upcoming Book One under MES Publishing, coming to Amazon with no date. It uses a text-only placeholder cover (`public/images/books/the-thousandfold-gate.jpg`) because no cover art was found on the box, in Drive, or in Canva. Its page and Fall from Space's page never cross-link in "Keep reading". Never connect the two worlds in public copy. Fall from Space also links to its Books2Read universal page. The Gentle Shadow genre now reads "cozy-goth fantasy". The MES Publishing wiki entry is neutral: "the imprint for Archetypal Architect's speculative and cozy fiction". `creator.json` imprint is MES Publishing.
+
+**Music/video.** Deja Vu is retired from the site (entry, connections, videos feature, thumbnail). The music page features the Gumroad album *More Dice, More Loot* ($9.99). TikTok has been added to the socials and the videos page.
+
+**Explore art.** Generic illustrations were replaced with typographic title cards in house style (charcoal #1a1a1a, white Inter Display, gold #c4a574 glyph and accents), stored in `public/images/cards/*.webp`. Book entries use real covers. Regenerate with `python3 scripts/render_cards.py` (Pillow + Inter). The Notion links that hit login walls were removed.
+
+Validation: `astro check` 0/0/0. The build produced 111 pages, and `node scripts/validate-site.mjs` passes.
+
+Open items: confirm which Printify products are live on Etsy and their listing URLs. The homepage "Down the rabbit hole" feature and the merch hero still use older generated art. Midnight Walk and Canon Ledger (Gumroad) are not added yet, pending the author's decision.

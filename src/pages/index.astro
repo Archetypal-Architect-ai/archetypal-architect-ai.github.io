@@ -2,7 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BookShelf from "../components/BookShelf.astro";
 import ListeningRoom from "../components/ListeningRoom.astro";
-import books from "../data/books.json";
+import allBooks from "../data/books.json";
+const books = allBooks.filter((b) => !b.upcoming);
 ---
 
 <BaseLayout title="Archetypal Architect — Beautifully strange stories"
@@ -108,9 +109,9 @@ import books from "../data/books.json";
       <div class="object-image">
         <img
           src="/images/works/class-1-memetic-hazard-tee.png"
-          alt="Concept artwork: Class 1 Memetic Hazard shirt"
+          alt="Class 1 Memetic Hazard shirt artwork"
           loading="lazy"
-        /><span>FROM THE DESIGN ARCHIVE · CONCEPT ART</span>
+        /><span>FROM THE DESIGN ARCHIVE</span>
       </div><div class="object-copy">
         <p class="eyebrow">04 / Objects from the worlds</p><h2>
           Wear your<br /><em>weird.</em>
@@ -118,22 +119,25 @@ import books from "../data/books.json";
           A phrase leaves a story. A symbol finds a shirt. A little of the world
           comes home with you.
         </p><p class="edition-note">
-          The Etsy shop is being rebuilt. This is a design preview; there are no
-          items for sale there yet.
-        </p><a class="button outline" href="/merch"
-          >Follow the next collection ↗</a
-        >
+          The Etsy shop is open: apparel, mugs, and totes, plus the Vault
+          Reading Ledger, a printable reading journal for $6.99.
+        </p><div class="hero-actions">
+          <a
+            class="button outline"
+            href="https://www.etsy.com/shop/archetypalarchitect"
+            >Visit the Etsy shop ↗</a
+          ><a class="text-link" href="/merch">See what’s in the shop →</a>
+        </div>
       </div>
     </section>
     <section class="letter-section">
       <span class="letter-kicker">AN INVITATION, FROM ROWAN</span><h2>
         Come in.<br />The honey cakes<br /><em>are still warm.</em>
       </h2><p>
-        A free recipe from The Gentle Shadow, and a place at the table for
-        whatever comes next.
+        Two of Rowan’s recipes plus Chapter One of The Gentle Shadow, free,
+        and a place at the table for whatever comes next.
       </p><div class="hero-actions">
-        <a class="button primary" href="https://archetypal-architect.kit.com/"
-          >Save me a seat ↗</a
+        <a class="button primary" href="/free">Save me a seat ↗</a
         ><a class="text-link" href="/rowans-honey-cakes"
           >Just here for the recipe →</a
         >

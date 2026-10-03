@@ -2040,3 +2040,97 @@ section[id] {
     height: 360px;
   }
 }
+
+/* Shop shelf (merch) and featured album (music). */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 22px;
+}
+.shop-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+.shop-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: #1a1a1a;
+  transition: transform 0.3s;
+}
+.shop-item:hover img {
+  transform: scale(1.02);
+}
+.shop-item h3 {
+  font-size: 1.35rem;
+  margin: 0;
+}
+.shop-item p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+.album-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 6%;
+  align-items: center;
+  padding: 80px 5%;
+  background: #1a1a1a;
+  color: #f2f0ea;
+}
+.album-feature img {
+  width: 100%;
+  height: auto;
+  max-width: 520px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+.album-feature .eyebrow {
+  color: #c4a574;
+}
+.album-feature h2 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.98;
+  margin: 10px 0 20px;
+}
+.album-feature p {
+  color: #cfccc3;
+  font-size: 15px;
+  max-width: 520px;
+}
+.album-feature .button.primary {
+  background: #c4a574;
+  border-color: #c4a574;
+  color: #1a1a1a;
+}
+.album-feature .text-link {
+  color: #f2f0ea;
+}
+.book-card.is-upcoming .book-art img {
+  outline: 1px solid #c4a57455;
+}
+.upcoming-label {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+@media (max-width: 1100px) {
+  .shop-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .shop-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .album-feature {
+    grid-template-columns: 1fr;
+    padding: 60px 6%;
+  }
+}

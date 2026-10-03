@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /adult-archive
+Disallow: /adult/
+Disallow: /admin
+
+Sitemap: https://archetypalarchitect.online/sitemap.xml

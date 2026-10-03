@@ -1,6 +1,6 @@
 {
   "name": "Archetypal Architect",
-  "imprint": "Archetypal Architect",
+  "imprint": "MES Publishing",
   "tagline": "Stories, songs, systems, and strange machines for minds that like friction.",
   "email": "mailto:contact@archetypalarchitect.online",
   "bio": "Archetypal Architect builds fiction, songs, essays, tools, and symbolic systems around agency, myth, psychology, civilization, AI, and the places where tools become culture.",
@@ -8,7 +8,7 @@
   "socialLinks": [
     {
       "label": "Reader list",
-      "url": "https://archetypal-architect.kit.com/"
+      "url": "/free"
     },
     {
       "label": "Suno",
@@ -19,12 +19,20 @@
       "url": "https://youtube.com/@archetypal.architect.whispers"
     },
     {
+      "label": "TikTok",
+      "url": "https://www.tiktok.com/@archetypal.architect"
+    },
+    {
       "label": "Substack",
       "url": "https://substack.com/@archetypal0architect"
     },
     {
       "label": "Amazon author",
       "url": "https://www.amazon.com/author/archetypal_architect"
+    },
+    {
+      "label": "Etsy",
+      "url": "https://www.etsy.com/shop/archetypalarchitect"
     },
     {
       "label": "Email",
