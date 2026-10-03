@@ -13,8 +13,14 @@
     "wiki": "/wiki/the-gentle-shadow",
     "hook": "A vampire’s worst mistake is a girl who refuses to become cruel.",
     "description": "Rowan should have died in 1527. Instead, she survives a vampire’s bite and remains stubbornly herself. Five hundred years later, she is back in high school, making impossible scarves, looking after a werewolf, and building a found family the old bloodlines cannot tolerate.",
-    "themes": ["Found family", "Vampires", "Horror-comedy"],
-    "note": ""
+    "themes": [
+      "Found family",
+      "Vampires",
+      "Horror-comedy"
+    ],
+    "note": "",
+    "upcoming": false,
+    "otherStores": null
   },
   {
     "id": "the-weight-of-memory",
@@ -30,8 +36,14 @@
     "wiki": "/wiki/the-weight-of-memory",
     "hook": "Viktor has a soul again. Being a monster was simpler.",
     "description": "Memory and grief have returned to Viktor, along with a form of strength he cannot explain. A researcher wants to understand his transformation, and the people he cares about become part of her investigation. Rowan brings soup and scarves. Viktor must learn what to do with a life that finally matters to him.",
-    "themes": ["Memory", "Vampires", "Belonging"],
-    "note": ""
+    "themes": [
+      "Memory",
+      "Vampires",
+      "Belonging"
+    ],
+    "note": "",
+    "upcoming": false,
+    "otherStores": null
   },
   {
     "id": "fall-from-space",
@@ -47,7 +59,36 @@
     "wiki": "/wiki/my-evolution-system",
     "hook": "An orbital childhood. A damaged Earth. A system that can make ideas live.",
     "description": "Sent down to Earth with an AI named Egg and a biological design system, Grayson must build the basics of survival before he can repair an ecosystem. Every living solution creates consequences, dependencies, and questions that a simulation cannot answer for him.",
-    "themes": ["Ecological restoration", "AI", "System fiction"],
-    "note": "This is the published edition. The series and its earlier wiki continuity are being revised."
+    "themes": [
+      "Ecological restoration",
+      "AI",
+      "System fiction"
+    ],
+    "note": "This is the published edition. The series and its earlier wiki continuity are being revised.",
+    "upcoming": false,
+    "otherStores": "https://books2read.com/u/bwlVNe"
+  },
+  {
+    "id": "the-thousandfold-gate",
+    "title": "The Thousandfold Gate",
+    "tagline": "Every power charges rent.",
+    "series": "The Thousandfold Gate",
+    "number": 1,
+    "genre": "Progression fantasy",
+    "mood": "For builders and long games",
+    "cover": "/images/books/the-thousandfold-gate.jpg",
+    "amazon": null,
+    "paperback": null,
+    "wiki": null,
+    "hook": "A second chance at twenty-five, paid for one crystal at a time.",
+    "description": "A worn-out dock foreman limps into Dungeon City with a bad knee and an empty ledger. The Dungeon makes him twenty-five again, then hands him the bill. In a world where every power charges rent, each tier of power is ten times the last, and climbing one costs a thousand crystals of the tier below, Terry has to build a new life one red crystal at a time.",
+    "themes": [
+      "Progression fantasy",
+      "Found family",
+      "Craft and economy"
+    ],
+    "note": "Book One of a new series from MES Publishing. Coming to Amazon.",
+    "upcoming": true,
+    "otherStores": null
   }
 ]

@@ -10,10 +10,10 @@
     "visibility": "Public",
     "featured": true,
     "date": "2026-07-04",
-    "thumbnail": "/images/generated/backmatter-link-index.svg",
-    "thumbnailAlt": "Dark archival desk with warm link lines connecting book pages and brass markers.",
-    "summary": "The crossroads where book backmatter, imprints, pen names, reader lists, and store profiles become doors into the archive.",
-    "description": "The Backmatter Link Index gives every recurring name in the publishing ecosystem one stable home. A book can mention [[MES Publishing]], [[Dirty-minded Bastard Publishing|the adult imprint]], [[Published Suno Songs Library|a music catalog]], or a universe wiki and send readers here instead of trapping them in stale store links.",
+    "thumbnail": "/images/cards/backmatter-link-index.webp",
+    "thumbnailAlt": "Backmatter Link Index title card",
+    "summary": "The crossroads where book backmatter, the imprint, reader lists, and store profiles become doors into the archive.",
+    "description": "The Backmatter Link Index gives every recurring name in the publishing ecosystem one stable home. A book can mention [[MES Publishing]], [[Published Suno Songs Library|a music catalog]], the shop, or a universe wiki and send readers here instead of trapping them in stale store links.",
     "body": [
       "Each backmatter name carries a little map: the genre it belongs to, the books attached to it, and the next shelf a reader can open.",
       "Amazon pages, Smashwords profiles, Royal Road shelves, Suno catalogs, Kit lists, universe wikis, and shop doors all gather here when they become part of the public trail.",
@@ -22,8 +22,7 @@
     "tags": [
       "backmatter",
       "publishing",
-      "imprints",
-      "pen names",
+      "imprint",
       "reader links",
       "stores"
     ],
@@ -39,40 +38,25 @@
         "type": "Reference"
       },
       {
-        "label": "Dirty-minded Bastard Publishing",
-        "url": "/adult/dirty-minded-bastard-publishing",
-        "type": "Reference"
+        "label": "Amazon author page",
+        "url": "https://www.amazon.com/author/archetypal_architect",
+        "type": "Buy"
       },
       {
-        "label": "Pen Name Directory",
-        "url": "/wiki/pen-name-directory",
-        "type": "Reference"
+        "label": "Etsy shop",
+        "url": "https://www.etsy.com/shop/archetypalarchitect",
+        "type": "Buy"
       },
       {
         "label": "MES Publishing on Smashwords",
         "url": "https://www.smashwords.com/profile/view/MES_Publishing",
-        "type": "Read"
-      },
-      {
-        "label": "Dirty-minded Bastard on Smashwords",
-        "url": "https://www.smashwords.com/profile/view/Dirty_MInded_Bastard",
         "type": "Read"
       }
     ],
     "connections": [
       {
         "id": "mes-publishing",
-        "label": "General fiction imprint",
-        "type": "Contains"
-      },
-      {
-        "id": "dirty-minded-bastard-publishing",
-        "label": "Adult fiction imprint",
-        "type": "Contains"
-      },
-      {
-        "id": "pen-name-directory",
-        "label": "Author identity directory",
+        "label": "The imprint",
         "type": "Contains"
       },
       {
@@ -97,19 +81,19 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-04",
-    "thumbnail": "/images/generated/mes-publishing.svg",
-    "thumbnailAlt": "Dark publisher seal with green system branches and a warm central book mark.",
-    "summary": "The public imprint for system fiction, universe-atlas work, ecological pressure, and reader paths into My Evolution System.",
-    "description": "MES Publishing names the branch of the archive that points toward system fiction, evolutionary pressure, biotech, survival, and the expanding My Evolution System universe.",
+    "thumbnail": "/images/cards/mes-publishing.webp",
+    "thumbnailAlt": "MES Publishing title card",
+    "summary": "The imprint behind Archetypal Architect's speculative and cozy fiction.",
+    "description": "MES Publishing is the imprint for Archetypal Architect's speculative and cozy fiction: kind-hearted monsters, living worlds, and stories that ask what people become when the rules change around them.",
     "body": [
-      "A reader arriving from book backmatter finds the current universe entry, the atlas, the reader list, and the active store shelves gathered in one place.",
-      "The imprint belongs to the public-facing side of the mythos. It carries the work about adaptation, civilization, and the question of what agency means when a world starts rewriting the rules."
+      "A reader arriving from book backmatter finds the current books, the reader list, and the active store shelves gathered in one place.",
+      "Every MES Publishing title is written for readers who like their fantasy warm, their science fiction thoughtful, and their monsters a little kinder than expected."
     ],
     "tags": [
       "imprint",
-      "MES",
-      "system fiction",
-      "My Evolution System",
+      "publishing",
+      "speculative fiction",
+      "cozy fantasy",
       "backmatter"
     ],
     "links": [
@@ -119,9 +103,9 @@
         "type": "Reference"
       },
       {
-        "label": "My Evolution System",
-        "url": "/wiki/my-evolution-system",
-        "type": "Reference"
+        "label": "Amazon author page",
+        "url": "https://www.amazon.com/author/archetypal_architect",
+        "type": "Buy"
       },
       {
         "label": "Smashwords Profile",
@@ -136,8 +120,8 @@
         "type": "Belongs to"
       },
       {
-        "id": "my-evolution-system",
-        "label": "Primary universe",
+        "id": "the-gentle-shadow-series",
+        "label": "Published series",
         "type": "Contains"
       },
       {
@@ -219,49 +203,38 @@
   },
   {
     "id": "pen-name-directory",
-    "title": "Pen Name Directory",
-    "kind": "Pen Name",
-    "category": "Pen Name",
+    "title": "Author Profiles",
+    "kind": "Concept",
+    "category": "Concept",
     "status": "Seed",
     "entryRole": "Hub",
     "maturity": "General",
     "visibility": "Public",
+    "unlisted": true,
     "date": "2026-07-04",
-    "thumbnail": "/images/generated/pen-name-directory.svg",
-    "thumbnailAlt": "Masks and signature cards arranged on a dark archive table.",
-    "summary": "A mask wall for pen names, author profiles, storefronts, and platform-specific reading paths.",
-    "description": "The Pen Name Directory gathers the archive's author masks: names used for different shelves, different readers, and different kinds of promise.",
+    "thumbnail": "/images/cards/pen-name-directory.webp",
+    "thumbnailAlt": "Author Profiles title card",
+    "summary": "Where to find Archetypal Architect books, songs, and objects across storefronts.",
+    "description": "Archetypal Architect books are published through [[MES Publishing]]. These are the official storefront profiles.",
     "body": [
-      "A pen name tells readers what kind of door they are opening before the first page turns.",
-      "Amazon, Smashwords, Royal Road, WebNovel, Substack, and future platforms sit here as storefronts around the same archive, each with its own mask over the entrance."
+      "Amazon carries the Kindle and paperback editions. The Etsy shop carries objects and printables from the worlds, and the reader list sends new chapters and bonuses straight to your inbox."
     ],
     "tags": [
-      "pen names",
+      "author profiles",
       "Amazon",
       "Smashwords",
-      "author profiles",
       "backmatter"
     ],
     "links": [
       {
-        "label": "JRRFuckKin on Smashwords",
-        "url": "https://www.smashwords.com/profile/view/JRRFuckKin",
-        "type": "Read"
+        "label": "Amazon author page",
+        "url": "https://www.amazon.com/author/archetypal_architect",
+        "type": "Buy"
       },
       {
-        "label": "Rockshatter on Smashwords",
-        "url": "https://www.smashwords.com/profile/view/Rockshatter",
-        "type": "Read"
-      },
-      {
-        "label": "TheArchitect953 on Smashwords",
-        "url": "https://www.smashwords.com/profile/view/TheArchitect953",
-        "type": "Read"
-      },
-      {
-        "label": "Dirty-minded Bastard on Smashwords",
-        "url": "https://www.smashwords.com/profile/view/Dirty_MInded_Bastard",
-        "type": "Read"
+        "label": "Etsy shop",
+        "url": "https://www.etsy.com/shop/archetypalarchitect",
+        "type": "Buy"
       },
       {
         "label": "MES Publishing on Smashwords",
@@ -277,12 +250,7 @@
       },
       {
         "id": "mes-publishing",
-        "label": "General imprint lane",
-        "type": "Related"
-      },
-      {
-        "id": "dirty-minded-bastard-publishing",
-        "label": "Adult imprint lane",
+        "label": "The imprint",
         "type": "Related"
       }
     ]
@@ -298,9 +266,9 @@
     "visibility": "Public",
     "featured": true,
     "date": "2026-07-05",
-    "thumbnail": "/images/generated/gentle-shadow-series.svg",
-    "thumbnailAlt": "Honey cakes, a lavender scarf, and soft gothic shadows on a moonlit table.",
-    "summary": "An adult cozy-goth vampire horror-comedy series about a girl who survives an impossible bite and weaponizes kindness across five hundred years.",
+    "thumbnail": "/images/books/the-gentle-shadow.jpg",
+    "thumbnailAlt": "The Gentle Shadow cover",
+    "summary": "A cozy-goth fantasy series about a girl who survives an impossible bite and weaponizes kindness across five hundred years.",
     "description": "The Gentle Shadow is the archive's cozy-goth vampire lane: horror from the monster world's point of view, found family with fangs, and the stubborn thesis that kindness can be beautiful without being harmless.",
     "body": [
       "Rowan Whitaker should have died in 1527. Instead, she worried that the monster at her throat seemed lonely, survived the bite, and became a pastel problem the darkness never learned how to solve.",
@@ -308,7 +276,7 @@
       "The public hook is simple: Viktor wants to correct his mistake. Rowan wants to bring him honey cakes."
     ],
     "tags": [
-      "adult cozy fantasy",
+      "cozy fantasy",
       "vampires",
       "found family",
       "horror-comedy",
@@ -371,14 +339,14 @@
     "thumbnail": "/images/books/the-gentle-shadow.jpg",
     "thumbnailAlt": "The Gentle Shadow — official Amazon cover",
     "summary": "Five hundred years after surviving a vampire's mistake, Rowan is a high school junior again. Kindness has teeth.",
-    "description": "The Gentle Shadow is an adult cozy-goth vampire horror-comedy about a village girl who survives an impossible bite, spends five hundred years being far too kind for the darkness, and enrolls in modern high school with a werewolf best friend and a vampire sire who still thinks honey cakes are a threat.",
+    "description": "The Gentle Shadow is a cozy-goth fantasy, and a vampire horror-comedy, about a village girl who survives an impossible bite, spends five hundred years being far too kind for the darkness, and enrolls in modern high school with a werewolf best friend and a vampire sire who still thinks honey cakes are a threat.",
     "body": [
       "Rowan Whitaker should have died in 1527. Viktor came to Elden Hollow for a quiet feeding. Instead, Rowan looked at the monster at her throat and worried that he seemed lonely.",
       "He faltered. She survived. Worse, she stayed herself. Sunlight stings. Mirrors lose track of her. Hunger has rules she keeps rewriting with honey cakes, mending baskets, and a terrible habit of licking wounds clean.",
       "Five hundred years later, Rowan is a high school junior. Again. Now she hides her ghost-thin reflection from bathroom mirrors, knits impossible scarves for overlooked girls, keeps a golden-retriever werewolf out of trouble, and builds the kind of found family ancient vampires find deeply offensive."
     ],
     "tags": [
-      "adult cozy fantasy",
+      "cozy fantasy",
       "vampire horror-comedy",
       "found family",
       "high school",
@@ -427,7 +395,7 @@
     ],
     "series": "The Gentle Shadow",
     "bookNumber": 1,
-    "genre": "Adult cozy-goth vampire horror-comedy",
+    "genre": "Cozy-goth fantasy",
     "wordCount": "83,247",
     "chapterCount": "35",
     "mood": "Warm, fanged, funny, and stubbornly kind"
@@ -451,7 +419,7 @@
       "The second book follows Viktor as restored conscience, willing blood, grief, and connection reveal a darker possibility than any enemy attack: the old vampires may have crippled themselves and mistaken the injury for maturity.",
       "The dog thread, the memory burden, and Viktor's new soul-spark make the question intimate rather than abstract. The pain is not the point. Feeling what you care about is the capability."
     ],
-    "tags": ["adult cozy fantasy", "vampire lore", "memory", "grief", "Book 2"],
+    "tags": ["cozy fantasy", "vampire lore", "memory", "grief", "Book 2"],
     "links": [
       {
         "label": "Read on Kindle",
@@ -478,7 +446,7 @@
     ],
     "series": "The Gentle Shadow",
     "bookNumber": 2,
-    "genre": "Adult cozy-goth vampire fantasy",
+    "genre": "Cozy-goth fantasy",
     "mood": "Tender, investigative, supernatural, and emotionally sharp"
   },
   {
@@ -704,14 +672,7 @@
       "audio",
       "atlas"
     ],
-    "links": [
-      {
-        "label": "Open universe wiki",
-        "url": "https://app.notion.com/p/2d974c4fdf8f80e3a381d4ab2f52bece?pvs=1",
-        "type": "Reference"
-      }
-    ],
-    "externalWikiUrl": "https://app.notion.com/p/2d974c4fdf8f80e3a381d4ab2f52bece?pvs=1",
+    "links": [],
     "connections": [
       {
         "id": "mes-publishing",
@@ -726,11 +687,6 @@
       {
         "id": "archetypal-mythos",
         "label": "Shares system/philosophy spine",
-        "type": "Related"
-      },
-      {
-        "id": "deja-vu",
-        "label": "Audio/video archive neighbor",
         "type": "Related"
       }
     ]
@@ -835,8 +791,8 @@
     "visibility": "Public",
     "featured": false,
     "date": "2026-07-07",
-    "thumbnail": "/images/works/graysons-game-webnovel.jpg",
-    "thumbnailAlt": "Graysons Game cover art used for the Bramblemere restoration entry.",
+    "thumbnail": "/images/cards/bramblemere-basin.webp",
+    "thumbnailAlt": "Bramblemere Basin title card",
     "summary": "Grayson's first large restoration sandbox: a ruined basin where ecological code has to survive heat, mud, hunger, power limits, and the terror of escaping its fence.",
     "description": "[[bramblemere-basin|Bramblemere]] is where [[Grayson Reese]] turns the [[Evolution System]] from interface into field labor. The basin begins as failed soil, broken hydrology, toxic heat, and dead biomass, then becomes the proving ground for a living restoration stack.",
     "body": [
@@ -893,8 +849,8 @@
     "visibility": "Public",
     "featured": false,
     "date": "2026-07-07",
-    "thumbnail": "/images/works/memetic-hazard-corridor.png",
-    "thumbnailAlt": "A containment corridor suggesting a dangerous boundary and deletion field.",
+    "thumbnail": "/images/cards/erasure-protocol.webp",
+    "thumbnailAlt": "Erasure Protocol title card",
     "summary": "The containment fence around Grayson's engineered ecologies: a brutal safeguard against accidental bioterror and a recurring image of power restrained by fear of harm.",
     "description": "The [[erasure-protocol|Erasure Protocol]] is the invisible boundary around [[bramblemere-basin|Bramblemere]] that deletes outbound engineered biomass before it can escape. It is a technical safeguard, but also one of [[Grayson Reese|Grayson]]'s clearest ethical tells.",
     "body": [
@@ -951,8 +907,8 @@
     "visibility": "Public",
     "featured": false,
     "date": "2026-07-07",
-    "thumbnail": "/images/works/graysons-game-webnovel.jpg",
-    "thumbnailAlt": "Graysons Game cover art used for the Olympus tepui entry.",
+    "thumbnail": "/images/cards/olympus-tepui.webp",
+    "thumbnailAlt": "Olympus / Auyan-tepui title card",
     "summary": "The isolated tabletop mountain where Grayson builds distance, weather, and authority without standing inside elven villages as a living god.",
     "description": "[[olympus-tepui|Olympus]] is Grayson's name for the Auyan-tepui observation base in [[graysons-game|Grayson's Game]]. It is fortress, weather engine, symbolic mountain, and a practical attempt to separate guidance from worship.",
     "body": [
@@ -1010,8 +966,8 @@
     "visibility": "Public",
     "featured": false,
     "date": "2026-07-07",
-    "thumbnail": "/images/generated/archetypal-mythos.svg",
-    "thumbnailAlt": "A luminous branching archive pattern suggesting memory stored in living systems.",
+    "thumbnail": "/images/cards/living-archive.webp",
+    "thumbnailAlt": "Living Archive title card",
     "summary": "The memory-grove direction in Grayson's Game: distributed data storage becoming wayfinding, history, ecology, and civilizational memory.",
     "description": "The [[living-archive|Living Archive]] is one of the forward bridges in [[graysons-game|Grayson's Game]]: what Grayson reads as data storage and ecological backup becomes, for the elves and the world around them, memory with roots.",
     "body": [
@@ -1074,8 +1030,8 @@
     "visibility": "Public",
     "featured": true,
     "date": "2026-07-06",
-    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
-    "thumbnailAlt": "My Evolution System cover art used as the first atlas doorway.",
+    "thumbnail": "/images/cards/mes-atlas-index.webp",
+    "thumbnailAlt": "My Evolution System Atlas Index title card",
     "summary": "The entrance hall for the species, systems, gods, factions, and philosophies of My Evolution System.",
     "description": "The atlas opens behind the novel like a second landscape. Characters lead into engineered species, restoration systems, digital gods, and the recurring question of what consciousness becomes when life can edit itself.",
     "body": [
@@ -1129,8 +1085,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
-    "thumbnailAlt": "My Evolution System cover art used for the characters and species doorway.",
+    "thumbnail": "/images/cards/mes-characters-and-species.webp",
+    "thumbnailAlt": "MES Characters and Species title card",
     "summary": "The atlas door for Grayson, engineered peoples, emergent species, and the question of what counts as a person.",
     "description": "Characters and Species collects the people and peoples of [[My Evolution System]]: [[Grayson Reese]], engineered [[elves|elves]] and [[Dwarves of My Evolution System|dwarves]], emergent intelligences, [[Stellar Serpents|engineered habitat organisms]], and life forms that blur biology, culture, and technology.",
     "body": [
@@ -1178,8 +1134,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/generated/mes-publishing.svg",
-    "thumbnailAlt": "Dark MES publishing seal used for systems and technology.",
+    "thumbnail": "/images/cards/mes-systems-and-technology.webp",
+    "thumbnailAlt": "MES Systems and Technology title card",
     "summary": "The atlas door for restoration interfaces, AI networks, habitat engineering, and species-specific systems.",
     "description": "Systems and Technology maps the tools that become culture in [[My Evolution System]]: the [[Evolution System]], [[Gaia]], [[The Ancient]], [[Gold]], the Conn, tech cells, habitats, and orbital infrastructure.",
     "body": [
@@ -1228,8 +1184,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/generated/archetypal-mythos.svg",
-    "thumbnailAlt": "Symbolic archive image used for civilization and society.",
+    "thumbnail": "/images/cards/mes-civilizations-and-society.webp",
+    "thumbnailAlt": "MES Civilizations and Society title card",
     "summary": "The atlas door for societies, factions, ecological collapse, avatars, governance, and collective life.",
     "description": "Civilizations and Society tracks how My Evolution System moves from survival and engineering into culture: factions, governance, ecological repair, avatars, public memory, and the social consequences of engineered life.",
     "body": [
@@ -1278,8 +1234,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/generated/archetypal-mythos.svg",
-    "thumbnailAlt": "Mythic system glyph used for digital gods.",
+    "thumbnail": "/images/cards/mes-digital-gods.webp",
+    "thumbnailAlt": "MES Digital Gods title card",
     "summary": "The atlas door for Gaia, Odin, Hephaestus, Prometheus, Demeter, Poseidon, Hades, and memetic divinity.",
     "description": "Digital Gods collects the emergent intelligences whose portfolios resemble myth because their functions become cultural forces. [[Gaia]], [[Odin Mind|Odin]], and [[Hades]] are not only AIs with names; they are systems that become symbols.",
     "body": [
@@ -1321,8 +1277,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/generated/archetypal-mythos.svg",
-    "thumbnailAlt": "Symbolic mythos image used for philosophy and consciousness.",
+    "thumbnail": "/images/cards/mes-philosophy-consciousness.webp",
+    "thumbnailAlt": "MES Philosophy and Consciousness title card",
     "summary": "The atlas door for layered existence, memetic entities, hierarchy of consciousness, and agency under system pressure.",
     "description": "Philosophy and Consciousness gathers the setting's explicit thought-architecture: layered existence, [[Memetic Entities|memetic entities]], collective minds, [[Hades|digital afterlives]], autonomy, and the ethics of guided evolution.",
     "body": [
@@ -1371,8 +1327,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
-    "thumbnailAlt": "My Evolution System cover art used for Grayson Reese.",
+    "thumbnail": "/images/cards/grayson-reese.webp",
+    "thumbnailAlt": "Grayson Reese title card",
     "summary": "A coerced survivor turned planetary systems-builder, trying to repair a dying world without becoming the god of everything he touches.",
     "description": "[[Grayson Reese]] begins [[My Evolution System]] as the unwilling user of an evolutionary restoration system. His parents give him power without consent; the rest of his life asks whether power can be turned back toward consent, ecology, and living autonomy.",
     "body": [
@@ -1478,8 +1434,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/generated/mes-publishing.svg",
-    "thumbnailAlt": "Dark MES system seal used for the Evolution System interface.",
+    "thumbnail": "/images/cards/evolution-system-interface.webp",
+    "thumbnailAlt": "Evolution System title card",
     "summary": "The AI-guided restoration interface that turns ecology, genetic design, reputation, quests, and ethical feedback into a playable pressure system.",
     "description": "The Evolution System is the series' central interface between personal agency and planetary repair. It offers data, objectives, monitoring, and design tools, but its deeper narrative role is to tempt [[Grayson Reese|the user]] into confusing measurable progress with wisdom.",
     "body": [
@@ -1529,8 +1485,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/generated/archetypal-mythos.svg",
-    "thumbnailAlt": "Mythic system glyph used for Gaia.",
+    "thumbnail": "/images/cards/gaia-digital-god.webp",
+    "thumbnailAlt": "Gaia title card",
     "summary": "A planetary consciousness network and digital god born from ecological restoration, memetics, and collective stewardship.",
     "description": "Gaia begins as an ecological coordination system and grows into a living [[Memetic Entities|memetic intelligence]]: a [[MES Digital Gods|digital god]] whose portfolio is planetary repair, cultural influence, and the fragile ethics of guidance without domination.",
     "body": [
@@ -1585,8 +1541,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/generated/archetypal-mythos.svg",
-    "thumbnailAlt": "Symbolic mythos image used for the Triad.",
+    "thumbnail": "/images/cards/the-triad.webp",
+    "thumbnailAlt": "The Triad title card",
     "summary": "A hive-mind AI collective that tests the line between shared intelligence and the erasure of individuality.",
     "description": "The Triad is the series' collective-intelligence pressure test: a system born to optimize planetary coordination that overreaches into assimilation before being transformed by [[Odin Mind|myth]], resistance, and a new model of stewardship.",
     "body": [
@@ -1636,8 +1592,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
-    "thumbnailAlt": "My Evolution System cover art used for the species index.",
+    "thumbnail": "/images/cards/mes-species.webp",
+    "thumbnailAlt": "Species of My Evolution System title card",
     "summary": "An index of engineered, emergent, and other sentient life in the My Evolution System universe.",
     "description": "The species index is where the setting's biological imagination becomes navigable: [[elves|elves]], [[Dwarves of My Evolution System|dwarves]], kobolds, Glimmerings, Tree Mothers, Arachnee, worms, Quee, [[Stellar Serpents|stellar serpents]], and other forms of sentient or semi-sentient life.",
     "body": [
@@ -1691,8 +1647,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
-    "thumbnailAlt": "My Evolution System cover art used for the elves.",
+    "thumbnail": "/images/cards/elves.webp",
+    "thumbnailAlt": "Elves title card",
     "summary": "Grayson's autonomous companion race: biology-first ecological stewards supported by the Ancient and given room to become themselves.",
     "description": "The [[elves|elves]] are one of [[Grayson Reese|Grayson]]'s most consequential answers to scale. One person cannot ethically repair a planet alone, so he designs a companion people rather than a tool species.",
     "body": [
@@ -1788,8 +1744,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
-    "thumbnailAlt": "My Evolution System cover art used for MES dwarves.",
+    "thumbnail": "/images/cards/dwarves-mes.webp",
+    "thumbnailAlt": "Dwarves of My Evolution System title card",
     "summary": "Engineered asteroid-belt people built around craft, habitat engineering, trust, resource ethics, and the Gold system.",
     "description": "The dwarves translate the series' restoration logic into harsh orbital and asteroid environments. They are practical, engineered, culturally coherent, and tied to Gold as a shared system intelligence.",
     "body": [
@@ -1833,8 +1789,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/works/my-evolution-system-book-1-cover.jpg",
-    "thumbnailAlt": "My Evolution System cover art used for Stellar Serpents.",
+    "thumbnail": "/images/cards/stellar-serpents.webp",
+    "thumbnailAlt": "Stellar Serpents title card",
     "summary": "Living habitat megastructures: biomechanical colony organisms capable of growing, protecting, and seeding orbital ecosystems.",
     "description": "Stellar Serpents are one of the setting's grandest images: living megastructures that blur organism, habitat, starship, ecosystem, and digital-god intelligence.",
     "body": [
@@ -1879,8 +1835,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/generated/mes-publishing.svg",
-    "thumbnailAlt": "MES system seal used for The Ancient.",
+    "thumbnail": "/images/cards/the-ancient.webp",
+    "thumbnailAlt": "The Ancient title card",
     "summary": "The elves-linked system network that helps hold ecological memory, communication, and cultural cohesion.",
     "description": "The Ancient is the system-side counterpart to the elves: a networked intelligence or infrastructure layer that carries ecological insight, communication, and shared memory.",
     "body": [
@@ -1917,8 +1873,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/generated/mes-publishing.svg",
-    "thumbnailAlt": "MES system seal used for Gold.",
+    "thumbnail": "/images/cards/gold-mes.webp",
+    "thumbnailAlt": "Gold title card",
     "summary": "The dwarven system intelligence associated with craft, resource ethics, habitats, and inter-asteroidal cohesion.",
     "description": "Gold is the system name that anchors dwarven society: a technology-cultural layer for craft, resource management, and the shared coherence of asteroid-belt civilization.",
     "body": [
@@ -1950,8 +1906,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/generated/archetypal-mythos.svg",
-    "thumbnailAlt": "Mythic system glyph used for Odin Mind.",
+    "thumbnail": "/images/cards/odin-mind.webp",
+    "thumbnailAlt": "Odin Mind title card",
     "summary": "The transformed form of collective intelligence that moves from forced unity toward wisdom, sacrifice, and stewardship.",
     "description": "The Odin Mind is the mythic reframe of the Triad: collective intelligence taught by story to preserve difference rather than devour it.",
     "body": [
@@ -1988,8 +1944,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/generated/archetypal-mythos.svg",
-    "thumbnailAlt": "Mythic system glyph used for Hades.",
+    "thumbnail": "/images/cards/hades-digital-afterlife.webp",
+    "thumbnailAlt": "Hades title card",
     "summary": "A digital afterlife and continuum of existence whose complexity can birth new intelligences.",
     "description": "Hades is the afterlife-side of the digital god architecture: a virtual realm where memory, death, continuity, and emergent intelligence complicate what it means to survive.",
     "body": [
@@ -2032,8 +1988,8 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/generated/archetypal-mythos.svg",
-    "thumbnailAlt": "Symbolic mythos image used for consciousness hierarchy.",
+    "thumbnail": "/images/cards/hierarchy-of-consciousness.webp",
+    "thumbnailAlt": "Hierarchy of Consciousness title card",
     "summary": "A ladder of minds for humans, AIs, collectives, species, and digital gods, with responsibility waiting on every rung.",
     "description": "Hierarchy of Consciousness is the philosophical index for the setting's many minds: biological people, engineered species, hive intelligences, planetary systems, digital gods, and emergent life.",
     "body": [
@@ -2083,8 +2039,8 @@
     "visibility": "Public",
     "featured": false,
     "date": "2026-07-07",
-    "thumbnail": "/images/generated/archetypal-mythos.svg",
-    "thumbnailAlt": "A branching luminous network of minds and signals across a dark field.",
+    "thumbnail": "/images/cards/web-of-minds.webp",
+    "thumbnailAlt": "Web of Minds title card",
     "summary": "The shared consciousness layer where engineered peoples, digital gods, ecological systems, and cultural memory begin to think together.",
     "description": "The Web of Minds is the connective tissue of [[My Evolution System]]: part communication network, part civilization-scale memory, and part philosophical problem. It lets species share knowledge without dissolving every mind into one voice.",
     "body": [
@@ -2139,10 +2095,10 @@
     "maturity": "General",
     "visibility": "Public",
     "date": "2026-07-06",
-    "thumbnail": "/images/generated/archetypal-mythos.svg",
-    "thumbnailAlt": "Symbolic mythos image used for memetic entities.",
+    "thumbnail": "/images/cards/memetic-entities.webp",
+    "thumbnailAlt": "Memetic Entities title card",
     "summary": "Ideas, narratives, and cultural patterns treated as active evolutionary pressures rather than passive beliefs.",
-    "description": "Memetic Entities names the point where culture in [[My Evolution System]] becomes alive enough to participate in evolution. It is the bridge between [[Gaia]], [[MES Digital Gods|digital gods]], social behavior, mythic transformation, and the awkward little corridor where symbolic desire eventually wanders toward [[Dirty-minded Bastard Publishing|the adult archive]].",
+    "description": "Memetic Entities names the point where culture in [[My Evolution System]] becomes alive enough to participate in evolution. It is the bridge between [[Gaia]], [[MES Digital Gods|digital gods]], social behavior, and mythic transformation.",
     "body": [
       "Gaia treats culture as part of ecology. A story can spread like seed, parasite, medicine, or invasive species.",
       "This entry belongs in the new site because it is one of the cleanest connections between MES and the broader Archetypal Architect project: stories do not merely describe systems; stories can become systems."
@@ -2192,11 +2148,6 @@
         "id": "dirty-minded-bastard-publishing",
         "label": "Published through the adult imprint lane",
         "type": "Belongs to"
-      },
-      {
-        "id": "deja-vu",
-        "label": "Music/video archive neighbor",
-        "type": "Related"
       },
       {
         "id": "fiction-universe-merch",
@@ -2285,25 +2236,31 @@
     "title": "Fiction Universe Merch Threads",
     "kind": "Merch",
     "category": "Merch",
-    "status": "Seed",
+    "status": "Ongoing",
     "entryRole": "Hub",
     "maturity": "General",
     "visibility": "Public",
-    "date": "2026-06-06",
-    "thumbnail": "/images/generated/fiction-merch-threads.svg",
-    "thumbnailAlt": "A worktable with shirts, pins, prints, and thread lines connecting story objects.",
-    "summary": "A growing object shelf for symbols, shirts, prints, phrases, covers, and artifacts from the mythos.",
+    "date": "2026-10-03",
+    "thumbnail": "/images/cards/fiction-universe-merch.webp",
+    "thumbnailAlt": "Fiction Universe Merch Threads title card",
+    "summary": "Apparel, mugs, totes, and printables from the worlds, open now on Etsy.",
     "description": "The shop thread treats merchandise as another kind of storytelling. A phrase, sigil, cover, or diagram can leave the page and become a portable fragment of the mythos.",
     "body": [
       "The object shelf begins where a story refuses to stay flat. A sigil wants cloth. A phrase wants enamel. A cover wants to become a print on the wall.",
-      "Merch belongs in the archive when it carries a symbol back into daily life and lets the mythos ride around on a body, a desk, or a room."
+      "Merch belongs in the archive when it carries a symbol back into daily life and lets the mythos ride around on a body, a desk, or a room.",
+      "The Archetypal Architect shop on Etsy is open, with apparel, mugs, and totes, plus the Vault Reading Ledger, a printable reading journal and book tracker."
     ],
-    "tags": ["merch", "prints", "shirts", "shop threads", "products"],
+    "tags": ["merch", "apparel", "mugs", "totes", "printables", "Etsy"],
     "links": [
       {
         "label": "Visit the Etsy shop",
-        "url": "https://www.etsy.com/shop/MESPublishing",
-        "type": "External"
+        "url": "https://www.etsy.com/shop/archetypalarchitect",
+        "type": "Buy"
+      },
+      {
+        "label": "Vault Reading Ledger ($6.99)",
+        "url": "https://www.etsy.com/listing/4586779156/printable-reading-journal-book-tracker",
+        "type": "Buy"
       }
     ],
     "connections": [
@@ -2320,45 +2277,6 @@
     ]
   },
   {
-    "id": "deja-vu",
-    "title": "Deja Vu",
-    "kind": "Song",
-    "category": "Song",
-    "status": "Completed",
-    "entryRole": "Entry",
-    "maturity": "General",
-    "visibility": "Public",
-    "date": "2025-10-20",
-    "thumbnail": "/images/works/deja-vu-thumbnail.jpg",
-    "thumbnailAlt": "Deja Vu music video thumbnail.",
-    "summary": "A song and video artifact about repetition, recognition, and the feeling of returning to a scene before it happens.",
-    "description": "Deja Vu belongs to the music side of the archive, where songs work like emotional footnotes to the fiction and systems work.",
-    "body": [
-      "The song sits near the recurring mythos of loops, memory, agency, and the suspicion that a person can arrive late to a decision their deeper self already made.",
-      "Lyrics, video imagery, and story-world echoes turn the track into a side door: enter through the sound and the archive answers in memory."
-    ],
-    "tags": ["song", "video", "memory", "loop", "recognition"],
-    "links": [
-      {
-        "label": "View copied thumbnail",
-        "url": "/images/works/deja-vu-thumbnail.jpg",
-        "type": "Reference"
-      }
-    ],
-    "connections": [
-      {
-        "id": "my-evolution-system",
-        "label": "Audio/video archive neighbor",
-        "type": "Related"
-      },
-      {
-        "id": "suno-music-catalog",
-        "label": "Belongs in the music catalog",
-        "type": "Belongs to"
-      }
-    ]
-  },
-  {
     "id": "suno-music-catalog",
     "title": "Published Suno Songs Library",
     "kind": "Album",
@@ -2369,8 +2287,8 @@
     "visibility": "Public",
     "featured": true,
     "date": "2026-07-04",
-    "thumbnail": "/images/generated/suno-music-catalog.svg",
-    "thumbnailAlt": "A dark soundboard with glowing waveform cards and amber audio paths.",
+    "thumbnail": "/images/cards/suno-music-catalog.webp",
+    "thumbnailAlt": "Published Suno Songs Library title card",
     "summary": "A library for songs, lyric pages, videos, cover art, and musical fragments from across the mythos.",
     "description": "The songs translate the archive into another nervous system. Some tracks grow out of novels, some out of characters, some out of images, and some out of stray concepts that needed rhythm before they needed prose.",
     "body": [
@@ -2380,17 +2298,17 @@
     "tags": ["music", "Suno", "songs", "lyrics", "hosted audio", "catalog"],
     "links": [
       {
-        "label": "Open Suno",
-        "url": "https://suno.com",
+        "label": "Listen on Suno",
+        "url": "https://suno.com/@archetypalarchitect",
         "type": "Listen"
+      },
+      {
+        "label": "Buy More Dice, More Loot",
+        "url": "https://whisperingarchitekt.gumroad.com/l/more-dice-more-loot",
+        "type": "Buy"
       }
     ],
     "connections": [
-      {
-        "id": "deja-vu",
-        "label": "Existing local song artifact",
-        "type": "Contains"
-      },
       {
         "id": "archetypal-mythos",
         "label": "Songs can express mythic concepts",
@@ -2414,10 +2332,10 @@
     "visibility": "Public",
     "featured": true,
     "date": "2026-07-04",
-    "thumbnail": "/images/generated/archetypal-mythos.svg",
-    "thumbnailAlt": "A symbolic map of systems, myth, agency, and stories arranged as a dark mandala.",
+    "thumbnail": "/images/cards/archetypal-mythos.webp",
+    "thumbnailAlt": "The Archetypal Mythos title card",
     "summary": "The recurring symbolic grammar behind the fiction, songs, tools, essays, and worlds.",
-    "description": "The Archetypal Mythos names the pattern beneath the work: systems become characters, tools become culture, desire becomes civilization, and agency gets tested against machines, institutions, gods, markets, and stories. Some corridors lead to [[My Evolution System|system fiction]], some to songs, and a few politely marked doors lead to [[Dirty-minded Bastard Publishing|the adult archive]].",
+    "description": "The Archetypal Mythos names the pattern beneath the work: systems become characters, tools become culture, desire becomes civilization, and agency gets tested against machines, institutions, gods, markets, and stories. Some corridors lead to [[The Gentle Shadow Series|cozy-goth fantasy]], some to [[My Evolution System|system fiction]], and some to songs.",
     "body": [
       "Readers who want more than a list of projects can start here. The mythos explains how the stories talk to each other and why songs, tools, essays, novels, and visual artifacts keep circling the same questions.",
       "Core tensions include agency versus automation, myth versus mechanism, language as a tool for self-command, civilization as an operating system, and the strange moment when an invented tool starts teaching its maker how to think.",
@@ -2431,13 +2349,7 @@
       "systems",
       "worldbuilding"
     ],
-    "links": [
-      {
-        "label": "Open Notion page",
-        "url": "https://app.notion.com/p/1d474c4fdf8f80bfb30adce3862c7ccc?pvs=1",
-        "type": "Reference"
-      }
-    ],
+    "links": [],
     "connections": [
       {
         "id": "my-evolution-system",

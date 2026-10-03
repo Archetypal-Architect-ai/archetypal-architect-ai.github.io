@@ -1,11 +1,12 @@
 ---
 import ExternalLinks from "./ExternalLinks.astro";
 import TagList from "./TagList.astro";
-import { displayStatus, getUniverseBackdrop, getVisualWorld, type Project } from "../content/projects";
+import { displayStatus, getConnectedEntries, getUniverseBackdrop, getVisualWorld, type Project } from "../content/projects";
 
 const { project } = Astro.props as { project: Project };
 const visibleTags = project.tags.slice(0, 3);
 const hiddenTagCount = Math.max(project.tags.length - visibleTags.length, 0);
+const linkedCount = getConnectedEntries(project.id).length;
 ---
 
 <article class:list={["project-card", project.entryRole?.toLowerCase(), `world-${getVisualWorld(project)}`]} style={`--entry-backdrop: url("${getUniverseBackdrop(project)}")`}>
@@ -21,8 +22,8 @@ const hiddenTagCount = Math.max(project.tags.length - visibleTags.length, 0);
     <h2><a href={`/wiki/${project.id}`}>{project.title}</a></h2>
     <p>{project.summary}</p>
     {
-      project.connections?.length ? (
-        <p class="micro-note">{project.connections.length} linked entries</p>
+      linkedCount ? (
+        <p class="micro-note">{linkedCount} linked {linkedCount === 1 ? "entry" : "entries"}</p>
       ) : null
     }
     <TagList tags={visibleTags} />

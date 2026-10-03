@@ -1,6 +1,8 @@
 ---
 import books from "../data/books.json";
 const { filters = true } = Astro.props;
+const genres = [...new Set(books.map((b) => b.genre))];
+const pad = (n: number) => String(n).padStart(2, "0");
 ---
 
 <div class="book-shelf" data-book-shelf>
@@ -11,18 +13,17 @@ const { filters = true } = Astro.props;
           <div class="shelf-filters" aria-label="Browse books">
             <>
               <button data-book-filter="all" aria-pressed="true">
-                All books <span>03</span>
+                All books <span>{pad(books.length)}</span>
               </button>
-              <button data-book-filter="Cozy-goth fantasy" aria-pressed="false">
-                Cozy-goth fantasy
-              </button>
-              <button data-book-filter="Science fiction" aria-pressed="false">
-                Science fiction
-              </button>
+              {genres.map((g) => (
+                <button data-book-filter={g} aria-pressed="false">
+                  {g}
+                </button>
+              ))}
             </>
           </div>
           <span class="small-label" data-book-count>
-            3 books
+            {books.length} books
           </span>
         </>
       </div>
@@ -31,13 +32,20 @@ const { filters = true } = Astro.props;
   <div class="book-grid">
     {
       books.map((book, i) => (
-        <article class="book-card" data-book-genre={book.genre}>
+        <article
+          class:list={["book-card", { "is-upcoming": book.upcoming }]}
+          data-book-genre={book.genre}
+        >
           <a class={"book-art book-art-" + i} href={"/books/" + book.id}>
             <>
-              <span class="book-art-number">0{i + 1}</span>
+              <span class="book-art-number">{pad(i + 1)}</span>
               <img
                 src={book.cover}
-                alt={book.title + " — official Amazon cover"}
+                alt={
+                  book.upcoming
+                    ? book.title + " — cover coming soon"
+                    : book.title + " — official Amazon cover"
+                }
                 width="938"
                 height="1500"
                 loading="lazy"
@@ -59,9 +67,13 @@ const { filters = true } = Astro.props;
                   <button class="text-link" data-open-book={book.id}>
                     Peek inside <span aria-hidden="true">↗</span>
                   </button>
-                  <a href={book.amazon} class="text-link quiet">
-                    Get the book ↗
-                  </a>
+                  {book.amazon ? (
+                    <a href={book.amazon} class="text-link quiet">
+                      Get the book ↗
+                    </a>
+                  ) : (
+                    <span class="upcoming-label">Coming to Amazon</span>
+                  )}
                 </>
               </div>
             </>
@@ -98,9 +110,15 @@ const { filters = true } = Astro.props;
                 {book.note && <p class="edition-note">{book.note}</p>}
                 <div class="hero-actions">
                   <>
-                    <a class="button primary" href={book.amazon}>
-                      Read on Kindle ↗
-                    </a>
+                    {book.amazon ? (
+                      <a class="button primary" href={book.amazon}>
+                        Read on Kindle ↗
+                      </a>
+                    ) : (
+                      <a class="button primary" href="/free">
+                        Hear when it’s out ↗
+                      </a>
+                    )}
                     <a class="text-link" href={"/books/" + book.id}>
                       More about the book →
                     </a>
