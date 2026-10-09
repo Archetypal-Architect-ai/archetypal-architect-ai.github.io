@@ -1,0 +1,149 @@
+{
+  "shopUrl": "https://www.etsy.com/shop/archetypalarchitect",
+  "priceNote": "Prices as of October 2026. Etsy always has the current price, sizes, and colors.",
+  "groups": [
+    {
+      "id": "printables",
+      "title": "Printables",
+      "intro": "Instant downloads for readers.",
+      "items": [
+        {
+          "id": "4586779156",
+          "name": "The Vault Reading Ledger",
+          "detail": "Printable PDF",
+          "price": "$6.99",
+          "blurb": "A 23-page printable reading journal and book tracker, US Letter and A4.",
+          "image": "/images/shop/vault-reading-ledger.webp",
+          "width": 794,
+          "height": 635,
+          "fit": "contain",
+          "url": "https://www.etsy.com/listing/4586779156/printable-reading-journal-book-tracker"
+        }
+      ]
+    },
+    {
+      "id": "tees",
+      "title": "Tees",
+      "intro": "Words from the worlds, and a few that just belong on a shirt.",
+      "items": [
+        {
+          "id": "4584684571",
+          "name": "Kindness Has Teeth",
+          "detail": "Unisex tee",
+          "price": "$27.99",
+          "blurb": "The Gentle Shadow’s motto, worn out loud.",
+          "image": "/images/shop/kindness-has-teeth-tee.webp",
+          "width": 794,
+          "height": 992,
+          "url": "https://www.etsy.com/listing/4584684571/kindness-has-teeth-tee-archetypal"
+        },
+        {
+          "id": "4584704958",
+          "name": "Care Is a Force",
+          "detail": "Unisex tee",
+          "price": "$27.99",
+          "blurb": "Care is not softness. An MES Publishing tee.",
+          "image": "/images/shop/care-is-a-force-tee.webp",
+          "width": 794,
+          "height": 992,
+          "url": "https://www.etsy.com/listing/4584704958/care-is-a-force-tee-mes-publishing"
+        },
+        {
+          "id": "4586483336",
+          "name": "Suspiciously Competent",
+          "detail": "Unisex tee",
+          "price": "$27.99",
+          "blurb": "For the one who quietly fixes everything.",
+          "image": "/images/shop/suspiciously-competent-tee.webp",
+          "width": 794,
+          "height": 992,
+          "url": "https://www.etsy.com/listing/4586483336/suspiciously-competent-shirt-funny"
+        },
+        {
+          "id": "4586481629",
+          "name": "Deliberately Unimpressed",
+          "detail": "Unisex tee",
+          "price": "$27.99",
+          "blurb": "A dry look, made official.",
+          "image": "/images/shop/deliberately-unimpressed-tee.webp",
+          "width": 794,
+          "height": 992,
+          "url": "https://www.etsy.com/listing/4586481629/deliberately-unimpressed-shirt-funny"
+        },
+        {
+          "id": "4586488562",
+          "name": "Chronically Unpersuaded",
+          "detail": "Unisex tee",
+          "price": "$27.99",
+          "blurb": "For the skeptic who has heard it all.",
+          "image": "/images/shop/chronically-unpersuaded-tee.webp",
+          "width": 794,
+          "height": 992,
+          "url": "https://www.etsy.com/listing/4586488562/chronically-unpersuaded-shirt-funny"
+        },
+        {
+          "id": "4586489384",
+          "name": "Cognitively Uninspiring",
+          "detail": "Unisex tee",
+          "price": "$27.99",
+          "blurb": "Low expectations, high comfort.",
+          "image": "/images/shop/cognitively-uninspiring-tee.webp",
+          "width": 794,
+          "height": 992,
+          "url": "https://www.etsy.com/listing/4586489384/cognitively-uninspiring-shirt-funny"
+        },
+        {
+          "id": "4584674463",
+          "name": "Grumpy Old Man Killing It",
+          "detail": "Unisex tee · 80s chrome",
+          "price": "$27.99",
+          "blurb": "Retro chrome lettering for a grump at the top of his game.",
+          "image": "/images/shop/grumpy-old-man-tee.webp",
+          "width": 794,
+          "height": 992,
+          "url": "https://www.etsy.com/listing/4584674463/grumpy-old-man-killing-it-tee-funny-80s"
+        }
+      ]
+    },
+    {
+      "id": "totes-mugs",
+      "title": "Totes & Mugs",
+      "intro": "For the books you carry and the coffee that powers the next draft.",
+      "items": [
+        {
+          "id": "4584720429",
+          "name": "Built from Deep Structures tote",
+          "detail": "15×16 tote · engraved archway",
+          "price": "$22.99",
+          "blurb": "The MES Publishing archway, on a tote for books and tools.",
+          "image": "/images/shop/mes-tote-archway.webp",
+          "width": 794,
+          "height": 992,
+          "url": "https://www.etsy.com/listing/4584720429/built-from-deep-structures-first-tote"
+        },
+        {
+          "id": "4584719621",
+          "name": "Built from Deep Structures canvas tote",
+          "detail": "Cotton canvas tote",
+          "price": "$22.99",
+          "blurb": "The same archway mark on natural cotton canvas.",
+          "image": "/images/shop/mes-tote-canvas.webp",
+          "width": 794,
+          "height": 794,
+          "url": "https://www.etsy.com/listing/4584719621/built-from-deep-structures-first-tote"
+        },
+        {
+          "id": "4584717875",
+          "name": "Wonder With Machinery Inside It",
+          "detail": "Black mug · 11 oz",
+          "price": "$18.99",
+          "blurb": "An MES Publishing mug for the morning writing session.",
+          "image": "/images/shop/wonder-mug.webp",
+          "width": 794,
+          "height": 992,
+          "url": "https://www.etsy.com/listing/4584717875/wonder-with-machinery-inside-it-mug-mes"
+        }
+      ]
+    }
+  ]
+}

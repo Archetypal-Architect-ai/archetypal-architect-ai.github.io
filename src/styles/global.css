@@ -2044,8 +2044,45 @@ section[id] {
 /* Shop shelf (merch) and featured album (music). */
 .shop-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 22px;
+}
+.shop-group {
+  margin-top: 56px;
+}
+.shop-group-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+  margin-bottom: 22px;
+}
+.shop-group-head h3 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0;
+}
+.shop-group-head p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+.shop-item img.is-contain {
+  object-fit: contain;
+  background: #1c1c1c;
+}
+.shop-item:focus-visible {
+  outline: 2px solid #b8963e;
+  outline-offset: 4px;
+}
+.shop-note {
+  margin-top: 40px;
+  font-size: 12px;
+  color: var(--muted);
+}
+a.object-image {
+  display: block;
 }
 .shop-item {
   display: flex;
@@ -2057,7 +2094,7 @@ section[id] {
 .shop-item img {
   width: 100%;
   height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   background: #1a1a1a;
   transition: transform 0.3s;
@@ -2065,7 +2102,8 @@ section[id] {
 .shop-item:hover img {
   transform: scale(1.02);
 }
-.shop-item h3 {
+.shop-item h3,
+.shop-item h4 {
   font-size: 1.35rem;
   margin: 0;
 }
@@ -2128,6 +2166,11 @@ section[id] {
 @media (max-width: 760px) {
   .shop-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .shop-group-head {
+    flex-direction: column;
+    gap: 6px;
   }
   .album-feature {
     grid-template-columns: 1fr;

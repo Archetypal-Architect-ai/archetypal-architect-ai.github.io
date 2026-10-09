@@ -29,6 +29,13 @@ assert(!read("music").includes('href="#"'));
 assert(read("contact").includes("youtube.com/@archetypal.architect.whispers"));
 assert(read("merch").includes("etsy.com/shop/archetypalarchitect"));
 assert(read("merch").includes("etsy.com/listing/4586779156"));
+for (const id of ["4586779156","4586489384","4586488562","4586481629","4586483336","4584720429","4584719621","4584717875","4584704958","4584684571","4584674463"]) {
+  assert(read("merch").includes(`etsy.com/listing/${id}/`), `merch is missing Etsy listing ${id}`);
+}
+assert(!read("merch").includes("class-1-memetic-hazard"), "merch still uses the old design-archive hero");
+assert(!read("").includes("class-1-memetic-hazard"), "homepage still uses the old design-archive hero");
+assert(!/fatwood/i.test(read("merch")), "unpublished fatwood drafts must not appear on merch");
+assert(!read("merch").includes("i.etsystatic.com"), "merch must not hotlink Etsy images");
 assert(!read("").includes("kit.com/\""), "Homepage signup goes to /free");
 assert(read("free").includes("kit.com/rowans-table"));
 assert(read("free").includes('rel="canonical" href="https://archetypalarchitect.online/free/"'));
