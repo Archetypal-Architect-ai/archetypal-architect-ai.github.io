@@ -106,3 +106,11 @@ Approved by the author and published live. This section supersedes earlier notes
 Validation: `astro check` 0/0/0. The build produced 111 pages, and `node scripts/validate-site.mjs` passes.
 
 Open items: confirm which Printify products are live on Etsy and their listing URLs. The homepage "Down the rabbit hole" feature and the merch hero still use older generated art. Midnight Walk and Canon Ledger (Gumroad) are not added yet, pending the author's decision.
+
+## 2026-10-09 — Merch shelf uses live Etsy listings
+
+- `/merch` now reads `src/data/shop.json`: 11 live Etsy listings (as of Oct 9), grouped into Printables, Tees, and Totes & Mugs. Each one has its own photo and listing link.
+- Product photos were downloaded from the listings and saved as ~794px WebP files in `public/images/shop/`, so the page doesn't hotlink Etsy. Prices are shown with a note that Etsy has the current price.
+- The old "Class 1 Memetic Hazard" design-archive hero is gone. `/merch` now leads with the Kindness Has Teeth tee and the homepage with the Care Is a Force tee, both linked to their listings. `/merch` has a JPG share image at `/images/share/merch.jpg`.
+- The Gentle Shadow wiki "Shop Thread" links that pointed to `#` now go to the Kindness Has Teeth listing.
+- Unpublished Etsy drafts (fatwood) are deliberately left out. The validator checks every listing ID, that the old hero is gone, that there's no fatwood, and that nothing is hotlinked.
