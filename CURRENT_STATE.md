@@ -114,3 +114,7 @@ Open items: confirm which Printify products are live on Etsy and their listing U
 - The old "Class 1 Memetic Hazard" design-archive hero is gone. `/merch` now leads with the Kindness Has Teeth tee and the homepage with the Care Is a Force tee, both linked to their listings. `/merch` has a JPG share image at `/images/share/merch.jpg`.
 - The Gentle Shadow wiki "Shop Thread" links that pointed to `#` now go to the Kindness Has Teeth listing.
 - Unpublished Etsy drafts (fatwood) are deliberately left out. The validator checks every listing ID, that the old hero is gone, that there's no fatwood, and that nothing is hotlinked.
+
+## 2026-10-09 — New model photos on six tees
+
+- Six tee listings (Grumpy Old Man, Cognitively Uninspiring, Chronically Unpersuaded, Suspiciously Competent, Deliberately Unimpressed, Care Is a Force) now use the new v2 lifestyle photos, saved as 800×1000 WebP at `public/images/shop/*-v2.webp`. The old images were removed. The homepage Care Is a Force tile uses the new photo too.
